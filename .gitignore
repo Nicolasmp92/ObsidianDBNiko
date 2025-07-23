@@ -1,0 +1,45 @@
+# =========================
+# 🚫 Archivos grandes o innecesarios
+# =========================
+*.exe
+*.zip
+*.rar
+*.mp4
+*.mov
+*.iso
+*.bak
+*.tmp
+*.log
+
+# =========================
+# 🧠 Obsidian
+# =========================
+.obsidian/
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+
+# =========================
+# ⚙️ Archivos del sistema
+# =========================
+ehthumbs.db
+Icon?
+._*
+*.sublime-project
+*.sublime-workspace
+
+# =========================
+# 📦 Laravel (si llegas a incluir código)
+# =========================
+/vendor/
+/node_modules/
+.env
+.env.*
+*.log
+*.lock
+/public/storage
+/storage/*.key
+/storage/logs/*
+/storage/framework/*
+.idea/
