@@ -126,4 +126,4 @@ Hoy Laravel es uno de los frameworks PHP más usados en el mundo, recomendado pa
 Laravel = PHP moderno, limpio y organizado, creado para hacer el desarrollo web **más rápido, claro y divertido**.
 ## [👈🏻VOLVER](Laravel%20index.md)
 
-## [SIGUIENTE 👉🏻](Historia%20y%20versio%CC%81n%20227d9e22edae818c821fc139cd95fe68.md)
+## [SIGUIENTE 👉🏻](Requisitos%20básicos.md)

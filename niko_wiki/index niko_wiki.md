@@ -11,7 +11,7 @@ Bienvenido a tu base de conocimiento de programación. Aquí puedes encontrar to
 
 ## 🎨 Frontend (la parte que mas me gusta)
 - [[HTML]]
-- [[Bootstrap
+- [[Bootstrap]]
 - [[CSS]]
 - [[Javascript]]
 

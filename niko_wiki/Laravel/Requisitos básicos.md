@@ -6,7 +6,7 @@ Titular: Niko
 
 Para trabajar con Laravel de forma cómoda necesitas tener instalados algunos programas y herramientas clave en tu computador.
 
-## 💻 PHP
+## 💻 [PHP](index%PHP)
 
 Laravel está construido sobre **PHP**, así que debes tener instalada una versión moderna. Laravel 11 requiere **PHP 8.2 o superior**.
 

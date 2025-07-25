@@ -1,4 +1,4 @@
-# Laravel Wiki: Todo lo necesario para aprender Laravel.
+# Todo lo necesario para aprender Laravel.
 
 Titular: Niko
 
@@ -21,7 +21,7 @@ Cada sección crece y se mejora a medida que avanzo en mis proyectos y en mi exp
 
 [ Requisitos básicos](Requisitos%20básicos.md)
 
-# **2️⃣** Entorno y Setup
+# **2️⃣ Entorno y Setup**
 
 [Instalación Paso a Paso](Instalación%20Paso%20a%20Paso.md)
 
@@ -29,7 +29,7 @@ Cada sección crece y se mejora a medida que avanzo en mis proyectos y en mi exp
 
 [Archivo `.env` y Configuración](Archivo%20env%20y%20Configuración.md)
 
-# 3️⃣Artisan CLI
+# **3️⃣Artisan CLI**
 
 [ Qué es Artisan](Qué%20es%20Artisan.md)
 
@@ -47,7 +47,7 @@ Cada sección crece y se mejora a medida que avanzo en mis proyectos y en mi exp
 
 [Usar Tinker para pruebas](Usar%20Tinker%20para%20pruebas.md)
 
-# 5️⃣ Seeders y Factories
+# **5️⃣ Seeders y Factories **
 
 [Seeders y Factories](Seeders%20y%20Factories.md)
 
@@ -63,7 +63,7 @@ Cada sección crece y se mejora a medida que avanzo en mis proyectos y en mi exp
 
 [Protección y Agrupación Avanzada](Protección%20y%20Agrupación%20Avanzada.md)
 
-# 7️⃣ Controladores
+# **7️⃣ Controladores **
 
 [Controladores ¿que son y como crearlos?](Controladores%20¿que%20son%20y%20como%20crearlos.md)
 
@@ -71,7 +71,7 @@ Cada sección crece y se mejora a medida que avanzo en mis proyectos y en mi exp
 
 [](Métodos%20(index,%20create,%20store…).md)
 
-# 8️⃣ Vistas y Blade
+# **8️⃣ Vistas y Blade**
 
 [Qué es Blade.](Qué%20es%20Blade.md)
 
@@ -94,7 +94,7 @@ Cada sección crece y se mejora a medida que avanzo en mis proyectos y en mi exp
 
 [Consultas básicas y avanzadas](Consultas%20básicas%20y%20avanzadas.md)
 
-# 1️⃣1️⃣ Autenticación
+# **1️⃣1️⃣ Autenticación**
 
 [ Breeze y Auth básica](Breeze%20y%20Auth%20básica.md)
 
