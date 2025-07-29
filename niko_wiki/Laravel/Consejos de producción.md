@@ -51,4 +51,4 @@ Nunca subas `.env` ni tokens a Git.
 
 ## [👈🏻VOLVER](Snippets%20útiles.md)
 
-## [SIGUIENTE 👉🏻](Laravel%20index.md)
+## [SIGUIENTE 👉🏻](0.%20Laravel%20index.md)

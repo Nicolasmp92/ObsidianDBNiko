@@ -15,8 +15,6 @@ Livewire valida igual que Laravel clásico, **pero en vivo**.
 **UserForm.php**
 
 ```php
-php
-CopiarEditar
 public $name;
 public $email;
 
@@ -37,7 +35,6 @@ public function save()
     session()->flash('message', 'Usuario guardado!');
     $this->reset(['name', 'email']);
 }
-
 ```
 
 ---
@@ -45,8 +42,6 @@ public function save()
 **user-form.blade.php**
 
 ```
-blade
-CopiarEditar
 <form wire:submit.prevent=\"save\">
     <input type=\"text\" wire:model.lazy=\"name\" placeholder=\"Nombre\">
     @error('name') <span>{{ $message }}</span> @enderror
@@ -101,11 +96,8 @@ public function updated($field)
 Para mostrar **cargando...**
 
 ```
-blade
-CopiarEditar
 <button wire:click=\"save\">Guardar</button>
 <span wire:loading>Guardando...</span>
-
 ```
 
 ---
@@ -161,4 +153,4 @@ Livewire y Alpine se **complementan** perfecto.
 
 ## [👈🏻VOLVER](Comunicación%20entre%20componentes.md)
 
-## [SIGUIENTE 👉🏻](Laravel%20index.md)
+## [SIGUIENTE 👉🏻](0.%20Laravel%20index.md)

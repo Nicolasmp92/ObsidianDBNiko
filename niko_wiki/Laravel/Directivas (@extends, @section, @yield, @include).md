@@ -158,4 +158,4 @@ php artisan view:clear
 
 ## [👈🏻VOLVER](Pasar%20datos%20con%20compact.md)
 
-## [SIGUIENTE 👉🏻](Laravel%20index.md)
+## [SIGUIENTE 👉🏻](0.%20Laravel%20index.md)

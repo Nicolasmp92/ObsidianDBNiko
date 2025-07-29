@@ -56,6 +56,6 @@ php artisan tinker               # Abrir consola interactiva
 
 ---
 
-## [👈🏻VOLVER](Laravel%20index.md)
+## [👈🏻VOLVER](0.%20Laravel%20index.md)
 
 ## [SIGUIENTE 👉🏻](Snippets%20útiles.md)

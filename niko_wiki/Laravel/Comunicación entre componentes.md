@@ -15,8 +15,7 @@ Livewire permite que **un componente hable con otro** usando **eventos**.
 **Child Component (PostForm)**
 
 ```php
-php
-CopiarEditar
+
 $this->emit('postCreated');
 
 ```
@@ -24,8 +23,7 @@ $this->emit('postCreated');
 **Parent Component (PostTable)**
 
 ```php
-php
-CopiarEditar
+
 protected $listeners = ['postCreated' => 'reloadPosts'];
 
 public function reloadPosts()
@@ -48,21 +46,18 @@ public function reloadPosts()
 ### 📌 **Pasar parámetros al emitir**
 
 ```php
-php
-CopiarEditar
+
 $this->emit('showNotification', 'Guardado exitoso!');
 
 ```
 
 ```php
-php
-CopiarEditar
+
 protected $listeners = ['showNotification'];
 
 public function showNotification($msg) {
     $this->notification = $msg;
 }
-
 ```
 
 ---
