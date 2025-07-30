@@ -124,4 +124,4 @@ Si tu app crece, mejor usa Spatie Laravel Permission para:
 
 ## [👈🏻VOLVER](Registro,%20login%20y%20logout.md)
 
-## [SIGUIENTE 👉🏻](0.%20Laravel%20index.md)
+## [SIGUIENTE 👉🏻](A0.%20Laravel%20index.md)
