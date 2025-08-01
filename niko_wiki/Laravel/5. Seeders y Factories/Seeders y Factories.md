@@ -57,6 +57,6 @@ Seeders y Factories suelen ir **de la mano**:
 
 ---
 
-## [👈🏻VOLVER](A0.%20Laravel%20index.md)
+## [👈🏻VOLVER](Laravel%20index.md)
 
 ## [SIGUIENTE 👉🏻](Crear%20Seeders%20y%20Factories.md)

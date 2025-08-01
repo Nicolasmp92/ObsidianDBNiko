@@ -67,6 +67,6 @@ public function show() {
 
 ---
 
-## [👈🏻VOLVER](A0.%20Laravel%20index.md)
+## [👈🏻VOLVER](Laravel%20index.md)
 
 ## [SIGUIENTE 👉🏻](Estructura%20de%20vistas%20(layouts,%20partials,%20component%20227d9e22edae80ea8206e976ad966dc0.md)

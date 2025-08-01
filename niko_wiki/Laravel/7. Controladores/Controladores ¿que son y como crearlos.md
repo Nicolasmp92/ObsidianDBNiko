@@ -72,6 +72,6 @@ Controllers/
 
 ---
 
-## [👈🏻VOLVER](A0.%20Laravel%20index.md)
+## [👈🏻VOLVER](Laravel%20index.md)
 
 ## [SIGUIENTE 👉🏻](Resource%20Controllers%20y%20REST.md)

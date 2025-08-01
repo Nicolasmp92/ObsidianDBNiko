@@ -153,4 +153,4 @@ Livewire y Alpine se **complementan** perfecto.
 
 ## [👈🏻VOLVER](Comunicación%20entre%20componentes.md)
 
-## [SIGUIENTE 👉🏻](A0.%20Laravel%20index.md)
+## [SIGUIENTE 👉🏻](Laravel%20index.md)

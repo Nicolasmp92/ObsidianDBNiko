@@ -174,4 +174,4 @@ Click en botón “Eliminar” → `destroy()` borra → vuelves a la lista sin 
 
 ## [👈🏻VOLVER](Resource%20Controllers%20y%20REST.md)
 
-## [SIGUIENTE 👉🏻](A0.%20Laravel%20index.md)
+## [SIGUIENTE 👉🏻](Laravel%20index.md)
