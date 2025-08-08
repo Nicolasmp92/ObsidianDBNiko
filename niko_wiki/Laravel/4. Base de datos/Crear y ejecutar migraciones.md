@@ -14,7 +14,7 @@ Es como **un “instructivo” paso a paso** para que Laravel sepa:
 - Qué columnas tendrá (ejemplo: `name`, `email`, `password`)
 - Qué tipo de dato es cada columna (texto, número, fecha…)
 
-👉 Laravel lee estas migraciones y las aplica **usando Artisan**.
+👉 Laravel lee estas migraciones y las aplica **usando Artisan** [[Qué es Artisan|¿que es artisan?]].
 
 ---
 
@@ -22,7 +22,7 @@ Es como **un “instructivo” paso a paso** para que Laravel sepa:
 
 ✅ **Organiza cambios:**
 
-Si mañana quieres **agregar una columna nueva** o **cambiar algo**, **no editas directo en phpMyAdmin**, sino que creas otra migración.
+Si mañana quieres **agregar una columna nueva** o **cambiar algo**, **no editas directo en phpMyAdmin**  (en SQL), sino que creas otra migración.
 
 ✅ **Deja historial:**
 
@@ -42,7 +42,10 @@ php artisan make:migration create_posts_table --create=posts
 
 ```
 
-Esto crea un archivo en `database/migrations/`.
+Esto crea un archivo en `database/migrations/` con dos métodos:
+
+- `up()`: lo que ocurre al aplicar la migración (crear o modificar).
+- `down()`: lo que ocurre al revertirla (rollback).
 
 ---
 
@@ -88,6 +91,8 @@ public function down(): void
 - `php artisan migrate:refresh` — Revierte **todo** y vuelve a migrar.
 - `php artisan migrate:fresh` — Borra **todo** y migra desde cero.
 - `php artisan migrate:status` — Ver qué migraciones se han corrido.
+- |`php artisan migrate:reset` — Revierte **todas las migraciones**, pero **no vuelve a ejecutarlas**
+
 
 ---
 
