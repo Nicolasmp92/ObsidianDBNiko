@@ -26,6 +26,7 @@ Selecciona el idioma que quieras configurar:
 ```
 ---
 
+
 ## 📌 3. Configuración
 
 En el archivo `.env` define los locales:
@@ -39,6 +40,16 @@ APP_FAKER_LOCALE=es_ES
 👉 `APP_FALLBACK_LOCALE` sirve como idioma de respaldo.  
 👉 `APP_FAKER_LOCALE` define el idioma de los datos falsos generados por `faker`.
 
+ Configura el idioma por defecto
+**`config/app.php`**
+```
+'locale' => 'es',          // <- idioma por defecto de la app
+'fallback_locale' => 'en', // <- si falta una traducción, usa inglés
+'faker_locale' => 'es_CL', // <- opcional, para factories (Chile)
+'timezone' => 'America/Santiago', // <- ya que estás en CL
+```
+
+> Esto hace que Laravel **busque primero** cadenas en `resources/lang/es`.
 ---
 
 ## 📌 4. Uso en Blade
