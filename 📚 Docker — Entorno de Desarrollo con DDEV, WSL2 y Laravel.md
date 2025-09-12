@@ -227,5 +227,95 @@ Con este stack:
 
 ---
 
-👉 Nye, este wiki lo puedes guardar tal cual en tu **Obsidian** bajo algo como:  
-`/Wiki/Entorno/DDEV-WSL2-Laravel.md`
+# 📘 Wiki 1 — Uso de DDEV con múltiples proyectos
+
+``# DDEV - Uso con múltiples proyectos  ## Concepto clave Cada carpeta con `.ddev/config.yaml` es un **proyecto independiente**.  - Ejemplo:  - `~/code/qcmanagerniko/.ddev/`   - `~/code/rucaray/.ddev/`  El **router de DDEV** se enciende al arrancar el primer proyecto y queda activo mientras haya alguno en ejecución.   ⚠️ Esto NO significa que todos los proyectos estén corriendo: solo los que tú inicies.  ---  ## Comandos básicos  - Listar proyectos conocidos:   ```bash   ddev list``
+
+- Arrancar un proyecto desde su carpeta:
+    
+    `cd ~/code/rucaray ddev start`
+    
+- Arrancar un proyecto desde cualquier lugar:
+    
+    `ddev start rucaray`
+    
+- Detener un proyecto específico:
+    
+    `ddev stop rucaray`
+    
+- Apagar todos los proyectos y router:
+    
+    `ddev poweroff`
+    
+
+---
+
+## Buenas prácticas
+
+- ✅ Usar **una terminal por proyecto** para mantener orden.
+    
+- ✅ Puedes tener varios proyectos corriendo a la vez:
+    
+    - `https://qcmanagerniko.ddev.site`
+        
+    - `https://rucaray.ddev.site`
+        
+- ❌ No es necesario `ddev poweroff` cada vez; basta con `ddev stop <nombre>` si quieres pausar solo uno.
+    
+
+---
+
+``---  # 📘 Wiki 2 — Configuración de HTTPS en DDEV con mkcert  ```markdown # DDEV - HTTPS con mkcert en Windows  ## Contexto Por defecto, DDEV genera certificados para `*.ddev.site`, pero tu navegador (Chrome/Edge/Firefox en Windows) no los reconoce como válidos.   Solución: instalar `mkcert` en Windows y registrar la **CA local de confianza**.  ---  ## Instalación con Chocolatey (más simple)  1. Abre PowerShell **como Administrador**. 2. Instala Chocolatey:    ```powershell    Set-ExecutionPolicy Bypass -Scope Process -Force    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072    iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))``
+
+3. Verifica:
+    
+    `choco --version`
+    
+4. Instala mkcert:
+    
+    `choco install mkcert -y`
+    
+5. Agrega la CA local de confianza:
+    
+    `mkcert -install`
+    
+
+---
+
+## Reiniciar DDEV
+
+En Ubuntu/WSL:
+
+`ddev poweroff ddev start`
+
+---
+
+## Verificación
+
+- Abre en navegador:
+    
+    - `https://qcmanagerniko.ddev.site`
+        
+    - `https://rucaray.ddev.site`
+        
+
+Ya no debería salir el aviso de _“La conexión no es privada”_.
+
+### Firefox extra
+
+- En `about:config` → activa:
+    
+    `security.enterprise_roots.enabled = true`
+    
+
+---
+
+## Si aún ves advertencia
+
+- Reinstala la CA:
+    
+    `mkcert -uninstall mkcert -install`
+    
+- Borra caché DNS en Chrome: `chrome://net-internals/#dns` → _Clear host cache_.
+    
+- Reinicia navegador.

@@ -20,11 +20,11 @@ Cada sección crece y se mejora a medida que avanzo en mis proyectos y en mi exp
 
 # **2️⃣ Entorno y Setup**
 
-[Instalación Paso a Paso](3.%20Instalación%20Paso%20a%20Paso.md)
+[Instalación Paso a Paso](Instalación%20Paso%20a%20Paso.md)
 
-[Estructura de carpetas](4.%20Estructura%20de%20carpetas.md)
+[Estructura de carpetas](Estructura%20de%20carpetas.md)
 
-[Archivo `.env` y Configuración](5.%20Archivo%20env%20y%20Configuración.md)
+[Archivo `.env` y Configuración](Archivo%20env%20y%20Configuración.md)
 
 
 

@@ -50,8 +50,6 @@ php -r "unlink('composer-setup.php');"
 Mueve el ejecutable para que sea global:
 
 bash
-Copiar
-Editar
 sudo mv composer.phar /usr/local/bin/composer
 Verifica la instalación:
 

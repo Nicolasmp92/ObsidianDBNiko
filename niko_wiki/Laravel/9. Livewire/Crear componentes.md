@@ -10,7 +10,6 @@ Titular: Niko
 
 ```bash
 bash
-CopiarEditar
 php artisan make:livewire TodoList
 
 ```
@@ -19,7 +18,7 @@ Esto crea:
 
 ```
 swift
-CopiarEditar
+
 app/Livewire/TodoList.php
 resources/views/livewire/todo-list.blade.php
 

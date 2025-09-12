@@ -108,6 +108,6 @@ Laravel promueve un flujo de trabajo limpio y eficiente:
 
 ---
 
-## [👈🏻VOLVER](3.%20Instalación%20Paso%20a%20Paso.md)
+## [👈🏻VOLVER](Instalación%20Paso%20a%20Paso.md)
 
-## [SIGUIENTE 👉🏻](5.%20Archivo%20env%20y%20Configuración.md)
+## [SIGUIENTE 👉🏻](Archivo%20env%20y%20Configuración.md)

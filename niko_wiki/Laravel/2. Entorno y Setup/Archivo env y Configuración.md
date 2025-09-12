@@ -120,6 +120,6 @@ cp .env.example .env
 
 ---
 
-## [👈🏻VOLVER](4.%20Estructura%20de%20carpetas.md)
+## [👈🏻VOLVER](Estructura%20de%20carpetas.md)
 
 ## [SIGUIENTE 👉🏻](Qué%20es%20Artisan.md)
