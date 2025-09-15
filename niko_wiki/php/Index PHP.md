@@ -1,70 +1,83 @@
-### 🧠 ¿Qué significa PHP?
+## 01. Introducción
 
-**PHP** originalmente significaba:
+- ¿Qué es PHP?
+- Historia breve y versiones actuales
+- PHP como lenguaje del lado del servidor
 
-> **Personal Home Page** (Página Personal)
+## 02. Fundamentos
 
-Pero ahora se conoce como:
+- Variables y constantes
+- Tipos de datos
+- Operadores
 
-> **PHP: Hypertext Preprocessor**  
-> (Sí, es un acrónimo recursivo 🤯)
+## 03. Control de Flujo
 
----
+- Condicionales (`if`, `else`, `elseif`, `switch`)
+- Bucles (`for`, `while`, `do...while`, `foreach`)
+- Break y continue
 
-### 🛠️ ¿Para qué sirve PHP?
+## 04. Funciones
 
-PHP sirve para:
+- Definición y sintaxis
+- Parámetros y valores de retorno
+- Funciones con parámetros por defecto
+- Funciones anónimas (closures)
+- Funciones flecha
 
-|Acción|Ejemplo|
-|---|---|
-|📝 Procesar formularios|Enviar un contacto desde una web|
-|📦 Conectar con base de datos|Guardar registros en **MySQL**|
-|🔐 Autenticación|Login de usuarios|
-|📄 Mostrar contenido dinámico|Listar productos desde una base de datos|
-|🧾 Generar HTML|Mostrar una página web desde código|
+## 05. Programación Orientada a Objetos (POO)
 
----
-
-### 💡 ¿Cómo funciona PHP?
-
-1. El usuario entra a una página con PHP, como `https://miweb.com/contacto`.
+- Clases y objetos
+- Propiedades y métodos
+- `$this` y `self`
+- Instanciación
+- Herencia (`extends`)
+- Polimorfismo y sobreescritura de métodos
+- **Modificadores de acceso** (`public`, `private`, `protected`)
+- **Constructores y destructores** (`__construct`, `__destruct`)
+- **Interfaces y Traits**
+- **Namespaces y Autoload**
     
-2. El **servidor** ejecuta el código PHP.
+
+## 06. Arrays y Colecciones
+
+- Arrays indexados
+- Arrays asociativos
+- Arrays multidimensionales
+- Funciones útiles (`array_map`, `array_filter`, `in_array`, etc.)
+
+## 07. Manejo de Errores y Excepciones
+
+- `try`, `catch`, `finally`
+- `throw new Exception`
+- Manejo de errores personalizados
     
-3. PHP **genera HTML** y lo envía al navegador del usuario.
-    
+## 08. Superglobales y Formularios
 
-> ⚠️ El usuario **nunca ve el código PHP**, solo el HTML resultante.
+- `$_GET`, `$_POST`, `$_REQUEST`
+- `$_SESSION` y `$_COOKIE`
+- `$_FILES` (subida de archivos)
+- Validación y sanitización de entradas
 
----
+## 09. Manejo de Archivos
 
-### 👶 Ejemplo muy básico
+- `fopen`, `fwrite`, `fread`, `fclose`
+- Leer y escribir JSON (`json_encode`, `json_decode`)
 
+## 10. PHP y Bases de Datos
 
-`<?php echo "Hola Nye, bienvenida al mundo PHP!"; ?>`
+- Conexión con MySQL (MySQLi y PDO)
+- Consultas básicas (SELECT, INSERT, UPDATE, DELETE)
+- Sentencias preparadas (prepared statements)
 
-💬 Este código muestra el texto directamente en la web:
+## 11. Temas Avanzados
 
-> `Hola Nye, bienvenida al mundo PHP!`
+- Programación funcional en PHP
+- Composer y gestión de dependencias
+- PHP en frameworks (Laravel, Symfony)
+- Buenas prácticas y PSR (estándares de código)
 
----
+## 12. Resumen y Cheatsheet
 
-### 🔁 ¿PHP aún se usa?
-
-¡**Sí!** Aunque hay muchos lenguajes modernos, **PHP sigue muy vivo**, sobre todo con frameworks como:
-
-- **Laravel** 🧡
-- Symfony
-- WordPress (sí, WordPress está hecho en PHP)
-
-### 📌 Versión más actual de PHP (al 2025)
-
-La versión más reciente y estable de PHP es:
-
-> 🧪 **PHP 8.3.9** (lanzada en julio de 2025)
-
-**PHP 8.3** incluye mejoras de rendimiento, nuevas funciones como `json_validate()`, y más expresividad en la sintaxis, como `class constants` tipados.
-
----
-
-`👉 [Siguiente: Cómo instalar PHP en tu equipo](./instalar-php.md)`
+- Tabla de operadores
+- Tabla de funciones comunes
+- Ejemplos prácticos rápidos
