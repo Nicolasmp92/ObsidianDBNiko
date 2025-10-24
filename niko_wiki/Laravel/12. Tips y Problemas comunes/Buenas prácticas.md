@@ -64,4 +64,4 @@ Menos bugs, menos dolores de cabeza y código más mantenible.
 
 ## [👈🏻VOLVER](Comandos%20para%20limpiar%20caché.md)
 
-## [SIGUIENTE 👉🏻](Laravel%20index.md)
+## [SIGUIENTE 👉🏻](índex%20Laravel%2012.md)

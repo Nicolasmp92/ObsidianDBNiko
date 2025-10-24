@@ -103,6 +103,6 @@ php artisan migrate:fresh   # Borra TODO y migra limpio
 
 ---
 
-## [👈🏻VOLVER](Laravel%20index.md)
+## [👈🏻VOLVER](índex%20Laravel%2012.md)
 
 ## [SIGUIENTE 👉🏻](Comandos%20para%20limpiar%20caché.md)

@@ -6,11 +6,31 @@ Permiten tomar **decisiones** según una condición.
 
 👉 Ejemplo simple:
 
-```<?php $edad = 18;  if ($edad >= 18) {     echo "Eres mayor de edad"; } else {     echo "Eres menor de edad"; } ?>```
+```php 
+<?php
+	 $edad = 18;  
+		 if ($edad >= 18) {
+		      echo "Eres mayor de edad"; 
+		      } else {
+		           echo "Eres menor de edad"; 
+		           } 
+?>
+```
 
 👉 Con varias condiciones:
 
-`<?php $nota = 75;  if ($nota >= 90) {     echo "Excelente"; } elseif ($nota >= 60) {     echo "Aprobado"; } else {     echo "Reprobado"; } ?>`
+```php
+<?php 
+	$nota = 75;  
+	if ($nota >= 90) {
+	     echo "Excelente"; 
+	     } elseif ($nota >= 60) {
+	          echo "Aprobado"; 
+	          } else {
+	               echo "Reprobado"; 
+	               } 
+?>
+```
 
 ---
 
@@ -20,7 +40,26 @@ Cuando tienes **muchos casos posibles**, `switch` es más limpio que muchos `if`
 
 👉 Ejemplo:
 
-`<?php $dia = "martes";  switch ($dia) {     case "lunes":         echo "Inicio de semana";         break;     case "martes":     case "miércoles":         echo "Mitad de semana";         break;     case "viernes":         echo "Casi fin de semana";         break;     default:         echo "Día normal"; } ?>`
+```php
+<?php 
+	$dia = "martes";  
+	
+	switch ($dia) {
+		case "lunes":
+		    echo "Inicio de semana";
+		    break;     
+		case "martes":     
+		case "miércoles":         
+			echo "Mitad de semana";         
+			break;
+		case "viernes":
+			echo "Casi fin de semana";
+			break;
+	    default:
+	    echo "Día normal";
+} 
+?>
+```
 
 📌 `break` evita que se sigan ejecutando los demás casos.
 

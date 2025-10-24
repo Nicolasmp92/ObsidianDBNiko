@@ -18,6 +18,6 @@ En Laravel, un CRUD se arma combinando:
 
 ---
 
-## [👈🏻VOLVER](Laravel%20index.md)
+## [👈🏻VOLVER](índex%20Laravel%2012.md)
 
 ## [SIGUIENTE 👉🏻](Snippets%20útiles.md)

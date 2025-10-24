@@ -35,6 +35,6 @@ En lugar de escribir `SELECT * FROM users WHERE id = 1`, usas `User::find(1)`.
 
 ---
 
-## [👈🏻VOLVER](Laravel%20index.md)
+## [👈🏻VOLVER](índex%20Laravel%2012.md)
 
 ## [SIGUIENTE 👉🏻](Modelos%20y%20relaciones.md)

@@ -118,6 +118,6 @@ php artisan list
 
 ---
 
-## [👈🏻VOLVER](Laravel%20index.md)
+## [👈🏻VOLVER](índex%20Laravel%2012.md)
 
 ## [SIGUIENTE 👉🏻](Comandos%20más%20usados.md)

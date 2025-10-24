@@ -23,7 +23,6 @@
 - Deben empezar con `$` y una letra o guion bajo.
 - No pueden empezar con número (`$2nombre ❌`).
 - Sensibles a mayúsculas/minúsculas (`$nombre` ≠ `$Nombre`).
-    
 
 ---
 
@@ -177,15 +176,13 @@ PHP convierte automáticamente, pero también puedes forzar:
 	$activo = true; 
 	define("APP", "WikiPHP");  
 	echo "Bienvenido a " . APP . "<br>"; 
-	echo "Hola, me llamo 
-	$nombre, tengo 
-	$edad años y mido 
-	$altura metros.<br>";  
-	if ($activo) {     
-	echo "El usuario está activo."; 
-	} else {    
-	 echo "El usuario no está activo."; 
-	} ?>
+	echo "Hola, me llamo $nombre, tengo $edad años y mido $altura metros.<br>";  
+	if ($activo){     
+		echo "El usuario está activo."; 
+		} else {    
+			 echo "El usuario no está activo."; 
+		} 
+	?>
 ```
 
 ---

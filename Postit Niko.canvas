@@ -1,0 +1,8 @@
+{
+	"nodes":[
+		{"id":"4a986969f58e9c27","type":"text","text":"Taza mas baja para el 2025 fue ofrecida por Santander con una tasa de 3.24%\n\nla mas baja histórica fue en 2019.\n\n","x":-300,"y":-740,"width":250,"height":254,"color":"5"},
+		{"id":"ea1e875a94999334","type":"text","text":"informar de permiso para el lunes 27 (se trata de llegar mas tarde por examenes 7:25)","x":-540,"y":-740,"width":185,"height":190,"color":"1"},
+		{"id":"46395c62f5927347","type":"text","text":"","x":-200,"y":-280,"width":250,"height":60}
+	],
+	"edges":[]
+}

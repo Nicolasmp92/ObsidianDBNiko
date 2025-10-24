@@ -71,7 +71,3 @@ Controllers/
 - Esto te ayuda a aplicar **Middleware**, **validar Requests**, **organizar mejor el código**.
 
 ---
-
-## [👈🏻VOLVER](Laravel%20index.md)
-
-## [SIGUIENTE 👉🏻](Resource%20Controllers%20y%20REST.md)

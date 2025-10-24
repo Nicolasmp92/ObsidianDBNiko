@@ -98,7 +98,7 @@ public function down(): void
 
 ## 🔑 **Tips reales**
 
-✅ **Siempre revisa [`.env`](Instalación%20Paso%20a%20Paso.md)** antes de migrar — asegúrate de estar conectado a la **base de datos correcta**.
+✅ **Siempre revisa [`.env`](2.2%20Instalación%20Paso%20a%20Paso.md)** antes de migrar — asegúrate de estar conectado a la **base de datos correcta**.
 
 ✅ Si haces **muchos cambios chiquitos**, agrúpalos: no generes mil migraciones por cada columna.
 

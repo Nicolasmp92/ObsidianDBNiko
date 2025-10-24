@@ -53,6 +53,6 @@ php artisan migrate
 **IMPORTANTE:** seguramente cuando crees un nuevo proyecto, querrás asignar roles a tu aplicación, esto generalmente se puede hacer de forma manual pero existe un complemento llamado [[Spatie Laravel-Permission]] que te permite gestionar los roles de una forma mas eficas. 
 
 
-## [👈🏻VOLVER](Laravel%20index.md)
+## [👈🏻VOLVER](índex%20Laravel%2012.md)
 
 ## [SIGUIENTE 👉🏻](Registro,%20login%20y%20logout.md)

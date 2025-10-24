@@ -5,7 +5,7 @@
 Antes de comenzar asegúrate de tener instalado:
 
 - [[Index PHP|PHP 8.2 o superior]]
-- [[Composer]]
+- [[2. Composer]]
 - Node.js y npm (opcional, para compilar assets)
 - MySQL o MariaDB
 - Git

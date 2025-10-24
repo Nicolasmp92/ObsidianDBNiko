@@ -132,4 +132,4 @@ Post::chunk(100, function ($posts) {
 
 ## [👈🏻VOLVER](Modelos%20y%20relaciones.md)
 
-## [SIGUIENTE 👉🏻](Laravel%20index.md)
+## [SIGUIENTE 👉🏻](índex%20Laravel%2012.md)

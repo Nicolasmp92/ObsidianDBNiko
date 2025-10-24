@@ -64,6 +64,6 @@ CopiarEditar
 
 ---
 
-## [👈🏻VOLVER](Laravel%20index.md)
+## [👈🏻VOLVER](índex%20Laravel%2012.md)
 
 ## [SIGUIENTE 👉🏻](Crear%20componentes.md)

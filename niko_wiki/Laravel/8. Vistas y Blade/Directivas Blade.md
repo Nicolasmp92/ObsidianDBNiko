@@ -179,4 +179,4 @@ CopiarEditar
 
 ## [👈🏻VOLVER](Pasar%20datos%20con%20compact.md)
 
-## [SIGUIENTE 👉🏻](Laravel%20index.md)
+## [SIGUIENTE 👉🏻](índex%20Laravel%2012.md)

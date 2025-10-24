@@ -99,6 +99,6 @@ Verifica:
 
 ---
 
-## [👈🏻VOLVER](Laravel%20index.md)
+## [👈🏻VOLVER](índex%20Laravel%2012.md)
 
 ## [SIGUIENTE 👉🏻](Crear%20y%20ejecutar%20migraciones.md)

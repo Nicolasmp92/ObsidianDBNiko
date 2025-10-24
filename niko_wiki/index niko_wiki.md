@@ -5,7 +5,7 @@ Bienvenido a tu base de conocimiento de programación. Aquí puedes encontrar to
 ---
 
 ## 📍 Laravel
-- [[Laravel index]]
+- [[índex Laravel 12]]
 ## 🛠️ Git y GitHub
 - [[Index Git y Github]]
 
