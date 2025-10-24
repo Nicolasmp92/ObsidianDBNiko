@@ -6,6 +6,7 @@ kanban-plugin: board
 
 ## Pendiente
 
+- [ ] [[## PRODUCTOS QUÍMICOS]]
 
 
 ## En Desarrollo

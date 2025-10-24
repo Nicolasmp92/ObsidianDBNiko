@@ -1,4 +1,4 @@
-Detalle: modal agregar productos químicos a especie)
+Detalle: modal agregar productos químicos a especie
 
 RUTAS involucradas: resources\views\Includes\Aplicadores\QuimicosPozos\ModalesMuestras.blade.php
 
@@ -13,4 +13,4 @@ RUTAS involucradas: resources\views\Includes\Aplicadores\QuimicosPozos\ModalesMu
 	- [x] Se agrega limitación para vista de edición.
 
 
-
+- [ ] 
