@@ -127,39 +127,172 @@ Esto es importante porque:
 
 ### 💧 3️⃣ Ejemplo matemático del cálculo
 
-Supongamos que:
+## 🧮 1. Variables base
 
-- El pozo tiene **capacidad total = 30.000 L**
-    
-- El relleno actual es **2.500 L**
-    
-- El producto químico tiene **dosis inicial de 30 L por pozo lleno (30.000 L)**
-    
+| Variable | Significado                                           | Unidad         |
+| -------- | ----------------------------------------------------- | -------------- |
+| `Cp`     | Capacidad del pozo                                    | **L** (litros) |
+| `Ra`     | Relleno de agua actual (lo que se agregará)           | **L**          |
+| `Dv`     | Valor de dosificación del producto (ej. 30 mL)        | **UM_orig**    |
+| `Db`     | Base de dosificación (ej. por cada 100 L de agua)     | **L**          |
+| `Eum/l`  | Equivalente por litro del producto                    | **UM_orig/L**  |
+| `FaB`    | Factor de conversión a unidad base interna (mL o mg)  | —              |
+| `Fdb`    | Factor de conversión desde base interna a UM original | —              |
 
-Entonces, para calcular la cantidad proporcional de producto a aplicar según el agua actual:
+> Las unidades originales (`UM_orig`) pueden ser **mL**, **mg**, **g**, **kg**, etc., según el producto químico.
 
-### 💧 Cálculo de Dosis Real (según relleno)
+---
 
-La **dosis real** se ajusta proporcionalmente según el volumen de agua que se haya rellenado en el pozo.
+## ⚗️ 2. Equivalente por litro (E)
 
-#### 📘 Fórmula general
-
-$$
-\text{Dosis real} = \frac{\text{Relleno actual}}{\text{Capacidad total}} \times \text{Dosis inicial}
-$$
-
-#### 📊 Ejemplo práctico
-
-- Capacidad total del pozo: **30 000 L**  
-- Relleno actual: **2 500 L**  
-- Dosis inicial: **30 L**
+### Si viene del backend:
 
 $$
-\text{Dosis real} = \frac{2500}{30000} \times 30 = 2.5\,L
+E_{UM/L} = \text{valor recibido (UM por litro)}
 $$
 
-➡️ Por lo tanto, la **dosis real a aplicar** es **2.5 L**.
+### Si se calcula desde la ficha del producto:
 
+$$
+E_{UM/L} = \frac{D_V}{D_B}
+$$
+
+**Ejemplo:**
+
+Si el producto indica “30 mL por 100 L”, entonces:
+
+$$
+E_{UM/L} = \frac{30}{100} = 0.3 \text{ mL/L}
+$$
+
+---
+
+## 🧪 3. Conversión a unidad base interna
+
+Esto se usa para mantener coherencia si el producto está en mg, g, kg, o mL, L.
+
+$$
+E_{BASE/L} = E_{UM/L} \times F_{aB}
+$$
+
+| Unidad original | Base interna | `FaB` |
+| ---------------- | ------------- | ------ |
+| mL → mL | 1 |
+| L → mL | 1000 |
+| mg → mg | 1 |
+| g → mg | 1000 |
+| kg → mg | 1 000 000 |
+
+---
+
+## 💧 4. Dosis inicial (pozo lleno)
+
+$$
+Dosis_{inicial\_BASE} = C_P \times E_{BASE/L}
+$$
+
+$$
+Dosis_{inicial\_UM} = Dosis_{inicial\_BASE} \times F_{dB}
+$$
+
+Donde \( F_{dB} \) es el inverso de \( F_{aB} \):
+
+| Unidad original | `FdB` |
+| ---------------- | ------ |
+| mL | 1 |
+| L | 1/1000 |
+| mg | 1 |
+| g | 1/1000 |
+| kg | 1/1 000 000 |
+
+🔹 **Ejemplo:**
+
+Pozo de **50 000 L**, producto **0.3 mL/L**:
+
+$$
+Dosis_{inicial} = 50\,000 \times 0.3 = 15\,000 \text{ mL}
+$$
+
+---
+
+## 🧴 5. Dosis a aplicar (relleno)
+
+$$
+Dosis_{aplicada\_BASE} = R_A \times E_{BASE/L}
+$$
+
+$$
+Dosis_{aplicada\_UM} = Dosis_{aplicada\_BASE} \times F_{dB}
+$$
+
+**Ejemplo:** con el mismo producto (0.3 mL/L) y relleno de **10 000 L**:
+
+$$
+Dosis_{aplicada} = 10\,000 \times 0.3 = 3\,000 \text{ mL}
+$$
+
+---
+
+## 📊 6. Concentración aplicada (para calificación)
+
+$$
+Conc_{UM/L} = \frac{Dosis_{aplicada\_UM}}{R_A}
+$$
+
+**Ejemplo:**
+
+$$
+Conc_{UM/L} = \frac{3\,000}{10\,000} = 0.3 \text{ mL/L}
+$$
+
+---
+
+## ✅ 7. Calificación de la dosis
+
+Comparación de la concentración real con los **rangos definidos del producto**:
+
+$$
+\text{Si } Conc_{UM/L} < Rango_{min} \Rightarrow \text{“DOSIS BAJA AL MÍNIMO”}
+$$
+
+$$
+\text{Si } Conc_{UM/L} > Rango_{max} \Rightarrow \text{“DOSIS SOBRE EL MÁXIMO”}
+$$
+
+$$
+\text{Si } Rango_{min} \le Conc_{UM/L} \le Rango_{max} \Rightarrow \text{“DOSIS ACEPTADA”}
+$$
+
+💡 **Resumen visual:**
+
+| Condición | Resultado |
+| ---------- | ---------- |
+| `Conc < Rango_min` | ⚠️ Dosis baja al mínimo |
+| `Conc > Rango_max` | 🚫 Dosis sobre el máximo |
+| `Rango_min ≤ Conc ≤ Rango_max` | ✅ Dosis aceptada |
+
+---
+
+## ⚙️ 8. Ejemplo completo
+
+| Concepto | Valor | Unidad |
+| --------- | ------ | ------- |
+| Capacidad pozo `C_P` | 50 000 | L |
+| Relleno `R_A` | 10 000 | L |
+| Dosificación `D_V / D_B` | 30 mL / 100 L | — |
+| `E_{UM/L}` | 0.3 | mL/L |
+
+**Cálculos:**
+
+$$
+\begin{align*}
+Dosis_{inicial} &= 50\,000 \times 0.3 = 15\,000 \text{ mL} \\
+Dosis_{aplicada} &= 10\,000 \times 0.3 = 3\,000 \text{ mL} \\
+Conc_{UM/L} &= \frac{3\,000}{10\,000} = 0.3 \text{ mL/L}
+\end{align*}
+$$
+
+Si el rango permitido es **0.25–0.35 mL/L** → ✅ **DOSIS ACEPTADA**
 
 ---
 
@@ -230,22 +363,22 @@ El objetivo final de todo esto es que el sistema:
 
 ## C) **Agregar Muestra** (modal)
 
--  Al seleccionar **Producto** → pintar Unidad, Dosis Inicial, Rangos (ya lo haces).
+- [x] Al seleccionar **Producto** → pintar Unidad, Dosis Inicial, Rangos (ya lo haces).
     
--  Input **Relleno (L)** → al escribir:
+- [ ] Input **Relleno (L)** → al escribir:
     
-    -  Calcular y mostrar (readonly) **Dosis por Relleno Calculada**.
+    - [x] Calcular y mostrar (readonly) **Dosis por Relleno Calculada**.
         
-    -  Pre-cargar **Dosis Aplicada** con ese valor (el aplicador puede ajustar).
+    - [x] Pre-cargar **Dosis Aplicada** con ese valor (el aplicador puede ajustar).
         
-    -  Si queda **fuera de rango**, marcar el input y mostrar aviso; **habilitar** Acción Correctiva.
+    - [x] Si queda **fuera de rango**, marcar el input y mostrar aviso; **habilitar** Acción Correctiva.
         
 
 ## D) **Editar Inspección / Muestras**
 
--  Mostrar también las dosis **calculadas** (si decides guardarlas) para auditoría.
+- [x] Mostrar también las dosis **calculadas** (si decides guardarlas) para auditoría.
     
--  Mantener la validación visual de rangos.
+- [x] Mantener la validación visual de rangos.
 
 
 
