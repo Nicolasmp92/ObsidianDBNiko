@@ -1,7 +1,7 @@
-Rutas Involucradas:
+
 - resources\views\Aplicadores\ProductosEspecies\Index.blade.php -> (para mostrar tabla Productos quimicos)
 - resources\views\Aplicadores\ProductosEspecies\Datos.blade.php -> (para mostrar las especies relacionadas a los quimicos)
-### Descripción:
+### Descripción/historia:
 En *"productos químicos por especie"* Los rangos en los productos químicos deben indicar la ==dosis inicial== de acuerdo al **volumen del pozo** y según el **relleno de agua** en los estanques, anotar los litros y que se calcule automáticamente el volumen de producto que deben aplicar. En productos químicos por especie, dejar rangos y agregar columna con la dosificación por producto para posterior calculo de dosis inicial o relleno.
 
 En Productos químicos por especie, dejar rangos y agregar columna con dosificación por producto para posterior calculo de dosis inicial o relleno 
@@ -126,8 +126,7 @@ Esto es importante porque:
 ---
 
 ### 💧 3️⃣ Ejemplo matemático del cálculo
-
-## 🧮 1. Variables base
+	## 🧮 1. Variables base
 
 | Variable | Significado                                           | Unidad         |
 | -------- | ----------------------------------------------------- | -------------- |
@@ -387,3 +386,22 @@ El objetivo final de todo esto es que el sistema:
 _IDEAS O SUGERENCIAS:
 	. las docis inicales podría  colocarse al momento de crear el químico y no en la asignación de la docis al fruto: 
 
+
+
+
+
+---
+### nuevos requerimientos Productos Químicos 05-11-2025. 
+
+- [ ] Para el modulo de agregar productos químicos a especies debemos trabajar los decimales  como 10,4 para utilizar milímetros, básicamente que permita el formato 0.009 en la dosis y su minimo y maximo. 
+	- [x] Cambiar tipos de datos en BD.
+	- [x] Asegurar Seeders y Factorys
+	- [x] Asegurar modelo
+	- [ ]  En los **Request/FormRequest** (validaciones), permitir números decimales con 4 cifras
+	- [ ] 
+
+- [x] Se debe quitar la validación en el *Relleno*, este debe permitir guardar con un relleno de 0 .
+
+- [ ] Reevaluar la calificación de la dosis en guardar o editar.
+
+- [ ] Para la calificación de la dosis al momento de guardar o editar es necesario no evaluar si no existe ni mínimo ni máximo.

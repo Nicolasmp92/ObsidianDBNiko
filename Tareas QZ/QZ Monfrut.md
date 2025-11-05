@@ -6,12 +6,13 @@ kanban-plugin: board
 
 ## Pendiente
 
-- [ ] [[## PRODUCTOS QUÍMICOS]]
+- [ ] [[SADEMA- DataTemperaturta.]]
 
 
 ## En Desarrollo
 
 - [ ] [[MODULO QuimicosPozo - Informe de consumo pdf]]
+- [ ] [[PRODUCTOS QUÍMICOS - Productos Químicos por Especie]] ^dwogqo
 
 
 ## Finalizado
