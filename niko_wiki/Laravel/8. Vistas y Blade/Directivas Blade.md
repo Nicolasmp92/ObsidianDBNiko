@@ -20,13 +20,38 @@ Esta sección te explica **cómo se conectan las vistas entre sí**, indicando:
 
 ## 🧱 Estructura típica de carpetas Blade
 
-bash
-
-CopiarEditar
-
-`resources/views/ ├── layouts/ │   └── app.blade.php          ← Layout principal ├── partials/ │   └── nav.blade.php          ← Fragmentos reutilizables ├── pages/ │   └── dashboard.blade.php    ← Vistas específicas`
+resources/
+└── views/
+    ├── components/              # Componentes Blade reutilizables
+    │   ├── layouts/             # Layouts principales (auth, app, etc.)
+    │   ├── auth/                # Componentes usados en vistas de login/register
+    │   ├── forms/               # Formularios parciales
+    │   └── ui/                  # Elementos de interfaz (botones, modales, etc.)
+    │
+    ├── livewire/                # Vistas que pertenecen a componentes Livewire
+    │   ├── auth/
+    │   ├── profile/
+    │   ├── settings/
+    │   └── dashboard.blade.php
+    │
+    ├── layouts/                 # Estructuras base de página
+    │   ├── app.blade.php
+    │   └── guest.blade.php
+    │
+    ├── partials/                # Fragmentos de código compartidos (head, footer, etc.)
+    │   ├── head.blade.php
+    │   └── footer.blade.php
+    │
+    ├── dashboard.blade.php      # Vista principal después del login
+    ├── welcome.blade.php        # Página pública o de inicio
+    └── auth/                    # Páginas de autenticación
+        ├── login.blade.php
+        ├── register.blade.php
+        ├── forgot-password.blade.php
+        └── reset-password.blade.php
 
 ---
+
 
 ## ✅ `@extends` → ¿Qué layout usa esta vista?
 

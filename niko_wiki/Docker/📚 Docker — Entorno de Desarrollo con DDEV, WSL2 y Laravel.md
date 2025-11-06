@@ -118,8 +118,22 @@ Ejemplo:
 
 Dejar ambas configuraciones (para histórico):
 
-`# --- XAMPP --- # DB_CONNECTION=mysql # DB_HOST=127.0.0.1 # DB_PORT=3306 # DB_DATABASE=qcmanager_prueba # DB_USERNAME=root # DB_PASSWORD=  # --- DDEV --- DB_CONNECTION=mysql DB_HOST=db DB_PORT=3306 DB_DATABASE=db DB_USERNAME=db DB_PASSWORD=db`
+```php
 
+# --- XAMPP --- 
+# DB_CONNECTION=mysql 
+# DB_HOST=127.0.0.1 
+# DB_PORT=3306 
+# DB_DATABASE=qcmanager_prueba 
+# DB_USERNAME=root # DB_PASSWORD=  
+
+# --- DDEV --- 
+DB_CONNECTION=mysql 
+DB_HOST=db DB_PORT=3306 
+DB_DATABASE=db 
+DB_USERNAME=db 
+DB_PASSWORD=db`
+```
 ### 7. Importar base de datos
 
 `ddev import-db --src=backup.sql`
