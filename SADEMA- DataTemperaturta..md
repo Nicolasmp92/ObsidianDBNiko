@@ -10,9 +10,11 @@ Se necesita generar una nueva vista en SADEM, para el control de temperaturas, l
 
 ### Requisito:
 
-- [ ] La Base de datos debe tener seguir el mismo estylo o orden que las demas de Sadema para este caso sadema_data_temperaturas dejo un ejemplo de otro modelo: sadema_prefrios_muestras_temperaturas
+- [ ]  Se exige simplicidad en el desarrollo no sobre extender el requerimiento.
 
-- [ ] La tabla además de los datos por defecto debe tener los siguientes datos:
+- [x] La Base de datos debe tener seguir el mismo estilo o orden que las demás de Sadema para este caso sadema_data_temperaturas dejo un ejemplo de otro modelo: sadema_prefrios_muestras_temperaturas
+
+- [x] La tabla además de los datos por defecto debe tener los siguientes datos:
       - especie      ->varchar
       - especie_id ->integer
       - temp_min   -> decimal 5.1
@@ -23,6 +25,7 @@ Se necesita generar una nueva vista en SADEM, para el control de temperaturas, l
 	  - Min no debe ser mayor que Max
 	  - debemos normalizar de , a .
 	  - debemos manejar los valores como numéricos. 
-	 []
+
+- [x]  Menu dentro de SADEMA/DATA/Temperaturas
   
   

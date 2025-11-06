@@ -325,13 +325,13 @@ El objetivo final de todo esto es que el sistema:
 
 - [x] 1. **Agregar campo "dosis_inicial"** a la relación _producto_especie_ (ya lo hiciste ✔️).
     
-- [ ] 2. **Obtener capacidad del pozo** cuando se seleccione en la inspección.
+- [x] 2. **Obtener capacidad del pozo** cuando se seleccione en la inspección.
     
 - [x] 3. **Pedir relleno actual** (ya tienes ese input en la vista).
     
-- [ ] 4. **Calcular automáticamente la dosis proporcional** en el frontend (JS) o backend (controller).
+- [x] 4. **Calcular automáticamente la dosis proporcional** en el frontend (JS) o backend (controller).
     
-- [ ] 5. **Guardar ese valor como "dosis aplicada"** en la tabla de muestras.
+- [x] 5. **Guardar ese valor como "dosis aplicada"** en la tabla de muestras.
     
 
 ---
@@ -393,15 +393,15 @@ _IDEAS O SUGERENCIAS:
 ---
 ### nuevos requerimientos Productos Químicos 05-11-2025. 
 
-- [ ] Para el modulo de agregar productos químicos a especies debemos trabajar los decimales  como 10,4 para utilizar milímetros, básicamente que permita el formato 0.009 en la dosis y su minimo y maximo. 
+- [x] Para el modulo de agregar productos químicos a especies debemos trabajar los decimales  como 10,4 para utilizar milímetros, básicamente que permita el formato 0.009 en la dosis y su minimo y maximo. 
 	- [x] Cambiar tipos de datos en BD.
 	- [x] Asegurar Seeders y Factorys
 	- [x] Asegurar modelo
-	- [ ]  En los **Request/FormRequest** (validaciones), permitir números decimales con 4 cifras
-	- [ ] 
+	- [x]  En los **Request/FormRequest** (validaciones), permitir números decimales con 4 cifras
+	
 
 - [x] Se debe quitar la validación en el *Relleno*, este debe permitir guardar con un relleno de 0 .
 
-- [ ] Reevaluar la calificación de la dosis en guardar o editar.
+- [x] Reevaluar la calificación de la dosis en guardar o editar.
 
-- [ ] Para la calificación de la dosis al momento de guardar o editar es necesario no evaluar si no existe ni mínimo ni máximo.
+- [x] Para la calificación de la dosis al momento de guardar o editar es necesario no evaluar si no existe ni mínimo ni máximo.
