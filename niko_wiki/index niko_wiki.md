@@ -7,7 +7,7 @@ Bienvenido a tu base de conocimiento de programación. Aquí puedes encontrar to
 ## 📍 Laravel
 - [[índex Laravel 12]]
 ## 🛠️ Git y GitHub
-- [[Index Git y Github]]
+- [[1 Index Git y Github]]
 
 ## 🎨 Frontend (la parte que mas me gusta)
 - [[HTML]]
@@ -22,7 +22,7 @@ Bienvenido a tu base de conocimiento de programación. Aquí puedes encontrar to
 - [[Índex Nuevos Proyectos| Index Nuevos Proyectos]]
 -
 ## 📚 Otros
-- [[Index Git]]
+- [[1 Index Git y Github]]
 
 
 

@@ -58,7 +58,3 @@ public function definition(): array
 👉 Las Factories usan **Faker (recuerda ya lo tienes)**, una librería para generar datos falsos (nombres, mails, fechas) biene integrado en laravel .
 
 ---
-
-## [👈🏻VOLVER](Seeders%20y%20Factories.md)
-
-## [SIGUIENTE 👉🏻](Ejecutar%20y%20combinar%20Seeders.md)
