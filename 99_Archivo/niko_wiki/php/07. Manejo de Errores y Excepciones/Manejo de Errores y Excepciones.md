@@ -127,3 +127,7 @@ Salida:
 ---
 
 📌 Con esto ya puedes **prevenir caídas en tu aplicación** y dar mensajes claros al usuario o registrar errores en logs.
+
+---
+
+**Anterior:** [[Arrays y Colecciones]] | **Siguiente:** [[Superglobales y Formularios]]

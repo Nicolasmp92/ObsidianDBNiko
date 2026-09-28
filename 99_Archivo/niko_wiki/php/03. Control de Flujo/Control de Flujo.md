@@ -159,3 +159,7 @@ Parecido a `switch`, pero más moderno y limpio.
 - **break / continue** → controlar bucles.
     
 - **operador ternario** → atajo para if.
+
+---
+
+**Anterior:** [[Fundamentos]] | **Siguiente:** [[Funciones]]

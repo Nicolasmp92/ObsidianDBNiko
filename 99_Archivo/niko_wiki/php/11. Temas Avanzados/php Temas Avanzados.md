@@ -165,3 +165,7 @@ Supongamos un mini proyecto con buenas prácticas.
 📌 Con esto ya pasaste de **PHP básico → PHP profesional**, lo que te prepara para frameworks como Laravel.
 
 👉 Próximo paso → **Capítulo 12: Resumen y Cheatsheet de PHP**, donde condensamos TODO el Wiki en tablas rápidas (perfecto para imprimir o tener en Obsidian como guía rápida).
+
+---
+
+**Anterior:** [[PHP y Bases de Datos]] | **Siguiente:** [[Resumen y Cheatsheet]]

@@ -172,4 +172,8 @@
 
 🎉 Con este capítulo cierras el **Wiki completo de PHP** → desde lo básico hasta lo avanzado, todo explicado con ejemplos y buenas prácticas.
 
-👉 Mi propuesta: ahora que ya tienes la **base de PHP cubierta**, podemos hacer un **nuevo Wiki de Laravel** (capítulos sobre rutas, controladores, Blade, Eloquent, Livewire, etc.).
+👉 La **wiki de Laravel** ya existe y retoma exactamente aquí → [[índex Laravel 12]]
+
+---
+
+**Anterior:** [[php Temas Avanzados]] | **Siguiente:** [[índex Laravel 12|Wiki de Laravel]]

@@ -198,3 +198,7 @@ PHP convierte automáticamente, pero también puedes forzar:
 - **Operadores** → aritméticos, asignación, comparación, lógicos, incremento.
     
 - **Conversiones** → automáticas o forzadas con `(int)`, `(float)`, `(string)`.
+
+---
+
+**Anterior:** [[Introducción a PHP]] | **Siguiente:** [[Control de Flujo]]

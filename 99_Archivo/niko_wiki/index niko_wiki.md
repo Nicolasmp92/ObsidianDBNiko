@@ -8,29 +8,25 @@ Bienvenido a tu base de conocimiento de programación. Aquí puedes encontrar to
 - [[índex Laravel 12]]
 
 ## 🛠️ Git y GitHub
-- [[1 Index Git y Github]]
+- [[1. Index Git y Github]]
 
 ## 🎨 Frontend
-- [[index JavaScript]]
+- [[1. Index JavaScript]]
+- [[1. Index Angular]]
 
 ## ⚙️ Backend
 - [[Index PHP]]
 - [[Como instalar PHP]]
+- [[1. Index Java y Spring Boot]]
 
 ## 🐳 Docker
-- [[1. introducción a Docker]]
-- [[2. Configuración del Entorno de Desarrollo (WSL2)]]
-- [[3. Comandos Esenciales de Docker La Hoja de Trucos]]
+- [[1. Index Docker]]
 
 ## 🌐 APIs
-- [[API REST]]
-- [[URIs]]
-- [[Verbos HTTP y su uso en APIs REST]]
+- [[1. Index APIs]]
 
 ## 📋 Metodologías
-- [[01 - Metodologías para el desarrollo]]
-- [[SCRUM]]
-- [[Metodología Kanban Flujo Continuo]]
+- [[1. Index Metodologías]]
 
 ## � Iniciando nuevos proyectos
 - [[Desde cero con Laravel en su última versión]]

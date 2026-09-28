@@ -160,3 +160,7 @@ Archivo `login.php`:
 - **$_SERVER** → información del servidor/petición.
     
 - Siempre validar y sanitizar entradas (`htmlspecialchars`).
+
+---
+
+**Anterior:** [[Manejo de Errores y Excepciones]] | **Siguiente:** [[Manejo de Archivos]]

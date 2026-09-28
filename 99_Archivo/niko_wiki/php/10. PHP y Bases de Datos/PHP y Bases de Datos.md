@@ -132,3 +132,7 @@ En Laravel, en vez de `PDO` o `mysqli`, usas cosas como:
 pero internamente sigue siendo SQL.
 
 👉 Próximo paso → **Capítulo 11: Temas Avanzados (funcional, Composer, PSR, buenas prácticas)**, donde ya llevamos PHP a nivel profesional.
+
+---
+
+**Anterior:** [[Manejo de Archivos]] | **Siguiente:** [[php Temas Avanzados]]

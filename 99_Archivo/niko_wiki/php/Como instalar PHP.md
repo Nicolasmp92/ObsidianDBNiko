@@ -171,3 +171,7 @@ php
 CopiarEditar
 
 `<?php echo "¡Hola Nye, tu servidor PHP funciona!"; ?>`
+
+---
+
+**Anterior:** [[Index PHP]] | **Siguiente:** [[Introducción a PHP]]

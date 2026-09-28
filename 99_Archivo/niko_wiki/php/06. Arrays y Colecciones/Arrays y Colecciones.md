@@ -151,3 +151,7 @@ En **Laravel**, los arrays se vuelven más poderosos con **Collections**:
 - **map, filter, reduce** → programación funcional con arrays.
     
 - **Collections en Laravel** → arrays mejorados con métodos extra.
+
+---
+
+**Anterior:** [[Programación Orientada a Objetos (POO)]] | **Siguiente:** [[Manejo de Errores y Excepciones]]

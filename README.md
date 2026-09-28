@@ -6,6 +6,7 @@ Base de conocimiento personal en Obsidian. Organización por embudo: **capturar 
 
 - 📥 [[Desarrollo]] — tablero kanban maestro (en `01_Laboratorio_y_Borradores/`)
 - 📐 [[Convenciones del Vault]] — reglas de orden, prefijos y frontmatter (en `02_Reglas_y_Estandares/`)
+- 🅰️ [[Estándares Front-End - Angular]] — estándares del front (Angular 22, Signals, Tailwind + CDK)
 
 ## 🚀 Proyectos activos (`03_Proyectos_Activos/`)
 

@@ -171,4 +171,7 @@ Sirven para organizar el código en proyectos grandes.
 - **Interfaces y Traits** → contratos y reutilización.
     
 - **Namespaces** → organización de código.
-- 
+
+---
+
+**Anterior:** [[Funciones]] | **Siguiente:** [[Arrays y Colecciones]]

@@ -162,6 +162,10 @@ Ejemplos comunes:
 - **Recursivas** → se llaman a sí mismas.
     
 - **Funciones built-in** → ya vienen en PHP.
+
+---
+
+**Anterior:** [[Control de Flujo]] | **Siguiente:** [[Programación Orientada a Objetos (POO)]]
     
 
 ---

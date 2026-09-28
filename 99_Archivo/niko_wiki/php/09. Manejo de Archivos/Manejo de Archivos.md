@@ -132,3 +132,7 @@ Supongamos que tenemos un archivo `usuarios.txt` y queremos registrar usuarios n
 
 📌 Con esto ya puedes manejar archivos de texto, JSON y CSV en PHP.  
 En **Laravel** esto se simplifica con `Storage`, pero la base sigue siendo la misma.
+
+---
+
+**Anterior:** [[Superglobales y Formularios]] | **Siguiente:** [[PHP y Bases de Datos]]

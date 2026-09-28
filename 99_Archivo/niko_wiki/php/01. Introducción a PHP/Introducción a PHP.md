@@ -145,3 +145,7 @@ Salida en el navegador:
 - Funciona junto a un **servidor web** y puede integrarse con bases de datos.
 - Se mezcla fácilmente con HTML.
 - Es la base sobre la que funcionan frameworks como **Laravel**.
+
+---
+
+**Anterior:** [[Como instalar PHP]] | **Siguiente:** [[Fundamentos]]
