@@ -19,7 +19,31 @@ Reglas de orden del vault (Kaizen / Seiton): todo tiene su lugar y cada nota cue
 | `GYM - ` | App de gimnasio |
 | `STK - N.` / `SCK-N` | StarterCustomeKit (serie de dominios numerada) |
 | `MP - ` | Sitio web MP |
+| `FX - ` | Frunexis |
 | `MOC - ` | Mapa de contenido de un proyecto o área |
+
+## Estructura canónica por proyecto (modelo repositorios-digitales-uoh)
+
+Cada carpeta de `03_Proyectos_Activos/<Proyecto>/` sigue esta forma; los archivos solo se crean con contenido real, no como andamiaje:
+
+```text
+<Proyecto>/
+  MOC - <Proyecto>.md        # ficha: frontmatter (tipo/estado/actualizado/tags)
+                             # + "Navegación por necesidad" (quiero X → doc)
+  log.md                   # bitácora narrativa append-only, entradas
+                             # tipificadas: HECHO / DECISIÓN / HIPÓTESIS / RIESGO
+  registro_actividades.md  # tabla append-only: Fecha | Actividad | Evidencia
+  <notas prefijadas>       # notas de trabajo, todas enlazadas desde el MOC
+  _historico/              # notas superadas (cuando existan; nunca se borran)
+```
+
+Reglas (adaptadas de la convención 2026-09-25 del repo UOH):
+
+- El `MOC` es la ficha del proyecto: qué es, estado, navegación **por necesidad** («quiero X»), no solo por nombre.
+- El `log.md` es **append-only y tipificado**: distingue lo verificado (HECHO) de lo elegido (DECISIÓN), lo supuesto (HIPÓTESIS) y lo que puede romperse (RIESGO). Las entradas nuevas van al final.
+- `registro_actividades.md` es la tabla de sesiones: una fila por actividad verificable, con evidencia. Si el proyecto tiene repo propio con su registro, esta tabla resume y apunta al autoritativo.
+- Una nota superada no se borra: se mueve a `_historico/` o se marca `SUPERADO <fecha>` apuntando a la vigente.
+- Toda nota de proyecto cuelga de su MOC (regla 3 del embudo) y el kanban maestro sigue siendo [[Desarrollo]].
 
 ## Reglas del embudo
 
@@ -32,5 +56,6 @@ Reglas de orden del vault (Kaizen / Seiton): todo tiene su lugar y cada nota cue
 ## Documentos de estándares
 
 - [[Estándares Front-End - Angular]] — reglas para el front (Angular 22, Signals, Tailwind + CDK headless, SSR, workflow y testing).
+- [[Estándares Full-Stack - StarterCustomeKit]] — stack de arranque para proyectos nuevos (Angular 22 + Spring Boot + PostgreSQL) y metodología de trabajo estilo DSpace-CRIS (paquete `.devin`, skills por gatillo, bitácoras, cadena lab→dev→prod).
 - [[Plugins de Obsidian - Setup]] — extensiones de comunidad requeridas por el vault (kanban, tablas, post-its).
 - [[Extensiones de VS Code - Setup]] — extensiones recomendadas del IDE (Angular, Java, Spring Boot, lint/formato).

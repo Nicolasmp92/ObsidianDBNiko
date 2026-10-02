@@ -1,8 +1,20 @@
+---
+tipo: proyecto
+proyecto: gym
+estado: activo
+actualizado: 2026-10-02
+tags: [app, gimnasio, rutinas, tracking]
+---
 # 🏋️ MOC — GYM
 
 App de gimnasio: gestión de ejercicios, constructor de rutinas y tracking de entrenamiento.
 
-Tablero maestro de tareas: [[Desarrollo]]
+## Navegación por necesidad
+
+- **Quiero ver qué se hizo y cuándo** → `log.md` (bitácora tipificada)
+- **Quiero la tabla de sesiones** → `registro_actividades.md`
+- **Quiero ver las tareas pendientes** → [[Desarrollo]] (kanban maestro)
+- **Quiero reportar/ver un bug** → sección "Bugs abiertos" abajo
 
 ## 🗺️ Roadmap
 

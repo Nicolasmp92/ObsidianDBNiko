@@ -1,8 +1,20 @@
+---
+tipo: proyecto
+proyecto: mp
+estado: activo-en-levantamiento
+actualizado: 2026-10-02
+tags: [web, corporativo, empresa, construccion]
+---
 # 🏗️ MOC — MP
 
 Sitio web corporativo para empresa familiar de ingeniería y construcción.
 
-Tablero maestro de tareas: [[Desarrollo]]
+## Navegación por necesidad
+
+- **Quiero ver qué se hizo y cuándo** → `log.md` (bitácora tipificada)
+- **Quiero la tabla de sesiones** → `registro_actividades.md`
+- **Quiero ver las tareas pendientes** → [[Desarrollo]] (kanban maestro)
+- **Quiero los requerimientos por sección** → [[MP - Requerimientos]]
 
 ## 📄 Notas
 
