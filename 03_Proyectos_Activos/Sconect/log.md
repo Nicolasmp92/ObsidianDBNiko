@@ -66,3 +66,8 @@ La bitácora técnica autoritativa vive en el repo (`log.md` + `registro_activid
 - **DECISIÓN** — En pantalla angosta, elegir día en el calendario lo colapsa solo para mostrar el listado del día (feedback del usuario sobre el flujo móvil).
 - **VERIFICADO** — POST evolución 201 + GET lista (API viva); `flutter analyze` limpio; `flutter test` 6/6.
 - **PENDIENTE** — Archivos clínicos (multipart); recordatorios; flujo n8n real.
+
+## 2026-10-03 — Análisis de mejoras (roadmap priorizado)
+
+- **ANÁLISIS** — Verificado en código: solape de citas sin validación, reagendar sin UI (PUT ya existe), archivos servidos sin UI, `especialidad` dormida. Prioridad: 1) solape+reagendar+archivos cierra MVP, 2) n8n mínimo viable, 3) plantillas por especialidad + recordatorios.
+- **NO adoptado** — multi-tenant, vista semanal, push nativas, audit/reportes (fase 2), stores.
