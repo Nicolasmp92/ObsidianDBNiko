@@ -12,6 +12,7 @@ Base de conocimiento personal en Obsidian. Organización por embudo: **capturar 
 
 - [[MOC - StarterCustomeKit]] — kit base (v2: Angular 22 + Spring Boot + PostgreSQL)
 - [[MOC - Frunexis]] — gestión agrícola (especies, temporadas, trabajadores, contratos)
+- [[MOC - Sconect]] — gestión clínica particular multidisciplinaria + agenda WhatsApp/n8n
 - [[MOC - MP]] — sitio web corporativo
 
 Cada proyecto sigue la estructura canónica: `MOC` (ficha) + `log.md` (bitácora tipificada) + `registro_actividades.md` (tabla de sesiones) — ver [[Convenciones del Vault]].

@@ -20,6 +20,7 @@ Reglas de orden del vault (Kaizen / Seiton): todo tiene su lugar y cada nota cue
 | `STK - N.` / `SCK-N` | StarterCustomeKit (serie de dominios numerada) |
 | `MP - ` | Sitio web MP |
 | `FX - ` | Frunexis |
+| `SCN - ` | Sconect |
 | `MOC - ` | Mapa de contenido de un proyecto o área |
 
 ## Estructura canónica por proyecto (modelo repositorios-digitales-uoh)
