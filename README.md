@@ -10,7 +10,6 @@ Base de conocimiento personal en Obsidian. Organización por embudo: **capturar 
 
 ## 🚀 Proyectos activos (`03_Proyectos_Activos/`)
 
-- [[MOC - GYM]] — app de rutinas de gimnasio
 - [[MOC - StarterCustomeKit]] — kit base (v2: Angular 22 + Spring Boot + PostgreSQL)
 - [[MOC - Frunexis]] — gestión agrícola (especies, temporadas, trabajadores, contratos)
 - [[MOC - MP]] — sitio web corporativo
@@ -20,6 +19,8 @@ Cada proyecto sigue la estructura canónica: `MOC` (ficha) + `log.md` (bitácora
 ## 📚 Base de conocimiento (`99_Archivo/niko_wiki/`)
 
 - [[index niko_wiki]] — índice general (Laravel, PHP, JavaScript, Git, Docker, APIs, Metodologías)
+
+Proyectos cerrados/archivados en `99_Archivo/Proyectos personales/`: GYM (app rutinas, cerrado 2026-10-02), sconect_project (a rescatar como `sconect`), StarterCustomeKit v1 (bitácora de setup Laravel).
 
 ## 📁 Convención de carpetas
 
