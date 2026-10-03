@@ -44,3 +44,10 @@ La bitácora técnica autoritativa vive en el repo (`log.md` + `registro_activid
 - **HECHO** — `ApiClient` en `core/` (Bearer automático + errores con message del backend). Feature `pacientes/`: modelo, repository, bloc, lista con búsqueda debounce, formulario crear/editar (10 campos), detalle con eliminar (soft-delete lo decide el backend). Home → Pacientes navegable.
 - **VERIFICADO** — API viva: POST 201, `?buscar=` OK; `flutter analyze` limpio, `flutter test` 3/3. Commit `8675d8b` en GitHub.
 - **PENDIENTE** — Agenda/citas, evoluciones y archivos en la app (placeholders honestos en detalle).
+
+## 2026-10-02 — Feature agenda (vista de día)
+
+- **HECHO** — Agenda por día: flechas ‹ › + date picker, citas por hora con chip de estado, menú por cita (confirmar/atendida/no asistió/cancelar/eliminar), FAB nueva cita con selector de paciente + duración. `ApiClient.patch` agregado.
+- **VERIFICADO** — POST cita 201 (`agendada`/`manual`), `?desde&hasta` del día OK; analyze limpio, test 4/4. Commit `cc3b357` en GitHub.
+- **DECISIÓN** — Vista de día en vez de calendario mensual (adecuada al profesional particular); semanal/mensual queda para después si hace falta.
+- **PENDIENTE** — Evoluciones y archivos por paciente; calendario semanal/mensual; recordatorios.

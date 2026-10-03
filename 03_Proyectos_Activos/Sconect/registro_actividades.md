@@ -17,3 +17,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-02 | App en web-server :4203 + analyze/test verdes | `flutter test` +1 |
 | 2026-10-02 | Login real Flutter↔backend: AuthRepository Bearer, TokenStorage, CORS :4203, HomeScreen | curl 200+CORS+token; analyze/test verdes |
 | 2026-10-02 | Feature pacientes: ApiClient core + lista/form/detalle en Flutter | API 201+?buscar; test 3/3; commit 8675d8b |
+| 2026-10-02 | Feature agenda: vista de día + form cita + cambio de estado en Flutter | API 201+?desde&hasta; test 4/4; commit cc3b357 |
