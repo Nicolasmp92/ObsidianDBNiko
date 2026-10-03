@@ -51,3 +51,11 @@ La bitácora técnica autoritativa vive en el repo (`log.md` + `registro_activid
 - **VERIFICADO** — POST cita 201 (`agendada`/`manual`), `?desde&hasta` del día OK; analyze limpio, test 4/4. Commit `cc3b357` en GitHub.
 - **DECISIÓN** — Vista de día en vez de calendario mensual (adecuada al profesional particular); semanal/mensual queda para después si hace falta.
 - **PENDIENTE** — Evoluciones y archivos por paciente; calendario semanal/mensual; recordatorios.
+
+## 2026-10-03 — Calendario mensual en agenda
+
+- **HECHO** — `CalendarioMes` (grid manual, sin dependencias): puntos en días con citas, día seleccionado destacado, hoy con tinte, ‹ › navega meses (carga día 1), tap en día → recarga la lista. `AgendaLoaded` lleva `citasDelMes` (conteo por día, canceladas no cuentan) vía `?desde&hasta` del mes visible.
+- **DECISIÓN** — El calendario es navegación, no reemplaza la vista de día: ≥900px lista izquierda + calendario derecha (~320px); angosto → colapsable con botón. Sin `table_calendar` ni paquetes (~150 líneas propias, tema esmeralda intacto).
+- **FIX** — `await bloc.close()` dentro de `testWidgets` cuelga la suite (fake-async); en widget tests no se cierra el bloc a mano.
+- **VERIFICADO** — `flutter analyze` limpio, `flutter test` 5/5. App servida en :4203.
+- **PENDIENTE** — Evoluciones y archivos por paciente; recordatorios; flujo n8n real.
