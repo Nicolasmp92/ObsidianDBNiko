@@ -38,3 +38,9 @@ La bitácora técnica autoritativa vive en el repo (`log.md` + `registro_activid
 - **HECHO** — AuthRepository (http + Bearer) reemplaza el mock; splash restaura sesión vía `GET /api/auth/me`; HomeScreen placeholder con logout. CORS habilitado solo para `localhost:4203` (sin credenciales).
 - **HECHO** — TokenStorage: secure storage en nativo, SharedPreferences en web/fallback. Verificado con curl cross-origin: 200 + token Bearer (26 permisos titular). `flutter analyze`/`test` verdes.
 - **PENDIENTE** — Pantallas de dominio (agenda/pacientes/evoluciones/archivos). Modo offline (restaurar con backend caído → login): fase 2.
+
+## 2026-10-02 — Feature pacientes (primer dominio en la app)
+
+- **HECHO** — `ApiClient` en `core/` (Bearer automático + errores con message del backend). Feature `pacientes/`: modelo, repository, bloc, lista con búsqueda debounce, formulario crear/editar (10 campos), detalle con eliminar (soft-delete lo decide el backend). Home → Pacientes navegable.
+- **VERIFICADO** — API viva: POST 201, `?buscar=` OK; `flutter analyze` limpio, `flutter test` 3/3. Commit `8675d8b` en GitHub.
+- **PENDIENTE** — Agenda/citas, evoluciones y archivos en la app (placeholders honestos en detalle).

@@ -16,3 +16,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-02 | Entorno Flutter/Android instalado (SDK 3.47.6, AVD, Chrome, toolchain Linux) | `flutter doctor` 6/6 |
 | 2026-10-02 | App en web-server :4203 + analyze/test verdes | `flutter test` +1 |
 | 2026-10-02 | Login real Flutter↔backend: AuthRepository Bearer, TokenStorage, CORS :4203, HomeScreen | curl 200+CORS+token; analyze/test verdes |
+| 2026-10-02 | Feature pacientes: ApiClient core + lista/form/detalle en Flutter | API 201+?buscar; test 3/3; commit 8675d8b |
