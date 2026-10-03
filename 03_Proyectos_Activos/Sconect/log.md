@@ -59,3 +59,10 @@ La bitácora técnica autoritativa vive en el repo (`log.md` + `registro_activid
 - **FIX** — `await bloc.close()` dentro de `testWidgets` cuelga la suite (fake-async); en widget tests no se cierra el bloc a mano.
 - **VERIFICADO** — `flutter analyze` limpio, `flutter test` 5/5. App servida en :4203.
 - **PENDIENTE** — Evoluciones y archivos por paciente; recordatorios; flujo n8n real.
+
+## 2026-10-03 — Evoluciones clínicas en la app
+
+- **HECHO** — Feature `evoluciones/` en Flutter: modelo + repo (solo crear/listar, inmutable) + pantalla de historial + formulario con vínculo opcional a cita. Ficha de paciente gana historial y botón "Evolucionar"; menú de cita gana "Evolucionar paciente" (vincula la nota a la atención); tap en cita abre la ficha del paciente.
+- **DECISIÓN** — En pantalla angosta, elegir día en el calendario lo colapsa solo para mostrar el listado del día (feedback del usuario sobre el flujo móvil).
+- **VERIFICADO** — POST evolución 201 + GET lista (API viva); `flutter analyze` limpio; `flutter test` 6/6.
+- **PENDIENTE** — Archivos clínicos (multipart); recordatorios; flujo n8n real.

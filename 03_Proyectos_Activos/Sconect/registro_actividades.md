@@ -19,3 +19,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-02 | Feature pacientes: ApiClient core + lista/form/detalle en Flutter | API 201+?buscar; test 3/3; commit 8675d8b |
 | 2026-10-02 | Feature agenda: vista de día + form cita + cambio de estado en Flutter | API 201+?desde&hasta; test 4/4; commit cc3b357 |
 | 2026-10-03 | Calendario mensual en agenda Flutter (CalendarioMes sin deps, conteoDelMes por rango, layout responsivo lista+calendario) | analyze limpio; test 5/5; commit 6fec587 |
+| 2026-10-03 | Evoluciones en app Flutter (historial+form con vínculo a cita) + tap cita→ficha + calendario colapsa al elegir día | API 201+GET; analyze/test 6/6 |
