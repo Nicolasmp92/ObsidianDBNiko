@@ -26,3 +26,15 @@ La bitácora técnica autoritativa vive en el repo (`log.md` + `registro_activid
 - Montar flujo n8n/WhatsApp real sobre el contrato ya servido.
 - AuditLog + reportes (fase 2 del PRD).
 - Token de GitHub expuesto en chat: revocación manual pendiente (tarea global del usuario).
+
+## 2026-10-02 — Entorno de desarrollo Flutter operativo
+
+- **HECHO** — Toolchain completo instalado y verificado: Flutter 3.47.6 (`~/flutter`), Android SDK 36 (`~/Android/Sdk`), AVD `sconect_dev`, Chrome 154, toolchain escritorio Linux. `flutter doctor` 6/6 verde; KVM activo para emulador acelerado.
+- **HECHO** — App corriendo en `web-server` puerto **4203** (mapa de puertos); `flutter analyze` limpio y `flutter test` verde (smoke splash→login reemplazó la plantilla del contador).
+- **PENDIENTE** — Conectar login real al backend :8083 (Bearer para móvil; verificar CORS para web).
+
+## 2026-10-02 — Login real conectado (Flutter ↔ backend)
+
+- **HECHO** — AuthRepository (http + Bearer) reemplaza el mock; splash restaura sesión vía `GET /api/auth/me`; HomeScreen placeholder con logout. CORS habilitado solo para `localhost:4203` (sin credenciales).
+- **HECHO** — TokenStorage: secure storage en nativo, SharedPreferences en web/fallback. Verificado con curl cross-origin: 200 + token Bearer (26 permisos titular). `flutter analyze`/`test` verdes.
+- **PENDIENTE** — Pantallas de dominio (agenda/pacientes/evoluciones/archivos). Modo offline (restaurar con backend caído → login): fase 2.
