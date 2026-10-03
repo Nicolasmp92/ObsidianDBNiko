@@ -21,3 +21,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-03 | Calendario mensual en agenda Flutter (CalendarioMes sin deps, conteoDelMes por rango, layout responsivo lista+calendario) | analyze limpio; test 5/5; commit 6fec587 |
 | 2026-10-03 | Evoluciones en app Flutter (historial+form con vínculo a cita) + tap cita→ficha + calendario colapsa al elegir día | API 201+GET; analyze/test 6/6 |
 | 2026-10-03 | Análisis de mejoras: roadmap priorizado (solape+reagendar+archivos → n8n → plantillas especialidad) | verificado en código, no ejecutado |
+| 2026-10-03 | Solape backend + fix lazy proxy + reagendar + archivos UI (MVP dominio completo) | API 409/200; mvn 7/7; flutter 7/7 |

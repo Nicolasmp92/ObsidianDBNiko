@@ -71,3 +71,9 @@ La bitácora técnica autoritativa vive en el repo (`log.md` + `registro_activid
 
 - **ANÁLISIS** — Verificado en código: solape de citas sin validación, reagendar sin UI (PUT ya existe), archivos servidos sin UI, `especialidad` dormida. Prioridad: 1) solape+reagendar+archivos cierra MVP, 2) n8n mínimo viable, 3) plantillas por especialidad + recordatorios.
 - **NO adoptado** — multi-tenant, vista semanal, push nativas, audit/reportes (fase 2), stores.
+
+## 2026-10-03 — Solape + reagendar + archivos (cierra MVP del dominio)
+
+- **HECHO** — Solape de citas validado en crear/PUT/webhook (409, canceladas no bloquean, adyacentes sí). Bug latente encontrado y corregido: proxies lazy → 500 en PUT/PATCH al serializar. Reagendar en app (form modo edición + menú). Feature archivos completo (file_picker/file_saver, subir/listar/descargar/eliminar).
+- **VERIFICADO** — API viva: solape 409, reagendar 200, PATCH 200, webhook 409; `mvn test` 7/7; `flutter test` 7/7, analyze limpio.
+- **PENDIENTE** — n8n real; recordatorios; plantillas por especialidad; modo offline; fase 2 (audit/reportes).
