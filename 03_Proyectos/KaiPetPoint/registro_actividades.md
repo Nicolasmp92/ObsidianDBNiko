@@ -28,3 +28,4 @@ proyecto: kaipetpoint
 | 2026-10-04 | Dashboard: card "Menos vendidos" (incluye productos con 0 ventas) | `2712029` |
 | 2026-10-04 | Semáforo de stock en POS + alertas reales en campana topbar | `d70d1a2` 25/25 |
 | 2026-10-04 | Multi-sucursal: V3, stock por tienda, panel root, selector en topbar | `5b7e9f7` en `feat/multisucursal` + smoke 2 sucursales |
+| 2026-10-04 | Delegación de rol root entre roots + protección de último root | `a643cac` |
