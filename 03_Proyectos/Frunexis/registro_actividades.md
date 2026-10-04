@@ -20,4 +20,5 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-02 | README documenta RBAC + bitácoras cerradas | PRs #12 (`ebbcd27`) y #13 (`1103032`) |
 | 2026-10-03 | Credenciales seed unificadas `nikolasmp92@gmail.com`/`niko9214` (en vivo + defaults) | login 200 vs API |
 | 2026-10-04 | Paletas+preferencias+login portados de SCK; fix prerender | `cb65de1`,`96c734c` 9/9 tests |
-| 2026-10-04 | RIESGO: bug sesión SSR (F5→login) pendiente de portar desde KaiPetPoint | diag. en log |
+| 2026-10-04 | Fix sesión SSR portado de KaiPetPoint (cookie SSR + auth) | `9d76aa1` 11/11 tests |
+| 2026-10-04 | Fix tooltip DomPortal (parentNode) portado de KaiPetPoint | `4b3105f` + spec |

@@ -34,4 +34,6 @@ La bitácora técnica autoritativa vive en el repo (`log.md` + `registro_activid
 - **HECHO** — Sistema de paletas de acento (`1754a65`, rama `feat/paletas-tema` sobre `feat/h1-enterprise`): 4 acentos vía `data-paleta`, tokens de estado `danger`/`success`/`warning`+`-soft`, selector con swatches en `/perfil`, anti-flash. 14 colores sueltos migrados a tokens.
 - **HECHO** — Login estándar (`cf364da`, `feat/login-recordar`): recordar correo `sck.recordar-correo`, toggle clave, mailto soporte, bloque de marca.
 - **HECHO** — Credenciales seed unificadas: `nikolasmp92@gmail.com`/`niko9214` (`chore/credenciales-seed-unificadas`).
-- **RIESGO** — Bug de sesión en SSR (F5 cierra sesión) existe aquí también; el fix está probado en KaiPetPoint (`ssrCookieInterceptor`) — pendiente portar. Además `feat/h1-enterprise` sigue sin mergear a `main`.
+- **HECHO** — Fix sesión SSR portado desde KaiPetPoint (`3abf342` en `feat/login-recordar`): `ssrCookieInterceptor` reenvía cookie a `/api/*` en el server, `AuthService` sin guard de plataforma, `httpErrorInterceptor` solo-browser. F5 ya no cierra sesión.
+- **HECHO** — Fix tooltip portado desde KaiPetPoint (`e949d54`): `DomPortal` de CDK 22 exige `parentNode` — el nodo se ancla a `body` antes de adjuntar y se retira al ocultar. Spec de regresión incluido.
+- **RIESGO** — `feat/h1-enterprise` sigue sin mergear a `main`.

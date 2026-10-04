@@ -20,4 +20,5 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-02 | Stack v2 promovido a `main` | PR #22 mergeado; tag `v1-laravel` creado |
 | 2026-10-03 | Paletas de acento + tokens de estado + selector en perfil | `1754a65` 22/22 tests |
 | 2026-10-04 | Login estándar + credenciales unificadas | `cf364da` + rama chore |
-| 2026-10-04 | RIESGO: bug sesión SSR pendiente de portar desde KaiPetPoint | diag. en log |
+| 2026-10-04 | Fix sesión SSR portado de KaiPetPoint (cookie SSR + auth + error int.) | `3abf342` 24/24 tests |
+| 2026-10-04 | Fix tooltip DomPortal (parentNode) portado de KaiPetPoint | `e949d54` + spec |
