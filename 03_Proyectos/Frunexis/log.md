@@ -33,3 +33,11 @@ La bitácora técnica autoritativa vive en el repo (`log.md` + `registro_activid
 
 - Revocar el token de GitHub expuesto en chat (manual, Developer Settings).
 - `sconect` absorberá el dominio Agenda cuando se aborde (Flutter, tiene app y Laravel previos en `~/Escritorio/Desarrollo/`).
+
+## 2026-10-03/04 — Credenciales unificadas + paletas + login + fix SSR pendiente
+
+- **DECISIÓN** — Convención unificada de credenciales en los tres repos: seed siembra `nikolasmp92@gmail.com` / `niko9214`. En Frunexis el admin existente se actualizó en vivo en PostgreSQL. Rama `chore/credenciales-seed-unificadas`.
+- **HECHO** — Sistema de paletas portado desde SCK (`cb65de1`, rama `feat/paletas-tema`): `PreferencesService`, `data-paleta` en `<html>`, 4 acentos, tokens de estado, anti-flash, página `/preferencias` (sin forms de cuenta — el backend no tiene `/api/perfil`), icono `ajustes`, `LayoutService.fijar()`. Migrados 14 colores sueltos → tokens. Fix bonus: prerender roto en `main` corregido (rutas con params → `RenderMode.Server`).
+- **HECHO** — Login estándar portado (`96c734c`): recordar correo `frunexis.recordar-correo`, toggle clave, mailto soporte, marca Frunexis.
+- **RIESGO** — Bug de sesión en SSR heredado del kit sigue presente aquí: F5 cierra sesión (el guard corre en Node sin cookie). El fix existe en KaiPetPoint (`b5cdfbe`, `ssrCookieInterceptor` + `httpErrorInterceptor` solo-browser) — pendiente portar.
+- **RAMAS PENDIENTES de merge/push**: `feat/paletas-tema` (incluye login), `chore/credenciales-seed-unificadas`.

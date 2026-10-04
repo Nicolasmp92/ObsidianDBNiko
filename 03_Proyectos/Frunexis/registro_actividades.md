@@ -18,3 +18,6 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-02 | RBAC granular: roles/permisos/joins + @PreAuthorize + seeder matriz v1 | smoke: 403/200 por permiso, grant sin re-login |
 | 2026-10-02 | Estructura v1: hoja de vida 8 tabs, contratos drill-down, temporada vigente única, modal permisos | build/lint/test verdes |
 | 2026-10-02 | README documenta RBAC + bitácoras cerradas | PRs #12 (`ebbcd27`) y #13 (`1103032`) |
+| 2026-10-03 | Credenciales seed unificadas `nikolasmp92@gmail.com`/`niko9214` (en vivo + defaults) | login 200 vs API |
+| 2026-10-04 | Paletas+preferencias+login portados de SCK; fix prerender | `cb65de1`,`96c734c` 9/9 tests |
+| 2026-10-04 | RIESGO: bug sesión SSR (F5→login) pendiente de portar desde KaiPetPoint | diag. en log |

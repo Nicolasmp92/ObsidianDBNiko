@@ -14,7 +14,7 @@ Sistema de gestión agrícola: catálogo de especies/temporadas, trabajadores y 
 - **Quiero ver qué se hizo y cuándo** → `log.md` de esta carpeta (resumen) + `log.md` del repo (detalle)
 - **Quiero la tabla de sesiones** → `registro_actividades.md`
 - **Quiero ver el modelo RBAC** → sección "Acceso" del `README.md` del repo
-- **Quiero levantar el stack** → `backend: mvn spring-boot:run` (:8082) + `npm start` (:4202); login `admin@frunexis.dev` / `frunexis-admin-2026`
+- **Quiero levantar el stack** → `backend: mvn spring-boot:run` (:8082) + `npm start` (:4202); login `nikolasmp92@gmail.com` / `niko9214` (convención unificada)
 - **Quiero ver las tareas** → [[Desarrollo]] (kanban maestro)
 
 ## Dominios (v2, en `main`)
@@ -24,7 +24,7 @@ Sistema de gestión agrícola: catálogo de especies/temporadas, trabajadores y 
 | Catálogo | `species_families`, `species`, `seasons` | Completo; temporada vigente exclusiva |
 | Personal | `workers`, `contracts` | Completo; hoja de vida 8 tabs, contratos drill-down temporadas→especies→lista |
 | Acceso | `roles`, `permisos`, `rol_permisos`, `usuario_permisos` | RBAC granular, 38 permisos, 3 presets |
-| Plataforma | `usuarios`, JWT dual | Heredado del kit |
+| Plataforma | `usuarios`, JWT dual, preferencias (tema+paletas+accesibilidad) | Heredado del kit |
 
 ## Decisiones estructurales vigentes
 

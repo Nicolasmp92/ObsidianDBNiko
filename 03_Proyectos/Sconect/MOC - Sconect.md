@@ -16,7 +16,7 @@ PRD original (especificación del dominio): `99_Archivo/Proyectos personales/sco
 - **Quiero ver qué se hizo y cuándo** → `log.md` de esta carpeta (resumen) + `log.md` del repo (detalle)
 - **Quiero la tabla de sesiones** → `registro_actividades.md`
 - **Quiero el contrato de los webhooks n8n** → sección "Webhooks n8n" del `README.md` del repo
-- **Quiero levantar el backend** → `cd backend && mvn spring-boot:run` (:8083); login `admin@sconect.dev` / `sconect-admin-2026`
+- **Quiero levantar el backend** → `cd backend && mvn spring-boot:run` (:8083); login `nikolasmp92@gmail.com` / `niko9214` (convención unificada, rol `titular`)
 - **Quiero ver las tareas** → [[Desarrollo]] (kanban maestro)
 
 ## Estado (2026-10-02)
