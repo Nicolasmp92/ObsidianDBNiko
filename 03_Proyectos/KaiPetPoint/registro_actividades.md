@@ -25,3 +25,6 @@ proyecto: kaipetpoint
 | 2026-10-04 | Reportes: selector ventas/catálogo/movimientos en dashboard | `6b03013` |
 | 2026-10-04 | Inventario: filtro por tipo/texto + ordenamiento del libro | `a8f1df9` |
 | 2026-10-04 | Fix tooltip: DomPortal sin parentNode nunca renderizaba | `c6ac8a3` + spec |
+| 2026-10-04 | Dashboard: card "Menos vendidos" (incluye productos con 0 ventas) | `2712029` |
+| 2026-10-04 | Semáforo de stock en POS + alertas reales en campana topbar | `d70d1a2` 25/25 |
+| 2026-10-04 | Multi-sucursal: V3, stock por tienda, panel root, selector en topbar | `5b7e9f7` en `feat/multisucursal` + smoke 2 sucursales |

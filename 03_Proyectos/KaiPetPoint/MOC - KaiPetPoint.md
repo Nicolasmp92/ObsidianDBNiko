@@ -15,6 +15,7 @@ Punto de venta e inventario para tiendas — primera instancia: **Patitas** (ali
 - **Quiero la tabla de sesiones** → `registro_actividades.md`
 - **Quiero levantar el stack** → `backend: mvn spring-boot:run` (:8084) + `npm start` (:4204); login `nikolasmp92@gmail.com` / `niko9214`
 - **Quiero ver las tareas** → [[Desarrollo]] (kanban maestro)
+- **Quiero emitir boletas SII** → [[Guia - Boleta electronica SII]] (trámites + opciones de integración)
 
 ## Dominios (en `main` + ramas de trabajo)
 
@@ -36,4 +37,5 @@ Punto de venta e inventario para tiendas — primera instancia: **Patitas** (ali
 
 ## Backlog declarado
 
-Clientes/proveedores · reportes por rango · identidad extraída a config (`app-identidad.ts`) · portar fix SSR a SCK/Frunexis.
+Clientes/proveedores · reportes por rango · identidad extraída a config (`app-identidad.ts`).
+**Diferidos documentados:** boleta electrónica SII (guía de trámites lista, integración vía API de terceros) · modo offline (diseño propuesto: PWA + cola de ventas con reconciliación — postergado hasta estabilizar multi-sucursal).
