@@ -29,3 +29,4 @@ proyecto: kaipetpoint
 | 2026-10-04 | Semáforo de stock en POS + alertas reales en campana topbar | `d70d1a2` 25/25 |
 | 2026-10-04 | Multi-sucursal: V3, stock por tienda, panel root, selector en topbar | `5b7e9f7` en `feat/multisucursal` + smoke 2 sucursales |
 | 2026-10-04 | Delegación de rol root entre roots + protección de último root | `a643cac` |
+| 2026-10-04 | Ingreso rapido de stock en POS (saldo real -> entrada trazable) | `8819d61` + revert `c68ed20` |
