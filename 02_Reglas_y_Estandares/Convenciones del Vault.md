@@ -9,7 +9,7 @@ Reglas de orden del vault (Kaizen / Seiton): todo tiene su lugar y cada nota cue
 | `00_Assets/` | Multimedia centralizada (imágenes, adjuntos) |
 | `01_Laboratorio_y_Borradores/` | Inbox: ideas sueltas, kanbans, notas sin clasificar |
 | `02_Reglas_y_Estandares/` | Estándares de código y convenciones (esta nota + documentos de reglas) |
-| `03_Proyectos_Activos/` | Proyectos en curso — una subcarpeta por proyecto |
+| `03_Proyectos/` | Proyectos en curso — una subcarpeta por proyecto |
 | `99_Archivo/` | Material histórico, wiki de referencia y notas depuradas |
 
 ## Prefijos de notas por proyecto
@@ -25,7 +25,7 @@ Reglas de orden del vault (Kaizen / Seiton): todo tiene su lugar y cada nota cue
 
 ## Estructura canónica por proyecto (modelo repositorios-digitales-uoh)
 
-Cada carpeta de `03_Proyectos_Activos/<Proyecto>/` sigue esta forma; los archivos solo se crean con contenido real, no como andamiaje:
+Cada carpeta de `03_Proyectos/<Proyecto>/` sigue esta forma; los archivos solo se crean con contenido real, no como andamiaje:
 
 ```text
 <Proyecto>/

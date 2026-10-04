@@ -8,7 +8,7 @@ Base de conocimiento personal en Obsidian. Organización por embudo: **capturar 
 - 📐 [[Convenciones del Vault]] — reglas de orden, prefijos y frontmatter (en `02_Reglas_y_Estandares/`)
 - 🅰️ [[Estándares Front-End - Angular]] — estándares del front (Angular 22, Signals, Tailwind + CDK)
 
-## 🚀 Proyectos activos (`03_Proyectos_Activos/`)
+## 🚀 Proyectos activos (`03_Proyectos/`)
 
 - [[MOC - StarterCustomeKit]] — kit base (v2: Angular 22 + Spring Boot + PostgreSQL)
 - [[MOC - Frunexis]] — gestión agrícola (especies, temporadas, trabajadores, contratos)
@@ -25,4 +25,4 @@ Proyectos cerrados/archivados en `99_Archivo/Proyectos personales/`: GYM (app ru
 
 ## 📁 Convención de carpetas
 
-`00_Assets` multimedia · `01_Laboratorio_y_Borradores` inbox · `02_Reglas_y_Estandares` estándares · `03_Proyectos_Activos` en curso · `99_Archivo` histórico
+`00_Assets` multimedia · `01_Laboratorio_y_Borradores` inbox · `02_Reglas_y_Estandares` estándares · `03_Proyectos` en curso · `99_Archivo` histórico

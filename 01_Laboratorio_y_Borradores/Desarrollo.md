@@ -15,8 +15,8 @@ kanban-plugin: board
 
 ## En proceso
 
-- [ ] [[MP - Requerimientos]]
 - [ ] [[SCK-7 UI Feedback & Notificaciones (Prioridad Media)]]
+- [ ] [[MP - segunda reunion Refactors]]
 
 
 ## En Aprobacion
@@ -44,6 +44,7 @@ kanban-plugin: board
 - [x] [[GYM - Generar etiquetas de edicion en textbox de exercicesdetails]] ✅ 2026-05-04
 - [x] [[GYM - Bajar el switch a un lado del titulo, ademas corroborar responsividad si el titulo es muy grande]] ✅ 2026-05-05
 - [x] [[GYM - Implementar el botón de editar y su vista]] ✅ 2026-05-05
+- [x] [[MP - Requerimientos]] ✅ 2026-06-16
 
 
 

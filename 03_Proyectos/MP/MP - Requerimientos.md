@@ -1,5 +1,5 @@
 ---
-status: En proceso
+status: Finalizadas
 ---
 
 
@@ -70,3 +70,11 @@ Son 4 en total y el que falta es  de capacitaciones.
 ### 7 - definir corres con el server
 
 próxima Reu miércoles 23  de junio definir hora 
+
+
+---
+reunión con pacheco chico 02-06-2026
+
+1 el logo debe respetar los colores originales ósea ser mas celeste
+2 reforzar mas el modo oscuro y claro respetando la imagen de fondo
+3 definir catalogo con las imágenes existente

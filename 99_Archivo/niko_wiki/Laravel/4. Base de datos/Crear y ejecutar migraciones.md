@@ -86,7 +86,7 @@ public function down(): void
 
 ## 🔄 **¿Cómo se ejecutan?**
 
-- `php artisan migrate` — Ejecuta migraciones pendientes.
+- ` php artisan migrate ` — Ejecuta migraciones pendientes.
 - `php artisan migrate:rollback` — Revierte la última tanda.
 - `php artisan migrate:refresh` — Revierte **todo** y vuelve a migrar.
 - `php artisan migrate:fresh` — Borra **todo** y migra desde cero.
