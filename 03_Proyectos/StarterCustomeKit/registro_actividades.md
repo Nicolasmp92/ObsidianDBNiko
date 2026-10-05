@@ -22,3 +22,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-04 | Login estándar + credenciales unificadas | `cf364da` + rama chore |
 | 2026-10-04 | Fix sesión SSR portado de KaiPetPoint (cookie SSR + auth + error int.) | `3abf342` 24/24 tests |
 | 2026-10-04 | Fix tooltip DomPortal (parentNode) portado de KaiPetPoint | `e949d54` + spec |
+| 2026-10-04 | Sistema de dialogos modales portado de KaiPetPoint (usuarios + items-admin a modal, confirms reemplazados) | `50891f6` en `feat/login-recordar` 25/25 |

@@ -32,3 +32,4 @@ proyecto: kaipetpoint
 | 2026-10-04 | Ingreso rapido de stock en POS (saldo real -> entrada trazable) | `8819d61` + revert `c68ed20` |
 | 2026-10-04 | Sistema de dialogos modales CDK (formularios + confirmaciones) | `fb39a53` 28/28 |
 | 2026-10-04 | Boton X de cierre estandar en todos los dialogos | `e41c5f2` |
+| 2026-10-04 | Iconos de alerta en dialogos (triangulo rojo peligroso / info azul neutro) | `ae3b0cc` 28/28 |

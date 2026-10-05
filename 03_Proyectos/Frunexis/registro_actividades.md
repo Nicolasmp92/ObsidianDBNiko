@@ -22,3 +22,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-04 | Paletas+preferencias+login portados de SCK; fix prerender | `cb65de1`,`96c734c` 9/9 tests |
 | 2026-10-04 | Fix sesión SSR portado de KaiPetPoint (cookie SSR + auth) | `9d76aa1` 11/11 tests |
 | 2026-10-04 | Fix tooltip DomPortal (parentNode) portado de KaiPetPoint | `4b3105f` + spec |
+| 2026-10-04 | Sistema de dialogos modales portado de KaiPetPoint (6 paginas a modal, 6 confirms reemplazados; alerts de error pendientes) | `4a3cd6d` en `feat/paletas-tema` 12/12 |
