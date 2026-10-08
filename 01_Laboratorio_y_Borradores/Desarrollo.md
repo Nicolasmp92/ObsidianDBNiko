@@ -11,6 +11,28 @@ kanban-plugin: board
 - [ ] [[SCK-10 Instalador & DX (Developer Experience) (Prioridad Baja)]]
 - [ ] [[GYM Paso 6 - Modo Entrenamiento Activo y Pausa]]
 - [ ] [[GYM Paso 7 - Temporizador de Descanso Inteligente]]
+- [ ] [[KPP - Hosting y despliegue para pruebas]] ⏫ @{2026-10-09} #urgente
+- [ ] [[KPP - Caja, medios de pago y arqueo]]
+- [ ] [[KPP - Venta de alimentos a granel]]
+- [ ] [[KPP - Clientes y cuenta corriente (fiado)]]
+- [ ] [[KPP - Lotes y fechas de vencimiento]]
+- [ ] [[KPP - Proveedores y órdenes de compra]]
+- [ ] [[KPP - Catálogo avanzado (importación CSV, etiquetas, kits)]]
+- [ ] [[KPP - Promociones y descuentos]]
+- [ ] [[KPP - Operaciones de venta (suspendidas, devoluciones, cotizaciones)]]
+- [ ] [[KPP - Boleta electrónica SII]]
+- [ ] [[KPP - Analítica (márgenes, ABC, reposición)]]
+- [ ] [[KPP - Ficha de mascota y recordatorio de recompra]]
+- [ ] [[KPP - Toma de inventario físico]]
+- [ ] [[KPP - Servicios y agenda (peluquería, baño)]]
+- [ ] [[KPP - Balanza integrada para venta a granel]]
+- [ ] [[KPP - Comisiones por vendedor y notificaciones push]]
+- [ ] [[KPP - Exportación contable]]
+- [ ] [[KPP - Modo offline (PWA)]]
+- [ ] [[KPP - SaaS multi-tienda y panel de tiendas]]
+- [ ] [[KPP - Canal online (catálogo público y pedidos)]]
+- [ ] [[KPP - Pagos online integrados]]
+- [ ] [[KPP - Integración WhatsApp Business]]
 
 
 ## En proceso
