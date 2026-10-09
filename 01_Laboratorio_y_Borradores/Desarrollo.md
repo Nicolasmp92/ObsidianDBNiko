@@ -13,7 +13,6 @@ kanban-plugin: board
 - [ ] [[GYM Paso 7 - Temporizador de Descanso Inteligente]]
 - [ ] [[KPP - Hosting y despliegue para pruebas]] ⏫ @{2026-10-09} #urgente
 - [ ] [[KPP - Caja, medios de pago y arqueo]]
-- [ ] [[KPP - Venta de alimentos a granel]]
 - [ ] [[KPP - Clientes y cuenta corriente (fiado)]]
 - [ ] [[KPP - Lotes y fechas de vencimiento]]
 - [ ] [[KPP - Proveedores y órdenes de compra]]
@@ -43,6 +42,7 @@ kanban-plugin: board
 
 ## En Aprobacion
 
+- [x] [[KPP - Venta de alimentos a granel]] ✅ 2026-10-09 — rama `feat/venta-a-granel`, pendiente merge a main
 - [x] [[GYM Paso 1 Control de Permisos y Limpieza de UI]] ✅ 2026-05-15
 - [x] [[GYM Paso 2 Infraestructura de Datos (Backend Core)]] ✅ 2026-05-15
 - [x] [[GYM Paso 3 Constructor de Rutinas (Admin UX)]] ✅ 2026-05-19
