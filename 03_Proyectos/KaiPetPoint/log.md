@@ -74,3 +74,16 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 - **HECHO** — Caja, medios de pago y arqueo mergeado a `main` (fbc1103, V5): POS cobra efectivo (recibido/vuelto), tarjeta, transferencia o mixto con desglose `venta_pagos`; página `/caja` abre turno con fondo, registra retiros/ingresos y cierra con arqueo (esperado vs declarado). Arqueo por queries de suma, no colecciones lazy. Smoke E2E verde (doble apertura 409, insuficiente 400, diferencia −480).
 - **HECHO** — Fix impresión de comprobante (24431d7): `window.print()` corría antes del render y capturaba "Cargando…"; ahora `afterRenderEffect` lo dispara con el ticket ya pintado.
 - **HECHO** — Regla `.devin/rules/backend-bd-esquema.md`: esquema completo de la BD (13 tablas, V1–V5) con mandato — todo cambio al modelo exige migración Flyway + actualización de la regla en el mismo commit.
+
+## 2026-10-09 — Sesión de pulido (post-caja)
+
+- **HECHO** — Fix crítico de lecturas de ventas (`81e1e73` → merge `c3e6f34`): `VentaResponse.de` leía `pagos` LAZY fuera de sesión → todos los GET /api/ventas daban 500 (historial, detalle, comprobante). El "Cargando…" del ticket era esto, no el timing del print. `listar`/`porId` ahora en `@Transactional(readOnly)`; `anular` inicializa `pagos` dentro de su tx.
+- **HECHO** — La venta exige turno de caja abierto (`1e81a09` → `4bd92b6`): `crear` valida sesión antes de persistir → 409 "La caja está cerrada: abre el turno". POS muestra banner con "Ir a Caja" y Cobrar deshabilitado. Smoke: sin turno 409, con turno venta 55 OK con vuelto.
+- **HECHO** — Flujo del comprobante: "Volver" → "Nueva venta" (`ea2f016` → `90c7d40`); el usuario sigue vendiendo sin rodeos por el historial.
+- **HECHO** — Historial honesto (`13bf29e` → `4d953eb`): `@empty` ya no confunde error de red con día sin ventas — mensaje de error en rojo, "Cargando…" y vacío son estados distintos.
+- **HECHO** — Escáner integrado al POS (`104412e` → `3e4b723`): sale del menú; `/escaner` queda como escáner remoto (PC + teléfono) alcanzable desde el modo escáner de Nueva venta. En un solo equipo la cámara del POS agrega directo al carrito.
+- **HECHO** — Catálogo unificado (`a48e756` → `0c89e00`): un ítem "Catálogo" con pestañas Productos/Marcas/Categorías; URLs hijas intactas; h1s redundantes fuera; íconos `marca`/`categoria`/`scan` limpiados.
+- **HECHO** — Alta rápida de marca/categoría (`1b7c9db` → `f4c49ca`): opción "+ Nueva…" al final de cada select del producto abre mini-diálogo, crea y auto-selecciona.
+- **HECHO** — Paleta en cierres (`a0bdff4` → `6473fc1`): × de modales, resultado de búsqueda y toasts pasan a `text-primary`/`bg-primary-soft`.
+- **HECHO** — Tooltip no bloquea clicks (`6bfafde` → `d81bc87`): pane con `pointer-events-none` (se empujaba sobre el FAB y tragaba el primer tap → "demora" al abrir novedades) + posición de respaldo a la izquierda del host.
+- **ESTADO** — Todo en `main` pusheado; suite verde (20/20 backend, 33/33 front, lint, build). Turno demo de caja abierto (fondo $20.000) en Casa matriz. Próximo PMV según kanban: clientes/fiado; pendiente hosting (HTTPS resuelve cámara) y la tarea OPS de clonar repos + esquemas BD.
