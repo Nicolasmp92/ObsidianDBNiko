@@ -77,3 +77,5 @@ Doble oferta, no excluyente:
   (`tienda.config`); apagado por defecto para el resto.
 - ¿Rompe la línea del producto? → se dice que no, o se deriva a on-premise.
 - Disciplina: decir sí a todo = N productos mantenidos por una persona.
+
+Cotizaciones base de cada modalidad: [[KPP - Cotización SaaS (arriendo mensual)]] · [[KPP - Cotización licencia perpetua on-premise]]
