@@ -12,7 +12,7 @@ kanban-plugin: board
 - [ ] [[GYM Paso 6 - Modo Entrenamiento Activo y Pausa]]
 - [ ] [[GYM Paso 7 - Temporizador de Descanso Inteligente]]
 - [ ] [[KPP - Hosting y despliegue para pruebas]] ⏫ @{2026-10-09} #urgente
-- [ ] [[KPP - Caja, medios de pago y arqueo]]
+- [ ] [[OPS - Clonar repos y documentar esquemas BD]]
 - [ ] [[KPP - Clientes y cuenta corriente (fiado)]]
 - [ ] [[KPP - Lotes y fechas de vencimiento]]
 - [ ] [[KPP - Proveedores y órdenes de compra]]
@@ -42,7 +42,6 @@ kanban-plugin: board
 
 ## En Aprobacion
 
-- [x] [[KPP - Venta de alimentos a granel]] ✅ 2026-10-09 — rama `feat/venta-a-granel`, pendiente merge a main
 - [x] [[GYM Paso 1 Control de Permisos y Limpieza de UI]] ✅ 2026-05-15
 - [x] [[GYM Paso 2 Infraestructura de Datos (Backend Core)]] ✅ 2026-05-15
 - [x] [[GYM Paso 3 Constructor de Rutinas (Admin UX)]] ✅ 2026-05-19
@@ -54,6 +53,8 @@ kanban-plugin: board
 
 ## Finalizadas
 
+- [x] [[KPP - Caja, medios de pago y arqueo]] ✅ 2026-10-09 — merge `feat/caja-medios-pago` → main (fbc1103)
+- [x] [[KPP - Venta de alimentos a granel]] ✅ 2026-10-09 — merge `feat/venta-a-granel` → main (ac67372)
 - [x] [[STK - 1. Dominio de Notificaciones (Prioridad Crítica)]] ✅ 2026-05-06
 - [x] [[STK - 2. Dominio de Gestión de Usuarios (Prioridad Alta)]] ✅ 2026-05-07
 - [x] [[STK - 3. Dominio de Permisos y Roles (Prioridad Media-Alta)]] ✅ 2026-05-09
