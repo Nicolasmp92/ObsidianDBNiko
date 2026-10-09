@@ -57,3 +57,23 @@ Todo el backlog priorizado por **criticidad** (¿bloquea operar o cobrar?), **vi
 - **Precio costo (OC)** habilita: márgenes y analítica de rentabilidad.
 - **Multi-sucursal estable** habilita: modo offline (riesgo de reconciliación al cuadrado).
 - **Multi-tienda** afecta: credenciales SII/pagos/branding por tenant — conviene decidir el modelo antes de integrar SII.
+
+## Modelo comercial (decisión 2026-10-09)
+
+Doble oferta, no excluyente:
+
+- **SaaS multi-tienda** (default): arriendo mensual, hosting nuestro,
+  updates incluidas. Cámara/HTTPS funcionan sin fricción al estar publicado.
+- **Licencia perpetua on-premise** (clientes que piden comprar): instalación
+  local vía docker-compose, pago único alto (≈12–24× arriendo anual),
+  sin fuente entregado; updates y soporte se cobran aparte.
+  Es también la **válvula de escape** para clientes cuyas necesidades
+  divergen del producto.
+
+### Política multi-tienda ante peticiones incompatibles
+
+- ¿Lo usaría otra tienda? → roadmap general (incluido en el plan).
+- ¿Solo esa tienda? → desarrollo cobrado + feature flag por tenant
+  (`tienda.config`); apagado por defecto para el resto.
+- ¿Rompe la línea del producto? → se dice que no, o se deriva a on-premise.
+- Disciplina: decir sí a todo = N productos mantenidos por una persona.

@@ -21,7 +21,7 @@ _Objetivo: adquirir hosting para desplegar KaiPetPoint y comenzar pruebas reales
     
 - [ ] Estimar costo mensual de cada opción (app + PostgreSQL + backups) y elegir.
     
-- [ ] Definir estrategia de despliegue: Dockerfile del backend (jar) + front SSR + compose, o deploy nativo del PaaS.
+- [x] Definir estrategia de despliegue: Dockerfile del backend (jar) + front SSR + compose ✅ 2026-10-09 — `backend/Dockerfile` (multi-etapa Maven→JRE), `Dockerfile` raíz (Angular build→Node SSR), `docker-compose.yml` (db+backend+frontend) en rama `feat/deploy`. Pendiente `docker build` real (sin docker local).
     
 - [ ] Configurar variables de entorno `KAIPETPOINT_*` en el ambiente remoto (BD, JWT, etc.).
     
