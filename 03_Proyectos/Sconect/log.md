@@ -84,3 +84,23 @@ La bitácora técnica autoritativa vive en el repo (`log.md` + `registro_activid
 - **BASE FUTURA** — `titulo`/`bio`/`direccion`/`foto` son los datos públicos del clínico para la app de pacientes (valoración, "cerca de mí").
 - **VERIFICADO** — `mvn test` 7/7, `flutter test` 7/7, analyze limpio; smoke curl en vivo OK (PUT 200, duración 300 → 400, foto sin auth → 401).
 - **PENDIENTE** — siguiente de la cola: webhook n8n mínimo viable (ya servido en `/api/webhooks/citas`); luego recordatorios y plantillas por especialidad.
+
+## 2026-10-13 — Preferencias del clínico (separación de perfil)
+
+- **HECHO** — Perfil = quién eres; preferencias = cómo trabajas. Nueva
+  feature `preferencias`: duración habitual de cita (movida del perfil),
+  días laborales con chips L-D, logo de la consulta (multipart ≤5 MB) y
+  tabla `dias_bloqueados` (fecha + motivo, UQ por usuario).
+- **ENFORCEMENT REAL** — La agenda rechaza en backend al crear y
+  reagendar: día no laboral → 400, día bloqueado → 409 (sumado al solape
+  409). No es configuración decorativa; ningún cliente/integración puede
+  crear citas inválidas.
+- **FIX DE DISEÑO** — PUT con los 7 días o null → "todos los días";
+  antes un null era ignorado y la preferencia era irreversible.
+- **VERIFICADO** — `mvn test` 7/7, `flutter test` 7/7, analyze limpio.
+  Smoke en vivo: PUT 200, sin auth 401, cita domingo no laboral → 400,
+  día bloqueado → 409, día libre → 201, POST/GET logo 200. `main`
+  (`b709c86` → `bb7ab97`), pusheado.
+- **PENDIENTE** — UI de agenda que atenúe días no laborales/bloqueados;
+  horarios de apertura/cierre por día (hoy son días enteros); usar el
+  logo en comprobantes. Cola intacta: n8n → recordatorios → plantillas.
