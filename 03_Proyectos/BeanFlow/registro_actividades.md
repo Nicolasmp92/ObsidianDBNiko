@@ -12,3 +12,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-05 | Fix `etiquetaRol()` en UsuariosPage + modo dev H2 (`db/migration-h2`) | backend :8085 up, login 200 |
 | 2026-10-05 | Stack v2 consolidado y pusheado; bitácoras repo+vault creadas | push `refactor/stack-angular-spring` |
 | 2026-10-05 | Fix 500 salón/carta/cocina: `@EntityGraph` en 5 repos (lazy + open-in-view=false) | `d590e17`; 10 GET 200 + abrir comanda 201 |
+| 2026-10-06 | BeanFlow: auditoría de mejora documentada (6 brechas + roadmap de ramas) y pusheada | `88487f9` en `refactor/stack-angular-spring` |
