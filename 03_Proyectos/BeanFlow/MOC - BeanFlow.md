@@ -30,6 +30,6 @@ POS de restaurante/café: salón con mesas, comandas, cocina, carta con recetas,
 ## Decisiones estructurales vigentes
 
 - Puertos: API `8085`, dev `4205`, SSR `4005` (reservados: 8080/4200/4000 DSpace-CRIS, 8081-84 los demás proyectos).
-- **BD PostgreSQL `beanflow`/`beanflow_user` pendiente de aprovisionar** — el backend corre en H2 en memoria mientras tanto; los datos se pierden al reiniciar y `uq_comanda_abierta_por_mesa` no se enforcea en H2. Requiere sudo/clave postgres del usuario: `sudo -u postgres psql -c "CREATE USER beanflow_user WITH PASSWORD 'beanflow_dev'"` y `sudo -u postgres createdb -O beanflow_user beanflow`.
+- **BD PostgreSQL `beanflow`/`beanflow_user` aprovisionada (2026-10-13)** — el backend corre contra PG 17.11 con Flyway V1 y el índice parcial enforced. El fallback H2 sigue disponible con `BEANFLOW_DB_URL=jdbc:h2:mem:beanflow;DB_CLOSE_DELAY=-1` + `SPRING_FLYWAY_LOCATIONS=classpath:db/migration-h2`.
 - Esquema vigente documentado en `.devin/rules/backend-bd-esquema.md` del repo; foto histórica del Laravel viejo en [[esquema-laravel-historico]].
 - Historia del nombre: el proyecto Laravel 2025 era BeanFlow (`beanflow_livewire`); sus notas wiki fueron reescritas como SCK y el código v2 quedó en `Desarrollo/BeanFlow`.

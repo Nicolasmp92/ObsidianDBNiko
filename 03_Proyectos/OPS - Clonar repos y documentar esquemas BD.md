@@ -12,9 +12,8 @@ y cada uno tiene su regla de esquema siguiendo el modelo de
       `ea07d99`, 2026-10-13 — Laravel eliminado). Regla de esquema creada
       (Flyway V1). Foto histórica del esquema Laravel en
       [[Proyectos/BeanFlow/esquema-laravel-historico]].
-      **Pendiente**: aprovisionar PostgreSQL `beanflow`/`beanflow_user`
-      (requiere clave sudo/postgres del usuario; hoy corre en H2 en
-      memoria, `:8085`/`:4205`).
+      PostgreSQL `beanflow`/`beanflow_user` aprovisionado el 2026-10-13
+      (`:8085`/`:4205`).
 - [x] **Frunexis** — clonado y regla creada (usa `ddl-auto: update`,
       sin Flyway — la regla lo registra).
 - [x] **Sconect** — clonado monorepo (`backend/` + `app/` Flutter) y
