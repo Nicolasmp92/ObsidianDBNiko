@@ -10,4 +10,6 @@ La bitácora técnica autoritativa vive en el repo (`log.md` + `registro_activid
 - **HECHO** — Stack v2 desarrollado sin commits: POS restaurante completo (salón/mesas, comandas, cocina, carta+recetas, bodega, cuenta, usuarios con roles garzon/cocina/caja/admin), auth JWT+cookie, diálogos modales y toasts ya portados del kit.
 - **HECHO** — Consolidación en git (2026-10-05): todo el working tree commiteado y pusheado a `origin/refactor/stack-angular-spring`. Fix `etiquetaRol()` incluido (la app no compilaba — el método se referenciaba en la plantilla pero no existía).
 - **RIESGO** — PostgreSQL `beanflow`/`beanflow_user` nunca se aprovisionó: backend corre en H2 en memoria (`db/migration-h2` sin el índice parcial `uq_comanda_abierta_por_mesa`). Datos volátiles; pendiente `createdb`/`createuser` con clave postgres del usuario.
-- **PENDIENTE** — Merge de `refactor/stack-angular-spring` a `main` vía PR.
+- **HECHO** — Merge `refactor/stack-angular-spring` → `main` (`ea07d99`, 2026-10-13): Laravel eliminado de `main`, el POS Angular+Spring es el stack activo. Verificado: `mvn test` 12/12, `ng build` verde, backend :8085 (H2) con login + comanda 201 en vivo.
+- **HECHO** — Foto del esquema nuevo: `.devin/rules/backend-bd-esquema.md` en el repo. Foto del esquema Laravel viejo en [[esquema-laravel-historico]] (solo registro — el proyecto ya no depende de él).
+- **PENDIENTE** — PostgreSQL `beanflow`/`beanflow_user`: requiere clave sudo/postgres del usuario (comandos listos en README/nota OPS). Hasta entonces H2 y sin índice parcial enforced.
