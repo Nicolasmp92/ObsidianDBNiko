@@ -25,3 +25,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-03 | Credenciales seed unificadas (rama chore, rol `titular`) | commit en rama |
 | 2026-10-13 | Perfil del clínico: `/api/perfil` + foto + `duracionCitaMin` alimenta agenda; usuarios +6 cols | suites verdes, smoke OK |
 | 2026-10-13 | Preferencias: dias laborales, bloqueos y logo separados del perfil; agenda enforcea 400/409 en crear y reagendar | suites verdes, smoke API OK, `bb7ab97` |
+| 2026-10-13 | Excepciones de calendario: dias_especiales (bloqueado\|extra) con rangos; extra abre dia no laboral, bloqueado cierra laboral | suites verdes, smoke 201/400/409, `a6bdcd7` |
