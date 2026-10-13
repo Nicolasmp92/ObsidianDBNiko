@@ -139,3 +139,18 @@ Sesión de ideación sobre qué pulir. Ordenado por retorno:
 **Prioridad sugerida**: 1) vista "hoy" + acciones rápidas, 2) horarios
 apertura/cierre + calendario que atenúa días bloqueados, 3) n8n mínimo,
 4) recordatorios.
+
+## 2026-10-13 — Solicitudes de cita pendientes + navegación M3
+
+- **HECHO** — Estado `solicitada` en citas: el webhook crea solicitudes
+  pendientes; el clínico las confirma/rechaza con un toque en la agenda
+  (tarjetas ámbar + banner). Calendario marca días con solicitudes con
+  punto ámbar. Las solicitudes bloquean el horario hasta resolverlas.
+- **HECHO** — Shell M3: barra inferior Agenda/Pacientes/Cuenta,
+  IndexedStack conserva estado; pacientes rediseñado (SearchBar,
+  iniciales, contador).
+- **LECCIÓN** — `ddl-auto` no actualiza CHECK constraints de enums al
+  agregar valores: hubo que hacer `DROP CONSTRAINT` manual. Otra razón
+  para migrar a Flyway antes de producción.
+- **VERIFICADO** — suites verdes ambos lados; webhook → solicitada →
+  confirmada en vivo. `main` `aa9137b`.
