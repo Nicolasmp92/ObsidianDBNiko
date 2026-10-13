@@ -104,3 +104,38 @@ La bitácora técnica autoritativa vive en el repo (`log.md` + `registro_activid
 - **PENDIENTE** — UI de agenda que atenúe días no laborales/bloqueados;
   horarios de apertura/cierre por día (hoy son días enteros); usar el
   logo en comprobantes. Cola intacta: n8n → recordatorios → plantillas.
+
+## 2026-10-13 — Lluvia de ideas (pulido según modelo de negocio)
+
+Sesión de ideación sobre qué pulir. Ordenado por retorno:
+
+**Día a día del clínico**
+- Vista "hoy" como home: próximas atenciones y próximo paciente al abrir.
+- Acciones rápidas en cita: confirmar / atendida / no_asistió + deep
+  links `tel:`/`wa.me` al paciente desde la ficha.
+- Registrar inasistencias → métrica de no-shows por paciente (cobra por
+  adelantado al reincidente).
+- Horarios de apertura/cierre por día (preferencias por bloque horario,
+  no solo día entero).
+
+**Ya servido, falta conectar**
+- n8n + WhatsApp sobre el webhook existente: recepcionista automático
+  (consulta agenda → ofrece horas → agenda → confirma).
+- Recordatorios 24h antes (campo `recordadoEn` ya existe en `citas`).
+- Plantillas de evolución por `usuarios.especialidad` (campo dormido).
+
+**Semilla de la app de pacientes**
+- Valoración post-atención (tabla `valoraciones`) → marketplace futuro.
+- Endpoint público del clínico (titulo/bio/direccion/foto/logo ya están).
+- Sobreturnos / lista de espera: ofrecer hora liberada por cancelación.
+
+**SaaS multi-empresa**
+- Multi-profesional (consulta con N clínicos compartiendo pacientes) —
+  hoy single-clinician por decisión, es el paso a arrendar a clínicas.
+- Reportes (permiso `reportes.view` existe sin endpoints): ocupación,
+  ingresos esperados, pacientes nuevos/mes.
+- AuditLog del PRD (obligación real con datos clínicos).
+
+**Prioridad sugerida**: 1) vista "hoy" + acciones rápidas, 2) horarios
+apertura/cierre + calendario que atenúa días bloqueados, 3) n8n mínimo,
+4) recordatorios.
