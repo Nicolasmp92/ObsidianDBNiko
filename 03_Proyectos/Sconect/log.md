@@ -154,3 +154,63 @@ apertura/cierre + calendario que atenúa días bloqueados, 3) n8n mínimo,
   para migrar a Flyway antes de producción.
 - **VERIFICADO** — suites verdes ambos lados; webhook → solicitada →
   confirmada en vivo. `main` `aa9137b`.
+
+## 2026-10-13 — Cupo diario de pacientes
+
+- Preferencias + "Pacientes por día" (`usuarios.max_pacientes_dia`,
+  null = sin límite, validado 1–100). Va de la mano con la duración
+  habitual: rendimiento = cuántos por hora + cuántos por día.
+- Enforcement en crear/reagendar (409 día lleno, la propia cita no se
+  cuenta al moverla en el mismo día) **y en el webhook** — el bot de
+  WhatsApp recibe "agenda completa" para ofrecer otra fecha.
+- El webhook ahora también respeta días laborales/bloqueos/extras
+  (hueco: antes solo chequeaba solape).
+- Bug preexistente arreglado de paso: reagendar por API daba 500 por
+  proxy lazy del profesional — `@Transactional` en `actualizar`.
+- Commits: `b328f4b` → merge `3846ac4` en `main`. Smoke en vivo OK,
+  datos de prueba limpiados. mvn 7/7 · flutter 7/7 · analyze limpio.
+
+## 2026-10-13 — Sobrecupo
+
+- `citas.sobrecupo`: el clínico fuerza una hora sobre el cupo diario o
+  en horario solapado (switch "Sobrecupo" en el formulario de cita).
+  Solo decisión manual — el webhook de WhatsApp nunca crea sobrecupos.
+  Sigue exigiendo día laboral/no bloqueado (para día extra, preferencias).
+- La tarjeta de agenda marca "· Sobrecupo" en el subtítulo.
+- Aprendizaje: `ddl-auto` no puede agregar `NOT NULL` sin default en
+  tabla con filas — la columna se agregó manual. Refuerza el pendiente
+  Flyway.
+- Commits: `16c5ea4` → merge `78cfc77` en `main`. Smoke OK (cupo 409 →
+  sobrecupo 201; bloqueado sigue 409). mvn 7/7 · flutter 7/7.
+
+## 2026-10-13 — Contador de cupos restantes
+
+- Sección "Por confirmar" muestra "Quedan N de M cupos" (rojo: "Cupo
+  completo") según `max_pacientes_dia` — misma regla que el backend
+  (no canceladas cuentan, sobrecupos incluidos). Solo front, sin cambio
+  de API. Prefs se recargan con cada carga del día.
+- Commit `95dac2b` → merge `718d8a6` en `main`.
+
+## 2026-10-13 — Nota n8n: solicitud de sobrecupo por WhatsApp
+
+- Pendiente para el flujo n8n: cuando el día esté lleno (409 cupo), el
+  bot podrá ofrecer al paciente **solicitar sobrecupo** — solo si el
+  clínico lo habilita en preferencias (flag opt-in por implementar).
+- Queda como `solicitada` + sobrecupo: el clínico confirma/rechaza
+  desde la agenda. El bot nunca crea el sobrecupo por sí solo.
+
+## 2026-10-13 — Portal del paciente (app del paciente en la misma app)
+
+- Entrada "Soy paciente" desde el login clínico → teléfono + código
+  de 6 dígitos (10 min, un solo uso). JWT propio
+  (`sub=paciente:<id>`) que no sirve para la API clínica; el token
+  vive en clave separada y convive con la sesión del profesional.
+- El paciente ve el catálogo de clínicos, solicita hora (queda
+  `solicitada`, origen `app`, mismas reglas de agenda), anula sus
+  citas no resueltas, y lee sus evoluciones y exámenes.
+- Nunca revela si un teléfono existe (respuesta genérica); en dev el
+  código viaja en la respuesta (`sconect.portal.dev-code`), en
+  producción lo mandará n8n por WhatsApp.
+- Smoke 12 casos OK; fix preventivo @Transactional en lecturas lazy.
+- Commit 4584034 en main. Pendiente: envío real del código por
+  WhatsApp (n8n) + rate-limit del acceso.
