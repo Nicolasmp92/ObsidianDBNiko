@@ -37,5 +37,5 @@ Punto de venta e inventario para tiendas — primera instancia: **Patitas** (ali
 
 ## Backlog declarado
 
-Clientes/proveedores · reportes por rango · identidad extraída a config (`app-identidad.ts`).
-**Diferidos documentados:** boleta electrónica SII (guía de trámites lista, integración vía API de terceros) · modo offline (diseño propuesto: PWA + cola de ventas con reconciliación — postergado hasta estabilizar multi-sucursal).
+Backlog completo priorizado por criticidad/viabilidad/esfuerzo en [[KPP - Roadmap y priorización (PMV)]] — fases: **PMV** (operación real) → nicho/retención → SaaS. Sueltos aún sin fase: reportes por rango · identidad extraída a config (`app-identidad.ts`).
+**Diferidos documentados:** boleta SII y modo offline entraron al roadmap ([[KPP - Boleta electrónica SII]] / [[KPP - Modo offline (PWA)]]) con su justificación de postergación intacta.

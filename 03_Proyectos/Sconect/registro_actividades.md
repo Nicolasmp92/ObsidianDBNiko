@@ -23,3 +23,10 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-03 | Análisis de mejoras: roadmap priorizado (solape+reagendar+archivos → n8n → plantillas especialidad) | verificado en código, no ejecutado |
 | 2026-10-03 | Solape backend + fix lazy proxy + reagendar + archivos UI (MVP dominio completo) | API 409/200; mvn 7/7; flutter 7/7 |
 | 2026-10-03 | Credenciales seed unificadas (rama chore, rol `titular`) | commit en rama |
+| 2026-10-13 | Perfil del clínico: `/api/perfil` + foto + `duracionCitaMin` alimenta agenda; usuarios +6 cols | suites verdes, smoke OK |
+| 2026-10-13 | Preferencias: dias laborales, bloqueos y logo separados del perfil; agenda enforcea 400/409 en crear y reagendar | suites verdes, smoke API OK, `bb7ab97` |
+| 2026-10-13 | Excepciones de calendario: dias_especiales (bloqueado\|extra) con rangos; extra abre dia no laboral, bloqueado cierra laboral | suites verdes, smoke 201/400/409, `a6bdcd7` |
+| 2026-10-13 | Navegacion inferior M3: tabs Agenda/Pacientes/Cuenta, IndexedStack conserva estado, fix heroTag de FABs | analyze+test 7/7, `61586a5` |
+| 2026-10-13 | Solicitudes de cita (estado solicitada, webhook), puntos ambar en calendario, banner + confirmar/rechazar 1-toque, pacientes M3; fix check constraint del enum | suites verdes, smoke webhook→solicitada→confirmada, `aa9137b` |
+| 2026-10-13 | Atender=Evolucionar (cita queda atendida al crear evolucion), swipe der=atender/izq=reagendar, atendidos al final del listado | suites verdes, smoke evolucion->atendida, `e3eea6f` |
+| 2026-10-13 | Agenda por etapas: 3 secciones colapsables (Por confirmar/Agendados/Atendidos), acciones coherentes por estado, toggle calendario en la vista | analyze+test 7/7, `95854c7` |
