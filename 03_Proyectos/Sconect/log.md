@@ -77,3 +77,10 @@ La bitácora técnica autoritativa vive en el repo (`log.md` + `registro_activid
 - **HECHO** — Solape de citas validado en crear/PUT/webhook (409, canceladas no bloquean, adyacentes sí). Bug latente encontrado y corregido: proxies lazy → 500 en PUT/PATCH al serializar. Reagendar en app (form modo edición + menú). Feature archivos completo (file_picker/file_saver, subir/listar/descargar/eliminar).
 - **VERIFICADO** — API viva: solape 409, reagendar 200, PATCH 200, webhook 409; `mvn test` 7/7; `flutter test` 7/7, analyze limpio.
 - **PENDIENTE** — n8n real; recordatorios; plantillas por especialidad; modo offline; fase 2 (audit/reportes).
+
+## 2026-10-13 — Perfil del clínico + "rendimiento" (duración por cita)
+
+- **HECHO** — Módulo `/api/perfil`: el clínico configura nombre, título, especialidad, teléfono, dirección de consulta, bio, foto (multipart ≤5 MB) y `duracionCitaMin` (15–120). La duración alimenta el default del formulario de citas — la agenda respeta el ritmo de cada profesional.
+- **BASE FUTURA** — `titulo`/`bio`/`direccion`/`foto` son los datos públicos del clínico para la app de pacientes (valoración, "cerca de mí").
+- **VERIFICADO** — `mvn test` 7/7, `flutter test` 7/7, analyze limpio; smoke curl en vivo OK (PUT 200, duración 300 → 400, foto sin auth → 401).
+- **PENDIENTE** — siguiente de la cola: webhook n8n mínimo viable (ya servido en `/api/webhooks/citas`); luego recordatorios y plantillas por especialidad.

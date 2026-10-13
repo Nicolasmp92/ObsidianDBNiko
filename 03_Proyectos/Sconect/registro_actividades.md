@@ -23,3 +23,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-03 | Análisis de mejoras: roadmap priorizado (solape+reagendar+archivos → n8n → plantillas especialidad) | verificado en código, no ejecutado |
 | 2026-10-03 | Solape backend + fix lazy proxy + reagendar + archivos UI (MVP dominio completo) | API 409/200; mvn 7/7; flutter 7/7 |
 | 2026-10-03 | Credenciales seed unificadas (rama chore, rol `titular`) | commit en rama |
+| 2026-10-13 | Perfil del clínico: `/api/perfil` + foto + `duracionCitaMin` alimenta agenda; usuarios +6 cols | suites verdes, smoke OK |
