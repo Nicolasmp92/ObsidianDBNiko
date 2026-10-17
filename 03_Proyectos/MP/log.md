@@ -32,3 +32,9 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **HECHO** — `Access-Control-Allow-Origin: *` reemplazado por whitelist `https://ingenieriamp.cl` + `https://www.ingenieriamp.cl`, con `Vary: Origin`. Orígenes ajenos reciben **403 antes de procesar** (defensa en profundidad). Requests sin `Origin` (curl/server-to-server) pasan: para ellos CORS no aplica y la barrera real es reCAPTCHA v3.
 - **RIESGO** — El formulario en dev local (`ng serve`, Origin `http://localhost:4200`) ya **no puede** probarse contra el mailer de producción: será rechazado con 403. Para pruebas locales usar un mailer de staging o añadir temporalmente el origen local.
 - **RIESGO** — El fix llega a producción solo cuando el deploy corra OK: requiere los secrets `SMTP_PASSWORD`/`RECAPTCHA_SECRET` en GitHub (pendiente desde la entrada anterior). Hasta entonces el mailer viejo sigue en cPanel con CORS `*`.
+
+## 2026-10-16 (3) — Info disclosure en errores + hardening de archivos expuestos
+
+- **HECHO** — El catch de `mailer.php` ya no devuelve `$mail->ErrorInfo` ni `$e->getMessage()` al cliente: ahora van a `error_log()` del servidor y el cliente recibe un mensaje genérico.
+- **HECHO** — `.htaccess` ampliado: deniega `error_log` (en cPanel PHP escribe el log en `public_html/error_log`, que quedaría navegable y expondría el diálogo SMTP logueado — el fix de logging sin esta deny habría creado una nueva filtración), `*.md`, además de lo ya cubierto (`mailer.config*.php`, `composer.*`, `vendor/`).
+- **RIESGO** — Todo lo de mailer sigue pendiente de publicación: requiere los GitHub secrets para que el deploy corra. Verificar el log de errores vía cPanel/FTP (HTTP denegado a propósito).
