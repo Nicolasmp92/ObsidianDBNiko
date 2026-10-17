@@ -26,3 +26,9 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **RIESGO** — Las credenciales **siguen en el historial de git** (commits anteriores, ya pusheados a GitHub). Quitarlas del HEAD no las compromete menos: hay que rotar la contraseña SMTP en cPanel y el secret de reCAPTCHA en Google, y luego actualizar `mailer.config.php` local + los secrets de GitHub.
 - **RIESGO** — Pushear a `main` gatilla deploy: si los secrets `SMTP_PASSWORD`/`RECAPTCHA_SECRET` no están creados en GitHub, el workflow falla a propósito; el mailer antiguo en cPanel sigue operativo hasta que un deploy exitoso lo reemplace.
 - **RIESGO** — El heredoc del workflow expande variables: la contraseña SMTP **no debe contener** `$`, comillas ni backticks, o el config generado quedará corrupto.
+
+## 2026-10-16 (2) — CORS restringido en mailer.php
+
+- **HECHO** — `Access-Control-Allow-Origin: *` reemplazado por whitelist `https://ingenieriamp.cl` + `https://www.ingenieriamp.cl`, con `Vary: Origin`. Orígenes ajenos reciben **403 antes de procesar** (defensa en profundidad). Requests sin `Origin` (curl/server-to-server) pasan: para ellos CORS no aplica y la barrera real es reCAPTCHA v3.
+- **RIESGO** — El formulario en dev local (`ng serve`, Origin `http://localhost:4200`) ya **no puede** probarse contra el mailer de producción: será rechazado con 403. Para pruebas locales usar un mailer de staging o añadir temporalmente el origen local.
+- **RIESGO** — El fix llega a producción solo cuando el deploy corra OK: requiere los secrets `SMTP_PASSWORD`/`RECAPTCHA_SECRET` en GitHub (pendiente desde la entrada anterior). Hasta entonces el mailer viejo sigue en cPanel con CORS `*`.
