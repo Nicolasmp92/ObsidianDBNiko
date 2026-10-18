@@ -46,3 +46,10 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **HECHO** — Nuevo `hero-og.jpg` (1200×630, 145KB) para `og:image`/`twitter:image`/JSON-LD: los scrapers sociales no siempre aceptan WebP y un PNG de 7.5MB podía agotar su timeout.
 - **HECHO** — Eliminados `hero.png` y `hero2.png` (7.9MB, sin referencias). Carpeta `public/hero/`: 16MB → 584KB.
 - **RIESGO** — Quedan ~29MB de imágenes sin optimizar en `obras-civiles/`, `equipos/`, `suelos/`, `sin-categorizar/` — el mismo tratamiento WebP conviene aplicarlo a galerías y `heroImage` de servicios.
+
+## 2026-10-18 (2) — Lazy loading, assets muertos y reCAPTCHA on-demand
+
+- **HECHO** — `service-detail.ts`: los 4 `loading="eager"` (heroes de detalle) pasados a `lazy`. El componente solo existe en el DOM al abrir un detalle (`@if currentArea()`), así que el eager forzaba descargas innecesarias si quedaba offscreen.
+- **HECHO** — `public/sin-categorizar/` eliminada completa (11 archivos, 7.5MB): auditoría confirma **cero referencias** en `src/`. Assets: `public/` 45MB → 23MB. Recuperables desde historial de git si alguno se necesitaba.
+- **HECHO** — reCAPTCHA v3 ya no carga global en `index.html`: `RecaptchaService` inyecta el script bajo demanda (`loadScript()` con promesa memoizada y retry tras error). `preload()` se llama al abrir el modal de contacto → token listo antes del envío. El timeout de 8s ahora cubre carga del script + ready + execute. Menos TBT y menos tracking de Google en visitas que no usan el formulario.
+- **RIESGO** — Si el script de Google falla al cargar (adblock/red), `execute()` rechaza y el formulario muestra error — comportamiento correcto, pero antes el script ya venía cargado desde el HTML: conviene probar el envío real en producción tras el deploy.
