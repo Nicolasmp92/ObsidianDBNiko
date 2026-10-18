@@ -78,3 +78,8 @@ reunión con pacheco chico 02-06-2026
 1 el logo debe respetar los colores originales ósea ser mas celeste
 2 reforzar mas el modo oscuro y claro respetando la imagen de fondo
 3 definir catalogo con las imágenes existente
+---
+
+## 🚫 Restricciones del cliente (no proponer de nuevo)
+
+- **NO quiere WhatsApp como canal en el sitio** — ni botón flotante ni CTA de wa.me. El cliente ya lo rechazó; los canales de contacto son formulario/mailer + teléfonos + Instagram. (registrado 2026-10-18)

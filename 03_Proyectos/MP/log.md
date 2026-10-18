@@ -64,3 +64,8 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **HECHO** — WhatsApp FAB (bottom-right, `wa.me/56976481490` con mensaje prellenado) junto al de Instagram. `AnalyticsService` creado: page_view por navegación + evento `generate_lead` en envíos exitosos; es no-op hasta descomentar el snippet GA4 en `index.html` (falta Measurement ID real — **pendiente del cliente/niko**).
 - **HECHO** — Tests: 4 specs nuevos (ContactInfoService, ContactModalService, RecaptchaService timeout, services.data) + fix del spec obsoleto de App. `ng test`: **14/14 pasan**. CI: `checkout@v4` + `cache: npm`. Budget initial subido a 650kB (router añadió ~17kB).
 - **RIESGO** — GA4 inactivo hasta crear la propiedad y poner el ID en `index.html`. El deploy sigue bloqueado por los secrets `SMTP_PASSWORD`/`RECAPTCHA_SECRET`.
+
+## 2026-10-18 (4) — Revertir WhatsApp FAB: el cliente no lo quiere
+
+- **DECISIÓN** — El cliente **no quiere WhatsApp como canal del sitio** (ya lo había rechazado antes; el FAB agregado por sugerencia fue revertido). Registrado también en `MP - Requerimientos` sección "Restricciones del cliente" para no volver a proponerlo. Canales válidos: formulario/mailer, teléfonos, Instagram.
+- **HECHO** — WhatsApp FAB eliminado de `app.html`; queda solo el FAB de Instagram (bottom-left).
