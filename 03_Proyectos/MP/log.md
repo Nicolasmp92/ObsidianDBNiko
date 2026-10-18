@@ -38,3 +38,11 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **HECHO** — El catch de `mailer.php` ya no devuelve `$mail->ErrorInfo` ni `$e->getMessage()` al cliente: ahora van a `error_log()` del servidor y el cliente recibe un mensaje genérico.
 - **HECHO** — `.htaccess` ampliado: deniega `error_log` (en cPanel PHP escribe el log en `public_html/error_log`, que quedaría navegable y expondría el diálogo SMTP logueado — el fix de logging sin esta deny habría creado una nueva filtración), `*.md`, además de lo ya cubierto (`mailer.config*.php`, `composer.*`, `vendor/`).
 - **RIESGO** — Todo lo de mailer sigue pendiente de publicación: requiere los GitHub secrets para que el deploy corra. Verificar el log de errores vía cPanel/FTP (HTTP denegado a propósito).
+
+## 2026-10-18 — FTPS en deploy + hero.png migrado a WebP responsive
+
+- **HECHO** — Deploy pasado de FTP plano a `protocol: ftps` (FTP-Deploy-Action): credenciales ya no viajan en claro. Si el servidor cPanel no acepta FTPS, el deploy fallará y habrá que evaluar `ftps-legacy` o sftp.
+- **HECHO** — `hero.png` (7.5MB, 2752×1536) reemplazado por WebP responsive generado con sharp-cli: `hero-768.webp` 54KB, `hero-1280.webp` 126KB, `hero-1920.webp` 243KB (~97% menos). `hero.ts` usa `srcset`/`sizes="100vw"`; el preload de `index.html` usa `imagesrcset`/`imagesizes`/`type="image/webp"` sincronizado.
+- **HECHO** — Nuevo `hero-og.jpg` (1200×630, 145KB) para `og:image`/`twitter:image`/JSON-LD: los scrapers sociales no siempre aceptan WebP y un PNG de 7.5MB podía agotar su timeout.
+- **HECHO** — Eliminados `hero.png` y `hero2.png` (7.9MB, sin referencias). Carpeta `public/hero/`: 16MB → 584KB.
+- **RIESGO** — Quedan ~29MB de imágenes sin optimizar en `obras-civiles/`, `equipos/`, `suelos/`, `sin-categorizar/` — el mismo tratamiento WebP conviene aplicarlo a galerías y `heroImage` de servicios.
