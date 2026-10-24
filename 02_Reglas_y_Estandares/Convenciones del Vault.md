@@ -19,6 +19,7 @@ Reglas de orden del vault (Kaizen / Seiton): todo tiene su lugar y cada nota cue
 | `GYM - ` | App de gimnasio (archivado 2026-10-02 → `99_Archivo/Proyectos personales/GYM`) |
 | `STK - N.` / `SCK-N` | StarterCustomeKit (serie de dominios numerada) |
 | `MP - ` | Sitio web MP |
+| `NAMP - ` | Plataforma web NAMP (empresa + portafolio) |
 | `FX - ` | Frunexis |
 | `SCN - ` | Sconect |
 | `MOC - ` | Mapa de contenido de un proyecto o área |

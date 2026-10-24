@@ -15,6 +15,7 @@ Base de conocimiento personal en Obsidian. Organización por embudo: **capturar 
 - [[MOC - Frunexis]] — gestión agrícola (especies, temporadas, trabajadores, contratos)
 - [[MOC - Sconect]] — gestión clínica particular multidisciplinaria + agenda WhatsApp/n8n
 - [[MOC - MP]] — sitio web corporativo
+- [[MOC - NAMP]] — plataforma web empresa/portafolio (servicios informáticos)
 
 Cada proyecto sigue la estructura canónica: `MOC` (ficha) + `log.md` (bitácora tipificada) + `registro_actividades.md` (tabla de sesiones) — ver [[Convenciones del Vault]].
 

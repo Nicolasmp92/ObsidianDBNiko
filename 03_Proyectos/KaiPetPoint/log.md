@@ -87,3 +87,12 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 - **HECHO** — Paleta en cierres (`a0bdff4` → `6473fc1`): × de modales, resultado de búsqueda y toasts pasan a `text-primary`/`bg-primary-soft`.
 - **HECHO** — Tooltip no bloquea clicks (`6bfafde` → `d81bc87`): pane con `pointer-events-none` (se empujaba sobre el FAB y tragaba el primer tap → "demora" al abrir novedades) + posición de respaldo a la izquierda del host.
 - **ESTADO** — Todo en `main` pusheado; suite verde (20/20 backend, 33/33 front, lint, build). Turno demo de caja abierto (fondo $20.000) en Casa matriz. Próximo PMV según kanban: clientes/fiado; pendiente hosting (HTTPS resuelve cámara) y la tarea OPS de clonar repos + esquemas BD.
+
+## 2026-10-24 — Stack Docker verificado end-to-end
+
+- **HECHO** — Deploy stack completo en `main` (`14a6de8`): `backend/Dockerfile` (maven→jre-17), `Dockerfile` raíz (node:22-alpine, ng build→server.mjs), `docker-compose.yml` (postgres:16 + backend + frontend SSR + caddy:2 con healthchecks y redes internal/web), `Caddyfile` (`{$DOMAIN}`→frontend:4004; sin dominio sirve :80 por IP, con dominio HTTPS automático), `.env.example` con todas las vars.
+- **HECHO** — Smoke real: `docker compose build`+`up` → Postgres fresco ejecuta migraciones V1–V15 + DataSeeder; `POST /api/auth/login` devuelve 200 con JWT y sucursales seed. Home redirige a /login (guard OK).
+- **HECHO** — `http-proxy-middleware` movido a `dependencies`: `server.ts` lo usa en runtime y `npm ci --omit=dev` de la imagen prod lo excluía — habría roto el SSR recién en producción.
+- **HECHO** — Rama `refactor/deuda-tecnica-pos` (v0.7.0: ofertas, despachos, cajón, retiro SII) estaba 3 commits sin pushear → respaldada a origin.
+- **DECISIÓN** — Hosting objetivo: VPS ~US$5 (Hetzner/Contabo) con este compose + Caddy; alternativa $0: Oracle Always Free. Descartados free-tier por capas (cold starts matan la demo) y managed por capas (~US$20+, overkill).
+- **RIESGO** — El `.env` de producción necesita secrets reales (JWT, DB, seed). Para demo pública falta: dominio, banner/etiqueta de demo, datos de ejemplo y reset periódico de la BD.

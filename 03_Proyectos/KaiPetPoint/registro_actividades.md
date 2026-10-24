@@ -33,3 +33,5 @@ proyecto: kaipetpoint
 | 2026-10-04 | Sistema de dialogos modales CDK (formularios + confirmaciones) | `fb39a53` 28/28 |
 | 2026-10-04 | Boton X de cierre estandar en todos los dialogos | `e41c5f2` |
 | 2026-10-04 | Iconos de alerta en dialogos (triangulo rojo peligroso / info azul neutro) | `ae3b0cc` 28/28 |
+| 2026-10-24 | Stack Docker VPS-ready: Dockerfiles + compose (pg/backend/SSR/caddy) + Caddyfile; smoke end-to-end OK (login 200 + seed) | `14a6de8` en `main` |
+| 2026-10-24 | Rama `refactor/deuda-tecnica-pos` (v0.7.0) respaldada a origin (estaba 3 commits sin pushear) | `741970d` |
