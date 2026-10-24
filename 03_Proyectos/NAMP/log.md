@@ -43,3 +43,11 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 ## 2026-10-24 — Carpeta local renombrada
 
 - **HECHO** — `C:\Users\Niko\Desktop\Desarrollo\nye-ingenieria` → `namp-ingenieria`. El intento del 19-10 fallaba por procesos node huérfanos del `ng serve` y archivos abiertos en el IDE; hoy sin procesos activos el rename pasó limpio. Git, remote (`namp-ingenieria`) y reglas `.devin/rules/namp-rules.md` intactos. Local y remoto ahora usan el mismo nombre.
+
+## 2026-10-24 — Deploy stack estático (Docker + nginx)
+
+- **HECHO** — `namp.cl` ya resuelve al VPS (`200.141.25.56`) y responde 404 vía Traefik — DNS Cloudflare propagado; ítem 1 del plan de infra superado. Google ya indexa el dominio.
+- **HECHO** — Artefactos deploy (`29963e9` en `main`): `Dockerfile` (node build → `nginx:alpine` sirviendo `dist/nampingenieria/browser`), `nginx.conf` (cache 1y assets, fallback SPA, redirect www→namp.cl), `docker-compose.yml` (servicio `web` puerto 80, dominios vía Dokploy). NAMP es 100% prerenderizado → estático, sin Node en prod.
+- **VERIFICADO** — Imagen `namp-web` construida local: `/`, `/portfolio`, `/servicios`, `/contacto` y rutas inexistentes → 200 (fallback SPA).
+- **DECISIÓN** — Deploy por Dokploy (Traefik ya gestiona HTTPS), no por compose manual.
+- **PENDIENTE** — Crear servicio compose `namp-web` en Dokploy (repo `namp-ingenieria`, branch `main`), dominios `namp.cl` + `www.namp.cl` → `web:80`, deploy. Este PC no tiene llave SSH del VPS (vive en el note TUF): se generó `id_ed25519` local pendiente de autorizar en `authorized_keys`.
