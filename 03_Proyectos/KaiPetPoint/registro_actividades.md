@@ -33,5 +33,13 @@ proyecto: kaipetpoint
 | 2026-10-04 | Sistema de dialogos modales CDK (formularios + confirmaciones) | `fb39a53` 28/28 |
 | 2026-10-04 | Boton X de cierre estandar en todos los dialogos | `e41c5f2` |
 | 2026-10-04 | Iconos de alerta en dialogos (triangulo rojo peligroso / info azul neutro) | `ae3b0cc` 28/28 |
+| 2026-10-16 | Flujo DTE interno: V8 + EmisorDte simulado + cola reintentos + NC 61 | `420f11b` en `feat/boleta-sii` + smoke E2E |
+| 2026-10-16 | Bandeja de boletas `/admin/boletas` — no emitidas + reintento lote | `f8020bc` |
+| 2026-10-16 | Borrador persistente del POS (localStorage, rehidrata vs catálogo fresco) | `f79a709` |
+| 2026-10-16 | RUT del cliente: módulo 11, único por sucursal, buscable (V9) | `63dabf8` + smoke |
+| 2026-10-16 | Máscara de RUT en vivo: filtra, acota, verifica DV | `52215e4` 50/50 |
+| 2026-10-16 | Seed de clientes con RUTs válidos + fiado demo + reparación legacy | `a9f7f70`, `9cb2ced` |
+| 2026-10-16 | Cobro combinado venta+abono fiado (V10, ticket transparenta deudor) | `2499fe2` 42/42 + venta 73 en vivo |
+| 2026-10-16 | Locale es-CL — signo $ a la izquierda en toda la app | `ab195f5` |
 | 2026-10-24 | Stack Docker VPS-ready: Dockerfiles + compose (pg/backend/SSR/caddy) + Caddyfile; smoke end-to-end OK (login 200 + seed) | `14a6de8` en `main` |
 | 2026-10-24 | Rama `refactor/deuda-tecnica-pos` (v0.7.0) respaldada a origin (estaba 3 commits sin pushear) | `741970d` |
