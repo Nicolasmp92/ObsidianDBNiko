@@ -74,3 +74,11 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 ## 2026-10-25 — CTA visible en destacados del home
 
 - **HECHO** — Tarjetas "Proyectos destacados": eran clickeables (stretched-link) pero sin señal consistente — CABID no mostraba cue alguna. Ahora todas llevan "Ver proyecto ↗" (externo) / "Ver detalle →" (sin link → `/portfolio`) en dorado bajo el nombre, estilo espejo de `portfolio__link`. Commit `b261a25` en `main`, verificado en prod (2↗ + 1→). Capturas de verificación: `Desarrollo/.shots/out/namp-home-*.png` (script `capture-namp-home.js`, sirve para capturar namp.cl o localhost).
+
+## 2026-10-25 (2) — Formulario de contacto a correo (FormSubmit)
+
+- **HECHO** — Descubierto: `namp.cl` no tiene MX ni SPF → `contacto@namp.cl` no puede recibir correos (rebota). VPS Hostinger KVM **no incluye email** (el "Free Business Email" es solo de planes web/cloud hosting; para VPS es add-on pago ~$1.59/mes).
+- **DECISIÓN** — Combo elegido: **Cloudflare Email Routing** (gratis, forward `contacto@namp.cl` → correo real de Niko; CF agrega MX/SPF solo) + **FormSubmit** (gratis, sin cuenta, endpoint AJAX + honeypot). Rechazadas: Zoho (más setup), Hostinger Email (pago), mailer propio en VPS (puerto 25/PTR/spam — alto mantenimiento).
+- **HECHO** — Formulario reimplementado (`3e3f6f3` + fix `911b826` en `main`): POST fetch a `formsubmit.co/ajax/contacto@namp.cl` con `_subject` (nombre), `_replyto` (email visitante), `_template: table`, `_captcha: false`, honeypot `_honey`; estados sending/sent/error con fallback a WhatsApp. Se valida `json.success === 'true'` (el endpoint devuelve 200 aun con `success:false`).
+- **VERIFICADO** — Endpoint responde correcto: sin `Referer` lo rechaza (el browser lo manda), con `Referer` pide activación ("Activate Form" link por email). La activación re-dispara sola en el próximo submit.
+- **PENDIENTE (Niko)** — 1) Activar Email Routing en Cloudflare → `contacto@namp.cl` → forward a su correo (verifica destino por email; CF agrega MX/SPF). 2) Enviar un mensaje de prueba en `namp.cl/contacto` → llega email de activación al correo real → click "Activate Form". 3) Listo: los submits siguientes llegan al inbox.
