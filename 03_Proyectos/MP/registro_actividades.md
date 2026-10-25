@@ -12,3 +12,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-05-22 | Propuesta tipo catálogo para Arriendo de Equipos | checkbox ✅ en `MP - Requerimientos` |
 | 2026-10-16 | Auditoría de seguridad/performance/SEO del repo MP | entrada `## 2026-10-16` en `log.md` |
 | 2026-10-16 | Credenciales SMTP/reCAPTCHA extraídas de `mailer.php` a `mailer.config.php` local (gitignored); deploy las inyecta desde GitHub secrets; `.htaccess` protege el config | commit en `MP` rama `main` (`.gitignore`, `angular.json`, `src/mailer.php`, `src/mailer.config.example.php`, `public/.htaccess`, `.github/workflows/deploy.yml`) |
+| 2026-10-25 | Crédito "Creado por NAMP Ingeniería" en footer → namp.cl (commit `e8c9dba`); descubierto: deploys GH Actions rotos desde 17-oct, prod corre build del 15-ago | commit en `MP` rama `main` — NO desplegado |

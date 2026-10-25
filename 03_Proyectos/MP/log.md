@@ -69,3 +69,9 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 
 - **DECISIÓN** — El cliente **no quiere WhatsApp como canal del sitio** (ya lo había rechazado antes; el FAB agregado por sugerencia fue revertido). Registrado también en `MP - Requerimientos` sección "Restricciones del cliente" para no volver a proponerlo. Canales válidos: formulario/mailer, teléfonos, Instagram.
 - **HECHO** — WhatsApp FAB eliminado de `app.html`; queda solo el FAB de Instagram (bottom-left).
+
+## 2026-10-25 — Crédito "Creado por NAMP" + deploys rotos descubiertos
+
+- **HECHO** — Footer: línea "Creado por NAMP Ingeniería" → `https://namp.cl` (target blank). Commit `e8c9dba` en `main`.
+- **RIESGO CRÍTICO** — **Todos los deploys a cPanel fallan desde el 17-oct**: GitHub Actions en rojo (~1 min cada run). Último deploy OK: **15-ago** — prod en `ingenieriamp.cl` corre build viejo (`Last-Modified` lo confirma): los commits de oct (seguridad SMTP/recaptcha, perf hero WebP, revert WhatsApp FAB, prerender por servicio) **nunca se publicaron**. Hipótesis principal: el step "Generar mailer.config.php" aborta si faltan los secrets `SMTP_PASSWORD`/`RECAPTCHA_SECRET` — guard introducido justo en los commits de seguridad del 17-oct que nunca despegaron.
+- **PENDIENTE (Niko)** — Revisar run fallido en Actions (step rojo + error) y/o verificar que existan los secrets `SMTP_PASSWORD`, `RECAPTCHA_SECRET`, `FTP_*` en Settings → Secrets. Hasta que se arregle, nada de lo pusheado a `main` llega a prod.
