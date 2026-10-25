@@ -16,7 +16,7 @@
 ## Estado del servidor (hecho ✅)
 
 - SSH solo por llave (password deshabilitado). Usuario `niko` con sudo + grupo docker.
-- Alias local `ssh vps` en `~/.ssh/config` del compu dev (cris-dev). Otros equipos: agregar su llave pública a `~/.ssh/authorized_keys` del server.
+- Alias local `ssh vps` en `~/.ssh/config` del compu dev (cris-dev) **y del PC de casa** (`niko-desktop-devin`, agregada 2026-10-24 vía consola web Hostinger). Otros equipos: agregar su llave pública a `~/.ssh/authorized_keys` del server. Ojo: generar llaves con passphrase vacía real (`-N ""`), no literal `""`.
 - Firewall UFW: solo puertos 22 / 80 / 443 / 3000.
 - Docker 29.9.x instalado.
 - **Dokploy** corriendo → panel: http://200.141.25.56:3000 (trae Traefik → HTTPS automático Let's Encrypt).
@@ -31,7 +31,7 @@
 4. ~~**Deploy**~~ ✅ 2026-10-24 — ambos servicios en producción: `namp.cl` 200 y `kpp.namp.cl` 302→`/login` con Let's Encrypt. Fixes aplicados en `main`: caddy bajo profile `standalone` (`c2b3d88`), `allowedHosts` con wildcard `*.namp.cl` (`3e27718` — la sintaxis `.namp.cl` no funciona en Angular).
 5. Probar login admin, una venta POS, stock, boleta (con las credenciales seed reales).
 6. Configurar monitor en Uptime Kuma para `https://namp.cl` y `https://kpp.namp.cl`.
-7. Cron `pg_dump` diario de Postgres + retención (backups fuera del VPS lo antes posible).
+7. ~~Cron `pg_dump` diario de Postgres + retención~~ ✅ 2026-10-24 — `~/backups/backup-kpp.sh` en cron niko `15 4 * * *`, dumps `-Fc` en `~/backups/kpp/`, retención 14 días. **Pendiente**: copia fuera del VPS (sync a otro equipo/storage).
 8. Subdominios previstos (registros A → 200.141.25.56 ya creados en Cloudflare): `demo` (staging), `status` (Uptime Kuma). Ya desplegados: `namp.cl`/`www` y `kpp`.
 
 ## Notas

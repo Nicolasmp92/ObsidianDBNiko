@@ -33,8 +33,11 @@ del plan original (post-F3) por decisión del usuario.
 
 ## Catálogo sembrado
 
-ISO 9001:2015 · ISO 14001:2015 · ISO 45001:2018 · ISO 27001:2022 —
-~66 cláusulas clave del esquema HLS/Anexo SL en `seed/requisitos.json`.
+ISO 9001:2015 · ISO 14001:2015 · ISO 45001:2018 · ISO 27001:2022 ·
+**ISO 55001:2024** (activos) · **ISO 50001:2018** (energía) —
+~94 cláusulas clave del esquema HLS/Anexo SL en `seed/requisitos.json`.
+55001 y 50001 entran por el **foco inicial en minería** (activos de faena
+y grandes consumidores eléctricos, Ley 21.305).
 
 ## Decisiones estructurales vigentes
 
@@ -43,7 +46,8 @@ ISO 9001:2015 · ISO 14001:2015 · ISO 45001:2018 · ISO 27001:2022 —
 - Estados: `pendiente` → `en_proceso` → `cumple` + `no_conforme` (abierto = todo lo que no es `cumple`).
 - `requisitos.orden` numérico: el orden alfabético de `clausula` pondría 4.10 antes que 4.2.
 - `/api/usuarios` expone id+nombre de activos para asignar responsables; administración sigue en `/api/admin/usuarios`.
-- Colaboración plena: todo autenticado actualiza cualquier fila y comenta (igual que TaskFlow — sin permisos por fila en el MVP).
+- **Dueño de certificación** (`normas.responsable_id`, V2): cada norma tiene un responsable asignado por admin desde `/responsabilidades` — quien responde por cargar evidencia y mantener la matriz al día. Panel con avance por estado y vencidos por norma.
+- Colaboración plena: todo autenticado actualiza cualquier fila y comenta (igual que TaskFlow — sin permisos por fila en el MVP; el dueño de norma es informativo por ahora).
 - Campana del topbar alimentada por `/api/cumplimientos/resumen` (mis abiertos, vencidos primero).
 - Puertos: API `8086`, dev `4206`, SSR `4006`. BD `isomanager`/`isomanager_user` en PostgreSQL (pendiente crear — mientras corre en H2).
 

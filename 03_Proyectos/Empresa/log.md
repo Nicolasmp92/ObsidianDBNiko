@@ -15,3 +15,9 @@ Bitácora append-only. Tipos: HECHO / DECISIÓN / HIPÓTESIS / RIESGO.
 - **HECHO** — Dokploy: GitHub App `Dokploy-2026-10-23-i5n9be` instalada solo sobre `kaipetpoint`; servicio compose `kpp` creado (repo `kaipetpoint`, branch `feat/deploy`, `./docker-compose.yml`). Uptime Kuma desplegado y respondiendo en sslip.io. Pendientes de cierre en [[Estado - Infraestructura NAMP]].
 - **RIESGO** — Secretos de producción KPP (DB pass, JWT, seed) pegados en chat/Dokploy: si el historial se expone, rotar antes de datos reales de clientes.
 - **HECHO** — ISO Manager v0.1.0 desarrollado (2026-10-25): matriz de cumplimiento ISO 9001/14001/45001/27001 operativa sobre SCK — estado/responsable/fecha/evidencia por cláusula, comentarios, campana con vencidos. Verificado E2E y publicado en `github.com/Nicolasmp92/isomanager` (privado). Proyecto propio en [[MOC - ISO Manager]]. Se adelantó respecto del plan "post-F3" por decisión del usuario.
+
+## 2026-10-24 — SSH PC casa + backups KPP
+
+- **HECHO** — PC de casa habilitado para `ssh vps` (llave `niko-desktop-devin` autorizada vía consola web Hostinger). Nota: la llave se generó con passphrase literal `""` por quoting de bash → `ssh-keygen -p` la dejó vacía.
+- **HECHO** — Backup automático KPP: cron `15 4 * * *` → `~/backups/backup-kpp.sh` → `pg_dump -Fc` del contenedor `kpp-cytxcx-postgres-1` a `~/backups/kpp/`, retención 14 días. Dump de prueba 64KB OK.
+- **PENDIENTE** — Copiar backups fuera del VPS (sync periódico a PC/storage externo).

@@ -26,3 +26,18 @@ El fit con el kit fue el esperado (roles, usuarios, alertas por vencimiento).
 **Siguiente.** Módulos del PMV en backlog: documentos controlados,
 auditorías + acciones correctivas, indicadores, capacitaciones,
 obligaciones legales.
+
+## 2026-10-25 — v0.2.0: panel de responsabilidades + foco minero
+
+**Hecho.** El usuario orientó el producto a procesos de la **minería**.
+Nuevo panel `/responsabilidades`: cada norma tiene un dueño de
+certificación (admin asigna, resto lee) — la persona que responde por
+cargar documentación/evidencia de esa norma. Vista con avance por estado
+y vencidos por norma.
+
+**Hecho.** Catálogo suma ISO 55001 (activos) e ISO 50001 (energía) —
+ambas muy exigidas en faenas. 6 normas, ~94 cláusulas.
+
+**Hecho.** Verificación completa + push `0b4a03f`. Próxima iteración:
+madurar el modelo con gente del rubro (qué significa "cargar
+documentación": ¿archivos adjuntos? ¿documentos controlados?).
