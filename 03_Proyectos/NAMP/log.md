@@ -70,3 +70,7 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 ## 2026-10-24 — Cierre del día (estado final)
 
 - **ESTADO** — `namp.cl` en producción (Dokploy, nginx estático, LE, autodeploy on push). `kpp.namp.cl` en producción (stack completo). Pendientes NAMP: datos de contacto reales en `/contacto` (tel +58 y Caracas son placeholders), agregar link de kpp.namp.cl a la tarjeta KPP del portfolio, y evaluar link/demo para CABID cuando apunte el DNS.
+
+## 2026-10-25 — CTA visible en destacados del home
+
+- **HECHO** — Tarjetas "Proyectos destacados": eran clickeables (stretched-link) pero sin señal consistente — CABID no mostraba cue alguna. Ahora todas llevan "Ver proyecto ↗" (externo) / "Ver detalle →" (sin link → `/portfolio`) en dorado bajo el nombre, estilo espejo de `portfolio__link`. Commit `b261a25` en `main`, verificado en prod (2↗ + 1→). Capturas de verificación: `Desarrollo/.shots/out/namp-home-*.png` (script `capture-namp-home.js`, sirve para capturar namp.cl o localhost).

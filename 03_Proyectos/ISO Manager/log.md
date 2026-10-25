@@ -41,3 +41,14 @@ ambas muy exigidas en faenas. 6 normas, ~94 cláusulas.
 **Hecho.** Verificación completa + push `0b4a03f`. Próxima iteración:
 madurar el modelo con gente del rubro (qué significa "cargar
 documentación": ¿archivos adjuntos? ¿documentos controlados?).
+
+## 2026-10-25 — Cierre de sesión · punto de retomada
+
+**Estado.** `main` = `0b4a03f` pusheado; v0.2.0 verificada; procesos dev
+apagados. Working tree limpio.
+
+**Retomar.** Levantar backend H2 (comando en `log.md` del repo o README)
++ `npm start`; la decisión abierta con el rubro: ¿el dueño de norma debe
+tener permiso exclusivo para cargar evidencia? ¿Evidencia = adjunto real
+(documento controlado) o referencia de texto? Backlog PMV: documentos
+controlados, auditorías, indicadores, capacitaciones, legales.
