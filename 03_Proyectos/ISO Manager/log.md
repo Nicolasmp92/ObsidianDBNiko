@@ -1,0 +1,28 @@
+# log.md — ISO Manager (vault)
+
+Bitácora de proyecto append-only. Detalle técnico completo en el `log.md`
+del repo.
+
+## 2026-10-25 — v0.1.0: matriz de cumplimiento operativa
+
+**Hecho.** Proyecto generado desde StarterCustomeKit `main` (git archive
++ rebrand, patrón TaskFlow). Dominio `items` del kit reemplazado por
+`cumplimientos`: normas ISO → requisitos → matriz de cumplimiento 1:1 con
+estado (pendiente/en_proceso/cumple/no_conforme), responsable, fecha
+objetivo, evidencia y comentarios append-only. Catálogo sembrado: ISO
+9001/14001/45001/27001, ~66 cláusulas.
+
+**Hecho.** Verificación completa: `mvn test` ✓, `npm test` 29/29 ✓,
+`ng lint` ✓, build SSR ✓, smoke E2E H2 ✓ (login, matriz, PUT, comentarios,
+validaciones 400/401, SSR redirect + proxy).
+
+**Decisión.** Se adelantó el desarrollo respecto del plan
+("post-F3, cuando KPP facture") — registrado como decisión del usuario.
+El fit con el kit fue el esperado (roles, usuarios, alertas por vencimiento).
+
+**Repo.** `github.com/Nicolasmp92/isomanager` (privado). Local:
+`Desarrollo/isomanager`, puertos 8086/4206/4006.
+
+**Siguiente.** Módulos del PMV en backlog: documentos controlados,
+auditorías + acciones correctivas, indicadores, capacitaciones,
+obligaciones legales.

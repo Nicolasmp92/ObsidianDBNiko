@@ -2,7 +2,7 @@
 tipo: proyecto
 proyecto: taskflow
 estado: activo
-actualizado: 2026-10-20
+actualizado: 2026-10-24
 tags: [tareas, kanban, colaborativo, angular, spring-boot]
 ---
 # ✅ MOC — TaskFlow

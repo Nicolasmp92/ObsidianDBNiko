@@ -8,7 +8,9 @@ tags: [empresa, ideas, backlog-productos]
 
 Ideas de productos futuros. Regla: anotar y soltar — nada entra al kanban de [[Desarrollo]] hasta que tenga cliente potencial o fase propia en el roadmap de [[MOC - Empresa]].
 
-## 💡 ISO Manager (idea, 2026-10-22)
+## 💡 ISO Manager (idea, 2026-10-22 → ✅ proyecto, 2026-10-25)
+
+**Estado: en desarrollo** — v0.1.0 con matriz de cumplimiento operativa, ver [[MOC - ISO Manager]] y `github.com/Nicolasmp92/isomanager` (privado).
 
 Sistema de gestión de cumplimiento normativo para empresas certificadas o en proceso de certificación ISO (9001 calidad, 14001 medioambiente, 45001 SST, 27001 seguridad de la información).
 

@@ -119,3 +119,10 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 - **HECHO** — Rama `refactor/deuda-tecnica-pos` (v0.7.0: ofertas, despachos, cajón, retiro SII) estaba 3 commits sin pushear → respaldada a origin.
 - **DECISIÓN** — Hosting objetivo: VPS ~US$5 (Hetzner/Contabo) con este compose + Caddy; alternativa $0: Oracle Always Free. Descartados free-tier por capas (cold starts matan la demo) y managed por capas (~US$20+, overkill).
 - **RIESGO** — El `.env` de producción necesita secrets reales (JWT, DB, seed). Para demo pública falta: dominio, banner/etiqueta de demo, datos de ejemplo y reset periódico de la BD.
+
+## 2026-10-24 (pm) — kpp.namp.cl en producción (Dokploy)
+
+- **HECHO** — `https://kpp.namp.cl` 302 → `/login` con Let's Encrypt. Dokploy compose desde `main`: postgres + backend + frontend SSR (caddy quedó bajo `profiles: [standalone]` — Traefik ya ocupa 80/443 y enruta directo a `frontend:4004`). Env vars reales en Dokploy (DB, JWT, seed); login test → 401 correcto (seed clave propia, no la dev).
+- **HECHO** — `allowedHosts` anti-SSRF del SSR de Angular exigía fix doble (`4e66bb9` + `3e27718`): agregar `namp.cl` y wildcard `*.namp.cl` — la sintaxis con punto (`.namp.cl`) **no** funciona; el matcher usa `startsWith("*.")` + `endsWith`. Verificado con `Host: kpp.namp.cl` local → 302.
+- **NOTA** — El deploy vía webhook On Push gatilla pero no siempre recompila la imagen (24s); si un push no toma efecto usar **Rebuild** en Dokploy.
+- **ESTADO** — namp.cl (sitio empresa, estático nginx) y kpp.namp.cl (POS, full stack) ambos en producción en el VPS Hostinger Brasil.

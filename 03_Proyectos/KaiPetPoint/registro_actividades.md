@@ -43,3 +43,4 @@ proyecto: kaipetpoint
 | 2026-10-16 | Locale es-CL — signo $ a la izquierda en toda la app | `ab195f5` |
 | 2026-10-24 | Stack Docker VPS-ready: Dockerfiles + compose (pg/backend/SSR/caddy) + Caddyfile; smoke end-to-end OK (login 200 + seed) | `14a6de8` en `main` |
 | 2026-10-24 | Rama `refactor/deuda-tecnica-pos` (v0.7.0) respaldada a origin (estaba 3 commits sin pushear) | `741970d` |
+| 2026-10-24 | kpp.namp.cl en producción (Dokploy compose main, Traefik + LE); fix allowedHosts `*.namp.cl` | `3e27718` + `4e66bb9` |
