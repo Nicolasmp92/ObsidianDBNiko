@@ -51,3 +51,9 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **VERIFICADO** — Imagen `namp-web` construida local: `/`, `/portfolio`, `/servicios`, `/contacto` y rutas inexistentes → 200 (fallback SPA).
 - **DECISIÓN** — Deploy por Dokploy (Traefik ya gestiona HTTPS), no por compose manual.
 - **PENDIENTE** — Crear servicio compose `namp-web` en Dokploy (repo `namp-ingenieria`, branch `main`), dominios `namp.cl` + `www.namp.cl` → `web:80`, deploy. Este PC no tiene llave SSH del VPS (vive en el note TUF): se generó `id_ed25519` local pendiente de autorizar en `authorized_keys`.
+
+## 2026-10-24 (pm) — namp.cl en producción
+
+- **HECHO** — `https://namp.cl` responde 200 con certificado Let's Encrypt (Traefik/Dokploy); `www.namp.cl` → 301 → apex. Deploy vía Dokploy: proyecto `namp`, servicio compose `web` (repo `namp-ingenieria`, branch `main`, `./docker-compose.yml`), Trigger **On Push** (cada push a main redespliega solo), dominios `namp.cl`+`www.namp.cl` → `web:80` con HTTPS.
+- **HECHO** — GitHub App `Dokploy-2026-10-23-i5n9be` ampliada a `namp-ingenieria` para acceso al repo.
+- **NOTA** — En Dokploy, los cambios de Domains requieren redeploy manual para que Traefik cree rutas/certs (el banner azul lo advierte); el primer deploy tardó ~2 min (npm ci + ng build) y los certs salieron a los ~60s del deploy.

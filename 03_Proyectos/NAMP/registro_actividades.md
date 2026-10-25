@@ -14,3 +14,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-20 | colegioangeles.cl y Tecnohoot comentados en PROJECTS (inactivos, pendiente remaster) | commit en `namp-ingenieria` rama `main` |
 | 2026-10-24 | Carpeta local `nye-ingenieria` → `namp-ingenieria` (nombre local = remoto) | `ls Desarrollo/` + `git remote -v` |
 | 2026-10-24 | Deploy stack: Dockerfile nginx + compose + nginx.conf; verificado local (rutas 200) | `29963e9` en `main` |
+| 2026-10-24 | namp.cl en producción: Dokploy compose + Traefik + LE; www→apex OK; autodeploy on push | `29963e9` + Dokploy |
