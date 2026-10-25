@@ -25,14 +25,14 @@
 
 ## Pendiente 🔲 (en este orden)
 
-1. **Esperar propagación DNS**: `namp.cl` está en Cloudflare "Pending" hasta que NIC publique los nuevos NS (zona .cl se actualiza cada ~30 min). Verificar: `dig NS namp.cl` → deben aparecer `*.ns.cloudflare.com`. Cuando Cloudflare marque "Active", seguir.
-2. **En Dokploy → servicio `kpp` → pestaña Environment**: pegar las env vars de producción (DB password, JWT secret, seed clave/correo, JWT horas, COOKIE_SECURE=true). Los valores están guardados en las env vars del servicio/secrets — NO commitear al repo ni al vault.
-3. **Pestaña Domains**: dominio `kpp.namp.cl` → servicio `frontend`, puerto contenedor `4004`, HTTPS activado.
-4. **Deploy** y revisar logs (build Maven + Angular tarda varios min).
-5. Probar login admin, una venta POS, stock, boleta.
-6. Configurar monitor en Uptime Kuma para `https://kpp.namp.cl`.
+1. ~~**Esperar propagación DNS**~~ ✅ 2026-10-24 — `namp.cl` resuelve al VPS y responde vía Traefik.
+2. ~~**En Dokploy → servicio `kpp` → pestaña Environment**~~ ✅ 2026-10-24 — vars `KAIPETPOINT_*` configuradas (DB, JWT, seed, COOKIE_SECURE=true).
+3. ~~**Pestaña Domains**~~ ✅ 2026-10-24 — `kpp.namp.cl` → `frontend:4004` HTTPS. Además `namp.cl`+`www.namp.cl` → servicio `web` (proyecto `namp`, sitio estático nginx).
+4. ~~**Deploy**~~ ✅ 2026-10-24 — ambos servicios en producción: `namp.cl` 200 y `kpp.namp.cl` 302→`/login` con Let's Encrypt. Fixes aplicados en `main`: caddy bajo profile `standalone` (`c2b3d88`), `allowedHosts` con wildcard `*.namp.cl` (`3e27718` — la sintaxis `.namp.cl` no funciona en Angular).
+5. Probar login admin, una venta POS, stock, boleta (con las credenciales seed reales).
+6. Configurar monitor en Uptime Kuma para `https://namp.cl` y `https://kpp.namp.cl`.
 7. Cron `pg_dump` diario de Postgres + retención (backups fuera del VPS lo antes posible).
-8. Subdominios previstos (registros A → 200.141.25.56 ya creados en Cloudflare): `namp.cl`/`www` (web empresa), `kpp` (POS), `demo` (staging), `status` (Uptime Kuma).
+8. Subdominios previstos (registros A → 200.141.25.56 ya creados en Cloudflare): `demo` (staging), `status` (Uptime Kuma). Ya desplegados: `namp.cl`/`www` y `kpp`.
 
 ## Notas
 
