@@ -82,3 +82,7 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **HECHO** — Formulario reimplementado (`3e3f6f3` + fix `911b826` en `main`): POST fetch a `formsubmit.co/ajax/contacto@namp.cl` con `_subject` (nombre), `_replyto` (email visitante), `_template: table`, `_captcha: false`, honeypot `_honey`; estados sending/sent/error con fallback a WhatsApp. Se valida `json.success === 'true'` (el endpoint devuelve 200 aun con `success:false`).
 - **VERIFICADO** — Endpoint responde correcto: sin `Referer` lo rechaza (el browser lo manda), con `Referer` pide activación ("Activate Form" link por email). La activación re-dispara sola en el próximo submit.
 - **PENDIENTE (Niko)** — 1) Activar Email Routing en Cloudflare → `contacto@namp.cl` → forward a su correo (verifica destino por email; CF agrega MX/SPF). 2) Enviar un mensaje de prueba en `namp.cl/contacto` → llega email de activación al correo real → click "Activate Form". 3) Listo: los submits siguientes llegan al inbox.
+
+## 2026-10-25 (3) — Contacto: selector de canal correo/WhatsApp
+
+- **HECHO** — Formulario con selector de canal (pills estilo filtros de portafolio): "Por correo" → FormSubmit (nombre/email/mensaje), "Por WhatsApp" → `wa.me` con mensaje pre-armado (nombre/mensaje). Signal `channel` en el componente; tabs con `role="tablist"`. Fix colateral: `.contact__info-link` → `display:block` (el label quedaba pegado al valor al reemplazar `<p>` por `<a>`). Commit `034caac` en `main`. Verificado con capturas puppeteer (`capture-namp-contacto.js`, acepta URL base por argv).
