@@ -66,3 +66,7 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **HECHO** — Tarjetas "Proyectos destacados" del home clickeables: nombre → link externo del proyecto (o `/portfolio` si no tiene), stretched-link en CSS. KPP: `link` GitHub → `https://kpp.namp.cl/` (ya en producción).
 - **DECISIÓN** — Flujo de trabajo: ramas `feat/*` → merge a `main` (Dokploy autodespliega on push). Trabajo desde Devin Desktop con preview local en `ng serve`.
 - **PENDIENTE** — CABID: agregar `link` en `portfolio.data.ts` cuando `cabid.cl` apunte al server nuevo (semanas próximas). Actualizar `sitemap.xml` al agregar rutas nuevas.
+
+## 2026-10-24 — Cierre del día (estado final)
+
+- **ESTADO** — `namp.cl` en producción (Dokploy, nginx estático, LE, autodeploy on push). `kpp.namp.cl` en producción (stack completo). Pendientes NAMP: datos de contacto reales en `/contacto` (tel +58 y Caracas son placeholders), agregar link de kpp.namp.cl a la tarjeta KPP del portfolio, y evaluar link/demo para CABID cuando apunte el DNS.
