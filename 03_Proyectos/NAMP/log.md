@@ -57,3 +57,12 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **HECHO** — `https://namp.cl` responde 200 con certificado Let's Encrypt (Traefik/Dokploy); `www.namp.cl` → 301 → apex. Deploy vía Dokploy: proyecto `namp`, servicio compose `web` (repo `namp-ingenieria`, branch `main`, `./docker-compose.yml`), Trigger **On Push** (cada push a main redespliega solo), dominios `namp.cl`+`www.namp.cl` → `web:80` con HTTPS.
 - **HECHO** — GitHub App `Dokploy-2026-10-23-i5n9be` ampliada a `namp-ingenieria` para acceso al repo.
 - **NOTA** — En Dokploy, los cambios de Domains requieren redeploy manual para que Traefik cree rutas/certs (el banner azul lo advierte); el primer deploy tardó ~2 min (npm ci + ng build) y los certs salieron a los ~60s del deploy.
+
+## 2026-10-24 (noche) — SEO, footer y contacto real
+
+- **HECHO** — SEO base (merge `efc5f72` en `main`, desplegado): `robots.txt`, `sitemap.xml` (4 rutas), meta description + Open Graph + Twitter card en `index.html`, `og-cover.png` de marca (1200×630, desde `og-cover.svg` con sharp-cli), `theme-color`, canonical por ruta. Servicio `src/app/shared/services/seo.ts` setea title/description/og:url/canonical por página — queda horneado en el prerender (verificado en dist).
+- **HECHO** — Footer global (`d26a8e8`): `shared/layout/footer/` standalone — marca, nav, email, Santiago-Chile, copyright con año dinámico. Mobile-first con vars de tema.
+- **HECHO** — Contacto real (merge `1f6e78d`): `contacto@namp.cl`, WhatsApp `+56 9 6397 8090` (`wa.me/56963978090`), Santiago, Chile. El formulario abre WhatsApp con mensaje pre-armado (nombre/email/mensaje → `wa.me?text=`); botón "Enviar por WhatsApp". WhatsApp también agregado al footer.
+- **HECHO** — Tarjetas "Proyectos destacados" del home clickeables: nombre → link externo del proyecto (o `/portfolio` si no tiene), stretched-link en CSS. KPP: `link` GitHub → `https://kpp.namp.cl/` (ya en producción).
+- **DECISIÓN** — Flujo de trabajo: ramas `feat/*` → merge a `main` (Dokploy autodespliega on push). Trabajo desde Devin Desktop con preview local en `ng serve`.
+- **PENDIENTE** — CABID: agregar `link` en `portfolio.data.ts` cuando `cabid.cl` apunte al server nuevo (semanas próximas). Actualizar `sitemap.xml` al agregar rutas nuevas.

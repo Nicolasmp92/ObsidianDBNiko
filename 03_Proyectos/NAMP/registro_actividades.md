@@ -15,3 +15,6 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-24 | Carpeta local `nye-ingenieria` → `namp-ingenieria` (nombre local = remoto) | `ls Desarrollo/` + `git remote -v` |
 | 2026-10-24 | Deploy stack: Dockerfile nginx + compose + nginx.conf; verificado local (rutas 200) | `29963e9` en `main` |
 | 2026-10-24 | namp.cl en producción: Dokploy compose + Traefik + LE; www→apex OK; autodeploy on push | `29963e9` + Dokploy |
+| 2026-10-24 | SEO base: robots.txt, sitemap.xml, metas OG/Twitter, title+canonical por ruta (servicio Seo), og-cover.png de marca | merge `efc5f72` en `namp-ingenieria` rama `main` |
+| 2026-10-24 | Footer global standalone (nav, contacto@namp.cl, Santiago, copyright) | `d26a8e8` en `main` |
+| 2026-10-24 | Contacto real + formulario a WhatsApp; destacados clickeables; KPP link → kpp.namp.cl | merge `1f6e78d` en `namp-ingenieria` rama `main` |
