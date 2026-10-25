@@ -86,3 +86,10 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 ## 2026-10-25 (3) — Contacto: selector de canal correo/WhatsApp
 
 - **HECHO** — Formulario con selector de canal (pills estilo filtros de portafolio): "Por correo" → FormSubmit (nombre/email/mensaje), "Por WhatsApp" → `wa.me` con mensaje pre-armado (nombre/mensaje). Signal `channel` en el componente; tabs con `role="tablist"`. Fix colateral: `.contact__info-link` → `display:block` (el label quedaba pegado al valor al reemplazar `<p>` por `<a>`). Commit `034caac` en `main`. Verificado con capturas puppeteer (`capture-namp-contacto.js`, acepta URL base por argv).
+
+## 2026-10-25 (4) — Formulario de correo funcionando end-to-end
+
+- **HECHO** — Cloudflare Email Routing activo en `namp.cl`: MX `route*.mx.cloudflare.net` + DKIM/SPF agregados por CF; regla `contacto@namp.cl` → Gmail de Niko (destino verificado). `contacto@namp.cl` recibe correo real.
+- **HECHO** — FormSubmit activado (`success:true` verificado por POST al endpoint AJAX). **Gotcha**: cada submit a un form sin activar genera un NUEVO token que invalida los anteriores — con el delay del forwarding hay que abrir SOLO el email más reciente (los viejos dan "token not found").
+- **HECHO** — Selector de canal en `/contacto` (pills estilo portfolio): "Por correo" → FormSubmit (nombre/email/mensaje, honeypot, reply-to del visitante, template table); "Por WhatsApp" → wa.me con mensaje pre-armado. Deploy `034caac` + `911b826`.
+- **PENDIENTE leve** — `_captcha:false` + honeypot; si llega spam, activar captcha de FormSubmit o migrar a Web3Forms (key por email).
