@@ -132,3 +132,11 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 - **HECHO** — Reproducido y corregido (`0e03791`): toda recarga completa mandaba a /login con cookie válida. Causa: SSR llamaba `/api/*` a la URL pública `http://` (Angular ignora `x-forwarded-proto`); el 301→https hacía que el fetch de Node descartara la cookie en el cambio de origen → guard anónimo. Afectaba cambio escritorio/mobile, F5, `cambiarSucursal` (location.assign) y retorno de suspensión del teléfono.
 - **FIX** — `ssrCookieInterceptor` ahora apunta a `KAIPETPOINT_API_URL` (`http://backend:8084`, red interna) en SSR vía token `API_INTERNA` en `app.config.server.ts`. Test de regresión falla contra código viejo, pasa con el fix. Verificado en prod: SSR con cookie → 200; sin cookie → 302/login (guard sigue protegiendo).
 - **NOTA** — Si otras páginas también usan recarga completa (location.assign) ya quedan cubiertas: la sesión sobrevive a cualquier render SSR.
+
+## 2026-10-26 — Auditoría mobile 360px (headless CDP)
+
+- **HECHO** — Método: Chrome headless + CDP (`/tmp/shot.mjs`) mide `scrollWidth` y lista elementos desbordados contra viewport 360, con cookie JWT firmada en VPS. `body { overflow-x: clip }` hacía que el desborde se viera como corte sin scroll.
+- **CAUSA** — Grids con breakpoint-only (`grid lg:grid-cols-N`) dejan columna implícita `auto` → se dimensiona al max-content del ítem más ancho (dashboard: 7 barras × max-w-12 = 424px → página 423px; /ventas/nueva: 407px).
+- **FIX** — `0e03791` (sesión), `b306d06` (dashboard: minmax(0,1fr) + min-w-0 en tarjetas + botón Nueva venta full-width en móvil), `bade949` (misma guarda en nueva-venta, sucursales, usuarios, perfil, productos, cliente-detalle, movimientos).
+- **VERIFICADO en prod** — 360px: dashboard, /ventas/nueva, /ventas, /catalogo/productos, /login, /caja → `scrollWidth=360`, cero elementos desbordados.
+- **PENDIENTE** — Auditar rutas restantes (despachos, clientes, inventario, ofertas, sucursales, perfil) y revisar UX táctil/tiempos, no solo overflow.
