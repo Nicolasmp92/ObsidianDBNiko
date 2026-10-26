@@ -146,3 +146,7 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 - **HECHO** — `/ventas/nueva` con carrito lleno (4 items, incl. a granel vía diálogo kg) a 360px: `scrollWidth=360`, sin desbordes — el desborde de "venta actual" era el mismo grid ya corregido en `bade949`.
 - **FIX** — `0040eba`: a 320px el topbar desbordaba 15px (selector sucursal + 3 botones 44px). Toggle de tema oculto bajo `sm` (sigue en Perfil) + nombre de sucursal `max-w-24` en móvil. Verificado: 320 y 360 limpios en prod.
 - **PENDIENTE** — Si la usuaria reporta de nuevo desborde en venta actual, pedir: modelo/ancho del teléfono y qué estado (¿con items? ¿con oferta? ¿diálogo abierto?).
+
+## 2026-10-26 — Topbar sticky
+
+- **HECHO** — `bcc278e` + `41e4e08`: topbar sticky para que el menú quede accesible al scrollear. Detalle fino: el sticky debía ir en el **host** `app-topbar` (`host.class`), no en el `<header>` interno — un sticky solo se mueve dentro de su padre, y el host medía lo mismo que la barra. z-30 < backdrop drawer z-40. Verificado en prod: scrollY 1264 → barra en top 0.
