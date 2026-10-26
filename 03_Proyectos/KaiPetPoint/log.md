@@ -150,3 +150,9 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 ## 2026-10-26 — Topbar sticky
 
 - **HECHO** — `bcc278e` + `41e4e08`: topbar sticky para que el menú quede accesible al scrollear. Detalle fino: el sticky debía ir en el **host** `app-topbar` (`host.class`), no en el `<header>` interno — un sticky solo se mueve dentro de su padre, y el host medía lo mismo que la barra. z-30 < backdrop drawer z-40. Verificado en prod: scrollY 1264 → barra en top 0.
+
+## 2026-10-26 — Eliminar sucursal como root
+- HECHO: el panel root no tenia forma de eliminar sucursales (faltaba endpoint DELETE y boton; no era bug de permisos). Se agrego DELETE /api/root/sucursales/{id} + boton Eliminar con dialogo de confirmacion peligrosa (f4fbaf6).
+- DECISIÓN: borrado fisico solo si la sucursal NO tiene historial (ventas, movimientos, despachos, caja, aperturas, clientes, abonos) → con historial responde 409 y se sugiere desactivarla. Stock/ofertas/zonas se borran explicito; membresias caen por cascade.
+- HECHO: verificado en prod con JWT firmado en VPS — sucursal vacia se elimina (204), Casa matriz → 409 con detalle de bloqueos, 404 inexistente, 401 sin token. Dos errores encontrados en verificacion: queries a tablas DTE ya eliminadas por V15 (ffa9226) y stock_sucursal sin cascade (bc00d67).
+- PENDIENTE: si la usuaria quiere eliminar una sucursal con ventas (ej. Patitas), no se podra — solo desactivarla. Evaluar si hace falta archivar/ocultar sucursales inactivas en selectores.
