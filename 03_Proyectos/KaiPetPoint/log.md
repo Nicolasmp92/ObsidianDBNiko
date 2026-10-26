@@ -126,3 +126,9 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 - **HECHO** — `allowedHosts` anti-SSRF del SSR de Angular exigía fix doble (`4e66bb9` + `3e27718`): agregar `namp.cl` y wildcard `*.namp.cl` — la sintaxis con punto (`.namp.cl`) **no** funciona; el matcher usa `startsWith("*.")` + `endsWith`. Verificado con `Host: kpp.namp.cl` local → 302.
 - **NOTA** — El deploy vía webhook On Push gatilla pero no siempre recompila la imagen (24s); si un push no toma efecto usar **Rebuild** en Dokploy.
 - **ESTADO** — namp.cl (sitio empresa, estático nginx) y kpp.namp.cl (POS, full stack) ambos en producción en el VPS Hostinger Brasil.
+
+## 2026-10-26 — Bug: sesión perdida en recargas (producción)
+
+- **HECHO** — Reproducido y corregido (`0e03791`): toda recarga completa mandaba a /login con cookie válida. Causa: SSR llamaba `/api/*` a la URL pública `http://` (Angular ignora `x-forwarded-proto`); el 301→https hacía que el fetch de Node descartara la cookie en el cambio de origen → guard anónimo. Afectaba cambio escritorio/mobile, F5, `cambiarSucursal` (location.assign) y retorno de suspensión del teléfono.
+- **FIX** — `ssrCookieInterceptor` ahora apunta a `KAIPETPOINT_API_URL` (`http://backend:8084`, red interna) en SSR vía token `API_INTERNA` en `app.config.server.ts`. Test de regresión falla contra código viejo, pasa con el fix. Verificado en prod: SSR con cookie → 200; sin cookie → 302/login (guard sigue protegiendo).
+- **NOTA** — Si otras páginas también usan recarga completa (location.assign) ya quedan cubiertas: la sesión sobrevive a cualquier render SSR.
