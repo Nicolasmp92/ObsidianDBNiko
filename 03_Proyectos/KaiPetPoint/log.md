@@ -140,3 +140,9 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 - **FIX** — `0e03791` (sesión), `b306d06` (dashboard: minmax(0,1fr) + min-w-0 en tarjetas + botón Nueva venta full-width en móvil), `bade949` (misma guarda en nueva-venta, sucursales, usuarios, perfil, productos, cliente-detalle, movimientos).
 - **VERIFICADO en prod** — 360px: dashboard, /ventas/nueva, /ventas, /catalogo/productos, /login, /caja → `scrollWidth=360`, cero elementos desbordados.
 - **PENDIENTE** — Auditar rutas restantes (despachos, clientes, inventario, ofertas, sucursales, perfil) y revisar UX táctil/tiempos, no solo overflow.
+
+## 2026-10-26 — Topbar <=340px + carrito auditado
+
+- **HECHO** — `/ventas/nueva` con carrito lleno (4 items, incl. a granel vía diálogo kg) a 360px: `scrollWidth=360`, sin desbordes — el desborde de "venta actual" era el mismo grid ya corregido en `bade949`.
+- **FIX** — `0040eba`: a 320px el topbar desbordaba 15px (selector sucursal + 3 botones 44px). Toggle de tema oculto bajo `sm` (sigue en Perfil) + nombre de sucursal `max-w-24` en móvil. Verificado: 320 y 360 limpios en prod.
+- **PENDIENTE** — Si la usuaria reporta de nuevo desborde en venta actual, pedir: modelo/ancho del teléfono y qué estado (¿con items? ¿con oferta? ¿diálogo abierto?).
