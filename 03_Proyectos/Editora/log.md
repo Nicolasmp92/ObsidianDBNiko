@@ -110,3 +110,9 @@ hitos.
   (Monografía demo, Prueba Import). PDFs pesados comprimidos con gs
   /ebook (113→19 MB, 80→11 MB). Novedades actualizadas, commit
   `6f9e72d`. Detalle: `OMP/EDITORA/log.md` (noche 7).
+- **HECHO.** Lector de PDF propio en `/libros/:slug/leer` (ruta
+  inmersiva fuera del layout): pdf.js 6.4 con worker como asset,
+  backend con rangos HTTP (206) para descarga progresiva, ajuste
+  ancho/página + zoom, teclado y swipe, slider de posición, pantalla
+  completa, y retoma donde quedó (localStorage). «Leer en línea» es
+  ahora el CTA primario de la ficha. v0.3.0, commit `1415e42`.
