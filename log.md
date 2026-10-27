@@ -33,3 +33,4 @@ Bitácora maestra append-only. Resume lo relevante entre sesiones y apunta al lo
 - **HECHO** — Editora: nueva página «Nosotros» (/nosotros) con misión y visión literales de la propuesta editorial + cita de Rectoría. Commit `1e08a49` (2026-10-27).
 - **HECHO** — Editora: home rediseñado con hero institucional (navy, abanico de portadas, stats, lomo de colores UOH). Commit `d35da3e` (2026-10-27).
 - **HECHO** — Editora: filtros en /panel/libros (procedencia, estado, colección, falta PDF) según el modelo de dos productos. Commit `b654e95` (2026-10-27).
+- **HECHO** — Editora: portadas reales extraídas de los PDF (pdftoppm + API admin) para los 6 títulos Editorial; el hero y /editorial lucen carátulas reales (2026-10-27).

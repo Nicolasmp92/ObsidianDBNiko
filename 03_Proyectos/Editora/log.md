@@ -129,3 +129,6 @@ hitos.
 - **HECHO.** Panel de libros con filtros del modelo de negocio:
   procedencia Editorial/Biblioteca, estado, colección y «falta
   PDF». Commit `b654e95`.
+- **HECHO.** Portadas reales para los 6 títulos Editorial,
+  renderizadas del PDF (pdftoppm) y subidas por el API. El hero y
+  /editorial ya muestran carátulas reales.
