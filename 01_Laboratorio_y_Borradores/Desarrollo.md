@@ -13,6 +13,7 @@ kanban-plugin: board
 - [ ] [[GYM Paso 7 - Temporizador de Descanso Inteligente]]
 - [ ] [[KPP - Hosting y despliegue para pruebas]] ⏫ @{2026-10-09} #urgente
 - [ ] [[OPS - Clonar repos y documentar esquemas BD]]
+- [ ] [[EDT - Roadmap y fases]] — Editora: BD PostgreSQL, citation absoluta, panel de ajustes, fase 2 convocatorias
 - [ ] [[KPP - Clientes y cuenta corriente (fiado)]]
 - [ ] [[KPP - Lotes y fechas de vencimiento]]
 - [ ] [[KPP - Proveedores y órdenes de compra]]
