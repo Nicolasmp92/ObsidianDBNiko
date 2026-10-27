@@ -97,3 +97,7 @@ hitos.
   del kit mergeado; nuevo `POST /{id}/estado` (un PUT parcial borraba
   metadata — bug encontrado y cerrado con test). Commits `5f66d2e`,
   `013616d`, `9b73813`. Guía de arranque actualizada: BD ya aprovisionada.
+- **HECHO + DECISIÓN.** Editorial y Biblioteca separados como dos
+  productos: `/editorial` y `/biblioteca`, home por secciones, nav
+  nuevo; propuesta PMV §13 documenta el modelo por módulos. Commit
+  `215306d`.
