@@ -73,3 +73,10 @@ hitos.
   no cubre el alcance — nombre institucional pendiente.
 - **PENDIENTE:** crear BD `editora` (sudo) sigue abierto; contrato del
   repo .6 con Cristóbal; cuenta staff Koha con DTI.
+- **HECHO.** Adaptador Koha de lectura implementado y verificado contra
+  el Koha real de la UOH: preview + importar registro → borrador con
+  procedencia `biblioteca`, `koha_biblio_id` y `koha_url` (V3). Panel
+  «Importar de Koha» con preview; catálogo público filtra por origen;
+  ficha enlaza al OPAC. Tests 19/19 back + 28/28 front; E2E biblio 100.
+  Commit `473f264` (rama `feat/integracion-koha`). Escritura a Koha
+  pendiente de credencial staff.
