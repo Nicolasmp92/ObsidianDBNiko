@@ -1,6 +1,6 @@
 # Estado actual — Infraestructura NAMP
 
-> Snapshot del estado del VPS/servicios para retomar el trabajo desde cualquier equipo. Última actualización: 2026-10-24.
+> Snapshot del estado del VPS/servicios para retomar el trabajo desde cualquier equipo. Última actualización: 2026-10-27.
 
 ## Recursos contratados
 
@@ -22,6 +22,7 @@
 - **Dokploy** corriendo → panel: http://200.141.25.56:3000 (trae Traefik → HTTPS automático Let's Encrypt).
 - Uptime Kuma desplegado → http://kaipetpoint-uptimekuma-64bf96-200-141-25-56.sslip.io
 - Proyecto Dokploy `kaipetpoint`, servicio compose `kpp` creado apuntando a repo `Nicolasmp92/kaipetpoint`, branch `feat/deploy`, compose `./docker-compose.yml`. GitHub App `Dokploy-2026-10-23-i5n9be` instalada solo sobre ese repo.
+- **Sandbox demo KPP** (2026-10-27): stack manual en `/opt/kpp-demo` con `docker-compose.demo.yml` — postgres+backend+frontend propios, volumen separado, unido a `dokploy-network` con labels Traefik → `https://demo.namp.cl`. Endpoint público `/api/demo/config` entrega credenciales `demo@kaipetpoint.cl` / `KppDemo.2026`; `DemoGuard` bloquea mutaciones de cuenta; `DemoResetService` resetea la BD a las 04:00. Ojo al sincronizar código: **excluir `.env` del rsync** (el .env local de dev sobreescribió el del VPS una vez y expuso credenciales reales en el endpoint público).
 
 ## Pendiente 🔲 (en este orden)
 
@@ -32,7 +33,7 @@
 5. Probar login admin, una venta POS, stock, boleta (con las credenciales seed reales).
 6. Configurar monitor en Uptime Kuma para `https://namp.cl` y `https://kpp.namp.cl`.
 7. ~~Cron `pg_dump` diario de Postgres + retención~~ ✅ 2026-10-24 — `~/backups/backup-kpp.sh` en cron niko `15 4 * * *`, dumps `-Fc` en `~/backups/kpp/`, retención 14 días. **Pendiente**: copia fuera del VPS (sync a otro equipo/storage).
-8. Subdominios previstos (registros A → 200.141.25.56 ya creados en Cloudflare): `demo` (staging), `status` (Uptime Kuma). Ya desplegados: `namp.cl`/`www` y `kpp`.
+8. ~~Subdominios previstos~~ ✅ `demo.namp.cl` desplegado 2026-10-27 como sandbox público de ventas (ver arriba). `status` (Uptime Kuma) sigue pendiente.
 
 ## Notas
 
