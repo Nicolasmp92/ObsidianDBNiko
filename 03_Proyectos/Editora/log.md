@@ -126,3 +126,6 @@ hitos.
 - **HECHO.** Rediseño del home: hero navy UOH full-bleed con
   buscador glass, abanico de portadas, stats y lomo de colores de
   la paleta. Commit `d35da3e`.
+- **HECHO.** Panel de libros con filtros del modelo de negocio:
+  procedencia Editorial/Biblioteca, estado, colección y «falta
+  PDF». Commit `b654e95`.
