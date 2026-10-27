@@ -26,7 +26,7 @@ Guía única para arrancar cualquier proyecto en este equipo (o uno nuevo). Todo
 | Sconect | `sconect` (monorepo) | 8083 | — (Flutter) | — | `sconect` |
 | KaiPetPoint | `kaipetpoint` | 8084 | 4204 | 4004 | `kaipetpoint` / `kaipetpoint_user` |
 | BeanFlow | `BeanFlow` | 8085 | 4205 | — | `beanflow` / `beanflow_user` ⚠️ |
-| Editora | `editora` | 8086 | 4206 | 4006 | `editora` / `editora_user` ⚠️ |
+| Editora | `editora` | 8086 | 4206 | 4006 | `editora` / `editora_user` |
 | MP | — | — | — | — | sin repo aún |
 
 **Login unificado en todos**: `nikolasmp92@gmail.com` / `niko9214` (seed). En Sconect el rol es `titular`.
@@ -75,11 +75,7 @@ mvn spring-boot:run
 Para persistir: crear la BD con la secuencia estándar y arrancar sin las env vars.
 
 ### Editora (8086/4206/4006)
-Plataforma editorial: catálogo público y panel. Detalle en [[MOC - Editora]]. ⚠️ **La BD `editora`/`editora_user` aún no se aprovisiona**; mientras tanto corre en H2 en memoria:
-```bash
-cd backend && EDITORA_DB_URL='jdbc:h2:mem:editora;DB_CLOSE_DELAY=-1' EDITORA_DB_USER=sa EDITORA_DB_PASSWORD='' mvn spring-boot:run
-```
-Para persistir (una vez): `sudo -u postgres psql -c "CREATE USER editora_user PASSWORD 'editora_dev';"` y luego `sudo -u postgres psql -c "CREATE DATABASE editora OWNER editora_user;"`. Flyway crea el esquema al arrancar. Sitio `http://localhost:4206`, panel `/panel`. Los archivos subidos van a `backend/data/archivos/`.
+Plataforma editorial: catálogo público y panel. Detalle en [[MOC - Editora]]. BD `editora`/`editora_user` (clave dev `editora_dev`) aprovisionada — Flyway crea el esquema al arrancar. Fallback H2: `EDITORA_DB_URL=jdbc:h2:mem:editora;DB_CLOSE_DELAY=-1` (datos volátiles). Sitio `http://localhost:4206`, panel `/panel`. Los archivos subidos van a `backend/data/archivos/`.
 
 ### MP
 Sitio web corporativo en levantamiento de requerimientos — **no tiene repo todavía**. Estado y pendientes en [[MOC - MP]].

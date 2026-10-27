@@ -93,3 +93,7 @@ hitos.
 - **HECHO.** Importar de Koha acepta ISBN además de biblionumber
   (resolución vía OPAC público, sin credenciales). Commits `1e3f796`,
   `5077bea`. 20/20 back.
+- **HECHO.** Topbar sticky + fixes móviles portados de KPP; CI workflow
+  del kit mergeado; nuevo `POST /{id}/estado` (un PUT parcial borraba
+  metadata — bug encontrado y cerrado con test). Commits `5f66d2e`,
+  `013616d`, `9b73813`. Guía de arranque actualizada: BD ya aprovisionada.
