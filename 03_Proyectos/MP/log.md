@@ -75,3 +75,11 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **HECHO** — Footer: línea "Creado por NAMP Ingeniería" → `https://namp.cl` (target blank). Commit `e8c9dba` en `main`.
 - **RIESGO CRÍTICO** — **Todos los deploys a cPanel fallan desde el 17-oct**: GitHub Actions en rojo (~1 min cada run). Último deploy OK: **15-ago** — prod en `ingenieriamp.cl` corre build viejo (`Last-Modified` lo confirma): los commits de oct (seguridad SMTP/recaptcha, perf hero WebP, revert WhatsApp FAB, prerender por servicio) **nunca se publicaron**. Hipótesis principal: el step "Generar mailer.config.php" aborta si faltan los secrets `SMTP_PASSWORD`/`RECAPTCHA_SECRET` — guard introducido justo en los commits de seguridad del 17-oct que nunca despegaron.
 - **PENDIENTE (Niko)** — Revisar run fallido en Actions (step rojo + error) y/o verificar que existan los secrets `SMTP_PASSWORD`, `RECAPTCHA_SECRET`, `FTP_*` en Settings → Secrets. Hasta que se arregle, nada de lo pusheado a `main` llega a prod.
+
+## 2026-10-27 — Deploys desbloqueados: secrets creados
+
+- **HECHO** — Confirmado el diagnóstico del 25-oct: en Settings → Secrets solo existían `FTP_*`; faltaban `SMTP_PASSWORD` y `RECAPTCHA_SECRET` (el guard del workflow abortaba sin ellos desde el 17-oct). Niko los creó desde cPanel + reCAPTCHA admin.
+- **HECHO** — Deploy gatillado con commit vacío `3057e12`: workflow verde, FTP OK. `ingenieriamp.cl` ya sirve el build del 27-oct (Last-Modified confirma) — publicado TODO lo acumulado desde el 15-ago: crédito "Creado por NAMP" en footer, páginas por servicio con SEO, WebP, revert WhatsApp FAB, seguridad mailer.
+- **VERIFICADO** — `https://ingenieriamp.cl` contiene "Creado por NAMP" + link a namp.cl en el HTML servido.
+- **HECHO** — Repo clonado en este equipo (`~/Escritorio/Desarrollo/mp`); remote renombrado `mp` → `MP` en GitHub (origin actualizado).
+- **PENDIENTE leve** — GA4 sigue sin Measurement ID en index.html; revisar que el formulario de contacto envíe correo real con el mailer ya deployado.
