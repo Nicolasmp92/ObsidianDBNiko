@@ -120,3 +120,6 @@ hitos.
   Unidad de Bibliotecas (media kit) en navbar sticky con blur +
   sombra al scroll + barra de progreso navy; logo UOH blanco en el
   footer navy. `EDITORIAL` → «Editorial UOH». Commit `4c9a2cc`.
+- **HECHO.** Página `/nosotros` con misión y visión literales de la
+  Propuesta Editorial UOH 2026 (láminas 6–7) + cita de Rectoría.
+  Commit `1e08a49`.
