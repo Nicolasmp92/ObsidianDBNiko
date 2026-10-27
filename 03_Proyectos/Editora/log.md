@@ -90,3 +90,6 @@ hitos.
 - **HECHO.** Eliminados seeders mock: `DataSeeder` = solo bootstrap del
   admin; borrados `seed/*.json`. BD purgada y repoblada con 8 biblios
   reales de Koha (100, 102–107, 110). Commit `58ba8e1`.
+- **HECHO.** Importar de Koha acepta ISBN además de biblionumber
+  (resolución vía OPAC público, sin credenciales). Commits `1e3f796`,
+  `5077bea`. 20/20 back.
