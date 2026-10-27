@@ -34,3 +34,4 @@ Bitácora maestra append-only. Resume lo relevante entre sesiones y apunta al lo
 - **HECHO** — Editora: home rediseñado con hero institucional (navy, abanico de portadas, stats, lomo de colores UOH). Commit `d35da3e` (2026-10-27).
 - **HECHO** — Editora: filtros en /panel/libros (procedencia, estado, colección, falta PDF) según el modelo de dos productos. Commit `b654e95` (2026-10-27).
 - **HECHO** — Editora: portadas reales extraídas de los PDF (pdftoppm + API admin) para los 6 títulos Editorial; el hero y /editorial lucen carátulas reales (2026-10-27).
+- **HECHO** — Editora: botón «Modo lectura» (abajo-izquierda) con ajustes de accesibilidad centrados en leer: tamaño, papel sepia/contraste, tipografía, regla de lectura, enlaces, movimiento. Commit `60d61f4` (2026-10-27).

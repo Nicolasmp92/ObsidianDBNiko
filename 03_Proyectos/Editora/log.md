@@ -132,3 +132,7 @@ hitos.
 - **HECHO.** Portadas reales para los 6 títulos Editorial,
   renderizadas del PDF (pdftoppm) y subidas por el API. El hero y
   /editorial ya muestran carátulas reales.
+- **HECHO.** «Modo lectura»: FAB de accesibilidad en el sitio
+  público con tamaño de texto, papel sepia/contraste, tipografía
+  legible, regla de lectura, enlaces subrayados y movimiento
+  reducido. Commit `60d61f4`.
