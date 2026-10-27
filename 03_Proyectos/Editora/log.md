@@ -53,3 +53,23 @@ hitos.
 - **HIPÓTESIS (comercial).** El diferencial frente a OMP es una interfaz
   moderna lista para usar, con el modelo editorial nativo. Por validar con
   la segunda editorial interesada, no antes.
+
+## 2026-10-27 — Pivote institucional: el alcance crece a Editorial + Biblioteca
+
+- **DECISIÓN (institucional, en registro):** reunión con jefaturas
+  (Bernardo + Cristóbal). La plataforma ya no es solo Editorial:
+  también digitaliza y publica libros de Biblioteca; se interconecta
+  con Koha (metadata) y con el repo de libros (.6); el panel propio
+  guarda el proceso en ambos sistemas. Registro completo en el repo
+  UOH: `OMP/EDITORA/docs/decisiones/2026-10-27-*.md` y propuesta PMV en
+  `OMP/EDITORA/docs/propuestas/propuesta-plataforma-pmv.md`.
+- **HECHO:** Koha tiene API REST v1 viva (lectura pública de biblios en
+  MARCXML/marc-in-json) y OAI-PMH operativo — la integración de lectura
+  es real hoy; la escritura requiere cuenta staff (pendiente).
+- **HECHO:** Editora pasa de «producto editorial propio» a núcleo del
+  PMV institucional. OMP queda como fallback del concurso abr-2027.
+- **RIESGO:** sin acuerdo escrito de IP/licencia (donación + open
+  source AGPL propuesto) no se inicia fase 2. El nombre «Editora» ya
+  no cubre el alcance — nombre institucional pendiente.
+- **PENDIENTE:** crear BD `editora` (sudo) sigue abierto; contrato del
+  repo .6 con Cristóbal; cuenta staff Koha con DTI.
