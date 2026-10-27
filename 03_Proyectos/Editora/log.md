@@ -123,3 +123,6 @@ hitos.
 - **HECHO.** Página `/nosotros` con misión y visión literales de la
   Propuesta Editorial UOH 2026 (láminas 6–7) + cita de Rectoría.
   Commit `1e08a49`.
+- **HECHO.** Rediseño del home: hero navy UOH full-bleed con
+  buscador glass, abanico de portadas, stats y lomo de colores de
+  la paleta. Commit `d35da3e`.
