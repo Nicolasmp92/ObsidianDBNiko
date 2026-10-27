@@ -101,3 +101,12 @@ hitos.
   productos: `/editorial` y `/biblioteca`, home por secciones, nav
   nuevo; propuesta PMV §13 documenta el modelo por módulos. Commit
   `215306d`.
+- **HECHO.** Catálogo Editorial poblado con 6 libros reales UOH
+  recuperados del ensayo OMP (leída su BD postgres en `~/omp/pgdata`
+  :5433): 1814 Rancagua, los dos Booklets «¡Profe, yo también
+  existo!», Navegando San Vicente, Guía de escritura académica e
+  Iniciativa de aprendizaje autónomo — todos con PDF en la nueva
+  «Colección Ensayos UOH». Descartados los 2 submissions técnicos
+  (Monografía demo, Prueba Import). PDFs pesados comprimidos con gs
+  /ebook (113→19 MB, 80→11 MB). Novedades actualizadas, commit
+  `6f9e72d`. Detalle: `OMP/EDITORA/log.md` (noche 7).
