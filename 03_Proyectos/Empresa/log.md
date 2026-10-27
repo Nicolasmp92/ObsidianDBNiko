@@ -21,3 +21,8 @@ Bitácora append-only. Tipos: HECHO / DECISIÓN / HIPÓTESIS / RIESGO.
 - **HECHO** — PC de casa habilitado para `ssh vps` (llave `niko-desktop-devin` autorizada vía consola web Hostinger). Nota: la llave se generó con passphrase literal `""` por quoting de bash → `ssh-keygen -p` la dejó vacía.
 - **HECHO** — Backup automático KPP: cron `15 4 * * *` → `~/backups/backup-kpp.sh` → `pg_dump -Fc` del contenedor `kpp-cytxcx-postgres-1` a `~/backups/kpp/`, retención 14 días. Dump de prueba 64KB OK.
 - **PENDIENTE** — Copiar backups fuera del VPS (sync periódico a PC/storage externo).
+
+## 2026-10-27 — Notificaciones por correo (decisión)
+
+- **DECISIÓN** — KPP no notifica por correo (creación de usuario, cambio de clave): no hay infra de envío. Niko centralizará las cuentas de correo por su parte y a solicitud — no se contrata servicio transaccional (Resend/Brevo) hasta generar ingresos. Cuando toque: API transaccional gratis (Resend 3k/mes) + DNS en Cloudflare, eventos: usuario creado, clave cambiada, y recuperación de clave.
+- **PENDIENTE** — Responsivo de `namp.cl` reportado "malísimo" por Niko → auditar a 360px y corregir (sesión 2026-10-27).
