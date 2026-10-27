@@ -80,3 +80,7 @@ hitos.
   ficha enlaza al OPAC. Tests 19/19 back + 28/28 front; E2E biblio 100.
   Commit `473f264` (rama `feat/integracion-koha`). Escritura a Koha
   pendiente de credencial staff.
+- **HECHO.** BD `editora` creada — PostgreSQL persistente (Flyway V1–V3
+  limpio), se cierra el riesgo de datos volátiles en H2.
+- **HECHO.** «Ver sitio público» del sidebar al topbar (icono globo,
+  pestaña nueva). Commit `04b59a4`.
