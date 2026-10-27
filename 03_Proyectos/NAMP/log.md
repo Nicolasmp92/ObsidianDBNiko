@@ -100,3 +100,10 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **VERIFICADO** — Prod: `/`, `/portfolio`, `/servicios`, `/contacto` → `scrollWidth=360` sin elementos >361px; menú abre/cierra/navega OK (CDP); desktop ≥769px nav inline intacta.
 - **DECISIÓN** — Repo `namp-ingenieria` clonado a `~/Escritorio/Desarrollo/namp-ingenieria` en este equipo (antes solo existía en el otro PC como `nye-ingenieria`).
 - **PENDIENTE** — Notificaciones por correo de KPP diferidas hasta generar ingresos (ver [[../Empresa/log]] 2026-10-27).
+
+## 2026-10-27 — Capa visual "detalle premium"
+
+- **HECHO** — Rediseño con libertad total (`00076d3`, en prod): dos directivas nuevas en `shared/directives/` — `appReveal` (IntersectionObserver, fade-up al entrar al viewport, delay escalonado; la clase solo se agrega en browser → HTML prerenderizado nunca queda invisible/SEO seguro) y `appSpotlight` (halo dorado que sigue al cursor vía --mx/--my, solo puntero). Hero: entrada escalonada, resplandor aurora tras los anillos, cue de scroll → `#servicios`. Cinta marquee del stack tech. Header: barra de progreso de scroll (gradiente dorado→esmeralda). Thumbs de proyectos con zoom, CTA con borde en gradiente, selección dorada, scrollbar a tono, guion dorado en eyebrows. Todo respeta `prefers-reduced-motion`.
+- **VERIFICADO** — 4/4 tests, build OK, prerender de 4 rutas; auditoría CDP en producción: las 4 rutas × 320/360/768/1280px con `scrollWidth` exacto, cero desbordes. Script reusable: `/tmp/namp-audit/audit.mjs` (CDP: screenshot + overflow por ruta/ancho).
+- **DECISIÓN** — Budget `anyComponentStyle` sube de 4→8kB en `angular.json` (home.css quedó en 6.14kB; sigue siendo CSS artesanal mínimo).
+- **PENDIENTE** — Ideas de siguiente nivel si se quiere: hero con texto en gradiente animado, sección de métricas/proceso, modo light con la misma capa de motion (ya funciona por tokens, sin QA visual dedicado).
