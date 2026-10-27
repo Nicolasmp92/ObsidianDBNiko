@@ -87,3 +87,6 @@ hitos.
 - **HECHO.** Footer institucional UOH (adaptado del tema DSpace-CRIS)
   + tokens `uoh-*` con los hex del XMLUI de producción en `styles.css`.
   Commit `cf726e7`.
+- **HECHO.** Eliminados seeders mock: `DataSeeder` = solo bootstrap del
+  admin; borrados `seed/*.json`. BD purgada y repoblada con 8 biblios
+  reales de Koha (100, 102–107, 110). Commit `58ba8e1`.
