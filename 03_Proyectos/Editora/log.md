@@ -84,3 +84,6 @@ hitos.
   limpio), se cierra el riesgo de datos volátiles en H2.
 - **HECHO.** «Ver sitio público» del sidebar al topbar (icono globo,
   pestaña nueva). Commit `04b59a4`.
+- **HECHO.** Footer institucional UOH (adaptado del tema DSpace-CRIS)
+  + tokens `uoh-*` con los hex del XMLUI de producción en `styles.css`.
+  Commit `cf726e7`.
