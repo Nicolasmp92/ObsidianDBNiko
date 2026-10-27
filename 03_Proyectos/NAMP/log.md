@@ -93,3 +93,10 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **HECHO** — FormSubmit activado (`success:true` verificado por POST al endpoint AJAX). **Gotcha**: cada submit a un form sin activar genera un NUEVO token que invalida los anteriores — con el delay del forwarding hay que abrir SOLO el email más reciente (los viejos dan "token not found").
 - **HECHO** — Selector de canal en `/contacto` (pills estilo portfolio): "Por correo" → FormSubmit (nombre/email/mensaje, honeypot, reply-to del visitante, template table); "Por WhatsApp" → wa.me con mensaje pre-armado. Deploy `034caac` + `911b826`.
 - **PENDIENTE leve** — `_captcha:false` + honeypot; si llega spam, activar captcha de FormSubmit o migrar a Web3Forms (key por email).
+
+## 2026-10-27 — Responsivo móvil: header hamburguesa
+
+- **HECHO** — Auditoría CDP a 360/320px: la nav inline (brand + 4 links + toggle ≈610px) forzaba el layout viewport a ~610px en TODAS las rutas → página entera "achicada" con links cortados. Fix `df31b3a` en `main` (autodeploy): menú hamburguesa ≤768px — dropdown full-width, botón 44px con aria-expanded/controls, cierre al navegar/Escape/resize; header semitransparente permanente; `overflow:clip` en hero (anillos SVG desbordaban); spec de App reparado (faltaba `provideRouter`, estaba roto en main) + tests del menú.
+- **VERIFICADO** — Prod: `/`, `/portfolio`, `/servicios`, `/contacto` → `scrollWidth=360` sin elementos >361px; menú abre/cierra/navega OK (CDP); desktop ≥769px nav inline intacta.
+- **DECISIÓN** — Repo `namp-ingenieria` clonado a `~/Escritorio/Desarrollo/namp-ingenieria` en este equipo (antes solo existía en el otro PC como `nye-ingenieria`).
+- **PENDIENTE** — Notificaciones por correo de KPP diferidas hasta generar ingresos (ver [[../Empresa/log]] 2026-10-27).
