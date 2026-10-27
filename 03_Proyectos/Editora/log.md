@@ -136,3 +136,9 @@ hitos.
   público con tamaño de texto, papel sepia/contraste, tipografía
   legible, regla de lectura, enlaces subrayados y movimiento
   reducido. Commit `60d61f4`.
+- **CIERRE DE SESIÓN 27-10.** editora `60d61f4`, UOH `d95ca8b`,
+  vault sincronizado. Hoy: marca UOH real, Nosotros
+  (misión/visión), hero institucional, filtros del panel, portadas
+  reales desde PDF, «Modo lectura». Siguiente: demo a Biblioteca;
+  antes de exponer fuera de localhost, confirmar derechos de los
+  PDF. Externos: credencial staff Koha (DTI), repo .6 caído.
