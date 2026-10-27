@@ -116,3 +116,7 @@ hitos.
   ancho/página + zoom, teclado y swipe, slider de posición, pantalla
   completa, y retoma donde quedó (localStorage). «Leer en línea» es
   ahora el CTA primario de la ficha. v0.3.0, commit `1415e42`.
+- **HECHO.** Marca institucional real en el sitio público: logo
+  Unidad de Bibliotecas (media kit) en navbar sticky con blur +
+  sombra al scroll + barra de progreso navy; logo UOH blanco en el
+  footer navy. `EDITORIAL` → «Editorial UOH». Commit `4c9a2cc`.
