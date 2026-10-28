@@ -173,3 +173,4 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 - HECHO: acuse demo obligatorio — modal con icono de alerta que el prospecto debe confirmar ("Entendido") por sesion de navegador; el banner estatico no se leia. En demo el tour ahora sale en CADA ingreso sin persistir el flag (5ccc0c2).
 - HECHO: fix contraste en tabs del catalogo — el texto activo quedaba ilegible porque routerLinkActive=text-surface perdia contra text-text-muted por orden del CSS; ahora binding condicional (5ccc0c2).
 - DECISIÓN: el acuse demo tampoco persiste — el sandbox lo visitan personas distintas, persistirlo supone que quien confirma es quien entra despues. Vive solo en memoria y se rearma en cada login/carga (dc18d21).
+- HECHO: acuse demo con borde cometa ambar animado (mas llamativo, fallback reduced-motion); nuevo paso del tour para el FAB de novedades y correccion del texto de topbar (8e4ca86).
