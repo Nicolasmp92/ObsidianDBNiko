@@ -40,3 +40,4 @@ Bitácora maestra append-only. Resume lo relevante entre sesiones y apunta al lo
 - **HECHO** — namp.cl: fix navegación SPA (faltaba withInMemoryScrolling — el scroll no volvía arriba entre rutas) + contenido acotado: Portafolio 6/10 con "Ver más", Servicios con `<details>` nativo por card. Commit `269cffa` (2026-10-27).
 - **HECHO** — Editora: footer institucional completo copiando la estructura real del CRIS-DEV (redes, acreditación CNA, campus, consorcios, transparencia). CRIS accesible vía túnel localhost:4000. Commit `5f5094a` (2026-10-28).
 - **HECHO** — Editora: animación de paso de hoja en el lector PDF (captura del canvas + giro 3D direccional, respeta reduced-motion, sin deps). Commit `a8c96b7` (2026-10-28).
+- **HECHO** — Infra UOH: host libros `.6` (172.16.0.6) recuperado tras caída 23–28 oct (Proxmox). Es Windows Server: FTP :21 (Microsoft FTP), IIS :80/443 con vhost libros-uoh.uoh.cl, SMB, RDP. Sin SSH. Ficha actualizada (2026-10-28).
