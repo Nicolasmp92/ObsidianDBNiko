@@ -170,3 +170,5 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 - HECHO: verificado en prod — V17 tutorial aplicada, backend reiniciado limpio, demo.namp.cl sano con credenciales correctas y tutorialCompletado:false (el prospecto vera el tour al entrar).
 - HECHO: tour omite el paso de sucursal cuando el usuario tiene una sola — el selector del topbar no existe para ellos, el paso era ruido (9fd9353).
 - DECISIÓN: el tour orienta por interfaz, no por negocio — pasos: barra superior (accesos), menú lateral (navegacion+☰), zona de contenido, perfil al pie del menú. Se eliminan anchors por entidad (sucursal, ventas, caja); lo estructural no se explica, se descubre usandolo (97aa6be).
+- HECHO: acuse demo obligatorio — modal con icono de alerta que el prospecto debe confirmar ("Entendido") por sesion de navegador; el banner estatico no se leia. En demo el tour ahora sale en CADA ingreso sin persistir el flag (5ccc0c2).
+- HECHO: fix contraste en tabs del catalogo — el texto activo quedaba ilegible porque routerLinkActive=text-surface perdia contra text-text-muted por orden del CSS; ahora binding condicional (5ccc0c2).
