@@ -142,3 +142,6 @@ hitos.
   reales desde PDF, «Modo lectura». Siguiente: demo a Biblioteca;
   antes de exponer fuera de localhost, confirmar derechos de los
   PDF. Externos: credencial staff Koha (DTI), repo .6 caído.
+- **HECHO.** Footer reconstruido calzando el DOM real del CRIS-DEV
+  (túnel :4000): redes sociales UOH, sello de acreditación CNA,
+  campus, CUE+CRUCH, transparencia. Commit `5f5094a`.
