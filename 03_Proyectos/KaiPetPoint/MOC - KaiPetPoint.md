@@ -16,15 +16,19 @@ Punto de venta e inventario para tiendas — primera instancia: **Patitas** (ali
 - **Quiero levantar el stack** → `backend: mvn spring-boot:run` (:8084) + `npm start` (:4204); login `nikolasmp92@gmail.com` / `niko9214`
 - **Quiero ver las tareas** → [[Desarrollo]] (kanban maestro)
 - **Quiero emitir boletas SII** → [[Guia - Boleta electronica SII]] (trámites + opciones de integración)
+- **Quiero el modelo de datos y diagramas** → [[KPP - Modelo de datos y flujos]] (ER Mermaid post-V17 + flujos venta/fiado/caja/importación; tablas al detalle en `.devin/rules/backend-bd-esquema.md` del repo)
 
 ## Dominios (en `main` + ramas de trabajo)
 
 | Dominio | Entidades | Estado |
 |---|---|---|
-| Catálogo | `marcas`, `categorias`, `productos` | Completo; bajas lógicas preservan historial |
-| Inventario | `movimientos_stock` | Completo; entradas/salidas/ajustes manuales + trazas automáticas de venta/anulación |
-| Ventas | `ventas`, `venta_items` | Completo; POS con comprobante post-cobro, anulación admin repone stock |
-| Plataforma | `usuarios`, JWT dual, preferencias/paletas | Heredado del kit |
+| Catálogo | `marcas`, `categorias`, `productos` | Completo; bajas lógicas + importación CSV masiva (2026-10-29) |
+| Inventario | `movimientos_stock`, `stock_sucursal` | Completo; saldo derivado por sucursal, nunca negativo |
+| Ventas | `ventas`, `venta_items`, `venta_pagos` | Completo; descuentos, mixto, anulación repone stock |
+| Clientes/fiado | `clientes`, `cliente_abonos` | Completo; cuenta corriente derivada + abono junto a venta |
+| Caja | `caja_sesiones`, `caja_movimientos`, `aperturas_cajon` | Completo; arqueo con diferencia + cajón auditado |
+| Despachos/ofertas | `despachos`, `zonas_despacho`, `ofertas` | Completo; tarifa por zona, precio por cantidad |
+| Plataforma | `usuarios`, JWT dual, preferencias/paletas | Sesión sliding 2h/cap 12h + revocación por cambio de clave (V16) + tour primer uso (V17) |
 
 ## Decisiones estructurales vigentes
 
