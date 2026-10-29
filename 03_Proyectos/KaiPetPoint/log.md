@@ -181,3 +181,4 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 - HECHO: flujo demo verificado visualmente con puppeteer en prod — login → modal acuse → Entendido → tour (capturas 1280px).
 - HECHO: backup offsite — cron en PC dev jala dumps del VPS via rsync diario 05:30 → /home/niko/backups/kpp-vps/ (retencion 30d). Solo corre si el PC esta encendido.
 - RIESGO: ~/.git-credentials tenia una credencial github muerta en primera posicion que bloqueaba pushes a namp-ingenieria — reordenada (la valida primero).
+- HECHO: status.namp.cl vivo — el panel de Uptime Kuma quedo accesible publico con HTTPS (labels Traefik websecure en el compose de Dokploy). La URL sslip.io vieja estaba muerta y Kuma tenia CERO monitores configurados. Falta: entrar al panel y crear los monitors (usuario).
