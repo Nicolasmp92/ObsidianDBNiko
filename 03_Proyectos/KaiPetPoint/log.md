@@ -174,3 +174,10 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 - HECHO: fix contraste en tabs del catalogo — el texto activo quedaba ilegible porque routerLinkActive=text-surface perdia contra text-text-muted por orden del CSS; ahora binding condicional (5ccc0c2).
 - DECISIÓN: el acuse demo tampoco persiste — el sandbox lo visitan personas distintas, persistirlo supone que quien confirma es quien entra despues. Vive solo en memoria y se rearma en cada login/carga (dc18d21).
 - HECHO: acuse demo con borde cometa ambar animado (mas llamativo, fallback reduced-motion); nuevo paso del tour para el FAB de novedades y correccion del texto de topbar (8e4ca86).
+
+## 2026-10-29 — Verificaciones de produccion y respaldo
+- HECHO: reset nocturno del demo verificado end-to-end — log muestra "reinicio nocturno" 04:00:00 → "datos restablecidos" 04:00:02.
+- HECHO: cobertura DemoGuard revisada — protege la cuenta demo en los 4 puntos de mutacion (Perfil + AdminUsuarios x3); el resto es destructible a proposito.
+- HECHO: flujo demo verificado visualmente con puppeteer en prod — login → modal acuse → Entendido → tour (capturas 1280px).
+- HECHO: backup offsite — cron en PC dev jala dumps del VPS via rsync diario 05:30 → /home/niko/backups/kpp-vps/ (retencion 30d). Solo corre si el PC esta encendido.
+- RIESGO: ~/.git-credentials tenia una credencial github muerta en primera posicion que bloqueaba pushes a namp-ingenieria — reordenada (la valida primero).

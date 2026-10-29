@@ -1,6 +1,6 @@
 # Estado actual — Infraestructura NAMP
 
-> Snapshot del estado del VPS/servicios para retomar el trabajo desde cualquier equipo. Última actualización: 2026-10-27.
+> Snapshot del estado del VPS/servicios para retomar el trabajo desde cualquier equipo. Última actualización: 2026-10-29.
 
 ## Recursos contratados
 
@@ -31,8 +31,8 @@
 3. ~~**Pestaña Domains**~~ ✅ 2026-10-24 — `kpp.namp.cl` → `frontend:4004` HTTPS. Además `namp.cl`+`www.namp.cl` → servicio `web` (proyecto `namp`, sitio estático nginx).
 4. ~~**Deploy**~~ ✅ 2026-10-24 — ambos servicios en producción: `namp.cl` 200 y `kpp.namp.cl` 302→`/login` con Let's Encrypt. Fixes aplicados en `main`: caddy bajo profile `standalone` (`c2b3d88`), `allowedHosts` con wildcard `*.namp.cl` (`3e27718` — la sintaxis `.namp.cl` no funciona en Angular).
 5. Probar login admin, una venta POS, stock, boleta (con las credenciales seed reales).
-6. Configurar monitor en Uptime Kuma para `https://namp.cl` y `https://kpp.namp.cl`.
-7. ~~Cron `pg_dump` diario de Postgres + retención~~ ✅ 2026-10-24 — `~/backups/backup-kpp.sh` en cron niko `15 4 * * *`, dumps `-Fc` en `~/backups/kpp/`, retención 14 días. **Pendiente**: copia fuera del VPS (sync a otro equipo/storage).
+6. Configurar monitores de uptime para `namp.cl`, `kpp.namp.cl` y `demo.namp.cl`. **Nota**: el Uptime Kuma actual corre EN el mismo VPS que monitorea — si el VPS muere, nadie avisa. Recomendado: UptimeRobot gratis (externo, 50 monitores, alertas por email + status page pública que cubriría `status.namp.cl`). Alternativa: panel Kuma → Add Monitor → HTTP(s) por cada URL.
+7. ~~Cron `pg_dump` diario de Postgres + retención~~ ✅ 2026-10-24 — `~/backups/backup-kpp.sh` en cron niko `15 4 * * *`, dumps `-Fc` en `~/backups/kpp/`, retención 14 días. **Copia fuera del VPS** ✅ 2026-10-29 — el PC dev jala los dumps por rsync (cron `30 5 * * *` → `/home/niko/backups/kpp-vps/`, retención 30 días). **Ojo**: solo corre si el PC está encendido a esa hora — evaluar storage cloud (rclone) como destino independiente.
 8. ~~Subdominios previstos~~ ✅ `demo.namp.cl` desplegado 2026-10-27 como sandbox público de ventas (ver arriba). `status` (Uptime Kuma) sigue pendiente.
 
 ## Notas
