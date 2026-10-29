@@ -33,7 +33,7 @@
 5. Probar login admin, una venta POS, stock, boleta (con las credenciales seed reales).
 6. Configurar monitores de uptime para `namp.cl`, `kpp.namp.cl` y `demo.namp.cl`. ✅ 2026-10-29 — panel Kuma accesible en `https://status.namp.cl` (router websecure+certresolver agregado al compose de Dokploy, backup en `.bak`; el dominio sslip.io viejo quedó muerto). **Pendiente usuario**: entrar al panel y agregar monitors HTTP(s) por cada URL. **Limitación estructural**: Kuma corre EN el mismo VPS — detecta caídas de app/contenedor pero NO la muerte del host; para eso haría falta un check externo (UptimeRobot gratis).
 7. ~~Cron `pg_dump` diario de Postgres + retención~~ ✅ 2026-10-24 — `~/backups/backup-kpp.sh` en cron niko `15 4 * * *`, dumps `-Fc` en `~/backups/kpp/`, retención 14 días. **Copia fuera del VPS** ✅ 2026-10-29 — el PC dev jala los dumps por rsync (cron `30 5 * * *` → `/home/niko/backups/kpp-vps/`, retención 30 días). **Ojo**: solo corre si el PC está encendido a esa hora — evaluar storage cloud (rclone) como destino independiente.
-8. ~~Subdominios previstos~~ ✅ `demo.namp.cl` desplegado 2026-10-27 como sandbox público de ventas (ver arriba). `status` (Uptime Kuma) sigue pendiente.
+8. ~~Subdominios previstos~~ ✅ `demo.namp.cl` desplegado 2026-10-27 como sandbox público de ventas (ver arriba). `status` (Uptime Kuma) ✅ desplegado 2026-10-29 — panel en `status.namp.cl`; la instancia nunca habia completado el setup inicial (wizard de BD + admin) y tenia cero monitores.
 
 ## Notas
 
