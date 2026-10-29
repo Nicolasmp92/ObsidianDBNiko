@@ -39,8 +39,13 @@ y genérico, los vet-software no tienen POS real.
 
 - **Precio fundador**: primeros 10 clientes congelan $19.990 de por vida
   (precio de lista objetivo después: $24.990 +IVA)
-- **Setup + migración de datos gratis** para los primeros clientes
-  (después: 1 UF único)
+- **Setup remoto gratis** (~1h: configuración, usuarios, impresora) — liviano,
+  no escala mal
+- **Migración = importación self-service por plantilla Excel/CSV** — feature
+  a construir (alta prioridad: habilita onboarding sin trabajo manual de
+  NAMP). El cliente carga SU inventario; escala a infinitos clientes
+- **Migración asistida opcional cobrada** (~$150.000 cotizado) — para quien
+  quiera que se lo hagamos; trabajo manual real, se cobra como tal
 - **Garantía 30 días**: si no le sirve, se devuelve el primer pago
 - **Cobro**: transferencia mensual o link de pago Flow (sin integración)
 - **DTE**: honesto en la página — "emites tu boleta en el portal gratuito del
@@ -66,6 +71,13 @@ y genérico, los vet-software no tienen POS real.
   badge "Precio fundador", CTAs → demo.namp.cl + WhatsApp/contacto
 - Sin pasarela de pago por ahora (contratación por contacto = correcto a
   esta escala)
+
+## Dependencia de producto identificada
+
+- **Importador CSV/Excel de productos (y luego clientes)** — prerequisito
+  real para vender sin regalar horas de carga manual. Va antes de la
+  página de precios si queremos que la promesa "carga tu inventario en
+  minutos" sea cierta el día que salga publicada
 
 ## Riesgos / honestidad
 
