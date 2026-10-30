@@ -1,7 +1,7 @@
 ---
 tipo: empresa
 estado: activo
-actualizado: 2026-10-22
+actualizado: 2026-10-30
 tags: [empresa, roadmap, saas, hosting, comercial]
 ---
 # MOC — Empresa (plan de trabajo)
@@ -12,6 +12,7 @@ Visión: convertir el stack propio ([[MOC - StarterCustomeKit|StarterCustomeKit]
 
 - **Quiero ver qué pasó** → `log.md` de esta carpeta
 - **Quiero las tareas de un producto** → kanban maestro en [[Desarrollo]]
+- **Parches/seguridad del VPS** → [[Seguridad - Gestión de parches VPS]]
 - **Quiero la evaluación de hosting completa** → [[KPP - Hosting y despliegue para pruebas]]
 - **Quiero ideas de productos futuros** → [[Ideas]] (pipeline: ISO Manager, …)
 
@@ -20,13 +21,13 @@ Visión: convertir el stack propio ([[MOC - StarterCustomeKit|StarterCustomeKit]
 - **Tamaño:** ~3.400–3.600 tiendas mascota/veterinaria en Chile (+35–43% en 4–5 años, Xbrein); gasto potencial ~$200 mil millones CLP/mes. Driver estructural: más mascotas que niños.
 - **Competencia POS+gestión:** Bsale Estándar ~$89.000 c/IVA (Básico ~$70.000 sin POS ni inventario); Fudo $25.500–52.500. **KPP a $19.990–29.990 es 3–4× más barato** con POS+inventario+cierre incluidos → precio de entrada correcto.
 - **Brecha crítica:** todos los incumbentes incluyen boleta electrónica SII; KPP la tiene diferida. En Chile la boleta es obligatoria → es el cuello de botella real para facturar. Mitigación piloto: boleta por portal gratuito del SII en paralelo; antes del 2º cliente conviene emisor DTE por API (LibreDTE/SimpleFactura/Haulmer).
-- **Break-even:** la puesta en marcha de 1 cliente ($99.990) paga la mitad del VPS; ~5 meses de un plan Base cubren el resto. El VPS además sirve a todos los proyectos → no es apuesta única.
+- **Break-even:** con el plan fundador ($19.990+IVA), 1 solo cliente cubre el VPS completo. El VPS además sirve a todos los proyectos → no es apuesta única.
 
 ## Economía
 
-- **Ingreso KPP SaaS:** $19.990–29.990 CLP/mes por tienda + $99.990 puesta en marcha única ([[KPP - Cotización SaaS (arriendo mensual)|cotización]]). Alternativa: licencia on-premise ([[KPP - Cotización licencia perpetua on-premise|cotización]]).
+- **Ingreso KPP SaaS:** $19.990 + IVA/mes **precio fundador** (primeros 10, congelado de por vida) → $24.990 + IVA lista después. Publicado en `namp.cl/precios` (2026-10-30). Setup remoto gratis ~1h; migración = self-service Excel (asistida se cotiza ~$150.000). Ver [[KPP - Propuesta de precios]]. Alternativa: licencia on-premise ([[KPP - Cotización licencia perpetua on-premise|cotización]]).
 - **Costo fijo:** VPS ≈ $8.54 USD/mes ≈ **$8.100 CLP/mes** (KVM 2, prepago 24m ≈ $195.000 CLP; renueva $17.19 USD ≈ $16.300 CLP) + dominio (gratis 1er año con el VPS). Escalar a KVM 4 (16 GB) cuesta +$3.500 CLP/mes — se paga solo con ~1/6 de un cliente SaaS.
-- **Break-even:** 1 cliente cubre el hosting ~11 meses con solo la puesta en marcha; con 3 clientes el hosting es <10% del MRR.
+- **Break-even:** con ~$8.100 CLP/mes de hosting, **1 solo cliente lo cubre completo**; 10 clientes ≈ $200.000 CLP/mes de MRR.
 
 ## Infraestructura (un solo host)
 
@@ -61,7 +62,7 @@ Visión: convertir el stack propio ([[MOC - StarterCustomeKit|StarterCustomeKit]
 
 - [ ] **Iniciación de actividades en SII** — prerequisito para emitir boleta/factura. **Parcial:** ya tiene iniciación de honorarios (2ª categoría, por su trabajo UOH). Pendiente: revisar con contador si el giro cubre venta de suscripciones SaaS (normalmente 1ª categoría — factura/boleta de venta) o si hay que ampliar giro / crear SpA vía "Tu Empresa en un Día". Con giro informático, la compra del VPS pasa a ser gasto deducible (responder IVA de servicios del exterior con contador).
 - [ ] Piloto KPP en producción con datos reales.
-- [ ] Cobrar puesta en marcha ($99.990) + primer mes.
+- [ ] Cobrar primer mes ($19.990 + IVA) — setup remoto gratis; migracion asistida solo si se cotiza aparte.
 - [ ] Feedback semanal → realimentar backlog PMV ([[KPP - Roadmap y priorización (PMV)|roadmap KPP]]).
 
 ### F3 — Crecimiento
