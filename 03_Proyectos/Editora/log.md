@@ -145,3 +145,11 @@ hitos.
 - **HECHO.** Footer reconstruido calzando el DOM real del CRIS-DEV
   (túnel :4000): redes sociales UOH, sello de acreditación CNA,
   campus, CUE+CRUCH, transparencia. Commit `5f5094a`.
+
+## 2026-10-30 — Nav + botón de ingreso
+
+- **HECHO.** Menú público reordenado a Inicio → Nosotros → Editorial →
+  Biblioteca digital (pedido de Nico). Botón «Ingresar» píldora navy
+  con icono de usuario: en desktop junto a los enlaces, en móvil
+  full-width dentro del menú. Si hay sesión activa muestra «Panel» y
+  lleva a /panel. Commit `ad952f4` en `NicolasMP-UOH/editora-uoh`.

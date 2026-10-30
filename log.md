@@ -57,3 +57,4 @@ Bitácora maestra append-only. Resume lo relevante entre sesiones y apunta al lo
   - **PENDIENTE — 2º correo**: propuesta PMV + diagramas (exportar a PDF si se quiere adjunto).
   - **SIGUIENTE**: terminar de leer la propuesta con Nico y ajustar; luego retomar desarrollo (estados+auditoría formal, modelo colecciones/institutos).
 - 2026-10-29 · KPP: monitores Kuma UP + alertas Gmail SMTP verificadas (status.namp.cl vivo). Importador CSV de productos deployado (3f10771). Doc BD al dia: esquema post-V17 + ER Mermaid en la boveda. Fixes: credenciales git duales embebidas en remotes; .env del demo restaurado tras rsync.
+- **HECHO** — Editora-uoh: nav pública reordenada (Inicio, Nosotros, Editorial, Biblioteca digital) + botón «Ingresar» navy con icono en navbar desktop y menú móvil; con sesión activa cambia a «Panel». Commit `ad952f4` pusheado (2026-10-30). Detalle: [[03_Proyectos/Editora/log]].
