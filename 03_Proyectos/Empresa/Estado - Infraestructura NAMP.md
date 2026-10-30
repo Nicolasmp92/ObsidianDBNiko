@@ -43,3 +43,7 @@
 - NIC Chile NO ofrece DNS — por eso Cloudflare como proveedor de zona DNS (gratis, PoP Santiago).
 - Registros DNS en Cloudflare están en modo **DNS only** (proxy naranja apagado) para que Traefik/Let's Encrypt funcionen sin conflicto.
 - Pendiente legal: ampliar giro SII (ya tiene honorarios 2ª cat.) para facturar SaaS — revisar con contador.
+
+## Seguridad del SO
+
+- **2026-10-30 — CVE-2026-98432 (kernel Linux, RCE remoto en conexiones de red)**: correo Hostinger 29-oct. Kernel actual `6.8.0-147-generic`; parche Ubuntu aun NO publicado al 30-oct (0 paquetes linux-* pendientes). `unattended-upgrades` ya estaba activo → instalara el kernel en cuanto Canonical lo libere. **Auto-reboot nocturno habilitado**: `/etc/apt/apt.conf.d/52auto-reboot-namp.conf` → `Automatic-Reboot "true"` a las **05:00** (tras dump 04:15, antes del pull local 05:30). Verificado que todo el stack vuelve solo: docker enabled + restart `unless-stopped`/`always` en todos los contenedores + swarm Dokploy replicated 1/1. **Efecto esperado**: Kuma mandara correo DOWN/UP la madrugada del parche — es comportamiento normal, no incidente. Verificar kernel post-reboot con `uname -r`.
