@@ -26,3 +26,10 @@ Bitácora append-only. Tipos: HECHO / DECISIÓN / HIPÓTESIS / RIESGO.
 
 - **DECISIÓN** — KPP no notifica por correo (creación de usuario, cambio de clave): no hay infra de envío. Niko centralizará las cuentas de correo por su parte y a solicitud — no se contrata servicio transaccional (Resend/Brevo) hasta generar ingresos. Cuando toque: API transaccional gratis (Resend 3k/mes) + DNS en Cloudflare, eventos: usuario creado, clave cambiada, y recuperación de clave.
 - **PENDIENTE** — Responsivo de `namp.cl` reportado "malísimo" por Niko → auditar a 360px y corregir (sesión 2026-10-27).
+
+## 2026-11-04 — Panel Dokploy detrás de HTTPS
+
+- **RIESGO → HECHO** — El panel Dokploy estaba expuesto por HTTP plano en `http://200.141.25.56:3000` (login admin sin cifrar, abierto a internet). Corregido: registro A `dokploy` (DNS only) en Cloudflare → Dokploy Settings → Web Server → Server Domain `dokploy.namp.cl` + HTTPS Let's Encrypt (SSL Labs: grado A). Luego `docker service update --publish-rm "published=3000,target=3000,mode=host" dokploy` + `ufw delete allow 3000/tcp`. Verificado desde nodos externos: `:3000` timeout, `https://dokploy.namp.cl` 200, `namp.cl` 200, `kpp.namp.cl` 302.
+- **HECHO** — Gotcha: Docker publica puertos saltándose UFW; borrar la regla UFW sola no cierra el puerto. Además, el toggle HTTPS del Server Domain se activa aparte — guardar sin él deja el panel en HTTP plano.
+- **PENDIENTE** — Confirmar que la Webhook URL de la GitHub App `Dokploy-2026-10-23-i5n9be` (github.com/settings/apps) apunte a `https://dokploy.namp.cl/...` y no a `http://200.141.25.56:3000/...`; si no, el auto-deploy On Push de `kaipetpoint` y `namp-ingenieria` deja de funcionar. Probar con un push y revisar Deployments en Dokploy.
+

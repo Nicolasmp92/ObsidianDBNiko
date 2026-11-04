@@ -17,9 +17,9 @@
 
 - SSH solo por llave (password deshabilitado). Usuario `niko` con sudo + grupo docker.
 - Alias local `ssh vps` en `~/.ssh/config` del compu dev (cris-dev) **y del PC de casa** (`niko-desktop-devin`, agregada 2026-10-24 vía consola web Hostinger). Otros equipos: agregar su llave pública a `~/.ssh/authorized_keys` del server. Ojo: generar llaves con passphrase vacía real (`-N ""`), no literal `""`.
-- Firewall UFW: solo puertos 22 / 80 / 443 / 3000.
+- Firewall UFW: solo puertos 22 / 80 / 443 (3000 cerrado 2026-11-04). Ojo: los puertos publicados por Docker **se saltan UFW** — para cerrar uno hay que quitarlo del servicio (`docker service update --publish-rm ...`), no basta `ufw delete`.
 - Docker 29.9.x instalado.
-- **Dokploy** corriendo → panel: http://200.141.25.56:3000 (trae Traefik → HTTPS automático Let's Encrypt).
+- **Dokploy** corriendo → panel: **https://dokploy.namp.cl** (2026-11-04; Settings → Web Server → Server Domain, Let's Encrypt). El acceso `http://200.141.25.56:3000` está **deshabilitado** (`docker service update --publish-rm "published=3000,target=3000,mode=host" dokploy`). Para re-abrirlo en emergencia (dominio/cert roto), desde la consola web de Hostinger: `docker service update --publish-add "published=3000,target=3000,mode=host" dokploy` + `ufw allow 3000/tcp`.
 - Uptime Kuma desplegado → http://kaipetpoint-uptimekuma-64bf96-200-141-25-56.sslip.io
 - Proyecto Dokploy `kaipetpoint`, servicio compose `kpp` creado apuntando a repo `Nicolasmp92/kaipetpoint`, branch `feat/deploy`, compose `./docker-compose.yml`. GitHub App `Dokploy-2026-10-23-i5n9be` instalada solo sobre ese repo.
 - **Sandbox demo KPP** (2026-10-27): stack manual en `/opt/kpp-demo` con `docker-compose.demo.yml` — postgres+backend+frontend propios, volumen separado, unido a `dokploy-network` con labels Traefik → `https://demo.namp.cl`. Endpoint público `/api/demo/config` entrega credenciales `demo@kaipetpoint.cl` / `KppDemo.2026`; `DemoGuard` bloquea mutaciones de cuenta; `DemoResetService` resetea la BD a las 04:00. Ojo al sincronizar código: **excluir `.env` del rsync** (el .env local de dev sobreescribió el del VPS una vez y expuso credenciales reales en el endpoint público).

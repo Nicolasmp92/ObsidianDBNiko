@@ -45,7 +45,7 @@ Visión: convertir el stack propio ([[MOC - StarterCustomeKit|StarterCustomeKit]
 
 - [x] Contratar KVM 2 Brasil (24m) ✅ 2026-10-22 — IP `200.141.25.56`, `ssh vps`.
 - [ ] Registrar/apuntar dominio + DNS subdominios en Traefik.
-- [x] Docker + Dokploy ✅ 2026-10-23 — panel http://200.141.25.56:3000.
+- [x] Docker + Dokploy ✅ 2026-10-23 — panel `https://dokploy.namp.cl` (IP:3000 cerrado 2026-11-04).
 - [ ] Deploy KPP producción desde rama `feat/deploy` (compose ya listo) + env `KAIPETPOINT_*`.
 - [ ] Staging separado para pruebas de clientela (BD limpia con seed).
 - [ ] `pg_dump` diario + Uptime Kuma en el mismo VPS.
