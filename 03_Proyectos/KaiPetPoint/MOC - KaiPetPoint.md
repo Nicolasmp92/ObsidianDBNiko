@@ -1,0 +1,45 @@
+---
+tipo: proyecto
+proyecto: kaipetpoint
+estado: activo
+actualizado: 2026-10-04
+tags: [pos, tienda, mascotas, patitas, inventario, ventas, angular, spring-boot]
+---
+# 🐾 MOC — KaiPetPoint
+
+Punto de venta e inventario para tiendas — primera instancia: **Patitas** (alimentos de mascotas). Repo: `~/Escritorio/Desarrollo/kaipetpoint` (GitHub `Nicolasmp92/kaipetpoint`, privado). Generado desde [[MOC - StarterCustomeKit|StarterCustomeKit v2]]; antes se llamaba *Mostrador* (renombrado 2026-10-04).
+
+## Navegación por necesidad
+
+- **Quiero ver qué se hizo y cuándo** → `log.md` de esta carpeta (resumen) + `log.md` del repo (detalle)
+- **Quiero la tabla de sesiones** → `registro_actividades.md`
+- **Quiero levantar el stack** → `backend: mvn spring-boot:run` (:8084) + `npm start` (:4204); login `nikolasmp92@gmail.com` / `niko9214`
+- **Quiero ver las tareas** → [[Desarrollo]] (kanban maestro)
+- **Quiero emitir boletas SII** → [[Guia - Boleta electronica SII]] (trámites + opciones de integración)
+- **Quiero el modelo de datos y diagramas** → [[KPP - Modelo de datos y flujos]] (ER Mermaid post-V17 + flujos venta/fiado/caja/importación; tablas al detalle en `.devin/rules/backend-bd-esquema.md` del repo)
+
+## Dominios (en `main` + ramas de trabajo)
+
+| Dominio | Entidades | Estado |
+|---|---|---|
+| Catálogo | `marcas`, `categorias`, `productos` | Completo; bajas lógicas + importación CSV masiva (2026-10-29) |
+| Inventario | `movimientos_stock`, `stock_sucursal` | Completo; saldo derivado por sucursal, nunca negativo |
+| Ventas | `ventas`, `venta_items`, `venta_pagos` | Completo; descuentos, mixto, anulación repone stock |
+| Clientes/fiado | `clientes`, `cliente_abonos` | Completo; cuenta corriente derivada + abono junto a venta |
+| Caja | `caja_sesiones`, `caja_movimientos`, `aperturas_cajon` | Completo; arqueo con diferencia + cajón auditado |
+| Despachos/ofertas | `despachos`, `zonas_despacho`, `ofertas` | Completo; tarifa por zona, precio por cantidad |
+| Plataforma | `usuarios`, JWT dual, preferencias/paletas | Sesión sliding 2h/cap 12h + revocación por cambio de clave (V16) + tour primer uso (V17) |
+
+## Decisiones estructurales vigentes
+
+- **Nombre**: `kaipetpoint` (paquetes, BD, cookie `kaipetpoint_token`, claves `kaipetpoint.*`, env `KAIPETPOINT_*`). Display: KaiPetPoint. La instancia Patitas vive en el seed — rebrandable.
+- Stock = saldo derivado de `movimientos_stock`; nunca negativo (409 al cobrar sin stock).
+- Total de venta siempre calculado en servidor con precio vigente.
+- Puertos: API `8084`, dev `4204`, SSR `4004`. BD `kaipetpoint`/`kaipetpoint_user` en PostgreSQL.
+- Roles simples del kit (admin/user): vendedor vende, admin gestiona + anula.
+- SSR con sesión: `ssrCookieInterceptor` reenvía la cookie a `/api/*` en render por petición (sin él, F5 cerraba sesión).
+
+## Backlog declarado
+
+Backlog completo priorizado por criticidad/viabilidad/esfuerzo en [[KPP - Roadmap y priorización (PMV)]] — fases: **PMV** (operación real) → nicho/retención → SaaS. Sueltos aún sin fase: reportes por rango · identidad extraída a config (`app-identidad.ts`).
+**Diferidos documentados:** boleta SII y modo offline entraron al roadmap ([[KPP - Boleta electrónica SII]] / [[KPP - Modo offline (PWA)]]) con su justificación de postergación intacta.

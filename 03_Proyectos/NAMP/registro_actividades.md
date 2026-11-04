@@ -1,0 +1,21 @@
+---
+tipo: registro
+proyecto: namp
+---
+# Registro de actividades — NAMP
+
+Tabla estructurada **append-only**. Una fila por actividad verificable; las filas nuevas van al final.
+
+| Fecha | Actividad | Evidencia |
+|---|---|---|
+| 2026-10-18 | Portafolio poblado con 10 proyectos reales (9 del portafolio personal + el propio portafolio), tarjetas con captura/tags/link, imágenes WebP | commit `d342e1d` en `namp-ingenieria` rama `main` |
+| 2026-10-19 | Rebrand NYE → NAMP en todo el repo (marca, proyecto Angular, reglas, storageKey); `lang="es"` en index | commit `4fc03c9` en `namp-ingenieria` rama `main` |
+| 2026-10-19 | Logo hero NYE→NAMP (4 letras) y trabajos destacados conectados a portfolio.data | commit `0917f8f` en `namp-ingenieria` rama `main` |
+| 2026-10-20 | colegioangeles.cl y Tecnohoot comentados en PROJECTS (inactivos, pendiente remaster) | commit en `namp-ingenieria` rama `main` |
+| 2026-10-24 | Carpeta local `nye-ingenieria` → `namp-ingenieria` (nombre local = remoto) | `ls Desarrollo/` + `git remote -v` |
+| 2026-10-24 | Deploy stack: Dockerfile nginx + compose + nginx.conf; verificado local (rutas 200) | `29963e9` en `main` |
+| 2026-10-24 | namp.cl en producción: Dokploy compose + Traefik + LE; www→apex OK; autodeploy on push | `29963e9` + Dokploy |
+| 2026-10-24 | SEO base: robots.txt, sitemap.xml, metas OG/Twitter, title+canonical por ruta (servicio Seo), og-cover.png de marca | merge `efc5f72` en `namp-ingenieria` rama `main` |
+| 2026-10-24 | Footer global standalone (nav, contacto@namp.cl, Santiago, copyright) | `d26a8e8` en `main` |
+| 2026-10-24 | Contacto real + formulario a WhatsApp; destacados clickeables; KPP link → kpp.namp.cl | merge `1f6e78d` en `namp-ingenieria` rama `main` |
+| 2026-10-24 | Cierre: namp.cl + kpp.namp.cl en producción; SSH PC casa; backups cron | Estado - Infraestructura NAMP.md |
