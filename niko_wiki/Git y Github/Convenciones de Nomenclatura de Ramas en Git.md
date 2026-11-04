@@ -17,6 +17,7 @@ Uso de **prefijos** para categorizar el trabajo en el repositorio. Ayuda a que
 | `docs/`     | Solo documentación       | `docs/update-install` |
 | `chore/`    | Mantenimiento/Config     | `chore/deps-update`   |
 | `perf/`     | Mejora de rendimiento    | `perf/load-images`    |
+|             |                          |                       |
 
 ---
 
@@ -31,4 +32,4 @@ Uso de **prefijos** para categorizar el trabajo en el repositorio. Ayuda a que
 > [!TIP] Tip de Organización  
 > Si usas el plugin **Dataview** en Obsidian, puedes etiquetar tus notas de proyectos con estos mismos prefijos para mantener una trazabilidad total entre tus notas y tu código.
 
----
+	---
