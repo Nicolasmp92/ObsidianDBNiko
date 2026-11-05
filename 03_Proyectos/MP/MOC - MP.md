@@ -1,7 +1,7 @@
 ---
 tipo: proyecto
 proyecto: mp
-estado: activo-en-levantamiento
+estado: activo
 actualizado: 2026-10-02
 tags: [web, corporativo, empresa, construccion]
 ---

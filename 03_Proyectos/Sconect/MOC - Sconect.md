@@ -1,7 +1,7 @@
 ---
 tipo: proyecto
 proyecto: sconect
-estado: activo-mvp-backend-listo
+estado: activo
 actualizado: 2026-10-02
 tags: [salud, agenda, pacientes, whatsapp, n8n, flutter, spring-boot]
 ---

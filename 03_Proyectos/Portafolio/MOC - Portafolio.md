@@ -1,5 +1,6 @@
 ---
-tipo: moc
+tipo: proyecto
+proyecto: portafolio
 estado: activo
 actualizado: 2026-10-14
 tags: [portafolio, github-pages, angular]

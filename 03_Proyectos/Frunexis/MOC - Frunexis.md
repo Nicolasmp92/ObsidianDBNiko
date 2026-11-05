@@ -1,7 +1,7 @@
 ---
 tipo: proyecto
 proyecto: frunexis
-estado: activo-v2-en-main
+estado: activo
 actualizado: 2026-10-02
 tags: [agricola, contratos, temporadas, angular, spring-boot, portafolio]
 ---

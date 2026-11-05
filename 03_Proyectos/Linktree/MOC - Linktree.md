@@ -1,5 +1,6 @@
 ---
 tipo: proyecto
+proyecto: linktree
 estado: produccion
 actualizado: 2026-11-05
 tags: [uoh, angular, enlaces, bibliotecas]

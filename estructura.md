@@ -22,6 +22,8 @@ ObsidianDBNiko/
 │   ├── reglas/                   → reglas de orden (Convenciones del Vault)
 │   ├── estandares/               → estándares de código y setups
 │   ├── skills/                   → skills de agente reutilizables (SKILL.md)
+│   │   └── MANIFEST.sha256       → integridad del store (verificación de hashes)
+│   ├── templates/                → plantillas canónicas (MOC, log, registro)
 │   └── log.md                    → registro propio de la carpeta
 │
 ├── 01_Inputs/  → INBOX: todo entra aquí primero
@@ -34,6 +36,7 @@ ObsidianDBNiko/
 ├── 03_Proyectos/                 → proyectos en curso (uno por carpeta)
 │   │                               estructura canónica por proyecto:
 │   │                               MOC - <P>.md + log.md + registro_actividades.md
+│   ├── Proyectos.base            → dashboard vivo: todos los MOC por estado
 │   ├── BeanFlow/     ├── Cabid/          ├── Editora/      ├── Empresa/
 │   ├── Frunexis/     ├── ISO Manager/    ├── KaiPetPoint/  ├── Linktree/
 │   ├── MP/           ├── NAMP/           ├── Portafolio/   ├── Sconect/

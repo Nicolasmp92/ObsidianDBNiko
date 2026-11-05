@@ -1,7 +1,7 @@
 ---
 tipo: proyecto
 proyecto: startercustomekit
-estado: activo-v2-en-main
+estado: activo
 actualizado: 2026-10-02
 tags: [starter, kit, angular, spring-boot, portafolio]
 ---

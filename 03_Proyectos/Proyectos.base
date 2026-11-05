@@ -1,0 +1,29 @@
+filters:
+  and:
+    - 'tipo == "proyecto"'
+properties:
+  estado:
+    displayName: Estado
+  actualizado:
+    displayName: Actualizado
+views:
+  - type: table
+    name: Todos por estado
+    group_by: estado
+    order:
+      - file.name
+      - estado
+      - actualizado
+      - tags
+    sort:
+      - property: actualizado
+        direction: DESC
+  - type: table
+    name: Activos
+    filters:
+      and:
+        - 'estado == "activo"'
+    order:
+      - file.name
+      - actualizado
+      - tags

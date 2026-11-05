@@ -1,5 +1,6 @@
 ---
-tipo: moc
+tipo: proyecto
+proyecto: namp
 estado: activo
 actualizado: 2026-10-18
 tags: [web, corporativo, portafolio, angular, ssr]

@@ -1,6 +1,7 @@
 ---
 tipo: proyecto
-estado: produccion-interna
+proyecto: cabid
+estado: produccion
 actualizado: 2026-11-05
 tags: [uoh, angular, spring-boot, cruch, sitio-institucional]
 ---

@@ -1,7 +1,7 @@
 ---
 tipo: proyecto
 proyecto: beanflow
-estado: activo-v2-en-rama
+estado: activo
 actualizado: 2026-10-05
 tags: [restaurante, pos, comandas, angular, spring-boot, portafolio]
 ---

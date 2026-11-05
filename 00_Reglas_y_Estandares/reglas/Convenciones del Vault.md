@@ -49,6 +49,22 @@ Reglas (adaptadas de la convención 2026-09-25 del repo UOH):
 - Una nota superada no se borra: se mueve a `_historico/` o se marca `SUPERADO <fecha>` apuntando a la vigente.
 - Toda nota de proyecto cuelga de su MOC (regla 3 del embudo) y el kanban maestro sigue siendo [[Desarrollo]].
 
+## Frontmatter controlado (vocabulario cerrado)
+
+Para que [[Proyectos]] (base) y cualquier consulta funcionen, el frontmatter usa valores cerrados:
+
+| Campo | Valores permitidos |
+|---|---|
+| `tipo` | `proyecto`, `empresa`, `log`, `registro`, `nota-tecnica`, `plan`, `roadmap`, `runbook`, `cotización`, `pipeline-ideas`, `documentacion-tecnica` |
+| `estado` (solo `tipo: proyecto`/`empresa`) | `pipeline` (idea sin código), `activo` (en desarrollo), `pausado`, `produccion` (live, incluye interno), `archivado` |
+| `proyecto` | slug del proyecto en minúsculas sin espacios (`kaipetpoint`, `namp`) |
+| `actualizado` | fecha `YYYY-MM-DD` de la última modificación relevante |
+
+- El detalle fino (rama, fase, subestado) va en el cuerpo del MOC o el log, **no** en `estado`.
+- `tipo: empresa` queda fuera del dashboard de productos — es la capa meta (infra, comercial, pipeline).
+- Las plantillas canónicas viven en `00_Reglas_y_Estandares/templates/` (plugin core Templates configurado): `MOC - Proyecto`, `log - Proyecto`, `registro_actividades - Proyecto`.
+- La integridad del store de skills se verifica con `00_Reglas_y_Estandares/skills/MANIFEST.sha256` (mismo patrón que `.devin/` en UOH; regenerar al agregar/mutar una skill).
+
 ## Reglas del embudo
 
 1. Nada entra directo a un proyecto: primero pasa por `01_Inputs/`.

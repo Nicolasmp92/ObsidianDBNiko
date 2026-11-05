@@ -21,7 +21,7 @@ Cada proyecto sigue la estructura canónica: `MOC` (ficha) + `log.md` (bitácora
 
 ## 📚 Base de conocimiento (`04_Wiki/`)
 
-- [[index niko_wiki]] — índice general (Laravel, PHP, JavaScript, Git, Docker, APIs, Metodologías)
+- [[Index - Wiki]] — índice general (Laravel, PHP, JavaScript, Git, Docker, APIs, Metodologías)
 
 Proyectos cerrados/archivados en `99_Archivados/Proyectos personales/`: GYM (app rutinas, cerrado 2026-10-02), sconect_project (a rescatar como `sconect`), StarterCustomeKit v1 (bitácora de setup Laravel).
 
