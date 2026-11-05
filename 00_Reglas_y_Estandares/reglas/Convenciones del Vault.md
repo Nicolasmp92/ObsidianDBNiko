@@ -72,6 +72,7 @@ Para que [[Proyectos]] (base) y cualquier consulta funcionen, el frontmatter usa
 3. Toda nota de proyecto debe estar enlazada desde su `MOC - <Proyecto>`.
 4. El tablero kanban maestro es [[Desarrollo]] — las notas de tarea usan el frontmatter `status:` (`Pendientes`, `En proceso`, `En Aprobacion`, `Finalizadas`).
 5. Los commits y ramas siguen [[6. Conventional Commits|Conventional Commits]] y [[5. Convenciones de Nomenclatura de Ramas en Git|Convenciones de Nomenclatura de Ramas en Git]].
+6. **`01_Inputs` se vacía al cierre de cada semana** (o al cerrar una sesión de trabajo larga): cada nota del inbox se clasifica a proyecto / wiki / outputs / archivo — o se borra. El inbox se mide por **rotación**, no por volumen; un `01_Inputs` que solo crece es una fuga del sistema igual que la raíz lo era antes.
 
 ## Documentos de estándares
 
