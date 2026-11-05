@@ -1,6 +1,7 @@
 filters:
   and:
-    - 'tipo == "proyecto"'
+    - tipo == "proyecto"
+    - 'file.folder != "00_Reglas_y_Estandares/templates"'
 properties:
   estado:
     displayName: Estado
@@ -9,7 +10,6 @@ properties:
 views:
   - type: table
     name: Todos por estado
-    group_by: estado
     order:
       - file.name
       - estado
@@ -18,11 +18,12 @@ views:
     sort:
       - property: actualizado
         direction: DESC
+    group_by: estado
   - type: table
     name: Activos
     filters:
       and:
-        - 'estado == "activo"'
+        - estado == "activo"
     order:
       - file.name
       - actualizado

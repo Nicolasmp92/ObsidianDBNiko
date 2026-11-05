@@ -1,7 +1,7 @@
 ---
 tipo: proyecto
 proyecto: gym
-estado: activo
+estado: archivado
 actualizado: 2026-10-02
 tags: [app, gimnasio, rutinas, tracking]
 ---
