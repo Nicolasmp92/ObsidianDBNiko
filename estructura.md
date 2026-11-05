@@ -15,6 +15,8 @@ ObsidianDBNiko/
 ├── log.md                        → bitácora maestra global (append-only,
 │                                   entradas tipificadas: HECHO / DECISIÓN /
 │                                   HIPÓTESIS / RIESGO / PENDIENTE)
+├── inyector-skill.md             → enrutador de skills del vault (qué skill
+│                                   activar según la tarea — derivado local)
 │
 ├── 00_Reglas_y_Estandares/       → PRIMERA: convenciones, estándares y skills
 │   ├── reglas/                   → reglas de orden (Convenciones del Vault)
