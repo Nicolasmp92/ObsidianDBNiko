@@ -234,3 +234,11 @@ apertura/cierre + calendario que atenúa días bloqueados, 3) n8n mínimo,
 - **HECHO** — Alta de paciente al vuelo desde Nueva cita (`PacienteFormScreen` devuelve el `Paciente` guardado y queda preseleccionado). `flutter analyze` 0 issues.
 - **HECHO** — **Demo pública desplegada** en el VPS (`/opt/sconect-demo`, patrón kpp-demo): postgres 16 + backend jar + nginx sirviendo el build web de Flutter con proxy `/api` → backend (mismo origen). Traefik + Let's Encrypt. URL temporal: `https://sconect.200.141.25.56.sslip.io` — login demo `demo@sconect.cl`. `ApiConfig` usa mismo origen en puerto 80/443. Commits `666e98d`+`0d39950` en `sconect/main`.
 - **PENDIENTE** — DNS `sconect.namp.cl` → `200.141.25.56` en NIC Chile (usuario); luego monitor Kuma. El registro A falta — Traefik ya tiene la regla, funcionará solo al propagarse.
+
+## 2026-11-05 (cierre) — Punto de retomada
+
+- **Dónde quedó**: demo pública viva en `https://sconect.200.141.25.56.sslip.io` (login `demo@sconect.cl`). Dev local operativo: backend `:8083` (H2 mem) + web `:4203`. Todo commiteado y pusheado (`sconect/main` = `0d39950`, vault incluido).
+- **Siguiente paso concreto**: usuario crea A record `sconect.namp.cl` → `200.141.25.56` en NIC Chile; luego agregar monitor Kuma.
+- **Abiertos**: provider WhatsApp (decisión), workflow n8n, recordatorios 24h, UI agenda días/horarios, Flyway pre-prod, bug `PUT /api/preferencias` (documentado), ventana anulación portal, logo comprobantes.
+- **Notas de entorno (este PC)**: Maven 3.9.9 + Flutter 3.47.9 en `~/tools` (portables); `flutter.bat` solo vía `cmd /c` en Git Bash; H2 es en memoria → cada restart del backend borra datos locales.
+- **Secretos**: `.env` del demo vive solo en el VPS (`/opt/sconect-demo/.env`, chmod 600) — no está en ningún repo.
