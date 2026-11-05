@@ -214,3 +214,9 @@ apertura/cierre + calendario que atenúa días bloqueados, 3) n8n mínimo,
 - Smoke 12 casos OK; fix preventivo @Transactional en lecturas lazy.
 - Commit 4584034 en main. Pendiente: envío real del código por
   WhatsApp (n8n) + rate-limit del acceso.
+
+## 2026-11-05 — Retomada en PC casa (segundo postulante a ingresos)
+
+- **HECHO** — Repo clonado en `Desktop/Desarrollo/sconect`; HEAD `2086608` coincide con la bitácora (sin divergencia, el vault estaba al día).
+- **RIESGO** — Toolchain incompleto en este PC: Java 17 OK pero `mvn` y `flutter` no instalados (viven en el PC pega) → instalar antes de tocar backend/app o trabajar en diseño/spec mientras.
+- **PENDIENTE** — Cola priorizada vigente: (1) n8n + WhatsApp real — envío del código del portal por WhatsApp + rate-limit del acceso + flag opt-in sobrecupo para el bot; (2) recordatorios 24h (`recordadoEn` ya existe); (3) UI agenda: atenuar días no laborales/bloqueados + horarios apertura/cierre por día; (4) Flyway antes de producción; (5) ventana mínima de anulación en portal; logo en comprobantes. Fase 2: audit/reportes, multi-profesional, offline.

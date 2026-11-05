@@ -7,7 +7,7 @@ tags: [salud, agenda, pacientes, whatsapp, n8n, flutter, spring-boot]
 ---
 # 🩺 MOC — Sconect
 
-Plataforma de gestión clínica para profesionales que atienden **particular** (kinesiología, podología, nutrición, medicina alternativa…): agenda + evolución de pacientes + **agendamiento por WhatsApp vía n8n**. Repo: `~/Escritorio/Desarrollo/sconect` (monorepo: `backend/` Spring Boot + `app/` Flutter).
+Plataforma de gestión clínica para profesionales que atienden **particular** (kinesiología, podología, nutrición, medicina alternativa…): agenda + evolución de pacientes + **agendamiento por WhatsApp vía n8n**. Repo: `~/Escritorio/Desarrollo/sconect` (PC pega) y `Desktop/Desarrollo/sconect` (PC casa) — monorepo: `backend/` Spring Boot + `app/` Flutter.
 
 PRD original (especificación del dominio): `99_Archivados/Proyectos personales/sconect_project/Product Requirements Document.md` — ojo: dice stack Go, el vigente es Spring Boot.
 
