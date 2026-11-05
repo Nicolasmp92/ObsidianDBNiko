@@ -112,3 +112,11 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - HECHO: fix de navegacion tras critica externa — faltaba withInMemoryScrolling en provideRouter, la SPA conservaba el scroll entre rutas (la pagina nueva aparecia a mitad). Ahora scroll restoration top + anchors (269cffa).
 - HECHO: contenido acotado con Ver mas — Portafolio muestra 6 de 10 proyectos + boton expandible; cada card de Servicios gana <details> nativo con entregables (269cffa).
 - HECHO: CTA comercial al pie del portafolio — "Probar el demo de KPP" (demo.namp.cl) + "Conversemos" (/contacto), borde gradiente marca (40f3bd5).
+
+## 2026-11-05 — Post Instagram + descubierto clon local obsoleto
+
+- **HECHO** — Post de lanzamiento Instagram 1080×1080 para NAMP (diseño urban-minimalist: carbón + dorado + esmeralda, anillos del hero). Fuente editable `instagram/post-01-lanzamiento.html` → PNG renderizado con Chrome headless. Commit `30bc575` en rama `dev` de `namp-ingenieria`.
+- **RIESGO** — El repo trabajado fue `Desarrollo/NYEinformatica` (clon antiguo en `dev`, código previo al rediseño `00076d3`, sin `portfolio.data.ts`, sin footer/directives/Seo). **El post usa datos placeholder del código viejo**: `nampingenieria.com` y `hola@nampingenieria.com` — lo real es `namp.cl` y `contacto@namp.cl`. Hay que regenerar el PNG desde el repo actualizado en `main`.
+- **PENDIENTE** — Clonar `namp-ingenieria` fresco en este PC (no existe en `Desarrollo/`); decidir qué hacer con `NYEinformatica` (probablemente eliminar tras confirmar que no tiene trabajo único). Ojo: autodeploy on push a `main` — trabajar en rama feature.
+- **PENDIENTE** — Usuario de Instagram de NAMP sin definir (el post no lleva handle).
+- **HECHO** — Vault: creado `estructura.md` en raíz; eliminados archivos basura `Sin título` (1 .md vacío, 5 .base con vista por defecto) y carpeta `Sin nombre`. Causa: plugin core **Bases** crea `Sin título N.base` al explorar + `newFileLocation:root` los tiraba a la raíz. Fix: `app.json` → nuevas notas caen en `01_Laboratorio_y_Borradores/` (regla 1 del embudo).

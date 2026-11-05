@@ -19,3 +19,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-24 | Footer global standalone (nav, contacto@namp.cl, Santiago, copyright) | `d26a8e8` en `main` |
 | 2026-10-24 | Contacto real + formulario a WhatsApp; destacados clickeables; KPP link → kpp.namp.cl | merge `1f6e78d` en `namp-ingenieria` rama `main` |
 | 2026-10-24 | Cierre: namp.cl + kpp.namp.cl en producción; SSH PC casa; backups cron | Estado - Infraestructura NAMP.md |
+| 2026-11-05 | Post de lanzamiento Instagram 1080×1080 (HTML→PNG Chrome headless) — quedó en rama `dev` con datos placeholder, regenerar desde `main` con contacto@namp.cl | `30bc575` en `namp-ingenieria` rama `dev`; `instagram/` |
