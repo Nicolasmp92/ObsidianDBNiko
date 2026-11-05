@@ -1,6 +1,6 @@
 ---
 tipo: decision
-estado: pendiente
+estado: parcialmente-instalado
 actualizado: 2026-11-05
 ---
 
