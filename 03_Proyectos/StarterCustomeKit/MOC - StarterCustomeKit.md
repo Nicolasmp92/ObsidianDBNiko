@@ -50,7 +50,7 @@ Kit base para arrancar proyectos rápido. Repo: `~/Escritorio/Desarrollo/Starter
 
 ## 📚 Bitácora de setup (archivo)
 
-Notas históricas de cómo se montó el kit v1, en `99_Archivo/Proyectos personales/StarterCustomeKit/`:
+Notas históricas de cómo se montó el kit v1, en `99_Archivados/Proyectos personales/StarterCustomeKit/`:
 
 - [[1. Iniciando proyecto]]
 - [[2. instalando lang control de Idiomas]]

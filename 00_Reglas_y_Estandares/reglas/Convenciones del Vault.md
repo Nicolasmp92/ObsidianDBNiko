@@ -6,17 +6,19 @@ Reglas de orden del vault (Kaizen / Seiton): todo tiene su lugar y cada nota cue
 
 | Carpeta | Propósito |
 |---|---|
-| `98_Assets/` | Multimedia centralizada (imágenes, adjuntos) |
-| `01_Laboratorio_y_Borradores/` | Inbox: ideas sueltas, kanbans, notas sin clasificar |
 | `00_Reglas_y_Estandares/` | Estándares de código y convenciones (esta nota + documentos de reglas) |
+| `01_Inputs/` | Inbox: ideas sueltas, kanbans, material entrante y notas sin clasificar |
+| `02_Outputs/` | Entregables producidos (posts, informes, propuestas) — subcarpeta por proyecto |
 | `03_Proyectos/` | Proyectos en curso — una subcarpeta por proyecto |
-| `99_Archivo/` | Material histórico, wiki de referencia y notas depuradas |
+| `04_Wiki/` | Base de conocimiento viva: lo aprendido, reutilizable entre proyectos |
+| `98_Assets/` | Multimedia centralizada (imágenes, adjuntos) — sirve a todas las carpetas |
+| `99_Archivados/` | Material histórico y notas depuradas (proyectos cerrados) |
 
 ## Prefijos de notas por proyecto
 
 | Prefijo | Proyecto |
 |---|---|
-| `GYM - ` | App de gimnasio (archivado 2026-10-02 → `99_Archivo/Proyectos personales/GYM`) |
+| `GYM - ` | App de gimnasio (archivado 2026-10-02 → `99_Archivados/Proyectos personales/GYM`) |
 | `STK - N.` / `SCK-N` | StarterCustomeKit (serie de dominios numerada) |
 | `MP - ` | Sitio web MP |
 | `NAMP - ` | Plataforma web NAMP (empresa + portafolio) |
@@ -49,7 +51,7 @@ Reglas (adaptadas de la convención 2026-09-25 del repo UOH):
 
 ## Reglas del embudo
 
-1. Nada entra directo a un proyecto: primero pasa por `01_Laboratorio_y_Borradores/`.
+1. Nada entra directo a un proyecto: primero pasa por `01_Inputs/`.
 2. Las imágenes van siempre a `98_Assets/` y se incrustan con `![[nombre.png]]`.
 3. Toda nota de proyecto debe estar enlazada desde su `MOC - <Proyecto>`.
 4. El tablero kanban maestro es [[Desarrollo]] — las notas de tarea usan el frontmatter `status:` (`Pendientes`, `En proceso`, `En Aprobacion`, `Finalizadas`).

@@ -4,7 +4,7 @@ Base de conocimiento personal en Obsidian. Organización por embudo: **capturar 
 
 ## 🗺️ Mapa del vault
 
-- 📥 [[Desarrollo]] — tablero kanban maestro (en `01_Laboratorio_y_Borradores/`)
+- 📥 [[Desarrollo]] — tablero kanban maestro (en `01_Inputs/`)
 - 📐 [[Convenciones del Vault]] — reglas de orden, prefijos y frontmatter (en `00_Reglas_y_Estandares/`)
 - 🅰️ [[Estándares Front-End - Angular]] — estándares del front (Angular 22, Signals, Tailwind + CDK)
 - 🚀 [[Proyectos - Setup y arranque]] — cómo levantar cada proyecto (repos, puertos, BD, login)
@@ -19,12 +19,12 @@ Base de conocimiento personal en Obsidian. Organización por embudo: **capturar 
 
 Cada proyecto sigue la estructura canónica: `MOC` (ficha) + `log.md` (bitácora tipificada) + `registro_actividades.md` (tabla de sesiones) — ver [[Convenciones del Vault]].
 
-## 📚 Base de conocimiento (`99_Archivo/niko_wiki/`)
+## 📚 Base de conocimiento (`04_Wiki/`)
 
 - [[index niko_wiki]] — índice general (Laravel, PHP, JavaScript, Git, Docker, APIs, Metodologías)
 
-Proyectos cerrados/archivados en `99_Archivo/Proyectos personales/`: GYM (app rutinas, cerrado 2026-10-02), sconect_project (a rescatar como `sconect`), StarterCustomeKit v1 (bitácora de setup Laravel).
+Proyectos cerrados/archivados en `99_Archivados/Proyectos personales/`: GYM (app rutinas, cerrado 2026-10-02), sconect_project (a rescatar como `sconect`), StarterCustomeKit v1 (bitácora de setup Laravel).
 
 ## 📁 Convención de carpetas
 
-`98_Assets` multimedia · `01_Laboratorio_y_Borradores` inbox · `00_Reglas_y_Estandares` estándares · `03_Proyectos` en curso · `99_Archivo` histórico
+`00_Reglas_y_Estandares` gobernanza · `01_Inputs` inbox · `02_Outputs` entregables · `03_Proyectos` en curso · `04_Wiki` conocimiento · `98_Assets` multimedia · `99_Archivados` histórico

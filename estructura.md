@@ -24,8 +24,12 @@ ObsidianDBNiko/
 │   ├── skills/                   → skills de agente reutilizables (SKILL.md)
 │   └── log.md                    → registro propio de la carpeta
 │
-├── 01_Laboratorio_y_Borradores/  → INBOX: todo entra aquí primero
+├── 01_Inputs/  → INBOX: todo entra aquí primero
 │   └── Desarrollo.md             → tablero kanban maestro
+│
+├── 02_Outputs/                   → entregables producidos: posts, informes,
+│   │                               propuestas — subcarpeta por proyecto
+│   └── log.md                    → registro de entregables (qué, cuándo, para qué)
 │
 ├── 03_Proyectos/                 → proyectos en curso (uno por carpeta)
 │   │                               estructura canónica por proyecto:
@@ -35,18 +39,23 @@ ObsidianDBNiko/
 │   ├── MP/           ├── NAMP/           ├── Portafolio/   ├── Sconect/
 │   └── StarterCustomeKit/                └── TaskFlow/
 │
-├── 98_Assets/                    → multimedia centralizada (imágenes, adjuntos)
+├── 04_Wiki/                      → base de conocimiento VIVA (Laravel, PHP, JS,
+│   │                               Git, Docker, APIs, Metodologías) — lo que
+│   │                               aprendo y reutilizo entre proyectos
 │
-└── 99_Archivo/                   → material histórico (no se borra, se archiva)
-    ├── niko_wiki/                → base de conocimiento (Laravel, PHP, JS,
-    │                               Git, Docker, APIs, Metodologías)
+├── 98_Assets/                    → multimedia centralizada (imágenes, adjuntos)
+│                                   compartida por TODAS las carpetas
+│
+└── 99_Archivados/                → material histórico (no se borra, se archiva)
     └── Proyectos personales/     → proyectos cerrados (GYM, sconect, SCK v1)
 ```
 
 ## Flujo (embudo)
 
-`capturar (01_)` → `procesar/clasificar` → `proyecto (03_)` → `archivo (99_)`
+`capturar (01_)` → `proyecto (03_)` → `entregar (02_)` → `conocimiento (04_)` → `archivar (99_)`
 
-- Notas nuevas caen en `01_Laboratorio_y_Borradores/` (configurado en `.obsidian/app.json` → `newFileFolderPath`).
+- Notas nuevas caen en `01_Inputs/` (configurado en `.obsidian/app.json` → `newFileFolderPath`).
 - Las imágenes siempre a `98_Assets/` con `![[nombre.png]]`.
 - Toda nota de proyecto cuelga de su `MOC - <Proyecto>`.
+- Lo entregado (posts, informes, propuestas) se registra en `02_Outputs/<proyecto>/` + `log.md`.
+- Lo aprendido se destila a `04_Wiki/`; lo cerrado se archiva en `99_Archivados/`.

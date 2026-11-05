@@ -73,8 +73,10 @@ y todo el trabajo commiteado/pusheado para viajar entre PCs.
   mismo contenido, el store es la fuente para distribuir a otros repos.
 - Concurrencia real: dos PCs (personal + pega) editan y pushean este repo.
   `git pull` antes de escribir archivos compartidos no es opcional.
-- Embudo: notas nuevas caen en `01_Laboratorio_y_Borradores/`; imágenes a
-  `98_Assets/`; toda nota de proyecto cuelga de su MOC (ver Convenciones).
+- Embudo: notas nuevas caen en `01_Inputs/`; entregables producidos a
+  `02_Outputs/` (con entrada en su `log.md`); conocimiento reutilizable a
+  `04_Wiki/`; imágenes a `98_Assets/`; toda nota de proyecto cuelga de su MOC
+  (ver Convenciones).
 - `webapp-testing` requiere Python + Playwright headless en la máquina.
 - `skill-creator` con evals necesita subagentes/viewer; sin ellos queda
   limitada a redactar `SKILL.md` — declarar la limitación al usarla.

@@ -147,7 +147,7 @@ interrogatorio → desarrollo.
 # 4. Diferencias respecto al kit anterior (Laravel)
 
 El StarterCustomeKit original era Laravel 12 + Breeze + Livewire/Volt
-(`99_Archivo/Proyectos personales/StarterCustomeKit/`). Esta versión lo
+(`99_Archivados/Proyectos personales/StarterCustomeKit/`). Esta versión lo
 **supera** como stack oficial: backend Java/Spring por campo laboral y perfil
 empresarial, frontend Angular idéntico a cabid, y metodología `.devin`
 incorporada desde el arranque. Las notas `STK-*`/`SCK-*` quedan como
