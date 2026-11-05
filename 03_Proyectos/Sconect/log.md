@@ -226,3 +226,11 @@ apertura/cierre + calendario que atenúa días bloqueados, 3) n8n mínimo,
 - **HECHO** — Backend: `GET /webhooks/preferencias`, `POST /webhooks/portal/codigo` (idempotente), `solicitudSobrecupo` + flag `sobrecupoBot`. `mvn test` 7/7 + smoke 11 casos. Commit `ead323d` en `sconect/main`.
 - **HECHO** — Spec del recepcionista: [[SCN - n8n Recepcionista WhatsApp]] — flujo conversacional, matriz de providers (Meta Cloud API / Evolution API / WAHA), plan de despliegue.
 - **PENDIENTE** — Decisión del usuario: provider de WhatsApp. Prerrequisito descubierto: sconect aún no tiene deploy en VPS (el backend corre local) — el bot en producción lo exige.
+
+## 2026-11-05 — Demo pública en el VPS + dev local completo
+
+- **HECHO** — Dev local end-to-end en este PC: backend `:8083` (H2) + app web `:4203`. Toolchain completado: Maven 3.9.9 + Flutter 3.47.9/Dart 3.13.7 portables en `~/tools` (Dart viejo 3.9.2 no cumplía `^3.11.4`).
+- **BUG+FIX** — CORS bloqueaba el front fuera de `localhost:4203` (preview/proxy `127.0.0.1` → "no se pudo conectar"). `SecurityConfig` ahora usa `allowedOriginPatterns` → comodín `http://localhost:*,http://127.0.0.1:*` en dev. Otra lección: `flutter.bat` solo corre vía `cmd /c` desde Git Bash.
+- **HECHO** — Alta de paciente al vuelo desde Nueva cita (`PacienteFormScreen` devuelve el `Paciente` guardado y queda preseleccionado). `flutter analyze` 0 issues.
+- **HECHO** — **Demo pública desplegada** en el VPS (`/opt/sconect-demo`, patrón kpp-demo): postgres 16 + backend jar + nginx sirviendo el build web de Flutter con proxy `/api` → backend (mismo origen). Traefik + Let's Encrypt. URL temporal: `https://sconect.200.141.25.56.sslip.io` — login demo `demo@sconect.cl`. `ApiConfig` usa mismo origen en puerto 80/443. Commits `666e98d`+`0d39950` en `sconect/main`.
+- **PENDIENTE** — DNS `sconect.namp.cl` → `200.141.25.56` en NIC Chile (usuario); luego monitor Kuma. El registro A falta — Traefik ya tiene la regla, funcionará solo al propagarse.

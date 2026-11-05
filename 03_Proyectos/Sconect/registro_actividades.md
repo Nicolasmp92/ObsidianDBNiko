@@ -32,3 +32,6 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-13 | Agenda por etapas: 3 secciones colapsables (Por confirmar/Agendados/Atendidos), acciones coherentes por estado, toggle calendario en la vista | analyze+test 7/7, `95854c7` |
 | 2026-11-05 | Repo clonado en PC casa (HEAD 2086608, sin divergencia); gap toolchain detectado: falta mvn+flutter | git clone + log repo |
 | 2026-11-05 | Contrato webhook n8n completado (preferencias + código portal + sobrecupo opt-in) + spec recepcionista | commit `ead323d`, [[SCN - n8n Recepcionista WhatsApp]] |
+
+| 2026-11-05 | Dev local E2E (backend :8083 + web :4203); toolchain Maven/Flutter portable; fix CORS patterns; paciente al vuelo en cita | `mvn test` 7/7 · analyze 0 issues · login local 200 |
+| 2026-11-05 | Demo pública en VPS: stack /opt/sconect-demo (pg+jar+nginx) tras Traefik → sslip.io con HTTPS | login demo 200 · api/clinica 200 via HTTPS público |
