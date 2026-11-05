@@ -1,7 +1,7 @@
 filters:
   and:
     - tipo == "proyecto"
-    - 'file.folder != "00_Reglas_y_Estandares/templates"'
+    - file.folder != "00_Reglas_y_Estandares/templates"
 properties:
   estado:
     displayName: Estado

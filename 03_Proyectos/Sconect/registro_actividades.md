@@ -31,3 +31,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-10-13 | Atender=Evolucionar (cita queda atendida al crear evolucion), swipe der=atender/izq=reagendar, atendidos al final del listado | suites verdes, smoke evolucion->atendida, `e3eea6f` |
 | 2026-10-13 | Agenda por etapas: 3 secciones colapsables (Por confirmar/Agendados/Atendidos), acciones coherentes por estado, toggle calendario en la vista | analyze+test 7/7, `95854c7` |
 | 2026-11-05 | Repo clonado en PC casa (HEAD 2086608, sin divergencia); gap toolchain detectado: falta mvn+flutter | git clone + log repo |
+| 2026-11-05 | Contrato webhook n8n completado (preferencias + código portal + sobrecupo opt-in) + spec recepcionista | commit `ead323d`, [[SCN - n8n Recepcionista WhatsApp]] |
