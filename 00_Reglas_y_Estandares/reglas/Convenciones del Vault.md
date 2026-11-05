@@ -6,9 +6,9 @@ Reglas de orden del vault (Kaizen / Seiton): todo tiene su lugar y cada nota cue
 
 | Carpeta | Propósito |
 |---|---|
-| `00_Assets/` | Multimedia centralizada (imágenes, adjuntos) |
+| `98_Assets/` | Multimedia centralizada (imágenes, adjuntos) |
 | `01_Laboratorio_y_Borradores/` | Inbox: ideas sueltas, kanbans, notas sin clasificar |
-| `02_Reglas_y_Estandares/` | Estándares de código y convenciones (esta nota + documentos de reglas) |
+| `00_Reglas_y_Estandares/` | Estándares de código y convenciones (esta nota + documentos de reglas) |
 | `03_Proyectos/` | Proyectos en curso — una subcarpeta por proyecto |
 | `99_Archivo/` | Material histórico, wiki de referencia y notas depuradas |
 
@@ -50,7 +50,7 @@ Reglas (adaptadas de la convención 2026-09-25 del repo UOH):
 ## Reglas del embudo
 
 1. Nada entra directo a un proyecto: primero pasa por `01_Laboratorio_y_Borradores/`.
-2. Las imágenes van siempre a `00_Assets/` y se incrustan con `![[nombre.png]]`.
+2. Las imágenes van siempre a `98_Assets/` y se incrustan con `![[nombre.png]]`.
 3. Toda nota de proyecto debe estar enlazada desde su `MOC - <Proyecto>`.
 4. El tablero kanban maestro es [[Desarrollo]] — las notas de tarea usan el frontmatter `status:` (`Pendientes`, `En proceso`, `En Aprobacion`, `Finalizadas`).
 5. Los commits y ramas siguen [[6. Conventional Commits|Conventional Commits]] y [[5. Convenciones de Nomenclatura de Ramas en Git|Convenciones de Nomenclatura de Ramas en Git]].

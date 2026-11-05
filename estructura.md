@@ -5,7 +5,7 @@ actualizado: 2026-11-05
 
 # 🗂️ Estructura del vault
 
-Árbol de carpetas y propósito de cada una. Reglas detalladas en [[02_Reglas_y_Estandares/Convenciones del Vault|Convenciones del Vault]] y mapa de contenido en [[README]].
+Árbol de carpetas y propósito de cada una. Reglas detalladas en [[00_Reglas_y_Estandares/reglas/Convenciones del Vault|Convenciones del Vault]] y mapa de contenido en [[README]].
 
 ```text
 ObsidianDBNiko/
@@ -16,18 +16,14 @@ ObsidianDBNiko/
 │                                   entradas tipificadas: HECHO / DECISIÓN /
 │                                   HIPÓTESIS / RIESGO / PENDIENTE)
 │
-├── 00_Assets/                    → multimedia centralizada (imágenes, adjuntos)
+├── 00_Reglas_y_Estandares/       → PRIMERA: convenciones, estándares y skills
+│   ├── reglas/                   → reglas de orden (Convenciones del Vault)
+│   ├── estandares/               → estándares de código y setups
+│   ├── skills/                   → skills de agente reutilizables (SKILL.md)
+│   └── log.md                    → registro propio de la carpeta
 │
 ├── 01_Laboratorio_y_Borradores/  → INBOX: todo entra aquí primero
 │   └── Desarrollo.md             → tablero kanban maestro
-│
-├── 02_Reglas_y_Estandares/       → convenciones y estándares de trabajo
-│   ├── Convenciones del Vault.md      → orden, prefijos, frontmatter, embudo
-│   ├── Estándares Front-End - Angular.md
-│   ├── Estándares Full-Stack - StarterCustomeKit.md
-│   ├── Proyectos - Setup y arranque.md
-│   ├── Plugins de Obsidian - Setup.md
-│   └── Extensiones de VS Code - Setup.md
 │
 ├── 03_Proyectos/                 → proyectos en curso (uno por carpeta)
 │   │                               estructura canónica por proyecto:
@@ -36,6 +32,8 @@ ObsidianDBNiko/
 │   ├── Frunexis/     ├── ISO Manager/    ├── KaiPetPoint/  ├── Linktree/
 │   ├── MP/           ├── NAMP/           ├── Portafolio/   ├── Sconect/
 │   └── StarterCustomeKit/                └── TaskFlow/
+│
+├── 98_Assets/                    → multimedia centralizada (imágenes, adjuntos)
 │
 └── 99_Archivo/                   → material histórico (no se borra, se archiva)
     ├── niko_wiki/                → base de conocimiento (Laravel, PHP, JS,
@@ -48,5 +46,5 @@ ObsidianDBNiko/
 `capturar (01_)` → `procesar/clasificar` → `proyecto (03_)` → `archivo (99_)`
 
 - Notas nuevas caen en `01_Laboratorio_y_Borradores/` (configurado en `.obsidian/app.json` → `newFileFolderPath`).
-- Las imágenes siempre a `00_Assets/` con `![[nombre.png]]`.
+- Las imágenes siempre a `98_Assets/` con `![[nombre.png]]`.
 - Toda nota de proyecto cuelga de su `MOC - <Proyecto>`.

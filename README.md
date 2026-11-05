@@ -5,7 +5,7 @@ Base de conocimiento personal en Obsidian. Organización por embudo: **capturar 
 ## 🗺️ Mapa del vault
 
 - 📥 [[Desarrollo]] — tablero kanban maestro (en `01_Laboratorio_y_Borradores/`)
-- 📐 [[Convenciones del Vault]] — reglas de orden, prefijos y frontmatter (en `02_Reglas_y_Estandares/`)
+- 📐 [[Convenciones del Vault]] — reglas de orden, prefijos y frontmatter (en `00_Reglas_y_Estandares/`)
 - 🅰️ [[Estándares Front-End - Angular]] — estándares del front (Angular 22, Signals, Tailwind + CDK)
 - 🚀 [[Proyectos - Setup y arranque]] — cómo levantar cada proyecto (repos, puertos, BD, login)
 
@@ -27,4 +27,4 @@ Proyectos cerrados/archivados en `99_Archivo/Proyectos personales/`: GYM (app ru
 
 ## 📁 Convención de carpetas
 
-`00_Assets` multimedia · `01_Laboratorio_y_Borradores` inbox · `02_Reglas_y_Estandares` estándares · `03_Proyectos` en curso · `99_Archivo` histórico
+`98_Assets` multimedia · `01_Laboratorio_y_Borradores` inbox · `00_Reglas_y_Estandares` estándares · `03_Proyectos` en curso · `99_Archivo` histórico
