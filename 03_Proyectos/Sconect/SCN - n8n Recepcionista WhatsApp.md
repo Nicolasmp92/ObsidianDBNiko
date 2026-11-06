@@ -1,11 +1,16 @@
 ---
 tipo: nota-tecnica
 proyecto: sconect
-estado: diseno-parcial
-actualizado: 2026-11-05
+estado: superseded
+actualizado: 2026-11-06
 tags: [n8n, whatsapp, bot, integracion, recepcionista]
 ---
 # SCN — n8n Recepcionista por WhatsApp
+
+> **SUPERSEDED 2026-11-06** — n8n salió del camino crítico. La arquitectura
+> elegida e implementada es backend + WAHA: ver
+> [[SCN - Recepcionista WhatsApp (WAHA + backend)]]. Esta nota se conserva
+> porque el contrato `/api/webhooks/**` sigue sirviendo para bots externos.
 
 **Objetivo:** un paciente escribe al WhatsApp de la consulta → el bot le ofrece
 horas libres → agenda su solicitud → el clínico confirma desde su agenda.
