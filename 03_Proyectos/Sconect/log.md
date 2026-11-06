@@ -276,3 +276,10 @@ Testers amigos probaron `https://sconect.namp.cl`. Bitácora ítem por ítem:
 - **INCIDENTE MENOR** — `ddl-auto` creó `eliminada_en/_por` y `modificado_*` pero NO la columna booleana `eliminada` en Postgres → `ALTER TABLE ... ADD COLUMN eliminada boolean NOT NULL DEFAULT false` manual en la DB del demo. Refuerza el pendiente de Flyway antes de producción real.
 - **Verificado en producción**: crear → PUT edita (registra `modificadoEn`) → DELETE 204 → desaparece del listado, `eliminada=true` en DB. Commit `dee71f1` en `sconect/main`.
 - **CIERRE DE RONDA**: los 11 ítems de testers quedaron resueltos y redesplegados en `https://sconect.namp.cl`. Pendientes originales vigentes: monitor Kuma, bug `PUT /api/preferencias` (semántica PATCH), n8n/WhatsApp, recordatorios 24h, Flyway.
+
+## 2026-11-06 (cierre de ronda) — Punto de retomada hacia WhatsApp
+
+- **Dónde quedó**: los 11 ítems de feedback de testers resueltos, verificados y desplegados en `https://sconect.namp.cl`. Todo pusheado: `sconect/main` = `dee71f1`, vault = `6f8fe74`.
+- **Siguiente paso concreto**: integración WhatsApp — cabeza de cola original (provider aún sin decidir: spec en [[SCN - n8n Recepcionista WhatsApp]]; recomendación piloto = Evolution API en Dokploy). El backend ya expone el contrato completo: `GET /webhooks/preferencias`, `POST /webhooks/portal/codigo` (idempotente), `solicitudSobrecupo` + flag `sobrecupoBot`.
+- **ADVERTENCIA del usuario**: encontró **errores importantes** al usar la app — se dejan registrados como cola de bugs para después de la integración WhatsApp (pendiente que el usuario los pase en detalle).
+- **Nota deploy**: para redesplegar: `mvn -q -DskipTests package` → `scp jar` → `tar` de `app/build/web` → `docker compose -f docker-compose.demo.yml up -d --build` en `/opt/sconect-demo`. Columna `eliminada` requirió ALTER manual (ddl-auto la omitió).
