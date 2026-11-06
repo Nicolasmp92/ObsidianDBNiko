@@ -293,3 +293,10 @@ Testers amigos probaron `https://sconect.namp.cl`. Bitácora ítem por ítem:
 - **RIESGO declarado** — WAHA es no-oficial: posible ban del número, apto piloto. Migración a Meta Cloud API si escala (solo cambia el adaptador).
 - **PENDIENTE (usuario)** — vincular el WhatsApp del consultorio: `ssh -L 3000:localhost:3000 niko@200.141.25.56` → `localhost:3000/dashboard` → sesión `default` → QR.
 - **Spec** — [[SCN - Recepcionista WhatsApp (WAHA + backend)]]; la nota n8n quedó `superseded` (contrato webhooks sigue vivo).
+
+## 2026-11-06 (continuación) — WAHA dashboard + monitor Kuma
+
+- **FIX** — Dashboard WAHA pedía login con clave aleatoria regenerada por restart → persistidas `SCONECT_WAHA_DASH_USER/PASSWORD` en `.env` del VPS + envs en compose. Credenciales entregadas al usuario (guardar en Bitwarden). Volumen sesiones corregido: health real mostró `/app/.sessions`, no `/app/sessions`.
+- **HECHO** — Monitor Kuma `Sconect Demo` (ID 4) → `https://sconect.namp.cl/api/health` cada 60s. Vía `uptime-kuma-api` en contenedor python efímero; workaround: Kuma 2.1 exige columna `conditions` NOT NULL que la librería aún no envía → dict del monitor construido a mano (`_build_monitor_data` + `conditions=[]` + `_call("add")`).
+- **NOTA** — El túnel SSH del dashboard WAHA muere si el contenedor se recrea: re-abrir `ssh -L 3000:localhost:3000 niko@200.141.25.56` y recargar.
+- **PENDIENTE (usuario)** — vincular sesión `default` de WAHA con el WhatsApp del consultorio (QR en dashboard).
