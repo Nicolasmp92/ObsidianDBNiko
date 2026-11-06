@@ -14,11 +14,13 @@ Plataforma web de NAMP: empresa de servicios informáticos. Nace como portafolio
 
 - **Quiero ver qué pasó y cuándo** → [[log]]
 - **Quiero la tabla fecha/actividad/evidencia** → [[registro_actividades]]
+- **Quiero el plan de Instagram** → [[Roadmap - Instagram]]
+- **Quiero el media kit / piezas gráficas** → `02_Outputs/NAMP/` (+ espejo `instagram/` en el repo)
 - **Quiero las reglas del repo** → `.devin/rules/namp-rules.md` (screaming architecture, standalone, dark-first, dorado + esmeralda, mobile-first)
 
 ## Datos operativos
 
-- Repo local: `C:\Users\Niko\Desktop\Desarrollo\namp-ingenieria` (renombrada de `nye-ingenieria` el 2026-10-24)
+- Repo local: `C:\Users\Niko\Desktop\Desarrollo\namp-ingenieria` (renombrada de `nye-ingenieria` el 2026-10-24); en PC ferlu: `C:\Users\ferlu\Desktop\Desarrollo\namp-ingenieria` (clonado 2026-11-06)
 - Remote: `Nicolasmp92/namp-ingenieria` (`origin` local ya actualizado)
 - Proyectos del portafolio: `src/app/portfolio/portfolio.data.ts` — fuente de verdad (interface `Project` + `PROJECTS`)
 - Imágenes de tarjetas: `public/img/projects/` en WebP (sharp-cli, max 1440px, desde capturas del portafolio personal)
