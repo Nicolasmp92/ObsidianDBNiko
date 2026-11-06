@@ -8,28 +8,52 @@ tags: [instagram, marketing, marca]
 
 # Roadmap — Instagram NAMP
 
-Pasos para dejar el perfil de Instagram operativo. Material gráfico ya
-listo en `02_Outputs/NAMP/2026-11-06-media-kit-instagram/` (avatar, post
-de lanzamiento, plantillas, README del kit).
+Pasos para dejar el perfil de Instagram operativo. La cuenta ya existe
+y tiene contenido antiguo (fotos e historias) → hay fase de limpieza.
+Material gráfico listo en `02_Outputs/NAMP/2026-11-06-media-kit-instagram/`
+(avatar, post de lanzamiento, plantillas, README del kit).
 
 ## Fase 0 — Decisiones (bloquea todo)
 
-- [ ] **Definir handle.** Candidatos por orden de consistencia con la
-  marca: `@namp.cl`, `@namp_ingenieria`, `@nampingenieria`. Verificar
-  disponibilidad en instagram.com — el mismo handle conviene reservarlo
-  también en LinkedIn/TikTok aunque no se usen aún.
-- [ ] **Correo de la cuenta:** usar `contacto@namp.cl` (ya recibe vía
-  Cloudflare Email Routing → Gmail).
+- [ ] **Definir handle definitivo.** Candidatos por orden de
+  consistencia con la marca: `@namp.cl`, `@namp_ingenieria`,
+  `@nampingenieria`. Verificar disponibilidad en instagram.com — el
+  mismo handle conviene reservarlo también en LinkedIn/TikTok aunque
+  no se usen aún. Si la cuenta actual ya tiene handle, decidir si se
+  conserva o se cambia (se puede cambiar sin perder seguidores).
+- [ ] **Correo de la cuenta:** pasar a `contacto@namp.cl` (ya recibe
+  vía Cloudflare Email Routing → Gmail).
 - [ ] **Tipo de cuenta: Profesional/Empresa** — da estadísticas, botón
-  de contacto y categoría ("Software" / "Servicio de TI").
+  de contacto y categoría ("Software" / "Servicio de TI"). Se puede
+  convertir una cuenta personal sin perder contenido ni seguidores.
 
-## Fase 1 — Crear y configurar el perfil
+## Fase 1 — Limpieza de la cuenta existente
 
-- [ ] Crear la cuenta en la app de IG (la configuración fina solo se
-  puede desde el móvil).
-- [ ] **Nombre visible:** `NAMP Ingeniería` (el nombre es indexable en
-  búsqueda de IG, mejor que solo "NAMP").
-- [ ] **Foto de perfil:** `avatar-instagram.png` (ya renderizada
+Hay fotos e historias previas que no representan la marca. Regla:
+**archivar primero, eliminar solo lo decidido** — archivar oculta el
+contenido sin borrarlo (recuperable desde "Tu actividad → Archivadas").
+
+- [ ] **Posts del feed:** Perfil → cada publicación → ⋯ → *Archivar*.
+  Masivo: Menú ☰ → *Tu actividad* → *Fotos y videos* → *Publicaciones*
+  → *Seleccionar* → marcar todas → *Archivar* (o *Eliminar* si ya se
+  sabe que no sirven).
+- [ ] **Historias activas:** desaparecen solas a las 24 h. Para borrar
+  una antes: abrirla → ⋯ → *Eliminar*.
+- [ ] **Destacadas:** en el perfil, mantener presionada la destacada →
+  *Eliminar destacada* (las historias archivadas quedan intactas).
+- [ ] **Historias archivadas:** *Tu actividad* → *Archivadas* →
+  *Historias* → abrir → ⋯ → *Eliminar* (opcional, no se ven público).
+- [ ] **Reels:** mismo flujo que posts (pestaña reels del perfil).
+- [ ] **Etiquetadas:** pestaña de etiquetas del perfil → revisar fotos
+  personales etiquetadas → ⋯ → *Ocultar de mi perfil* o quitar etiqueta.
+- [ ] **Seguidos/bio:** dejar de seguir cuentas ajenas a la marca si
+  aplica; limpiar bio antigua (se reescribe en la fase siguiente).
+
+## Fase 2 — Configurar el perfil
+
+- [ ] **Nombre visible:** `NAMP Ingeniería` (indexable en búsqueda de
+  IG, mejor que solo "NAMP").
+- [ ] **Foto de perfil:** `avatar-instagram.png` (renderizada
   1080×1080 pensada para el crop circular).
 - [ ] **Bio** (máx. 150 caracteres), propuesta:
   > Ingeniería de software a medida
@@ -41,7 +65,7 @@ de lanzamiento, plantillas, README del kit).
 - [ ] **Botones de contacto** (cuenta profesional): `contacto@namp.cl`
   + WhatsApp `+56 9 6397 8090` (`wa.me/56963978090`).
 
-## Fase 2 — Contenido semilla (antes de difundir el perfil)
+## Fase 3 — Contenido semilla (antes de difundir el perfil)
 
 Un perfil vacío no convierte. Publicar 3 piezas antes de compartir el
 handle con nadie:
@@ -61,11 +85,11 @@ handle con nadie:
   demo abierto, precio fundador $19.990+IVA.
 - [ ] **Destacadas** (historias fijas bajo la bio): crear 3–4 portadas
   con `plantilla-destacada.html`, cambiando solo el glifo: `</>`
-  Servicios, portafolio Proyectos, carrito/monitor Demo KPP, sobre
-  Contacto. Las historias que alimentan cada destacada salen de
+  Servicios, portafolio Proyectos, monitor Demo KPP, sobre Contacto.
+  Las historias que alimentan cada destacada salen de
   `plantilla-historia.html`.
 
-## Fase 3 — Operación
+## Fase 4 — Operación
 
 - [ ] **Meta Business Suite** (business.facebook.com): vincular la
   cuenta IG → permite programar posts/historias desde el PC y ver
@@ -75,8 +99,8 @@ handle con nadie:
   avance real (deploys, features, antes/después). Calidad sobre
   volumen — el kit garantiza coherencia visual.
 - [ ] **Agregar el handle** al footer de `plantilla-post.html` y
-  `plantilla-historia.html` cuando exista (zona "Visítanos namp.cl"
-  → "@handle · namp.cl").
+  `plantilla-historia.html` cuando quede definido (zona "Visítanos
+  namp.cl" → "@handle · namp.cl").
 - [ ] Merge de `feat/media-kit-instagram` → `main` en GitHub (el PNG
   ya está en el vault, pero el espejo fuente debe quedar en main).
 
