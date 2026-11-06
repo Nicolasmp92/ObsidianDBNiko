@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --gold: #d4af37;
+    --emerald: #10b981;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+  }
+
+  .avatar {
+    position: relative;
+    width: 1080px;
+    height: 1080px;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Resplandores sutiles de marca */
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(160px);
+    opacity: 0.12;
+  }
+  .glow--gold {
+    width: 700px; height: 700px;
+    background: var(--gold);
+    top: -300px; right: -260px;
+  }
+  .glow--emerald {
+    width: 620px; height: 620px;
+    background: var(--emerald);
+    bottom: -280px; left: -240px;
+  }
+
+  /* Isotipo centrado: ocupa ~62% del lienzo para leer bien
+     en el crop circular de Instagram (~110px en el feed). */
+  .mark {
+    position: relative;
+    z-index: 2;
+    width: 660px;
+    height: 660px;
+  }
+</style>
+</head>
+<body>
+  <div class="avatar">
+    <div class="glow glow--gold"></div>
+    <div class="glow glow--emerald"></div>
+
+    <svg class="mark" viewBox="0 0 200 200" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="100" cy="100" r="88" stroke="#2a2a2e" stroke-width="3" />
+      <circle cx="100" cy="100" r="58" stroke="#2a2a2e" stroke-width="3" />
+      <path d="M100 12a88 88 0 0 1 0 176" stroke="#d4af37" stroke-width="6" />
+      <circle cx="100" cy="188" r="9" fill="#d4af37" />
+      <path d="M100 42a58 58 0 0 0 0 116" stroke="#10b981" stroke-width="6" />
+      <circle cx="100" cy="158" r="9" fill="#10b981" />
+      <text x="100" y="100" text-anchor="middle" dominant-baseline="central"
+            font-family="Inter, 'Segoe UI', system-ui, sans-serif"
+            font-size="38" font-weight="700" letter-spacing="1">
+        <tspan fill="#d4af37">N</tspan><tspan fill="#f4f4f5">AM</tspan><tspan fill="#10b981">P</tspan>
+      </text>
+    </svg>
+  </div>
+</body>
+</html>

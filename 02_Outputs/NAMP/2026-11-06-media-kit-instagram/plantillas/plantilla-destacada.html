@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<!--
+  PLANTILLA PORTADA DE DESTACADA — 1080×1080
+  Instagram muestra la portada como círculo pequeño (~60px):
+  un solo glifo/icono grande centrado, sin texto pequeño.
+  Uso: duplicar por cada destacada, cambiar el glifo del <svg class="icono">.
+-->
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --border: #2a2a2e;
+    --text: #f4f4f5;
+    --gold: #d4af37;
+    --emerald: #10b981;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  }
+
+  .cover {
+    position: relative;
+    width: 1080px;
+    height: 1080px;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(170px);
+    opacity: 0.12;
+  }
+  .glow--gold {
+    width: 680px; height: 680px;
+    background: var(--gold);
+    top: -280px; right: -240px;
+  }
+  .glow--emerald {
+    width: 600px; height: 600px;
+    background: var(--emerald);
+    bottom: -260px; left: -220px;
+  }
+
+  .rings {
+    position: absolute;
+    width: 720px;
+    height: 720px;
+    opacity: 0.7;
+  }
+
+  .icono {
+    position: relative;
+    z-index: 2;
+    width: 220px;
+    height: 220px;
+    stroke: var(--gold);
+  }
+</style>
+</head>
+<body>
+  <div class="cover">
+    <div class="glow glow--gold"></div>
+    <div class="glow glow--emerald"></div>
+
+    <svg class="rings" viewBox="0 0 200 200" fill="none" stroke-linecap="round">
+      <circle cx="100" cy="100" r="88" stroke="#2a2a2e" stroke-width="1.5" />
+      <circle cx="100" cy="100" r="58" stroke="#2a2a2e" stroke-width="1.5" />
+      <path d="M100 12a88 88 0 0 1 0 176" stroke="#d4af37" stroke-width="3" />
+      <circle cx="100" cy="188" r="5" fill="#d4af37" />
+      <path d="M100 42a58 58 0 0 0 0 116" stroke="#10b981" stroke-width="3" />
+      <circle cx="100" cy="158" r="5" fill="#10b981" />
+    </svg>
+
+    <!-- EDITAR: glifo central (ej. </> para servicios, carrito para KPP) -->
+    <svg class="icono" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m8 6-6 6 6 6" />
+      <path d="m16 6 6 6-6 6" />
+    </svg>
+  </div>
+</body>
+</html>

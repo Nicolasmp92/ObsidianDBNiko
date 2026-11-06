@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<!--
+  PLANTILLA HISTORIA — 1080×1920
+  Zona segura: mantener texto fuera de los 250px superiores e
+  inferiores (ahí Instagram dibuja avatar y caja de respuesta).
+-->
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --surface: #141416;
+    --border: #2a2a2e;
+    --text: #f4f4f5;
+    --muted: #a1a1aa;
+    --gold: #d4af37;
+    --emerald: #10b981;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  }
+
+  .story {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+    background: var(--bg);
+  }
+
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(160px);
+    opacity: 0.14;
+  }
+  .glow--gold {
+    width: 720px; height: 720px;
+    background: var(--gold);
+    top: -300px; right: -260px;
+  }
+  .glow--emerald {
+    width: 640px; height: 640px;
+    background: var(--emerald);
+    bottom: -280px; left: -260px;
+  }
+
+  .rings {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -52%);
+    width: 900px;
+    height: 900px;
+    opacity: 0.35;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 260px 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .brand svg { width: 110px; height: 110px; }
+  .brand .word {
+    margin-top: 26px;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.5px;
+  }
+  .brand .word span { color: var(--gold); font-weight: 500; }
+
+  .spacer { flex: 1; }
+
+  .eyebrow {
+    color: var(--emerald);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    font-size: 104px;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -2px;
+    color: var(--text);
+    margin-bottom: 48px;
+  }
+  h1 .accent { color: var(--gold); }
+
+  .sub {
+    font-size: 36px;
+    line-height: 1.5;
+    color: var(--muted);
+    max-width: 780px;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--gold);
+    color: #0a0a0b;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 26px 46px;
+    border-radius: 14px;
+  }
+</style>
+</head>
+<body>
+  <div class="story">
+    <div class="glow glow--gold"></div>
+    <div class="glow glow--emerald"></div>
+
+    <svg class="rings" viewBox="0 0 200 200" fill="none" stroke-linecap="round">
+      <circle cx="100" cy="100" r="88" stroke="#2a2a2e" stroke-width="1" />
+      <circle cx="100" cy="100" r="58" stroke="#2a2a2e" stroke-width="1" />
+      <path d="M100 12a88 88 0 0 1 0 176" stroke="#d4af37" stroke-width="2" />
+      <circle cx="100" cy="188" r="4" fill="#d4af37" />
+      <path d="M100 42a58 58 0 0 0 0 116" stroke="#10b981" stroke-width="2" />
+      <circle cx="100" cy="158" r="4" fill="#10b981" />
+    </svg>
+
+    <div class="content">
+
+      <div class="brand">
+        <svg viewBox="0 0 200 200" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="100" cy="100" r="88" stroke="#2a2a2e" stroke-width="3" />
+          <circle cx="100" cy="100" r="58" stroke="#2a2a2e" stroke-width="3" />
+          <path d="M100 12a88 88 0 0 1 0 176" stroke="#d4af37" stroke-width="6" />
+          <circle cx="100" cy="188" r="9" fill="#d4af37" />
+          <path d="M100 42a58 58 0 0 0 0 116" stroke="#10b981" stroke-width="6" />
+          <circle cx="100" cy="158" r="9" fill="#10b981" />
+          <text x="100" y="100" text-anchor="middle" dominant-baseline="central"
+                font-family="Inter, 'Segoe UI', system-ui, sans-serif"
+                font-size="38" font-weight="700" letter-spacing="1">
+            <tspan fill="#d4af37">N</tspan><tspan fill="#f4f4f5">AM</tspan><tspan fill="#10b981">P</tspan>
+          </text>
+        </svg>
+        <div class="word">NAMP<span> Ingeniería</span></div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <!-- EDITAR -->
+      <p class="eyebrow">Categoría</p>
+
+      <!-- EDITAR -->
+      <h1>Titular de la <span class="accent">historia</span></h1>
+
+      <!-- EDITAR -->
+      <p class="sub">Bajada corta, máximo dos líneas.</p>
+
+      <div class="spacer"></div>
+
+      <!-- EDITAR -->
+      <div class="cta">namp.cl</div>
+
+    </div>
+  </div>
+</body>
+</html>
