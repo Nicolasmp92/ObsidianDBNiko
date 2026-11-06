@@ -242,3 +242,29 @@ apertura/cierre + calendario que atenúa días bloqueados, 3) n8n mínimo,
 - **Abiertos**: provider WhatsApp (decisión), workflow n8n, recordatorios 24h, UI agenda días/horarios, Flyway pre-prod, bug `PUT /api/preferencias` (documentado), ventana anulación portal, logo comprobantes.
 - **Notas de entorno (este PC)**: Maven 3.9.9 + Flutter 3.47.9 en `~/tools` (portables); `flutter.bat` solo vía `cmd /c` en Git Bash; H2 es en memoria → cada restart del backend borra datos locales.
 - **Secretos**: `.env` del demo vive solo en el VPS (`/opt/sconect-demo/.env`, chmod 600) — no está en ningún repo.
+
+## 2026-11-06 — Dominio real + acceso Kuma
+
+- **HECHO** — `sconect.namp.cl` → `200.141.25.56` creado en **Cloudflare** (no en NIC Chile — la zona DNS del dominio vive ahí: `andy/cheryl.ns.cloudflare.com`; NIC solo tiene el registro). Proxy "DNS only" (nube gris) obligatorio para que Traefik emita Let's Encrypt. Propagación instantánea; cert válido + login demo verificado end-to-end. `sconect.200.141.25.56.sslip.io` sigue funcionando (SAN en el mismo cert).
+- **HECHO** — Clave de Uptime Kuma reseteada por CLI: los scripts documentados vivían en otra cuenta; Kuma usa `@louislam/sqlite3` → update directo de hash bcrypt en la DB (`changes=1`). Usuario `nikolasmp92@gmail.com`, nueva clave entregada en conversación.
+- **PENDIENTE** — Agregar monitor de `sconect.namp.cl` en Kuma (manual o vía Socket.IO).
+
+## 2026-11-06 — Ronda de feedback de testers (demo) — ejecutada y redesplegada
+
+Testers amigos probaron `https://sconect.namp.cl`. Bitácora ítem por ítem:
+
+1. **Retorno entre vistas** — HECHO: las 21 `MaterialPageRoute` llevan `RouteSettings(name)` → el navegador sincroniza URL/historial (atrás/adelante reales en web). Las AppBar ya tenían flecha de vuelta.
+2. **Instalar la app** — HECHO: Sconect es PWA. `manifest.json` con branding (nombre "Sconect", theme `#004D40`), `index.html` con hook `beforeinstallprompt` → `window.sconectInstalar()`; login muestra "Instalar la app en mi dispositivo" — prompt nativo en Chrome/Edge/Android, instrucciones en Safari/iOS (helper Dart `core/pwa/` con import condicional).
+3. **Teléfono sin validación** — HECHO: solo dígitos y `+`, máx 15, mín 8 si se rellena ("Max" interpretado como máximo de dígitos). Formatter + validator.
+4. **RUT sin validación** — HECHO: dígito verificador módulo 11 (`12.345.678-9` o `12345678-9`); validador independiente del de teléfono.
+5. **Fecha de nacimiento** — HECHO: `TextFormField` readOnly que abre picker (ya no es un ListTile disfrazado), muestra `DD/MM/AAAA`, opcional y con botón para limpiar; el modelo sigue guardando ISO en backend.
+6. **Bloqueo de agenda en calendario** — HECHO: `AgendaBloc` cachea `Preferencias`; el calendario atenúa y tacha días no laborales (gris) y bloqueados (tinte rojo + snackbar con motivo al tocar); `CitaFormScreen` usa `selectableDayPredicate` → esos días no se pueden elegir en el picker. Backend sigue validando como fuente de verdad.
+7. **Preview de rendimiento + horas/día** — HECHO: backend `Usuario.horasTrabajoDia` (1–16, null=8) en `GET/PUT /api/preferencias`; form "Jornada diaria" + tarjeta preview en vivo "≈ N pacientes/día: horas × (60/duración)", acotado por el cupo si existe.
+8. **Subida de archivos con error** — HECHO (causa real): Spring Boot limita multipart a **1 MB** por defecto; nginx ya permitía 25m pero `application.yml` no configuraba `spring.servlet.multipart` → `MaxUploadSizeExceededException` en cualquier archivo real. Fijado a 20MB/25MB. Verificado en la demo: subir PDF 2MB → 201, listar → OK, descargar → 2MB íntegro, borrar → 204.
+9. **Redundancia en evoluciones** — HECHO: ficha tenía tarjeta "Evoluciones" + botón suelto "Evolucionar"; queda solo la tarjeta (el historial ya tiene FAB "Nueva evolución").
+10. **Reagendar permite cambiar paciente** — HECHO: en modo edición el selector se reemplaza por un campo deshabilitado con el nombre del paciente (cambiarlo no es reagendar, es transferir la hora).
+11. **Evoluciones sin editar/eliminar** — **FLAG, decisión del usuario pendiente**: hoy son inmutables por diseño clínico (el formulario ya lo advierte). Opciones: (a) mantener inmutables + corregir/agregar nueva evolución; (b) edición solo del autor con ventana (p.ej. 24h) y registro de modificación; (c) eliminar solo titular con soft-delete. No implementado a propósito — es una decisión médico-legal del producto, no un bug.
+
+**Verificación**: `flutter analyze` 0 issues, `mvn test` 7/7, build web + jar, redeploy VPS (`up -d --build`, healthy), smoke en producción: front 200, login OK, preferencias con `horasTrabajoDia` persistido, upload/descarga/eliminación OK. Commit `2096780` en `sconect/main`.
+
+**Pendiente tras la ronda**: decisión ítem 11; monitor Kuma; bug conocido `PUT /api/preferencias` (campos ausentes borran — confirmado de nuevo hoy al hacer PUT solo con `horasTrabajoDia`: dejó `diasLaborales` vacío; restaurado manualmente; front siempre envía todo así que no afecta al usuario).
