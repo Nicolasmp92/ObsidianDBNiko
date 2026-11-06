@@ -19,10 +19,12 @@ dependencias: se edita texto y se exporta a PNG con `render.ps1`.
 
 ## Marca
 
-- **Isotipo**: dos anillos orbitales (arco dorado exterior, arco esmeralda
-  interior, cada uno con su nodo) + sigla `NAMP` — N dorado, AM texto,
-  P esmeralda. Es el mismo grafismo del hero del sitio; no redibujarlo.
-- **Wordmark**: `NAMP` bold + ` Ingeniería` en dorado (como el header).
+- **Isotipo**: monograma **N** geométrica en trazo puro (path propio, sin
+  fuente) dentro de dos arcos orbitales (dorado exterior, esmeralda
+  interior, cada uno con su nodo) sobre anillos tenues. Mismo grafismo
+  del hero y del header del sitio; no redibujarlo.
+- **Wordmark**: `NAMP` bold con N dorado / AM neutro / P esmeralda +
+  ` Ingeniería` o `INGENIERÍA` en dorado (como el header).
 - **Tagline**: «Ingeniería de software a medida».
 
 ## Paleta
@@ -45,8 +47,9 @@ tracking -2px; eyebrows en mayúsculas con tracking amplio.
 ## Reglas de uso
 
 - Isotipo solo sobre carbón/oscuro o con la variante `-light` en claro.
-- No cambiar el orden de colores de la sigla (N dorado / AM neutro / P esmeralda).
-- Dejar aire alrededor del isotipo ≥ alto de una letra de la sigla.
+- La N siempre en color texto del tema; los arcos siempre dorado afuera
+  y esmeralda adentro — no invertir ni recolorear.
+- Dejar aire alrededor del isotipo ≥ el ancho del trazo de la N.
 - En historias, respetar la zona segura (250px arriba y abajo sin texto).
 - No usar otros colores de acento: dorado = lujo/CTA, esmeralda = innovación/eyebrow.
 
@@ -65,5 +68,6 @@ Para un post nuevo: copiar `plantillas/plantilla-post.html` a
 
 - [ ] Handle de Instagram de NAMP sin definir — agregar `@handle` en el
       footer de las piezas cuando exista.
-- [ ] Convertir textos de los SVG a outlines si el kit sale a terceros
-      (hoy dependen de Inter/Segoe instalada).
+- [ ] Convertir los wordmarks (texto "NAMP"/"INGENIERÍA") a outlines si
+      el kit sale a terceros (hoy dependen de Inter/Segoe instalada);
+      el isotipo ya es path puro y no depende de fuentes.
