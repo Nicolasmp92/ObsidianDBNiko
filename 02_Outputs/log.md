@@ -14,3 +14,7 @@ Entradas tipificadas: ENTREGADO / BORRADOR / DECISIÓN.
 - **PENDIENTE** — Posts de Instagram de MP y NAMP viven en sus repos satélite
   (`<repo>/instagram/`); registrar aquí referencias cuando se publiquen, no
   duplicar los archivos.
+
+## 2026-11-06
+
+- **BORRADOR** — Media kit Instagram NAMP en repo satélite `namp-ingenieria`, rama `feat/media-kit-instagram`: `instagram/` (brand/*.svg, avatar PNG, post-01-lanzamiento PNG con datos reales, plantillas feed/historia/destacada + previews, render.ps1, README del kit). Publicación pendiente: falta merge a `main` y handle de IG.

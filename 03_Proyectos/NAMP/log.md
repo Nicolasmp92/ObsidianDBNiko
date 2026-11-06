@@ -120,3 +120,10 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **PENDIENTE** — Clonar `namp-ingenieria` fresco en este PC (no existe en `Desarrollo/`); decidir qué hacer con `NYEinformatica` (probablemente eliminar tras confirmar que no tiene trabajo único). Ojo: autodeploy on push a `main` — trabajar en rama feature.
 - **PENDIENTE** — Usuario de Instagram de NAMP sin definir (el post no lleva handle).
 - **HECHO** — Vault: creado `estructura.md` en raíz; eliminados archivos basura `Sin título` (1 .md vacío, 5 .base con vista por defecto) y carpeta `Sin nombre`. Causa: plugin core **Bases** crea `Sin título N.base` al explorar + `newFileLocation:root` los tiraba a la raíz. Fix: `app.json` → nuevas notas caen en `01_Inputs/` (regla 1 del embudo).
+
+## 2026-11-06 — Media kit Instagram + clon fresco
+
+- **HECHO** — `namp-ingenieria` clonado fresco en `Desarrollo/` (main `0f25414`, limpio). Media kit de marca creado en `instagram/` (rama `feat/media-kit-instagram`, pusheada — no tocar `main` por autodeploy): isotipo NAMP extraído del hero real (anillos orbitales + sigla multicolor N dorado/AM texto/P esmeralda) como SVG master en `brand/` (mark, horizontal dark, horizontal light), avatar de perfil 1080×1080, post de lanzamiento **regenerado con datos reales** (`namp.cl`, `contacto@namp.cl`, tagline real), plantillas para feed/historia/destacadas + previews PNG, `render.ps1` (Chrome headless) y `README.md` del kit (paleta, tipografía, reglas de uso).
+- **HECHO** — Fix del mark: la sigla debe quedar *dentro* del anillo interior (font-size 38 en viewBox 200); la primera iteración a 52 la desbordaba, detectado en el render del avatar.
+- **RESUELTO** — Riesgo del post con datos placeholder (`nampingenieria.com`): el post nuevo usa el mark real del sitio en `main`, no el clon obsoleto.
+- **PENDIENTE** — Merge de `feat/media-kit-instagram` a `main` (PR: github.com/Nicolasmp92/namp-ingenieria/pull/new/feat/media-kit-instagram). Decidir qué hacer con `Desarrollo/NYEinformatica` (clon obsoleto, probablemente eliminar tras confirmar que no tiene trabajo único). Handle de Instagram sigue sin definir.
