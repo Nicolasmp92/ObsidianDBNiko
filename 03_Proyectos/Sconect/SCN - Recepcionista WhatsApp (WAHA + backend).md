@@ -93,12 +93,18 @@ Envs nuevas (en `/opt/sconect-demo/.env`): `SCONECT_BOT_TOKEN`,
 - Deploy VPS: `waha` healthy, `health` ok con api key, webhook token malo
   → 401 / token real → 200, app `sconect.namp.cl` sigue 200.
 
-## Paso que le queda al usuario
+## Paso que le queda al usuario — vincular número (pendiente)
 
-Vincular el WhatsApp del consultorio a WAHA:
+**Estado 2026-11-06 cierre**: sesión `default` creada con engine GOWS pero en
+`FAILED` — el QR expiró dos veces sin escanearse (rota cada ~60s y llega al
+usuario con demora). Próximo paso al retomar:
 
-```bash
-ssh -L 3000:localhost:3000 niko@200.141.25.56
-# abrir http://localhost:3000/dashboard → crear/iniciar sesión "default"
-# → escanear QR con el WhatsApp del consultorio (o pairing code)
-```
+1. `POST /api/sessions/default/restart` (X-Api-Key de `.env`) → vuelve a
+   `SCAN_QR_CODE`.
+2. Preferir **pairing code** sobre QR: `POST /api/default/auth/request-code`
+   con `{"phoneNumber":"569…"}` → el usuario ingresa el código en WhatsApp
+   (Dispositivos vinculados → "Vincular con número de teléfono") — sin
+   cámara ni carrera contra el timeout. Falta: número del consultorio.
+3. Dashboard alternativo: `ssh -L 3000:localhost:3000 niko@200.141.25.56`
+   → `localhost:3000/dashboard` (admin / clave en `.env` del VPS:
+   `SCONECT_WAHA_DASH_*`). El túnel muere si el contenedor se recrea.

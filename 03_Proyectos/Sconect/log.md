@@ -300,3 +300,11 @@ Testers amigos probaron `https://sconect.namp.cl`. Bitácora ítem por ítem:
 - **HECHO** — Monitor Kuma `Sconect Demo` (ID 4) → `https://sconect.namp.cl/api/health` cada 60s. Vía `uptime-kuma-api` en contenedor python efímero; workaround: Kuma 2.1 exige columna `conditions` NOT NULL que la librería aún no envía → dict del monitor construido a mano (`_build_monitor_data` + `conditions=[]` + `_call("add")`).
 - **NOTA** — El túnel SSH del dashboard WAHA muere si el contenedor se recrea: re-abrir `ssh -L 3000:localhost:3000 niko@200.141.25.56` y recargar.
 - **PENDIENTE (usuario)** — vincular sesión `default` de WAHA con el WhatsApp del consultorio (QR en dashboard).
+
+## 2026-11-06 (cierre) — Vinculación WAHA pendiente, pairing code como vía
+
+- **INTENTO** — Sesión `default` creada por API; primera vez arrancó con engine WEBJS (env errónea `WAHA_ENGINE`) → corregida a `WHATSAPP_DEFAULT_ENGINE=GOWS` en compose y redeploy. GOWS activo (`grpc READY`, `gows connected`).
+- **BLOQUEO** — QR escaneo falló dos veces: el PNG rota cada ~60s y llega al usuario con demora (se muestra la imagen por chat, no es cámara en vivo). Sesión quedó `FAILED` por timeout. **Vía elegida para el retake**: pairing code (`POST /api/default/auth/request-code`, sin cámara) — falta que el usuario pase el número del consultorio.
+- **HECHO** — Credenciales dashboard persistidas (`SCONECT_WAHA_DASH_*` en `.env`); monitor Kuma `Sconect Demo` (ID 4) vivo contra `/api/health`.
+- **PUNTO DE RETOMADA** — todo lo demás listo: bot desplegado y testeado (11/11), WAHA sano, red interna verificada (401/200 según token). Solo falta: (1) `POST /api/sessions/default/restart`, (2) pairing code con el número, (3) mandar "hola" al WhatsApp del consultorio y verificar respuesta del bot.
+- **Cola pendiente** — errores importantes que el usuario encontró en la app (pospuestos); bug `PUT /api/preferencias`; recordatorios 24h; Flyway.
