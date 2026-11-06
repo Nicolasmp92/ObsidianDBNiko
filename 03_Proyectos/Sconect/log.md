@@ -268,3 +268,11 @@ Testers amigos probaron `https://sconect.namp.cl`. Bitácora ítem por ítem:
 **Verificación**: `flutter analyze` 0 issues, `mvn test` 7/7, build web + jar, redeploy VPS (`up -d --build`, healthy), smoke en producción: front 200, login OK, preferencias con `horasTrabajoDia` persistido, upload/descarga/eliminación OK. Commit `2096780` en `sconect/main`.
 
 **Pendiente tras la ronda**: decisión ítem 11; monitor Kuma; bug conocido `PUT /api/preferencias` (campos ausentes borran — confirmado de nuevo hoy al hacer PUT solo con `horasTrabajoDia`: dejó `diasLaborales` vacío; restaurado manualmente; front siempre envía todo así que no afecta al usuario).
+
+## 2026-11-06 (segunda parte) — Ítem 11 resuelto: evoluciones editar/eliminar
+
+- **DECISIÓN (usuario)** — Política "Editar 24h + historial": el autor corrige su evolución dentro de 24 h de creada (queda `modificadoEn`/`modificadoPor` y la UI marca "editada"); eliminar es **soft-delete** (`eliminada`/`eliminadaEn`/`eliminadaPor`) — el registro clínico se conserva para auditoría, nunca se borra físicamente. Pasada la ventana, las evoluciones son inmutables y el backend sugiere crear una nota aclaratoria (409).
+- **HECHO** — `PUT/DELETE /api/clinica/evoluciones/{id}` (regla autor + ventana), `puedeEditar` calculado en backend por solicitante, acciones en la UI solo cuando aplica, listados clínica+portal excluyen eliminadas, `@Transactional` en mutaciones (autor lazy + `open-in-view:false` → el primer deploy dio 500 "no session", corregido).
+- **INCIDENTE MENOR** — `ddl-auto` creó `eliminada_en/_por` y `modificado_*` pero NO la columna booleana `eliminada` en Postgres → `ALTER TABLE ... ADD COLUMN eliminada boolean NOT NULL DEFAULT false` manual en la DB del demo. Refuerza el pendiente de Flyway antes de producción real.
+- **Verificado en producción**: crear → PUT edita (registra `modificadoEn`) → DELETE 204 → desaparece del listado, `eliminada=true` en DB. Commit `dee71f1` en `sconect/main`.
+- **CIERRE DE RONDA**: los 11 ítems de testers quedaron resueltos y redesplegados en `https://sconect.namp.cl`. Pendientes originales vigentes: monitor Kuma, bug `PUT /api/preferencias` (semántica PATCH), n8n/WhatsApp, recordatorios 24h, Flyway.
