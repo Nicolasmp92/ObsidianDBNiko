@@ -314,3 +314,11 @@ Testers amigos probaron `https://sconect.namp.cl`. Bitácora ítem por ítem:
 - **HECHO** — Sesión `default` → `WORKING`, cuenta `56962308757@c.us` ("Niko"), GOWS conectado. Logrado por QR en dashboard con cámara pre-abierta. Timing real: el QR muere a ~2.5 min y WAHA no regenera (sesión → FAILED); pairing code expira aún antes. Dashboard nuevo requiere Connect del worker (API + `WAHA_API_KEY`, guarda server en localStorage) o Sessions lista vacío.
 - **PENDIENTE (verificación e2e)** — "hola" al +56 9 6230 8757 → bot debe contestar menú 1/2/3. Después: flujo completo agendar → cita `solicitada` aparece en la agenda del clínico.
 - **RIESGO (cuentas)** — PAT GitHub `Nicolasmp92` de este PC expiró/revocado (12→13-nov): push/pull de repos privados y del vault caído hasta renovar. Commits quedan locales.
+
+## 2026-11-13 (cierre) — Bot no respondía: fix HTTP/1.1 deployado
+
+- **HECHO** — Testers mandaron "hola" sin respuesta. Causa aislada: el webhook entrante funcionaba (WAHA→backend 200) pero `WahaClient` fallaba al **responder** — el `HttpClient` del JDK intenta upgrade h2c en cleartext y WAHA cierra la conexión (`header parser received no bytes`). Endpoint y auth verificados sanos por curl antes de tocar código.
+- **FIX+DEPLOY** — `HttpClient` pinned a HTTP/1.1 (commit `f4df87f`), `mvn test` 11/11, jar subido por rsync (el scp lo dejó corrupto 258B — verificado por SHA-256) y backend recreado: `/api/health` 200.
+- **PENDIENTE (e2e)** — repetir "hola" al +56 9 6230 8757 → menú 1/2/3. Si no responde, siguiente sospechoso: remitentes llegan `…@lid` (esquema nuevo de WhatsApp) y `BotController` pasa `payload.from` directo como `chatId` — verificar si WAHA acepta `@lid` en `sendText`.
+- **CORRECCIÓN** — el PAT `Nicolasmp92` NO murió (falsa alarma por DNS transitorio); pushes funcionan.
+- **PUNTO DE RETOMADA** — sesión WAHA `default` WORKING, fix en prod, solo falta el test e2e. Si responde: probar flujo agendar → cita `solicitada` en la agenda del clínico. Cola intacta: errores de la app que el usuario reportó, bug `PUT /api/preferencias`, recordatorios 24h, Flyway.
