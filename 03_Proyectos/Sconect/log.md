@@ -308,3 +308,9 @@ Testers amigos probaron `https://sconect.namp.cl`. Bitácora ítem por ítem:
 - **HECHO** — Credenciales dashboard persistidas (`SCONECT_WAHA_DASH_*` en `.env`); monitor Kuma `Sconect Demo` (ID 4) vivo contra `/api/health`.
 - **PUNTO DE RETOMADA** — todo lo demás listo: bot desplegado y testeado (11/11), WAHA sano, red interna verificada (401/200 según token). Solo falta: (1) `POST /api/sessions/default/restart`, (2) pairing code con el número, (3) mandar "hola" al WhatsApp del consultorio y verificar respuesta del bot.
 - **Cola pendiente** — errores importantes que el usuario encontró en la app (pospuestos); bug `PUT /api/preferencias`; recordatorios 24h; Flyway.
+
+## 2026-11-13 — WAHA vinculado: recepcionista conectado al WhatsApp real
+
+- **HECHO** — Sesión `default` → `WORKING`, cuenta `56962308757@c.us` ("Niko"), GOWS conectado. Logrado por QR en dashboard con cámara pre-abierta. Timing real: el QR muere a ~2.5 min y WAHA no regenera (sesión → FAILED); pairing code expira aún antes. Dashboard nuevo requiere Connect del worker (API + `WAHA_API_KEY`, guarda server en localStorage) o Sessions lista vacío.
+- **PENDIENTE (verificación e2e)** — "hola" al +56 9 6230 8757 → bot debe contestar menú 1/2/3. Después: flujo completo agendar → cita `solicitada` aparece en la agenda del clínico.
+- **RIESGO (cuentas)** — PAT GitHub `Nicolasmp92` de este PC expiró/revocado (12→13-nov): push/pull de repos privados y del vault caído hasta renovar. Commits quedan locales.
