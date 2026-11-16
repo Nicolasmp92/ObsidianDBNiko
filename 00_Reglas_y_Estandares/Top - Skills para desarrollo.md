@@ -16,7 +16,7 @@ Skills evaluadas para instalar en los proyectos de NAMP/vault. Formato: `SKILL.m
 
 ---
 
-## Tier 1 — Ya en nuestro store (`skills/`), probadas en UOH
+## Tier 1 — Ya en nuestro store (`skills/`), probadas en proyectos reales
 
 Ordenadas por impacto en tu flujo (bitácoras + multi-PC + varios repos):
 
@@ -31,7 +31,7 @@ Ordenadas por impacto en tu flujo (bitácoras + multi-PC + varios repos):
 | 7 | `interrogatorio-adopcion` | Evalúa herramientas/dependencias antes de incorporarlas | Encaja con "cero dependencias extra" de NAMP |
 | 8 | `exploracion-analisis` | Análisis profundo de decisiones (primeros principios + OODA + consejo) | Para decisiones de arquitectura grandes |
 
-**Recomendación:** instalarlas todas — ya fueron batalla-probadas en el repo UOH y vienen con `references/` incluidos.
+**Recomendación:** instalarlas todas — ya fueron batalla-probadas en proyectos reales y vienen con `references/` incluidos.
 
 ---
 

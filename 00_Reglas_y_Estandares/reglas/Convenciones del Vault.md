@@ -26,7 +26,7 @@ Reglas de orden del vault (Kaizen / Seiton): todo tiene su lugar y cada nota cue
 | `SCN - ` | Sconect |
 | `MOC - ` | Mapa de contenido de un proyecto o área |
 
-## Estructura canónica por proyecto (modelo repositorios-digitales-uoh)
+## Estructura canónica por proyecto
 
 Cada carpeta de `03_Proyectos/<Proyecto>/` sigue esta forma; los archivos solo se crean con contenido real, no como andamiaje:
 
@@ -41,7 +41,7 @@ Cada carpeta de `03_Proyectos/<Proyecto>/` sigue esta forma; los archivos solo s
   _historico/              # notas superadas (cuando existan; nunca se borran)
 ```
 
-Reglas (adaptadas de la convención 2026-09-25 del repo UOH):
+Reglas:
 
 - El `MOC` es la ficha del proyecto: qué es, estado, navegación **por necesidad** («quiero X»), no solo por nombre.
 - El `log.md` es **append-only y tipificado**: distingue lo verificado (HECHO) de lo elegido (DECISIÓN), lo supuesto (HIPÓTESIS) y lo que puede romperse (RIESGO). Las entradas nuevas van al final.
@@ -63,7 +63,7 @@ Para que [[Proyectos]] (base) y cualquier consulta funcionen, el frontmatter usa
 - El detalle fino (rama, fase, subestado) va en el cuerpo del MOC o el log, **no** en `estado`.
 - `tipo: empresa` queda fuera del dashboard de productos — es la capa meta (infra, comercial, pipeline).
 - Las plantillas canónicas viven en `00_Reglas_y_Estandares/templates/` (plugin core Templates configurado): `MOC - Proyecto`, `log - Proyecto`, `registro_actividades - Proyecto`.
-- La integridad del store de skills se verifica con `00_Reglas_y_Estandares/skills/MANIFEST.sha256` (mismo patrón que `.devin/` en UOH; regenerar al agregar/mutar una skill).
+- La integridad del store de skills se verifica con `00_Reglas_y_Estandares/skills/MANIFEST.sha256` (mismo patrón que el paquete `.devin/`; regenerar al agregar/mutar una skill).
 
 ## Reglas del embudo
 
@@ -77,6 +77,6 @@ Para que [[Proyectos]] (base) y cualquier consulta funcionen, el frontmatter usa
 ## Documentos de estándares
 
 - [[Estándares Front-End - Angular]] — reglas para el front (Angular 22, Signals, Tailwind + CDK headless, SSR, workflow y testing).
-- [[Estándares Full-Stack - StarterCustomeKit]] — stack de arranque para proyectos nuevos (Angular 22 + Spring Boot + PostgreSQL) y metodología de trabajo estilo DSpace-CRIS (paquete `.devin`, skills por gatillo, bitácoras, cadena lab→dev→prod).
+- [[Estándares Full-Stack - StarterCustomeKit]] — stack de arranque para proyectos nuevos (Angular 22 + Spring Boot + PostgreSQL) y metodología de trabajo `.devin` (skills por gatillo, bitácoras, cadena lab→dev→prod).
 - [[Plugins de Obsidian - Setup]] — extensiones de comunidad requeridas por el vault (kanban, tablas, post-its).
 - [[Extensiones de VS Code - Setup]] — extensiones recomendadas del IDE (Angular, Java, Spring Boot, lint/formato).

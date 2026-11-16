@@ -7,8 +7,8 @@ tags: [promocion, entornos, produccion, seguridad-operacional]
 
 # Reglas · cadena de promoción lab → dev → producción
 
-> Regla genérica del paquete (origen: auditoría `diagnostico_dspace-cris`,
-> EV-06): ninguna operación escribe directo en producción. Toda
+> Regla genérica del paquete (origen: auditoría de la cadena de
+> despliegue): ninguna operación escribe directo en producción. Toda
 > carga/cambio sube por la cadena con verificación en cada escalón. Los
 > nombres de los entornos se concretan por proyecto.
 

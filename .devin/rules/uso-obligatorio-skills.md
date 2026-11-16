@@ -7,8 +7,7 @@ tags: [metodologia, skills, gates, evidencia]
 
 # Reglas · uso obligatorio de la metodología del paquete
 
-> Decisión del 2026-10-01, tras la auditoría `diagnostico_dspace-cris`:
-> las skills de `.devin/skills/` no son opcionales. El método existe en disco;
+> Las skills de `.devin/skills/` no son opcionales. El método existe en disco;
 > esta regla exige activarlo **antes** de ejecutar el tipo de tarea que gobierna,
 > no después ni "de memoria".
 
@@ -31,8 +30,8 @@ Si varias aplican, se invocan **todas** al inicio, en paralelo.
 
 - No emitir dictamen, informe ni "está bien" sobre un artefacto sin haberlo
   verificado contra la fuente en disco. Conteo narrado ≠ evidencia.
-- No ejecutar escrituras contra sistemas institucionales (CRIS prod, Solr,
-  BD, endpoints) sin gate explícito del usuario. Dry-run primero, siempre.
+- No ejecutar escrituras contra sistemas de producción (BD, endpoints,
+  índices, servicios) sin gate explícito del usuario. Dry-run primero, siempre.
 - No declarar una carga/migración/reconciliación "completa" sin manifiesto:
   esperados, procesados, excluidos, hashes.
 - No reescribir logs ni bitácoras (ver `logs-y-bitacoras.md`); los estados

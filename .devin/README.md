@@ -1,7 +1,8 @@
 # Skills esenciales para programacion
 
-Paquete portable construido desde las fuentes canonicas de
-`system_4/skills_compartidas/skills/` el 2026-09-22.
+Paquete portable de skills esenciales para programacion — la copia
+canonica vive en `.devin/` en la raiz del vault; cada proyecto mantiene
+su propia copia adaptada.
 
 ## Contenido
 

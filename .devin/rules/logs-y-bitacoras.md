@@ -7,9 +7,9 @@ tags: [logs, bitacora, trazabilidad, convencion]
 
 # Reglas de logs y bitácoras
 
-Evita la proliferación de logs solapados (caso real: `log.md` + `log-coordinador.md`
-en raíz registrando los mismos eventos; `log.md` vs `log-maestro-*` en
-CARGAR_DSPACE divergiendo).
+Evita la proliferación de logs solapados (caso real: un `log.md` raíz
+conviviendo con logs alternos como `log-coordinador.md` o `log-maestro-*`
+que registraban los mismos eventos y divergían).
 
 ## 1. Un solo log narrativo por nivel — nombre exacto `log.md`
 
@@ -46,17 +46,13 @@ archivo, añadir al final. Nunca "reordenar" entradas ajenas.
 Todo commit que cambie una decisión, estado o estructura debe tener su entrada
 en el log correspondiente — el commit y la entrada son el mismo acto.
 
-## Estado tras la unificación 2026-09-25
+## Distribución canónica (ejemplo)
 
 | Log | Rol |
 |---|---|
 | `log.md` (raíz) | Transversal del workspace |
-| `DSPACE-CRIS/log.md` | Línea CRIS |
-| `DSPACE-CRIS/registro_actividades.md` | Tabla de sesiones CRIS |
-| `DSPACE/log.md`, `DSPACE/CARGAR_DSPACE/log.md` | Línea DSpace 6 (congelada) |
-| `DATAVERSE/log.md` | Línea Dataverse |
-| `DSPACE-CRIS/docs/bitacora-servidor-cris.md` | Incidentes app CRIS |
-| `DSPACE/docs/bitacora-repositorio.md` | Incidentes DSpace 6 |
-| `SERVIDORES/<host>/bitacora.md` | Incidentes de host |
-| `log-coordinador.md` | **CERRADO** — historial solamente |
-| `DSPACE/CARGAR_DSPACE/versiones/log-maestro-*` | Historial archivado |
+| `<LINEA>/log.md` | Narrativo de esa línea/proyecto |
+| `<LINEA>/registro_actividades.md` | Tabla de sesiones de esa línea |
+| `<LINEA>/docs/bitacora-<tema>.md` | Incidentes de aplicación |
+| `SERVIDORES/<host>/bitacora.md` | Incidentes de host/infra |
+| `<LINEA>/versiones/log-*` | Historial archivado (append-only) |

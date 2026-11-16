@@ -14,11 +14,9 @@ Flutter (mobile)** — por eso el backend es API-first, no monolito.
 
 > **Autocontenido**: este documento + el paquete `.devin/` de la raíz de este
 > vault bastan para arrancar un proyecto — no depende de carpetas ajenas que
-> puedan desaparecer. La primera implementación del kit fue `cabid` y la
-> metodología `.devin` nació en el workspace `repositorios-digitales-uoh`;
-> ambas quedan internalizadas aquí: la copia de `.devin/` del vault es la
-> **canónica** y el código de referencia es el de cualquier proyecto vigente
-> del kit (§Estructura monorepo lista las piezas a portar).
+> puedan desaparecer. La copia de `.devin/` del vault es la **canónica** y el
+> código de referencia es el de cualquier proyecto vigente del kit
+> (§Estructura monorepo lista las piezas a portar).
 
 # 1. Stack técnico
 
@@ -154,8 +152,7 @@ interrogatorio → desarrollo.
    estructura creada).
 7. **Git**: un repo por proyecto; Conventional Commits en español; ramas
    `<tipo>/<descripcion-corta-kebab>`. Documentación y código pueden vivir en
-   el mismo repo (a diferencia de UOH, donde la bitácora vive separada del
-   código institucional).
+   el mismo repo.
 
 # 4. Diferencias respecto al kit anterior (Laravel)
 
