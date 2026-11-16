@@ -38,3 +38,7 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-11-16 | Tercer PC dev Windows: sconect clonado + toolchain portable (JDK 17, Maven 3.9.9, Flutter 3.50) | `mvn test` 20/20 · build web OK |
 | 2026-11-16 | Diagnóstico bot con WAHA mockeado: "hola"→menú @c.us/@lid, token 401 — código sano | log mock con sendText correcto |
 | 2026-11-16 | Fix PUT /api/preferencias (merge tri-estado) + recordatorios 24h + hardening @lid + ojito login | 4 commits pusheados `9c1c506` · tests 20/20 |
+| 2026-11-16 | E2E bot WhatsApp en prod: "hola"→menú→agendar→solicitada id=7; confirmar notifica al paciente (lids/pn→sendText 201, mensaje recibido) | logs WAHA/backend + WhatsApp real |
+| 2026-11-16 | Fix CORS: PATCH no estaba en allowedMethods → 403 pre-auth en app (causa del "sin permiso"); fix lazy-proxy en cambiarEstado; pull-to-refresh en agenda | PATCH+OPTIONS con Origin→200, `96e0865` `7d30b3f` |
+| 2026-11-16 | UX bot: atajos m/s/n, numeración plana, año en fechas; anticipación mínima configurable (120min) | `b73c850` `d6facf1` `86a2b3a` |
+| 2026-11-16 | Lock pesimista por profesional (carrera app↔bot) + 409 informativo; AppToast componente único (17 showSnackBar→1 API, overlay superior) + aviso "notificamos a tu paciente" | tests 20/20, `1d78736` `212a25a` |

@@ -340,3 +340,16 @@ Testers amigos probaron `https://sconect.namp.cl`. Bitácora ítem por ítem:
 - **HECHO (deploy)** — Commits `559e173`+`f1a5413`+`010bde7` deployados a `/opt/sconect-demo` (jar SHA-256 verificado + build web). Stack healthy, `sconect.namp.cl/api/health` 200, columna `recordado_en` creada por ddl-auto sin ALTER manual.
 - **HECHO** — Titular del demo cambiado a `nikolasmp92@gmail.com`/`niko9214` (decisión usuario; demo@sconect.cl dejó de existir). Update por SQL con bcrypt generado local. **Ojo trampa**: el hash `$2b$…` se corrompió por doble expansión de shell (`$2b`→`b`) en el primer UPDATE — re-aplicado por psql stdin heredoc; login verificado 200 via `/api/auth/login`.
 - **PENDIENTE (e2e)** — "hola" al +56 9 6230 8757 → menú. Usuario por enviar.
+
+## 2026-11-16 (noche) — E2E bot exitoso + confirmación notifica + fixes UX/CORS/lock
+
+- **HECHO (e2e bot)** — "hola" al +56 9 6230 8757 → menú → agendar → `solicitada` id=7 en prod. Webhook→backend 200, sendText 201, `lids/{lid}` resolviendo PN en vivo (hardening operando).
+- **HECHO (notificación)** — `notificarRespuesta` en `cambiarEstado`: PATCH solicitada→confirmada → `lids/pn` 200 → sendText 201 → mensaje recibido en WhatsApp real. El 401 de `lids/pn` visto antes era sonda manual sin `X-Api-Key` — falsa alarma.
+- **HECHO (causa raíz "No tienes permiso")** — el CorsFilter rechazaba **PATCH** (no estaba en `allowedMethods`) con 403 "Invalid CORS request" 31B ANTES de auth: los GET cargaban la agenda pero confirmar moría en app/navegador; mis curls sin `Origin` pasaban 200. Fix `96e0865`: agregar PATCH. Verificado OPTIONS+PATCH con Origin → 200.
+- **HECHO (agenda)** — `RefreshIndicator` pull-to-refresh (solicitudes del bot llegan con la agenda ya abierta); fix lazy-proxy en `cambiarEstado` (re-fetch `findWithDetalleById` para response+notify; el proxy `Paciente#1` moría fuera de sesión → 500 → "reintentar").
+- **HECHO (UX bot)** — atajos `m`/`s`/`n` (además de menu/si/no), numeración plana `1.` (keycaps no agrupan decenas), fechas con año, instrucción de hora y de menú en líneas separadas.
+- **HECHO (reglas configurables)** — `anticipacionMinMin` en preferencias (default 120, 0=off) reemplaza el 30' hardcodeado; el bot no ofrece horas dentro de la ventana.
+- **HECHO (carrera reservas)** — `findWithLockById` PESSIMISTIC_WRITE sobre la fila del profesional + `@Transactional` en crear/actualizar: el par validar-solape→insert es serializado app↔bot. Bot re-valida solape+cupo bajo lock en `crearSolicitud`. 409 informativo: "la acaba de pedir un paciente por WhatsApp — respóndela en 'Por confirmar'" vs "solapa con la cita de <nombre> (<hora>)". Commit `1d78736`.
+- **HECHO (AppToast)** — componente único `lib/core/widgets/app_toast.dart` (Overlay superior, exito/error/info, auto-dismiss): reemplazados los 17 `showSnackBar` ad-hoc de 13 archivos; el SnackBar default tapaba la bottom-nav. `AgendaAviso` (estado one-shot del bloc) → toast "Hora confirmada — avisamos a <paciente> por WhatsApp". Commit `212a25a`.
+- **Tests** 20/20 · `analyze` 0 errores (solo deprecations material_ui preexistentes) · stack healthy.
+- **PENDIENTE cola** — Flyway, migración material_ui, sesión WAHA zombie `session_01m7…` (ruido horario), errores de la app aún sin detalle del usuario.
