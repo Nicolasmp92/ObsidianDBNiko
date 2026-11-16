@@ -35,3 +35,6 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 
 | 2026-11-05 | Dev local E2E (backend :8083 + web :4203); toolchain Maven/Flutter portable; fix CORS patterns; paciente al vuelo en cita | `mvn test` 7/7 · analyze 0 issues · login local 200 |
 | 2026-11-05 | Demo pública en VPS: stack /opt/sconect-demo (pg+jar+nginx) tras Traefik → sslip.io con HTTPS | login demo 200 · api/clinica 200 via HTTPS público |
+| 2026-11-16 | Tercer PC dev Windows: sconect clonado + toolchain portable (JDK 17, Maven 3.9.9, Flutter 3.50) | `mvn test` 20/20 · build web OK |
+| 2026-11-16 | Diagnóstico bot con WAHA mockeado: "hola"→menú @c.us/@lid, token 401 — código sano | log mock con sendText correcto |
+| 2026-11-16 | Fix PUT /api/preferencias (merge tri-estado) + recordatorios 24h + hardening @lid + ojito login | 4 commits pusheados `9c1c506` · tests 20/20 |
