@@ -10,10 +10,15 @@ tags: [stack, metodologia, angular, spring-boot, postgresql, starterkitcustome]
 
 Stack y forma de trabajo estándar para proyectos nuevos (StarterCustomeKit v2,
 Frunexis, web empresa, apps móviles). Una sola API sirve a **Angular (web) y
-Flutter (mobile)** — por eso el backend es API-first, no monolito. Referencia
-de código: **cabid**
-(`~/Escritorio/Desarrollo/cabid`). Referencia de metodología: workspace
-**repositorios-digitales-uoh** (`~/Escritorio/repositorios-digitales-uoh/.devin`).
+Flutter (mobile)** — por eso el backend es API-first, no monolito.
+
+> **Autocontenido**: este documento + el paquete `.devin/` de la raíz de este
+> vault bastan para arrancar un proyecto — no depende de carpetas ajenas que
+> puedan desaparecer. La primera implementación del kit fue `cabid` y la
+> metodología `.devin` nació en el workspace `repositorios-digitales-uoh`;
+> ambas quedan internalizadas aquí: la copia de `.devin/` del vault es la
+> **canónica** y el código de referencia es el de cualquier proyecto vigente
+> del kit (§Estructura monorepo lista las piezas a portar).
 
 # 1. Stack técnico
 
@@ -63,10 +68,16 @@ Auth/Users (roles), Notifications, Settings (key-value), Audit (trazabilidad),
 Media (storage), Health (estado del sistema). Prioridad: Auth → Health → CRUD
 ejemplo; el resto según necesidad del proyecto (YAGNI).
 
-# 2. Metodología de trabajo (modelo DSpace-CRIS)
+# 2. Metodología de trabajo (paquete `.devin`)
 
-El workspace `repositorios-digitales-uoh/.devin/` es un **paquete portable**:
-copiar la carpeta completa al nuevo proyecto/workspace y ejecutar su bootstrap.
+La copia canónica vive en `.devin/` en la raíz de **este vault** — paquete
+portable y autocontenido. Para adoptarlo en un proyecto se copia la carpeta
+completa al nuevo workspace y se ejecuta su bootstrap (`LAUNCHER.md`). Las
+`rules/` del paquete canónico son solo las **genéricas**
+(`uso-obligatorio-skills`, `logs-y-bitacoras`, `promocion-entornos`); cada
+proyecto añade en su copia las reglas que nombran hosts, esquemas o rutas
+concretas (esquema de BD del backend, mapa de repos, estándar de front) —
+esas nunca suben al paquete base.
 
 ```
 .devin/
@@ -127,15 +138,17 @@ interrogatorio → desarrollo.
 
 # 3. Arranque rápido (checklist)
 
-1. **Front**: `ng new <app>` con SSR, o copiar la base de cabid. Tailwind 4 +
-   CDK + Vitest + prettier/eslint según [[Estándares Front-End - Angular]].
-2. **Back**: proyecto Maven desde start.spring.io con las 5 deps base; portar
-   `config/`, `auth/` y `seed/` de `cabid/backend` como punto de partida.
+1. **Front**: `ng new <app>` con SSR, o copiar la base de un proyecto vigente
+   del kit. Tailwind 4 + CDK + Vitest + prettier/eslint según
+   [[Estándares Front-End - Angular]].
+2. **Back**: proyecto Maven desde start.spring.io con las 5 deps base; como
+   punto de partida portar `config/`, `auth/` y `seed/` del proyecto vigente
+   más reciente que use este kit (piezas listadas en §Estructura monorepo).
 3. **Wiring**: `proxy.conf.cjs` con rewrite de `/api`; `server.ts` (Express)
    proxifica a `$<APP>_API_URL` (default `http://localhost:8080`).
 4. **BD**: `CREATE USER` + `CREATE DATABASE` dedicados; env vars `<APP>_*`.
-5. **Metodología**: copiar `.devin/` al proyecto, ejecutar `LAUNCHER.md` →
-   generar `inyector-skill.md` local.
+5. **Metodología**: copiar `.devin/` desde la raíz de este vault (canónica)
+   al proyecto, ejecutar `LAUNCHER.md` → generar `inyector-skill.md` local.
 6. **Docs**: `README.md` + `log.md` + `registro_actividades.md` + agenda con
    primera entrada `## <fecha> · Inicio del proyecto` (stack, decisiones,
    estructura creada).
@@ -149,6 +162,6 @@ interrogatorio → desarrollo.
 El StarterCustomeKit original era Laravel 12 + Breeze + Livewire/Volt
 (`99_Archivados/Proyectos personales/StarterCustomeKit/`). Esta versión lo
 **supera** como stack oficial: backend Java/Spring por campo laboral y perfil
-empresarial, frontend Angular idéntico a cabid, y metodología `.devin`
+empresarial, frontend Angular según §1, y metodología `.devin`
 incorporada desde el arranque. Las notas `STK-*`/`SCK-*` quedan como
 especificación funcional de los dominios a portar, no como stack vigente.
