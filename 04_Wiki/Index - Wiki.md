@@ -28,6 +28,9 @@ Bienvenido a tu base de conocimiento de programación. Aquí puedes encontrar to
 ## 📋 Metodologías
 - [[1. Index Metodologías]]
 
+## 🤖 Inteligencia Artificial
+- [[1. Index Inteligencia Artificial]] — proyecto [[MOC - Myk]] (IA local, desde cero)
+
 ## � Iniciando nuevos proyectos
 - [[Desde cero con Laravel en su última versión]]
 - [[Desde Git+Laravel]]
