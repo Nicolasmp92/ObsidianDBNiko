@@ -367,3 +367,4 @@ Testers amigos probaron `https://sconect.namp.cl`. Bitácora ítem por ítem:
 - **HECHO (filtros)** — chips de especialidad → botón tune + bottom sheet (badge + chip borrable en el contador): libera el top del directorio en móvil. Deployado a prod (2026-11-17).
 - **HECHO (perf directorio)** — tirones de scroll: lista por grupos era `ListView(children:)` eager + imágenes decodificando a resolución completa. Fix: `ListView.builder` lazy con headers como items + `cacheWidth/Height` a tamaño físico. Deployado a prod (2026-11-17).
 - **HECHO (fix blanco Solicitar hora)** — causa: `MaterialApp` sin `localizationsDelegates` y el picker pedía 'es' → crash/pantalla blanca. Fix: flutter_localizations + delegates (datepicker en español en toda la app). + diálogo de carga en solicitarCita y loadingBuilder en imágenes de la card. Deployado (2026-11-17).
+- **HECHO (cuenta)** — botón Cerrar sesión fijado al pie con su divisor, fuera del scroll. Deployado (2026-11-17).
