@@ -14,6 +14,9 @@ Bienvenido a tu base de conocimiento de programación. Aquí puedes encontrar to
 - [[1. Index JavaScript]]
 - [[1. Index Angular]]
 
+## 📐 Diseño UI / UX
+- [[1. Index Diseño UI-UX]] — línea de investigación: patrones mobile-first, metodologías de diseño
+
 ## ⚙️ Backend
 - [[Index PHP]]
 - [[Como instalar PHP]]
