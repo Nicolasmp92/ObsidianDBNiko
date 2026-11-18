@@ -39,15 +39,16 @@ GET /me/accounts                      → id de la página FB
 GET /{page-id}?fields=instagram_business_account  → IG_USER_ID
 ```
 
-### 4. Directorio público en el VPS
+### 4. Directorio público en el VPS — ✅ YA HECHO (2026-11-18)
 
-Instagram descarga la imagen desde una URL pública. Crear un directorio
-servido por el web server del VPS (ej. `namp.cl/media-ig/`):
+Instagram descarga la imagen desde una URL pública. Ya quedó montado:
+contenedor `ig-media` (nginx:alpine) en el VPS sirviendo
+`~/ig-media/media-ig` vía Traefik con la regla
+`Host(namp.cl) && PathPrefix(/media-ig)` + cert let's encrypt.
 
-```bash
-ssh usuario@namp.cl 'mkdir -p /var/www/namp/media-ig'
-# y exponerlo en la config de nginx/apache como /media-ig/
-```
+Verificado: `curl https://namp.cl/media-ig/test.txt` → `test-ok`.
+El `.env` ya trae `VPS_SSH=vps`, `VPS_MEDIA_DIR=/home/niko/ig-media/media-ig`,
+`MEDIA_BASE_URL=https://namp.cl/media-ig/` — no tocar.
 
 ### 5. Configurar y probar
 
