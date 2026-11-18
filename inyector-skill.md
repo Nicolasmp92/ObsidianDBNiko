@@ -1,13 +1,13 @@
 ---
 tipo: inyector-skills
 estado: derivado-local
-paquete: store-local (base: skills-programacion-esenciales UOH + 2 externas anthropics/skills)
+paquete: store-local (base: skills-programacion-esenciales UOH + 2 externas anthropics/skills + 1 propia contenido-instagram)
 paquete_sha256: n/a  # este vault guarda el STORE, no el paquete canónico; el manifiesto verificable vive en repositorios-digitales-uoh/.devin/MANIFEST.sha256
 paquete_ruta: 00_Reglas_y_Estandares/skills/
 proyecto_raiz:
   pc-personal: C:/Users/ferlu/Desktop/ObsidianDBNiko
   pc-trabajo:  C:/Users/nicolas.munoz/Desktop/ObsidianDBNiko  # verificar ruta real en la pega
-actualizado: 2026-11-05
+actualizado: 2026-11-18
 ---
 
 # Inyector local de skills — Vault ObsidianDBNiko
@@ -50,6 +50,7 @@ y todo el trabajo commiteado/pusheado para viajar entre PCs.
 | Auditar entrega, documento, post o afirmar completitud | `auditoria-evidencia` | Después de implementar | Denominadores + gates + veredicto separado | Cosecha primaria, inventario de movimientos |
 | Probar/verificar app web local (UI, screenshots, consola) | `webapp-testing` | Con el server arriba o `with_server.py` | Script Playwright + evidencia visual/consola | App no web, o test ya cubierto por el framework del repo |
 | Crear skill nueva, mejorar/evaluar una existente | `skill-creator` | Tras capturar intención | SKILL.md draft + evals si el output es verificable | Edición puntual sin eval (va directo) |
+| Crear contenido IG/redes (post, historia, destacada, carrusel), actualizar media kit, renovar capturas de producto | `contenido-instagram` | Al producir piezas | PNG + fuente HTML + caption + pendientes humanos | Publicar en IG, decidir handle/cuenta |
 
 ## Cadenas habituales
 
@@ -60,6 +61,7 @@ y todo el trabajo commiteado/pusheado para viajar entre PCs.
 | Dependencia/patrón nuevo | `interrogatorio-adopcion` → `desarrollo-aplicaciones` | adopción justificada o descarte registrado |
 | Reanudación con cambios ajenos (la pega también edita/pushea) | `continuidad-sesion` → `guarda-edicion-concurrente` | estado reconciliado antes de editar |
 | Skill nueva al store | `skill-creator` → registro en `00_Reglas_y_Estandares/log.md` | SKILL.md validado + entrada tipificada |
+| Pieza/campaña Instagram | `contenido-instagram` → `auditoria-evidencia` | revisión visual a tamaño real + datos cotejados |
 
 ## Adaptaciones locales
 
@@ -80,6 +82,9 @@ y todo el trabajo commiteado/pusheado para viajar entre PCs.
 - `webapp-testing` requiere Python + Playwright headless en la máquina.
 - `skill-creator` con evals necesita subagentes/viewer; sin ellos queda
   limitada a redactar `SKILL.md` — declarar la limitación al usarla.
+- `contenido-instagram` es propia del vault (nacida del media kit NAMP);
+  en otros proyectos exige primero su base de marca antes que piezas
+  sueltas. Publicar en IG es siempre decisión humana.
 
 ## Mejoras candidatas
 
@@ -92,10 +97,11 @@ y todo el trabajo commiteado/pusheado para viajar entre PCs.
 - Integridad del paquete: `no_evaluable` en este repo (store sin manifiesto
   propio). Fuentes verificadas: `.devin` de repositorios-digitales-uoh
   (52/52 blobs vs MANIFEST, 2026-11-05) + `anthropics/skills` (Apache 2.0).
-- Skills leídas: 10/10 (8 del paquete UOH + `webapp-testing` + `skill-creator`)
+- Skills leídas: 11/11 (8 del paquete UOH + `webapp-testing` +
+  `skill-creator` + `contenido-instagram` propia)
 - Recursos requeridos leídos: bajo demanda por skill activada
-- Ultimo caso de enrutamiento probado: incorporación de las 2 skills externas
-  al paquete UOH (2026-11-05)
+- Ultimo caso de enrutamiento probado: creación de `contenido-instagram`
+  y producción del contenido semilla IG de NAMP con ella (2026-11-18)
 - Resultado: `pass`
 
 ## Punto de retomada

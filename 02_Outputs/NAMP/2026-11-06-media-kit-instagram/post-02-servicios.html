@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="brand/fonts.css">
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --surface: #141416;
+    --surface-2: #1d1d20;
+    --border: #2a2a2e;
+    --text: #f4f4f5;
+    --muted: #a1a1aa;
+    --gold: #d4af37;
+    --emerald: #10b981;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  }
+
+  .post {
+    position: relative;
+    width: 1080px;
+    height: 1080px;
+    background: var(--bg);
+  }
+
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.14;
+  }
+  .glow--gold {
+    width: 640px; height: 640px;
+    background: var(--gold);
+    top: -260px; right: -200px;
+  }
+  .glow--emerald {
+    width: 560px; height: 560px;
+    background: var(--emerald);
+    bottom: -240px; left: -200px;
+  }
+
+  .rings {
+    position: absolute;
+    right: -110px;
+    top: 130px;
+    width: 480px;
+    height: 480px;
+    opacity: 0.6;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 64px 80px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .brand svg { width: 92px; height: 92px; flex-shrink: 0; }
+  .brand .word {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.5px;
+  }
+  .brand .word span { color: var(--gold); font-weight: 500; }
+  .brand .tag {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  .eyebrow {
+    color: var(--emerald);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 21px;
+    font-weight: 700;
+    margin: 44px 0 22px;
+  }
+
+  h1 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    color: var(--text);
+    max-width: 860px;
+    margin-bottom: 40px;
+  }
+  h1 .accent { color: var(--gold); }
+
+  /* Lista de servicios — espejo de las cards del sitio (etapa 01/02/03) */
+  .services { display: flex; flex-direction: column; gap: 18px; }
+  .service {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px 28px;
+  }
+  .service .tile {
+    width: 62px; height: 62px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .service .tile svg { width: 30px; height: 30px; stroke: var(--gold); }
+  .service:nth-child(2) .tile svg { stroke: var(--emerald); }
+  .service .name {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .service .desc {
+    font-size: 19px;
+    color: var(--muted);
+    margin-top: 4px;
+    max-width: 560px;
+  }
+  .service .num {
+    margin-left: auto;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--border);
+    letter-spacing: 1px;
+  }
+
+  .spacer { flex: 1; }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border);
+    padding-top: 34px;
+  }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--gold);
+    color: #0a0a0b;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 20px 34px;
+    border-radius: 12px;
+  }
+  .site {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .site span { color: var(--text); }
+</style>
+</head>
+<body>
+  <div class="post">
+    <div class="glow glow--gold"></div>
+    <div class="glow glow--emerald"></div>
+
+    <svg class="rings" viewBox="0 0 200 200" fill="none" stroke-linecap="round">
+      <circle cx="100" cy="100" r="88" stroke="#2a2a2e" stroke-width="1.5" />
+      <circle cx="100" cy="100" r="58" stroke="#2a2a2e" stroke-width="1.5" />
+      <path d="M100 12a88 88 0 0 1 0 176" stroke="#d4af37" stroke-width="3" />
+      <circle cx="100" cy="188" r="5" fill="#d4af37" />
+      <path d="M100 42a58 58 0 0 0 0 116" stroke="#10b981" stroke-width="3" />
+      <circle cx="100" cy="158" r="5" fill="#10b981" />
+    </svg>
+
+    <div class="content">
+
+      <div class="brand">
+        <svg viewBox="0 0 200 200" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="100" cy="100" r="88" stroke="#2a2a2e" stroke-width="3" />
+          <circle cx="100" cy="100" r="58" stroke="#2a2a2e" stroke-width="3" />
+          <path d="M100 12a88 88 0 0 1 0 176" stroke="#d4af37" stroke-width="8" />
+          <circle cx="100" cy="188" r="10" fill="#d4af37" />
+          <path d="M100 42a58 58 0 0 0 0 116" stroke="#10b981" stroke-width="8" />
+          <circle cx="100" cy="158" r="10" fill="#10b981" />
+          <g transform="rotate(-18 100 100)"><path d="M14 100a86 34 0 1 0 172 0a86 34 0 1 0 -172 0" stroke="#2a2a2e" stroke-width="1" opacity="0.55" /></g>
+          <path d="M68 136V64l64 72V64" stroke="#f4f4f5" stroke-width="20" />
+        </svg>
+        <div>
+          <div class="word">NAMP<span> Ingeniería</span></div>
+          <span class="tag">Ingeniería de software a medida</span>
+        </div>
+      </div>
+
+      <p class="eyebrow">Qué ofrecemos</p>
+
+      <h1>Un equipo para cada <span class="accent">etapa</span> de tu proyecto.</h1>
+
+      <div class="services">
+        <div class="service">
+          <span class="tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2 2 7l10 5 10-5-10-5Z" />
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </span>
+          <div>
+            <div class="name">Consultoría tecnológica</div>
+            <div class="desc">Auditamos tu stack y definimos una hoja de ruta clara.</div>
+          </div>
+          <span class="num">01</span>
+        </div>
+        <div class="service">
+          <span class="tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          </span>
+          <div>
+            <div class="name">Desarrollo a medida</div>
+            <div class="desc">Software propio, sin plantillas: web, móvil y APIs escalables.</div>
+          </div>
+          <span class="num">02</span>
+        </div>
+        <div class="service">
+          <span class="tile">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18" />
+              <path d="M7 14l4-4 3 3 5-6" />
+            </svg>
+          </span>
+          <div>
+            <div class="name">Soporte &amp; mantenimiento</div>
+            <div class="desc">Monitoreo continuo y mejoras evolutivas para tus sistemas.</div>
+          </div>
+          <span class="num">03</span>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="footer">
+        <div class="cta">Conversemos</div>
+        <div class="site">Visítanos <span>namp.cl</span></div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

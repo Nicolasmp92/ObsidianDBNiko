@@ -8,6 +8,8 @@
     <circle cx="100" cy="188" r="10" fill="#b8912b" />
     <path d="M100 42a58 58 0 0 0 0 116" stroke="#059669" stroke-width="8" />
     <circle cx="100" cy="158" r="10" fill="#059669" />
+    <g transform="rotate(-18 100 100)"><path d="M14 100a86 34 0 1 0 172 0a86 34 0 1 0 -172 0" stroke="#d4d4d8" stroke-width="1" opacity="0.55" /></g>
+
     <path d="M68 136V64l64 72V64" stroke="#18181b" stroke-width="20" />
   </g>
   <text x="248" y="98" dominant-baseline="central"

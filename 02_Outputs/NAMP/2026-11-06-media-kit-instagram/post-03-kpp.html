@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="brand/fonts.css">
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --surface: #141416;
+    --surface-2: #1d1d20;
+    --border: #2a2a2e;
+    --text: #f4f4f5;
+    --muted: #a1a1aa;
+    --gold: #d4af37;
+    --emerald: #10b981;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  }
+
+  .post {
+    position: relative;
+    width: 1080px;
+    height: 1080px;
+    background: var(--bg);
+  }
+
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.14;
+  }
+  .glow--gold {
+    width: 640px; height: 640px;
+    background: var(--gold);
+    top: -260px; right: -200px;
+  }
+  .glow--emerald {
+    width: 560px; height: 560px;
+    background: var(--emerald);
+    bottom: -240px; left: -200px;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 60px 80px 56px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .brand svg { width: 84px; height: 84px; flex-shrink: 0; }
+  .brand .word {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.5px;
+  }
+  .brand .word span { color: var(--gold); font-weight: 500; }
+  .brand .tag {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 5px;
+  }
+
+  .head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 40px 0 34px;
+  }
+  .head > div { max-width: 390px; }
+  .eyebrow {
+    color: var(--emerald);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-size: 76px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    color: var(--text);
+  }
+  h1 .accent { color: var(--gold); }
+  .sub {
+    font-size: 24px;
+    line-height: 1.45;
+    color: var(--muted);
+    max-width: 400px;
+    margin-top: 18px;
+  }
+
+  .chips { display: flex; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
+  .chip {
+    font-size: 19px;
+    font-weight: 600;
+    padding: 12px 22px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(16,185,129,0.5);
+    color: var(--emerald);
+  }
+  .chip--gold {
+    border-color: rgba(212,175,55,0.5);
+    color: var(--gold);
+  }
+
+  /* Mockup de navegador con captura real del POS */
+  .shot {
+    position: absolute;
+    right: 80px;
+    bottom: 170px;
+    width: 560px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 40px 90px rgba(0,0,0,0.55);
+  }
+  .shot .bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 16px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .shot .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--border); }
+  .shot .url {
+    flex: 1;
+    font-size: 15px;
+    color: var(--muted);
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 6px 14px;
+    margin-left: 6px;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    object-position: left top;
+  }
+
+  .spacer { flex: 1; }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border);
+    padding-top: 30px;
+  }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--gold);
+    color: #0a0a0b;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 20px 34px;
+    border-radius: 12px;
+  }
+  .site {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .site span { color: var(--text); }
+</style>
+</head>
+<body>
+  <div class="post">
+    <div class="glow glow--gold"></div>
+    <div class="glow glow--emerald"></div>
+
+    <div class="content">
+
+      <div class="brand">
+        <svg viewBox="0 0 200 200" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="100" cy="100" r="88" stroke="#2a2a2e" stroke-width="3" />
+          <circle cx="100" cy="100" r="58" stroke="#2a2a2e" stroke-width="3" />
+          <path d="M100 12a88 88 0 0 1 0 176" stroke="#d4af37" stroke-width="8" />
+          <circle cx="100" cy="188" r="10" fill="#d4af37" />
+          <path d="M100 42a58 58 0 0 0 0 116" stroke="#10b981" stroke-width="8" />
+          <circle cx="100" cy="158" r="10" fill="#10b981" />
+          <g transform="rotate(-18 100 100)"><path d="M14 100a86 34 0 1 0 172 0a86 34 0 1 0 -172 0" stroke="#2a2a2e" stroke-width="1" opacity="0.55" /></g>
+          <path d="M68 136V64l64 72V64" stroke="#f4f4f5" stroke-width="20" />
+        </svg>
+        <div>
+          <div class="word">NAMP<span> Ingeniería</span></div>
+          <span class="tag">Ingeniería de software a medida</span>
+        </div>
+      </div>
+
+      <div class="head">
+        <div>
+          <p class="eyebrow">Producto en producción</p>
+          <h1>Kai<span class="accent">Pet</span>Point</h1>
+          <p class="sub">Punto de venta para tiendas de mascotas: ventas, caja, inventario y despachos.</p>
+          <div class="chips">
+            <div class="chip">Demo abierto</div>
+            <div class="chip chip--gold">Precio fundador $19.990 + IVA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shot">
+        <div class="bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="url">demo.namp.cl</span>
+        </div>
+        <img src="assets/kpp-pos.png" alt="POS KaiPetPoint — nueva venta">
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="footer">
+        <div class="cta">Explorar el demo</div>
+        <div class="site">Visítanos <span>namp.cl</span></div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
