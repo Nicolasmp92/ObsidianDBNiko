@@ -110,6 +110,14 @@ handle con nadie:
   **Pendiente:** las historias que alimentan cada destacada
   (`plantilla-historia.html` lista para usar).
 
+> **Realineación visual (2026-11-18, v4):** el kit fue re-auditado
+> contra namp.cl en producción y re-renderizado completo — isotipo
+> cometa del hero (estelas + chispas + núcleos blancos + cometa
+> esmeralda en el plano orbital), eyebrow con guion dorado `—`,
+> ambient de 3 halos del sitio, tiles de ícono 44px dorados, índices
+> fantasma, radios 12px y CTAs ghost neutros como el sitio. Las 11
+> piezas quedaron verificadas visualmente.
+
 ## Fase 4 — Operación
 
 - [ ] **Meta Business Suite** (business.facebook.com): vincular la

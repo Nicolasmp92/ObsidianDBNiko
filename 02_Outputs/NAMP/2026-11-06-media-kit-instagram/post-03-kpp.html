@@ -31,21 +31,14 @@
     background: var(--bg);
   }
 
-  .glow {
+  .post::before {
+    content: '';
     position: absolute;
-    border-radius: 50%;
-    filter: blur(140px);
-    opacity: 0.14;
-  }
-  .glow--gold {
-    width: 640px; height: 640px;
-    background: var(--gold);
-    top: -260px; right: -200px;
-  }
-  .glow--emerald {
-    width: 560px; height: 560px;
-    background: var(--emerald);
-    bottom: -240px; left: -200px;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 640px 420px at 82% 12%, rgba(16,185,129,0.12), transparent 70%),
+      radial-gradient(ellipse 560px 380px at 90% 55%, rgba(212,175,55,0.10), transparent 70%),
+      radial-gradient(ellipse 620px 440px at 8% 88%, rgba(16,185,129,0.09), transparent 70%);
   }
 
   .content {
@@ -90,17 +83,21 @@
   .eyebrow {
     color: var(--emerald);
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 0.12em;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 18px;
+  }
+  .eyebrow::before {
+    content: '—';
+    color: var(--gold);
+    margin-right: 0.6ch;
   }
   h1 {
     font-size: 76px;
     font-weight: 700;
     line-height: 1.05;
-    letter-spacing: -2px;
-    color: var(--text);
+        color: var(--text);
   }
   h1 .accent { color: var(--gold); }
   .sub {
@@ -116,12 +113,11 @@
     font-size: 19px;
     font-weight: 600;
     padding: 12px 22px;
-    border-radius: 10px;
-    border: 1.5px solid rgba(16,185,129,0.5);
+    border-radius: 12px;
+    border: 1.5px solid var(--border);
     color: var(--emerald);
   }
   .chip--gold {
-    border-color: rgba(212,175,55,0.5);
     color: var(--gold);
   }
 
@@ -133,9 +129,9 @@
     width: 560px;
     background: var(--surface-2);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 40px 90px rgba(0,0,0,0.55);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
   }
   .shot .bar {
     display: flex;
@@ -193,20 +189,47 @@
 </head>
 <body>
   <div class="post">
-    <div class="glow glow--gold"></div>
-    <div class="glow glow--emerald"></div>
 
     <div class="content">
 
       <div class="brand">
         <svg viewBox="0 0 200 200" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <defs>
+            <radialGradient id="namp-mark-glow">
+              <stop offset="0%" stop-color="#10b981" stop-opacity="0.16" />
+              <stop offset="60%" stop-color="#10b981" stop-opacity="0.05" />
+              <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+          <circle cx="100" cy="100" r="66" fill="url(#namp-mark-glow)" stroke="none" />
           <circle cx="100" cy="100" r="88" stroke="#2a2a2e" stroke-width="3" />
           <circle cx="100" cy="100" r="58" stroke="#2a2a2e" stroke-width="3" />
-          <path d="M100 12a88 88 0 0 1 0 176" stroke="#d4af37" stroke-width="8" />
+          <g stroke="#d4af37">
+            <path d="M187.7 92.3A88 88 0 0 1 100 188" stroke-width="7" opacity="0.3" />
+            <path d="M158.9 165.4A88 88 0 0 1 100 188" stroke-width="8" opacity="0.9" />
+            <circle cx="183.7" cy="72.8" r="5" opacity="0.32" fill="#d4af37" stroke="none" />
+            <circle cx="173" cy="50.8" r="3.6" opacity="0.18" fill="#d4af37" stroke="none" />
+            <circle cx="150.5" cy="27.9" r="2.4" opacity="0.09" fill="#d4af37" stroke="none" />
+          </g>
           <circle cx="100" cy="188" r="10" fill="#d4af37" />
-          <path d="M100 42a58 58 0 0 0 0 116" stroke="#10b981" stroke-width="8" />
+          <circle cx="100" cy="188" r="4.2" fill="#ffffff" opacity="0.85" stroke="none" />
+          <g stroke="#10b981">
+            <path d="M42.2 94.9A58 58 0 0 0 100 158" stroke-width="7" opacity="0.3" />
+            <path d="M61.2 143.1A58 58 0 0 0 100 158" stroke-width="8" opacity="0.9" />
+            <circle cx="44.8" cy="82.1" r="4.6" opacity="0.32" fill="#10b981" stroke="none" />
+            <circle cx="51.9" cy="67.6" r="3.4" opacity="0.18" fill="#10b981" stroke="none" />
+            <circle cx="66.7" cy="52.5" r="2.2" opacity="0.09" fill="#10b981" stroke="none" />
+          </g>
           <circle cx="100" cy="158" r="10" fill="#10b981" />
-          <g transform="rotate(-18 100 100)"><path d="M14 100a86 34 0 1 0 172 0a86 34 0 1 0 -172 0" stroke="#2a2a2e" stroke-width="1" opacity="0.55" /></g>
+          <circle cx="100" cy="158" r="4.2" fill="#ffffff" opacity="0.85" stroke="none" />
+          <g transform="rotate(-18 100 100)" opacity="0.55">
+            <path d="M14 100a86 34 0 1 0 172 0a86 34 0 1 0 -172 0" stroke="#2a2a2e" stroke-width="1" />
+            <circle cx="180" cy="112" r="4.5" fill="#10b981" stroke="none" />
+            <circle cx="172" cy="119" r="3.5" fill="#10b981" stroke="none" opacity="0.55" />
+            <circle cx="162" cy="124" r="2.7" fill="#10b981" stroke="none" opacity="0.38" />
+            <circle cx="150" cy="128" r="1.9" fill="#10b981" stroke="none" opacity="0.24" />
+            <circle cx="135" cy="131" r="1.2" fill="#10b981" stroke="none" opacity="0.14" />
+          </g>
           <path d="M68 136V64l64 72V64" stroke="#f4f4f5" stroke-width="20" />
         </svg>
         <div>

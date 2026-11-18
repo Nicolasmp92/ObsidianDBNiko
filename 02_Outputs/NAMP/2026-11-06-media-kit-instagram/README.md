@@ -27,12 +27,20 @@ dependencias de build: se edita texto y se exporta a PNG con `render.sh`
 ## Marca
 
 - **Isotipo**: monograma **N** geométrica en trazo puro (path propio, sin
-  fuente) dentro de dos arcos orbitales (dorado exterior, esmeralda
-  interior, cada uno con su nodo) sobre anillos tenues. Mismo grafismo
-  del hero y del header del sitio; no redibujarlo.
+  fuente) dentro de dos **cometas orbitales** (dorado exterior, esmeralda
+  interior): cada cometa es tramo caliente + tramo difuso + 3 chispas que
+  se disipan, cabeza = nodo con núcleo blanco. El plano orbital inclinado
+  lleva un cometa esmeralda de 5 partículas decrecientes. Réplica
+  estática del hero del sitio (`home.html`) — no redibujarlo.
 - **Wordmark**: `NAMP` bold con N dorado / AM neutro / P esmeralda +
   ` Ingeniería` o `INGENIERÍA` en dorado (como el header).
 - **Tagline**: «Ingeniería de software a medida».
+- **Eyebrow**: guion dorado `—` antes del texto esmeralda en mayúsculas
+  (tracking 0.12em) — misma regla `.section__eyebrow::before` del sitio.
+- **Ambient**: 3 halos radiales sutiles del sitio (esmeralda arriba-
+  derecha, dorado medio-derecha, esmeralda abajo-izquierda), no blobs
+  difuminados.
+- **Titulares**: peso 700 sin tracking negativo (el sitio no lo usa).
 
 ## Paleta
 
@@ -57,10 +65,14 @@ tracking amplio.
 ## Reglas de uso
 
 - Isotipo solo sobre carbón/oscuro o con la variante `-light` en claro.
-- La N siempre en color texto del tema; los arcos siempre dorado afuera
-  y esmeralda adentro — no invertir ni recolorear.
+- La N siempre en color texto del tema; los cometas siempre dorado
+  afuera y esmeralda adentro — no invertir ni recolorear. Nodos con
+  núcleo blanco, nunca sólidos.
 - Dejar aire alrededor del isotipo ≥ el ancho del trazo de la N.
 - En historias, respetar la zona segura (250px arriba y abajo sin texto).
+- Radios 12px (`--radius` del sitio); superficies/bordes/texto con los
+  tokens de la tabla; botones como el sitio (primary dorado, ghost con
+  borde neutro — esmeralda solo al hover, inexistente en PNG).
 - No usar otros colores de acento: dorado = lujo/CTA, esmeralda = innovación/eyebrow.
 - Contenido siempre real: servicios, precios y demos son los del sitio
   (`/servicios`, `/precios`, demo.namp.cl), nunca inventados.
