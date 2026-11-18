@@ -18,7 +18,7 @@ Plan por fases. Nivel asumido: desde cero. Cada fase deja registro en `log.md` y
 
 ## Fase 1 — El equipo listo
 
-- [ ] Arreglar driver NVIDIA (ver [[MYK - Hardware del equipo]]) → `nvidia-smi` OK
+- [x] Arreglar driver NVIDIA (ver [[MYK - Hardware del equipo]]) → `nvidia-smi` OK ✅ 2026-11-18
 - [ ] Decidir runtime: Ollama (DX simple) vs llama.cpp (control) → entrada wiki comparativa
 
 ## Fase 2 — Primer modelo local

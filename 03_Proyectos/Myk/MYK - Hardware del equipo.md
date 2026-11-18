@@ -20,11 +20,24 @@ Ficha del hardware disponible para correr una IA local. Auditado 2026-11-17 (`ls
 | Disco | 468 GB totales, **362 GB libres** |
 | SO | Ubuntu 24.04.5 LTS |
 
-## Estado del driver NVIDIA — ⚠️ punto bloqueante
+## Estado del driver NVIDIA — ✅ RESUELTO (2026-11-18)
 
-- `nvidia-smi` **falla**: "couldn't communicate with the NVIDIA driver".
-- Hay librerías instaladas de la versión **595.91.07** y `ubuntu-drivers` ofrece `nvidia-driver-580` / `580-open` / `470`.
-- Hipótesis: módulo del kernel no cargado (kernel nuevo sin rebuild DKMS, o Secure Boot firmando mal el módulo). Verificar con `dkms status`, `mokutil --sb-state`, `lsmod | grep nvidia`.
+`nvidia-smi` responde: RTX 2060, **6.144 MiB VRAM**, driver **595.99.02**, **CUDA 13.2**, ~1W en idle.
+
+**Causa raíz (dos capas):**
+1. `prime-select` estaba en modo `intel` → generaba `/usr/lib/modprobe.d/blacklist-nvidia.conf` con `alias nvidia off`, que bloqueaba la carga del módulo (el error críptico `could not insert 'off'` venía de ahí).
+2. Faltaba `linux-modules-nvidia-595-open-<kernel>` para los kernels nuevos (Ubuntu usa módulos precompilados por kernel, no DKMS — `dkms status` vacío es normal aquí).
+
+**Fix aplicado:**
+```bash
+sudo apt install linux-modules-nvidia-595-open-<kernel>  # módulo del kernel vigente
+sudo prime-select on-demand                            # borra el blacklist
+sudo modprobe nvidia nvidia_uvm                        # carga sin reiniciar
+```
+
+- Modo `on-demand`: pantalla en la iGPU Vega, RTX libre para cómputo CUDA — ideal para inferencia local sin quemar batería.
+- Kernels cubiertos: módulos nvidia instalados para -42 y -43; `full-upgrade` mantiene el metapaquete `linux-modules-nvidia-595-open-generic-hwe-24.04` al día.
+- Lección: si `nvidia-smi` vuelve a fallar tras update de kernel → revisar `prime-select query`, `lsmod | grep nvidia` y que exista `linux-modules-nvidia-595-open-$(uname -r)`.
 
 ## Qué implica para IA local
 

@@ -12,3 +12,8 @@ Stack: por definir (Ollama / llama.cpp candidatos).
 - **RIESGO** — Driver NVIDIA roto: librerías de la versión 595.91.07 instaladas pero `nvidia-smi` no logra comunicar con el driver → la GPU no sirve para inferencia hasta resolverlo (módulo no cargado / posible Secure Boot o kernel nuevo sin rebuild). Sin GPU, solo queda CPU (lento pero usable con modelos pequeños).
 - **HECHO** — Creada sección `04_Wiki/Inteligencia Artificial/` con índice y primera entrada: [[2. Las Tres Leyes de Asimov - de la ficción a la IA real]] (fuentes reales citadas: Brookings, FLI/Asilomar, The Conversation, MIT Press Reader, Computerphile).
 - **PENDIENTE** — Próximos temas wiki sugeridos: qué es un LLM e inferencia vs entrenamiento, cuantización (GGUF/Q4), panorama de runtimes locales (Ollama, llama.cpp, LM Studio), modelos open-weight que caben en 6 GB VRAM.
+
+## 2026-11-18
+
+- **HECHO** — RIESGO del driver NVIDIA resuelto: `nvidia-smi` OK — RTX 2060, 6.144 MiB VRAM, driver 595.99.02, CUDA 13.2. Causa raíz de dos capas: (1) `prime-select intel` tenía blacklist-nvidia.conf (`alias nvidia off`) bloqueando el módulo — el error `could not insert 'off'` delataba el alias; (2) faltaba el paquete `linux-modules-nvidia-595-open` para el kernel vigente. Fix: instalar módulo del kernel + `prime-select on-demand` + `modprobe`. Detalle completo en [[MYK - Hardware del equipo]].
+- **HECHO** — Kernel actualizado a 7.0.0-43 con su módulo nvidia-595-open correspondiente; GPU queda disponible para CUDA en modo on-demand (pantalla sigue en iGPU Vega).
