@@ -86,7 +86,8 @@ Las capturas de `assets/` se renuevan con Playwright contra demo.namp.cl
 
 ## Pendientes
 
-- [ ] Handle de Instagram de NAMP sin definir — agregar `@handle` en el
-      footer de las piezas cuando exista.
+- [x] Handle: `@namp.cl` ya integrado en el footer de las piezas
+      (fallbacks `@nampingenieria` → `@namp_ingenieria` si está tomado;
+      cambiar y re-render con `render.sh`).
 - [ ] Historias reales para alimentar las destacadas (hoy solo hay
       portadas; `plantilla-historia.html` está lista).

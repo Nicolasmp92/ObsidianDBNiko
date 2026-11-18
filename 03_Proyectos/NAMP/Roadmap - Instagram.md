@@ -16,19 +16,32 @@ del kit). Render multiplataforma: `render.sh` (Linux/macOS) y
 `render.ps1` (Windows). Pipeline documentado en la skill
 `contenido-instagram` del store.
 
-## Fase 0 — Decisiones (bloquea todo)
+## Fase 0 — Decisiones (resuelta 2026-11-18 con datos de namp.cl)
 
-- [ ] **Definir handle definitivo.** Candidatos por orden de
-  consistencia con la marca: `@namp.cl`, `@namp_ingenieria`,
-  `@nampingenieria`. Verificar disponibilidad en instagram.com — el
-  mismo handle conviene reservarlo también en LinkedIn/TikTok aunque
-  no se usen aún. Si la cuenta actual ya tiene handle, decidir si se
-  conserva o se cambia (se puede cambiar sin perder seguidores).
-- [ ] **Correo de la cuenta:** pasar a `contacto@namp.cl` (ya recibe
-  vía Cloudflare Email Routing → Gmail).
-- [ ] **Tipo de cuenta: Profesional/Empresa** — da estadísticas, botón
-  de contacto y categoría ("Software" / "Servicio de TI"). Se puede
-  convertir una cuenta personal sin perder contenido ni seguidores.
+- [x] **Handle: `@namp.cl`** (primario) — los puntos son válidos en
+  usernames de IG y calza 1:1 con el dominio. Fallbacks en orden:
+  `@nampingenieria` → `@namp_ingenieria`. Reservar el mismo handle en
+  LinkedIn/TikTok aunque no se usen aún. No verificable remoto (IG
+  sirve muro de login a bots): si la cuenta actual ya tiene otro
+  handle, cambiarlo — se puede sin perder seguidores.
+- [x] **Correo de la cuenta: `contacto@namp.cl`** — ya recibe vía
+  Cloudflare Email Routing → Gmail (verificado 2026-10-25).
+- [x] **Tipo de cuenta: Profesional/Empresa** — namp.cl se define como
+  "Consultora de servicios informáticos" (og:description) y vende
+  servicios + productos: categoría **Empresa de software** (o
+  "Servicio de TI"). Da estadísticas, botones de contacto y Meta
+  Business Suite. Convertir una personal no pierde contenido ni
+  seguidores.
+- [x] **Nombre visible: `NAMP Ingeniería`** — igual que `og:site_name`
+  y `<title>` del sitio; indexable en búsqueda de IG.
+- [x] **Bio** (máx. 150 chars, derivada del og:description del sitio):
+  > Consultora de servicios informáticos — Santiago, Chile
+  > Desarrollo a medida · consultoría · soporte
+  > Pruébalo: demo.namp.cl
+- [x] **Enlace:** `namp.cl` (si hacen falta varios links, evaluar
+  `/enlaces` propio en vez de Linktree — patrón linktree UOH).
+- [x] **Botones de contacto:** `contacto@namp.cl` + WhatsApp
+  `+56 9 6397 8090` (`wa.me/56963978090` — el del footer/contacto).
 
 ## Fase 1 — Limpieza de la cuenta existente
 
@@ -52,21 +65,18 @@ contenido sin borrarlo (recuperable desde "Tu actividad → Archivadas").
 - [ ] **Seguidos/bio:** dejar de seguir cuentas ajenas a la marca si
   aplica; limpiar bio antigua (se reescribe en la fase siguiente).
 
-## Fase 2 — Configurar el perfil
+## Fase 2 — Configurar el perfil (aplicar lo resuelto en Fase 0)
 
-- [ ] **Nombre visible:** `NAMP Ingeniería` (indexable en búsqueda de
-  IG, mejor que solo "NAMP").
+- [ ] **Nombre visible:** `NAMP Ingeniería`.
 - [ ] **Foto de perfil:** `avatar-instagram.png` (renderizada
   1080×1080 pensada para el crop circular).
-- [ ] **Bio** (máx. 150 caracteres), propuesta:
-  > Ingeniería de software a medida
-  > Consultoría · Desarrollo · Cloud · UX
-  > Prueba el demo: demo.namp.cl
-- [ ] **Enlace:** `namp.cl` (si después hacen falta varios links,
-  evaluar página `/enlaces` propia en namp.cl en vez de Linktree —
-  mismo patrón que el linktree UOH).
+- [ ] **Bio:** la de Fase 0 (verificada ≤150 caracteres).
+- [ ] **Enlace:** `namp.cl`.
 - [ ] **Botones de contacto** (cuenta profesional): `contacto@namp.cl`
   + WhatsApp `+56 9 6397 8090` (`wa.me/56963978090`).
+- [x] **Handle `@namp.cl`** ya integrado en plantillas y los 3 posts
+  (footer "@namp.cl · namp.cl", historia "@namp.cl") — re-render hecho
+  2026-11-18.
 
 ## Fase 3 — Contenido semilla (antes de difundir el perfil)
 
@@ -109,9 +119,8 @@ handle con nadie:
 - [ ] **Cadencia realista:** 1 post/semana + historias cuando haya
   avance real (deploys, features, antes/después). Calidad sobre
   volumen — el kit garantiza coherencia visual.
-- [ ] **Agregar el handle** al footer de `plantilla-post.html` y
-  `plantilla-historia.html` cuando quede definido (zona "Visítanos
-  namp.cl" → "@handle · namp.cl").
+- [x] ~~**Agregar el handle**~~ — `@namp.cl` ya está en las piezas
+  (resuelto en Fase 0).
 - [x] Merge de `feat/media-kit-instagram` → `main` en GitHub (`b8c8ad1`,
   2026-11-06 — el isotipo ya está en producción).
 
