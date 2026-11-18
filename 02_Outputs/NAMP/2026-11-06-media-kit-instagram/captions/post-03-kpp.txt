@@ -1,0 +1,2 @@
+KaiPetPoint ya está en línea: punto de venta para tiendas de mascotas con ventas, caja, inventario y despachos. Pruébalo libre en demo.namp.cl — precio fundador $19.990 + IVA.
+#puntodeventa #pos #mascotas #softwarechile

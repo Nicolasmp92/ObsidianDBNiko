@@ -124,6 +124,13 @@ handle con nadie:
   cuenta IG → permite programar posts/historias desde el PC y ver
   bandeja unificada. Requiere página de Facebook de NAMP (crearla
   básica, no hace falta alimentarla).
+- [ ] **Publicación por API** (alternativa automatizada): el kit incluye
+  `publish.py` (Graph API oficial — PNG→URL pública en el VPS→contenedor
+  →publish) + `captions/` versionadas + `PUBLICACION.md` con el setup
+  paso a paso (cuenta profesional, página FB, app Meta, token largo,
+  IG_USER_ID, directorio público). Soporta feed e historias; NO crea
+  destacadas ni limpia contenido viejo. Queda activa al configurar
+  `.env` — publicar las 3 piezas semilla sería un comando cada una.
 - [ ] **Cadencia realista:** 1 post/semana + historias cuando haya
   avance real (deploys, features, antes/después). Calidad sobre
   volumen — el kit garantiza coherencia visual.

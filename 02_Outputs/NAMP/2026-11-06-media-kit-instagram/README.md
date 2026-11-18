@@ -62,6 +62,14 @@ el PC y calzan con el sitio, que carga Inter real. Fallback: Segoe UI →
 system-ui. Titulares 700 con tracking -2px; eyebrows en mayúsculas con
 tracking amplio.
 
+## Publicación
+
+- `publish.py` — publica una pieza en Instagram vía Graph API oficial
+  (sube el PNG a una URL pública del VPS, crea contenedor, publica).
+- `captions/` — caption versionada por pieza (`<nombre-del-png>.txt`).
+- `.env.example` → copiar a `.env` (no se commitea) con credenciales.
+- **Setup y límites**: ver `PUBLICACION.md`.
+
 ## Reglas de uso
 
 - Isotipo solo sobre carbón/oscuro o con la variante `-light` en claro.
