@@ -109,6 +109,8 @@
   /* Lista de servicios — espejo de las cards del sitio (etapa 01/02/03) */
   .services { display: flex; flex-direction: column; gap: 18px; }
   .service {
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     gap: 22px;
@@ -116,6 +118,34 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 22px 28px;
+  }
+  /* Sheen del sitio (.home__service::after): banda de luz sesgada
+     congelada a mitad de barrido, posicion escalonada por card */
+  .service::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 55%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg,
+      transparent 0%,
+      rgba(244,244,245,0.09) 50%,
+      transparent 100%);
+    transform: skewX(-20deg);
+    pointer-events: none;
+  }
+  .service:nth-child(1)::after { left: 64%; }
+  .service:nth-child(3)::after { left: 44%; }
+  /* Estado encendido = hover del sitio: borde dorado + indice lit */
+  .service--lit { border-color: var(--gold); }
+  .service--lit .tile { border-color: var(--gold); }
+  .service--lit .num { -webkit-text-stroke-color: rgba(212,175,55,0.65); }
+  .service--lit::after {
+    background: linear-gradient(120deg,
+      transparent 0%,
+      rgba(244,244,245,0.14) 50%,
+      transparent 100%);
   }
   .service .tile {
     width: 52px; height: 52px;
@@ -277,7 +307,7 @@
           </div>
           <span class="num">01</span>
         </div>
-        <div class="service">
+        <div class="service service--lit">
           <span class="tile">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="16 18 22 12 16 6" />

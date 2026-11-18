@@ -74,6 +74,11 @@ tracking amplio.
   tokens de la tabla; botones como el sitio (primary dorado, ghost con
   borde neutro — esmeralda solo al hover, inexistente en PNG).
 - No usar otros colores de acento: dorado = lujo/CTA, esmeralda = innovación/eyebrow.
+- Luminosidad de cards: replicar el sheen del sitio
+  (`.home__service::after` — banda de luz a 120°, sesgada -20°, ~9%
+  texto) como banda congelada con `::after`; una card puede ir
+  "encendida" (`.service--lit`: borde dorado + índice lit + sheen más
+  fuerte) como punto focal, tal como el hover real.
 - Contenido siempre real: servicios, precios y demos son los del sitio
   (`/servicios`, `/precios`, demo.namp.cl), nunca inventados.
 
