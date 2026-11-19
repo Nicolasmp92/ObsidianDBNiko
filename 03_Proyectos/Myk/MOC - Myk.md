@@ -20,7 +20,7 @@ Proyecto de investigación y aprendizaje: entender la IA desde cero (el usuario 
 
 ## Ficha
 
-- **Repo:** sin repo satélite aún (fase documental; el material vive en este vault)
+- **Repo:** `~/Escritorio/Desarrollo/myk` → GitHub `Nicolasmp92/myk` (privado)
 - **Stack:** Ollama 0.40.16 (portable, `~/tools/ollama`) + `llama3.2:3b` — API OpenAI en `http://localhost:11434`
 - **Equipo objetivo:** este PC (ver [[MYK - Hardware del equipo]])
 
