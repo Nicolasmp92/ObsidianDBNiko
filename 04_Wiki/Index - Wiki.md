@@ -34,7 +34,7 @@ Bienvenido a tu base de conocimiento de programación. Aquí puedes encontrar to
 ## 🤖 Inteligencia Artificial
 - [[1. Index Inteligencia Artificial]] — proyecto [[MOC - Myk]] (IA local, desde cero)
 
-## � Iniciando nuevos proyectos
+## 🚀 Iniciando nuevos proyectos
 - [[Desde cero con Laravel en su última versión]]
 - [[Desde Git+Laravel]]
 - [[Montar URL.test en server local]]
