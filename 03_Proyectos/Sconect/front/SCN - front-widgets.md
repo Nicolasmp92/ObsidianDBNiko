@@ -8,7 +8,7 @@ tags: [front, widgets, flutter, regla-docs-first]
 # SCN — Widgets compartidos (`app/lib/core/widgets/`)
 
 Inventario de componentes de UI compartidos. **Antes de crear un widget nuevo:
-mirar aquí si ya existe.** Regla madre: [[Docs-first UI - estructura antes de construir]].
+mirar aquí si ya existe.** Regla madre: [[Docs-first - estructura antes de construir]].
 
 ## AppButton — botón estándar (2026-11-19)
 
