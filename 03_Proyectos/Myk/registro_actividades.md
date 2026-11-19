@@ -12,3 +12,4 @@ Tabla append-only. Detalle narrativo en `log.md`.
 | 2026-11-19 | Primer modelo local `llama3.2:3b` + primera inferencia 100% GPU (84,8 tok/s) + API OpenAI verificada | `ollama ps`, `/api/generate`, `/v1/chat/completions` |
 | 2026-11-19 | Repo `Nicolasmp92/myk` creado + primer código (`myk.py` CLI chat, stdlib) | github.com/Nicolasmp92/myk |
 | 2026-11-19 | UI web Angular en `web/` — chat streaming vs Ollama, lint+tests+build verdes, dev :4207 | commit `c48ae02` |
+| 2026-11-19 | Persona "Chari" + llamita SVG animada en toda la UI | commit `19ab84f` |
