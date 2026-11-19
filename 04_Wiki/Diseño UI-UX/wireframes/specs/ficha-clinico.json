@@ -1,0 +1,12 @@
+{
+  "name": "ficha-clinico",
+  "caption": "Vista: Detalle de clínico (pública) — CTA único abajo, no FAB",
+  "appBar": {"leading": "back", "title": "Dr. Pérez", "actions": ["share"]},
+  "body": [
+    {"type": "header", "badge": true},
+    {"type": "card", "title": "Sobre el profesional", "lines": 3},
+    {"type": "list", "title": "Próximas horas", "items": 4, "trailing": true}
+  ],
+  "bottomBar": {"type": "cta", "text": "Agendar hora"},
+  "overlay": {"type": "sheet", "title": "Crea tu cuenta para agendar", "lines": 1, "button": "Continuar"}
+}

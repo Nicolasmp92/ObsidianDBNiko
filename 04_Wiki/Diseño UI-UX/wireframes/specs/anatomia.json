@@ -1,0 +1,12 @@
+{
+  "name": "anatomia",
+  "caption": "Las 5 regiones: appBar · body · FAB · bottomBar · overlays",
+  "appBar": {"leading": "menu", "title": "① App bar", "actions": ["search", "more"]},
+  "body": [
+    {"type": "card", "title": "② Body — contenido scrolleable", "lines": 2},
+    {"type": "list", "items": 2},
+    {"type": "image", "h": 90, "label": "imagen"}
+  ],
+  "fab": {"label": "+", "position": "end"},
+  "bottomBar": {"type": "nav", "items": ["Inicio", "Buscar", "Citas", "Perfil"]}
+}

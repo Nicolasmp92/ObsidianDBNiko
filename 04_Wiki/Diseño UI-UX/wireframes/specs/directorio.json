@@ -1,0 +1,10 @@
+{
+  "name": "directorio",
+  "caption": "Vista: Directorio público — búsqueda + filtros + cards scrolleables",
+  "appBar": {"leading": "none", "title": "Clínicos", "actions": ["search", "filter"]},
+  "body": [
+    {"type": "chips", "labels": ["Dental", "Kine", "Psicología"]},
+    {"type": "list", "items": 5, "trailing": true}
+  ],
+  "bottomBar": {"type": "nav", "items": ["Inicio", "Buscar", "Citas", "Perfil"]}
+}
