@@ -13,3 +13,4 @@ Tabla append-only. Detalle narrativo en `log.md`.
 | 2026-11-19 | Repo `Nicolasmp92/myk` creado + primer código (`myk.py` CLI chat, stdlib) | github.com/Nicolasmp92/myk |
 | 2026-11-19 | UI web Angular en `web/` — chat streaming vs Ollama, lint+tests+build verdes, dev :4207 | commit `c48ae02` |
 | 2026-11-19 | Persona "Chari" + llamita SVG animada en toda la UI | commit `19ab84f` |
+| 2026-11-19 | Documentado incidente muerte SSD (inferencia+proyectos → cuelgue → apagado forzado → disco no enumera) + REGLA preflight antes de carga pesada | [[MYK - Hardware del equipo]] |

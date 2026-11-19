@@ -46,6 +46,23 @@ sudo modprobe nvidia nvidia_uvm                        # carga sin reiniciar
 - **RAM 15 GiB:** suficiente para cargar el modelo en CPU si hiciera falta (un 7B Q4 ocupa ~4–5 GB).
 - **Disco:** sobrado — un modelo GGUF pesa 2–8 GB.
 
+## Incidente 2026-11-19 — muerte del SSD secundario (D:)
+
+- **Qué pasó:** con `llama3.2:3b` corriendo en GPU (84,8 tok/s) + **otros proyectos abiertos** (sistema ya cargado), el usuario envió un "hola" en la UI web de Chari → el equipo completo se congeló → apagado forzado con el botón → el SSD `HS-SSD-E100 512G` (disco 0, D:, donde vivía Ubuntu 24.04 + Juegos) **no volvió a enumerar**: ni BIOS, ni Windows, ni el initramfs de Ubuntu lo detectan. Disco muerto a nivel de hardware.
+- **Hipótesis causal:** SSD white-label frágil + apagado en mitad de escritura. Alternativa complementaria: el propio fallo del disco pudo causar el cuelgue (I/O timeouts congelan Linux). Antecedente: el enclosure USB Realtek ya se había "colgado en escritura sostenida" (13-nov) — el ecosistema de storage económico mostraba fragilidad.
+- **Daño colateral:** NTFS de C: dañado en `SoftwareDistribution\Download` (Windows Update) → autoreparado en el arranque siguiente (hoy sano). Entrada EFI `ubuntu` zombie en NVRAM.
+- **Lo salvado:** repo `Nicolasmp92/myk` ya en GitHub (UI + Chari); notas de reconstrucción en esta ficha + [[3. Ollama - el runtime que ejecuta modelos locales]] + [[4. Modelos de IA - familias open-weight y como elegir para tu hardware]].
+
+## REGLA — Preflight antes de carga pesada (vigente desde 2026-11-19)
+
+Antes de ejecutar inferencia IA o cualquier carga sostenida (build grande, entrenamiento, batch) en este equipo:
+
+1. **Listar qué ya corre** — cerrar proyectos/pestañas no esenciales (RAM 15 GiB se agota rápido; el cuelgue fue con varios proyectos abiertos).
+2. **Chequeo mínimo:** RAM libre (`free -h` / Administrador de tareas), temperatura (`sensors`), espacio en disco.
+3. **Modelo vs hardware:** verificar que el modelo cuadre en VRAM sin swap (regla de la entrada 4 de wiki: params×bytes + KV cache). `llama3.2:3b` = ~2,6 GB VRAM — OK; un 8B quedaría al límite.
+4. **Storage:** preferir disco de marca para cargas de I/O; los SSD genéricos murieron ya dos veces bajo estrés.
+5. **Si el equipo se congela:** esperar ~2 min antes del apagado forzado — los timeouts de I/O a veces se resuelven y el corte a mitad de escritura es lo que mata SSDs.
+
 ## Referencias para la siguiente sesión
 
 - Runtime candidato: Ollama (más simple) o llama.cpp (más control).
