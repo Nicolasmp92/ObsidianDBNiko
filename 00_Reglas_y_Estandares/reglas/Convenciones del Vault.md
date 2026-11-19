@@ -76,6 +76,7 @@ Para que [[Proyectos]] (base) y cualquier consulta funcionen, el frontmatter usa
 
 ## Documentos de estándares
 
+- [[Docs-first UI - estructura antes de construir]] — ningún módulo UI se construye sin su spec escrita antes en `03_Proyectos/<P>/front/` (componentes, API, tokens, estados, decisión de reuso).
 - [[Estándares Front-End - Angular]] — reglas para el front (Angular 22, Signals, Tailwind + CDK headless, SSR, workflow y testing).
 - [[Estándares Full-Stack - StarterCustomeKit]] — stack de arranque para proyectos nuevos (Angular 22 + Spring Boot + PostgreSQL) y metodología de trabajo `.devin` (skills por gatillo, bitácoras, cadena lab→dev→prod).
 - [[Plugins de Obsidian - Setup]] — extensiones de comunidad requeridas por el vault (kanban, tablas, post-its).

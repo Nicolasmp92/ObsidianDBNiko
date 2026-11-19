@@ -20,6 +20,7 @@ PRD original (especificación del dominio): `99_Archivados/Proyectos personales/
 - **Quiero levantar la app web local** → `cd app` y `cmd /c "C:\Users\ferlu\tools\flutter-sdk\flutter\bin\flutter.bat run -d web-server --web-port=4203"` → http://localhost:4203 (Flutter 3.47.9 portable; `flutter.bat` solo vía `cmd /c` desde Git Bash)
 - **Quiero abrir la demo pública** → https://sconect.200.141.25.56.sslip.io (login `demo@sconect.cl`). Stack `/opt/sconect-demo` en el VPS; redeploy = compilar jar+web en dev → `tar czf - . | ssh niko@200.141.25.56 "tar xzf - -C /opt/sconect-demo"` → `docker compose -f docker-compose.demo.yml up -d --build`. Secrets en `/opt/sconect-demo/.env` (chmod 600, no van al repo)
 - **Quiero ver las tareas** → [[Desarrollo]] (kanban maestro)
+- **Quiero qué widgets compartidos existen / crear uno nuevo** → `front/` → [[SCN - front-widgets]] (regla: [[Docs-first UI - estructura antes de construir]] — spec antes de construir)
 
 ## Estado (2026-11-05)
 

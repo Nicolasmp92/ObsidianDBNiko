@@ -42,3 +42,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-11-16 | Fix CORS: PATCH no estaba en allowedMethods → 403 pre-auth en app (causa del "sin permiso"); fix lazy-proxy en cambiarEstado; pull-to-refresh en agenda | PATCH+OPTIONS con Origin→200, `96e0865` `7d30b3f` |
 | 2026-11-16 | UX bot: atajos m/s/n, numeración plana, año en fechas; anticipación mínima configurable (120min) | `b73c850` `d6facf1` `86a2b3a` |
 | 2026-11-16 | Lock pesimista por profesional (carrera app↔bot) + 409 informativo; AppToast componente único (17 showSnackBar→1 API, overlay superior) + aviso "notificamos a tu paciente" | tests 20/20, `1d78736` `212a25a` |
+| 2026-11-19 | `front/SCN - front-widgets.md` — inventario de widgets compartidos + API AppButton (primera spec docs-first) | doc en vault |
