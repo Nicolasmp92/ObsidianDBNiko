@@ -19,13 +19,14 @@ Plan por fases. Nivel asumido: desde cero. Cada fase deja registro en `log.md` y
 ## Fase 1 — El equipo listo
 
 - [x] Arreglar driver NVIDIA (ver [[MYK - Hardware del equipo]]) → `nvidia-smi` OK ✅ 2026-11-18
-- [ ] Decidir runtime: Ollama (DX simple) vs llama.cpp (control) → entrada wiki comparativa
+- [x] Decidir runtime: **Ollama** ✅ 2026-11-19 → entrada wiki [[3. Ollama - el runtime que ejecuta modelos locales]]
 
 ## Fase 2 — Primer modelo local
 
-- [ ] Instalar runtime y descargar primer modelo (candidato ~3B–8B Q4 según GPU/CPU)
-- [ ] Primera conversación local + medir velocidad real (tokens/seg) en este hardware
-- [ ] Probar el endpoint local compatible con OpenAI (`http://localhost:11434` en Ollama)
+- [x] Instalar runtime y descargar primer modelo → Ollama 0.40.16 portable en `~/tools/ollama` + `llama3.2:3b` ✅ 2026-11-19
+- [x] Primera conversación local + medir velocidad real → **84,8 tok/s, 100% GPU** ✅ 2026-11-19
+- [x] Probar el endpoint local compatible con OpenAI → `/v1/models` + `/v1/chat/completions` OK en `http://localhost:11434` ✅ 2026-11-19
+- [ ] Levantar el servidor de forma persistente (hoy: `~/tools/ollama/bin/ollama serve` manual; pendiente: servicio systemd de usuario o instalación oficial con sudo)
 
 ## Fase 3 — Uso real
 

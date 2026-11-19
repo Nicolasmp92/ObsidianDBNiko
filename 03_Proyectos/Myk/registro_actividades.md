@@ -8,3 +8,5 @@ Tabla append-only. Detalle narrativo en `log.md`.
 | 2026-11-17 | Auditoría de hardware del equipo | [[MYK - Hardware del equipo]] (lscpu, free, lspci, df, ubuntu-drivers) |
 | 2026-11-17 | Sección wiki `Inteligencia Artificial` creada + entrada Asimov | [[1. Index Inteligencia Artificial]], [[2. Las Tres Leyes de Asimov - de la ficción a la IA real]] |
 | 2026-11-18 | Driver NVIDIA resuelto: prime-select on-demand + módulo del kernel; `nvidia-smi` OK (RTX 2060, 6 GB, CUDA 13.2) | [[MYK - Hardware del equipo]] § Estado del driver |
+| 2026-11-18 | Ollama 0.40.16 instalado portable en `~/tools/ollama` + entrada wiki sobre runtimes | [[3. Ollama - el runtime que ejecuta modelos locales]] |
+| 2026-11-19 | Primer modelo local `llama3.2:3b` + primera inferencia 100% GPU (84,8 tok/s) + API OpenAI verificada | `ollama ps`, `/api/generate`, `/v1/chat/completions` |

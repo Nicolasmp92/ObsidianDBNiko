@@ -17,3 +17,15 @@ Stack: por definir (Ollama / llama.cpp candidatos).
 
 - **HECHO** — RIESGO del driver NVIDIA resuelto: `nvidia-smi` OK — RTX 2060, 6.144 MiB VRAM, driver 595.99.02, CUDA 13.2. Causa raíz de dos capas: (1) `prime-select intel` tenía blacklist-nvidia.conf (`alias nvidia off`) bloqueando el módulo — el error `could not insert 'off'` delataba el alias; (2) faltaba el paquete `linux-modules-nvidia-595-open` para el kernel vigente. Fix: instalar módulo del kernel + `prime-select on-demand` + `modprobe`. Detalle completo en [[MYK - Hardware del equipo]].
 - **HECHO** — Kernel actualizado a 7.0.0-43 con su módulo nvidia-595-open correspondiente; GPU queda disponible para CUDA en modo on-demand (pantalla sigue en iGPU Vega).
+
+## 2026-11-18 (tarde)
+
+- **HECHO** — Ollama v0.40.16 instalado **portable** en `~/tools/ollama` (tarball oficial, sin sudo ni systemd; el script oficial requiere root). Servidor detecta la RTX 2060 solo: CUDA0, 5,5 GiB disponibles, contexto default 4096.
+- **RIESGO menor** — Pull de `llama3.2:3b` se cayó a la mitad por DNS transitorio (`r2.cloudflarestorage.com` no resolvía en 127.0.0.53) — mismo síntoma intermitente ya visto con GitHub. Resolver reintenta y listo.
+
+## 2026-11-19
+
+- **HECHO** — **Primera IA local corriendo**: `llama3.2:3b` descargado (2,0 GB → `~/.ollama/models`), inferencia verificada **100% GPU** — 40 tokens en 0,5 s = **84,8 tok/s**, 2,6 GB en VRAM, contexto 4096.
+- **HECHO** — API compatible OpenAI verificada: `GET /v1/models` lista el modelo y `POST /v1/chat/completions` responde → cualquier app que hable protocolo OpenAI puede usar el modelo local apuntando a `localhost:11434`. Anécdota didáctica: el 3B respondió en italiano a un prompt ambiguo — modelos chicos derivan de idioma.
+- **HECHO** — Entrada wiki [[3. Ollama - el runtime que ejecuta modelos locales]] escrita (inferencia vs entrenamiento, qué hace un runtime, cuantización GGUF/Q4, Ollama vs llama.cpp/LM Studio/vLLM, tradeoffs local vs nube).
+- **PENDIENTE** — Servidor Ollama no arranca solo al boot (es nohup manual). Opciones: `systemd --user` unit o reinstalar con script oficial (sudo).
