@@ -42,6 +42,7 @@ Bienvenido a tu base de conocimiento de programación. Aquí puedes encontrar to
 ## 🧰 Herramientas
 - [[Cambiar el idioma en Visual Studio Code]]
 - [[croc - transferir archivos entre equipos]]
+- [[Empaquetado Windows para vender - opciones]]
 
 ---
 
