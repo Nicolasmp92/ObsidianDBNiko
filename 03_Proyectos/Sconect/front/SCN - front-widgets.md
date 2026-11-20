@@ -52,6 +52,15 @@ salían morado M3 — `MaterialApp` no define `theme:`).
 | `ElegirFoto` | `elegir_foto.dart` | Selector/recorte de foto de perfil |
 | `CamaraPerfil` | `camara_perfil.dart` | Cámara en vivo: vista previa espejo, guía circular, Usar/Repetir |
 | `ElegirHora` | `elegir_hora.dart` | Picker de hora compartido (agenda + portal) |
+| `BannerActualizacion` | `banner_actualizacion.dart` | Banner no-modal "nueva versión" PWA (ver [[SCN - front-actualizacion-pwa]]) |
+
+## Servicios PWA (`core/pwa/`)
+
+| Pieza | Qué hace |
+|---|---|
+| `pwa_install*` | Prompt nativo de instalación (`sconectInstalar` en index.html) |
+| `pwa_update*` | Activa SW en espera y recarga (`sconectActualizar` en index.html) |
+| `ActualizacionService` | Polling `version.json` (30 min + resume) → levanta el banner |
 
 ## Tokens (de `core/theme/app_colors.dart`)
 

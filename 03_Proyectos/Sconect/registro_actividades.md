@@ -45,3 +45,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-11-19 | `front/SCN - front-widgets.md` — inventario de widgets compartidos + API AppButton (primera spec docs-first) | doc en vault |
 | 2026-11-19 | `back/SCN - back-arquitectura.md` — mapa de módulos + API + invariantes (spec docs-first del back) | doc en vault |
 | 2026-11-20 | Preview local con seed demo completo (`SCONECT_SEED_DEMO=true`): 10 pac + 9 citas (todos los estados/orígenes) + clínicos | verificación API login+conteos |
+| 2026-11-20 | Detección de versión nueva PWA (banner Actualizar): spec docs-first + implementación `691e874` | analyze 0 · test 11/11 · :4203 |
