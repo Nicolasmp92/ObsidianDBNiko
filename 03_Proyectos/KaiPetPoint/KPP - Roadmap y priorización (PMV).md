@@ -26,7 +26,9 @@ Todo el backlog priorizado por **criticidad** (¿bloquea operar o cobrar?), **vi
 | 7 | [[KPP - Catálogo avanzado (importación CSV, etiquetas, kits)]] | Media-Alta | Alta | M | CSV es clave para el onboarding de tiendas |
 | 8 | [[KPP - Promociones y descuentos]] | Media | Alta | M | Descuento trazado por usuario |
 | 9 | [[KPP - Operaciones de venta (suspendidas, devoluciones, cotizaciones)]] | Media | Alta | M | |
-| 10 | [[KPP - Boleta electrónica SII]] | Crítica | Media | L | Obligatoria para venta formal en CL; depende de trámites + API de terceros |
+**Descartada (no diferida):** ~~[[KPP - Boleta electrónica SII]]~~ — se decidió
+2026-11-20 no implementar DTE integrado; el cliente emite por el portal SII
+gratuito por fuera del POS.
 
 ## Fase 2 — nicho y retención
 

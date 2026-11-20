@@ -1,8 +1,9 @@
 # Guía — Boleta electrónica SII para KaiPetPoint
 
 Pasos para que KaiPetPoint pueda emitir boletas electrónicas legalmente en Chile.
-Estado: **diferido — no implementado**. Esta guía cubre los trámites; la integración
-técnica recomendada es vía API de terceros (ver sección final).
+Estado: **descartado 2026-11-20** — se decidió no implementar SII integrado;
+esta guía queda como referencia por si otro producto la necesita. La integración
+técnica recomendada era vía API de terceros (ver sección final).
 
 ---
 

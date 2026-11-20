@@ -191,3 +191,17 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 - FIX: credenciales git — dos cuentas GitHub en ~/.git-credentials (Nicolasmp92 y NicolasMP-UOH); git usaba siempre la primera. Se embebio el usuario en la URL remota de kaipetpoint y namp-ingenieria (ambas usan la PAT Nicolasmp92): deterministas, el orden del store ya no importa.
 - HECHO: documentacion de BD puesta al dia — regla backend-bd-esquema.md actualizada a post-V17 en el repo (b8d52fc, faltaban ofertas/despachos/cajon y la doc aun describia DTE que V15 elimino) + doc nuevo "KPP - Modelo de datos y flujos" en la boveda con ER Mermaid completo y 4 flujos (venta POS, fiado, caja/arqueo, importacion CSV).
 - 2026-10-30 · HECHO: pagina /precios publicada en namp.cl (commit 0f25414, desplegado y verificado 200). Plan unico KPP $19.990+IVA precio fundador (primeros 10, congelado de por vida, $24.990 lista despues). Card con features reales, caja honesta "lo que todavia no incluye" (DTE en roadmap, tienda online), condiciones (garantia 30d, setup remoto gratis, migracion=self-service Excel o cotizada). CTAs: demo.namp.cl + /contacto. Link agregado a header y footer.
+
+## 2026-11-20 — SII integrado descartado + repo clonado a compu pega
+
+- **DECISIÓN** — Boleta electrónica SII **descartada** (no diferida): no se
+  implementará emisión DTE integrada. El flujo interno ya había salido del
+  código en V15; ahora sale también del roadmap y del discurso comercial
+  (precios dice "emites en el portal gratuito del SII", sin promesa).
+  Docs marcadas: nota SII + guía trámites → `Descartada`; roadmap fila 10
+  eliminada; MOC actualizado. namp.cl/precios no menciona DTE (verificado,
+  no hacía falta tocarlo).
+- **HECHO** — repo clonado a este equipo (`Desarrollo/kaipetpoint`,
+  `b8d52fc`) — antes vivía solo en el otro PC. Stack local arrancando
+  con H2 (mismo patrón que Sconect: `SPRING_FLYWAY_ENABLED=false` +
+  `ddl-auto=update`, `KAIPETPOINT_DB_URL=jdbc:h2:mem:...`).

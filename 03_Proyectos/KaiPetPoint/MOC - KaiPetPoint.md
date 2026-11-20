@@ -15,7 +15,7 @@ Punto de venta e inventario para tiendas — primera instancia: **Patitas** (ali
 - **Quiero la tabla de sesiones** → `registro_actividades.md`
 - **Quiero levantar el stack** → `backend: mvn spring-boot:run` (:8084) + `npm start` (:4204); login `nikolasmp92@gmail.com` / `niko9214`
 - **Quiero ver las tareas** → [[Desarrollo]] (kanban maestro)
-- **Quiero emitir boletas SII** → [[Guia - Boleta electronica SII]] (trámites + opciones de integración)
+- ~~**Quiero emitir boletas SII**~~ → **descartado 2026-11-20** (no se implementará; [[Guia - Boleta electronica SII]] queda como referencia)
 - **Quiero el modelo de datos y diagramas** → [[KPP - Modelo de datos y flujos]] (ER Mermaid post-V17 + flujos venta/fiado/caja/importación; tablas al detalle en `.devin/rules/backend-bd-esquema.md` del repo)
 
 ## Dominios (en `main` + ramas de trabajo)
@@ -42,4 +42,4 @@ Punto de venta e inventario para tiendas — primera instancia: **Patitas** (ali
 ## Backlog declarado
 
 Backlog completo priorizado por criticidad/viabilidad/esfuerzo en [[KPP - Roadmap y priorización (PMV)]] — fases: **PMV** (operación real) → nicho/retención → SaaS. Sueltos aún sin fase: reportes por rango · identidad extraída a config (`app-identidad.ts`).
-**Diferidos documentados:** boleta SII y modo offline entraron al roadmap ([[KPP - Boleta electrónica SII]] / [[KPP - Modo offline (PWA)]]) con su justificación de postergación intacta.
+**Descartado:** boleta SII integrada — decisión 2026-11-20 (era diferida; el flujo DTE interno ya había salido en V15). **Diferido documentado:** modo offline → [[KPP - Modo offline (PWA)]] con su justificación intacta.

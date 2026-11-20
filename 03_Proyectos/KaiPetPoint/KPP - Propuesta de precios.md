@@ -49,7 +49,7 @@ y genérico, los vet-software no tienen POS real.
 - **Garantía 30 días**: si no le sirve, se devuelve el primer pago
 - **Cobro**: transferencia mensual o link de pago Flow (sin integración)
 - **DTE**: honesto en la página — "emites tu boleta en el portal gratuito del
-  SII mientras; DTE integrado viene en el roadmap"
+  SII" (sin promesa de DTE integrado: descartado 2026-11-20)
 
 ### Por qué no tiers ahora
 

@@ -1,10 +1,16 @@
 ---
-status: En curso
+status: Descartada
 proyecto: kaipetpoint
 fase: pmv
 criticidad: critica
 esfuerzo: L
 ---
+
+> **DESCARTADA 2026-11-20** — decisión del dueño: SII integrado **no se
+> implementará**. El flujo interno DTE ya había sido eliminado en V15; esta
+> nota queda como registro histórico (el checkbox "formal" lo resuelve el
+> cliente con el portal gratuito del SII por fuera).
+
 _Objetivo: emitir boleta electrónica desde el POS — obligatoria para la venta formal en Chile._
 
 - [x] Flujo interno DTE completo (mergeado a `main`, `420f11b`): emisión post-venta sin bloquear el cobro, cola con reintentos automáticos (5 intentos, scheduler 60 s), reintento manual admin, NC tipo 61 al anular, folio/timbre/estado en ticket e historial.
