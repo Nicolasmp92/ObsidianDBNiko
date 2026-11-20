@@ -81,8 +81,8 @@ Cifrado E2E derivado del código vía PAKE → el relay ni el ISP pueden leer el
 
 ## 6. Estado actual y prueba
 
-- Instalado: **compu pega** (por el usuario) y **PC casa** (`~/tools/croc`, v11.6.5, symlink en `~/.local/bin`).
-- Verificado 2026-11-19: loopback local `send`→`receive` con `risk-stung-whiff`, archivo íntegro. Falta la prueba real entre los dos PCs.
+- Instalado: **PC casa** (`~/tools/croc`, v11.6.5, Linux) y **compu pega** (`~/tools/croc/croc.exe`, v11.6.5 Windows — zip oficial, PATH de usuario).
+- Verificado 2026-11-19: loopback local `send`→`receive` con `risk-stung-whiff`, archivo íntegro (PC casa). 2026-11-20: loopback en compu pega con `test-loop-113` — OK, aunque el discovery LAN da timeout y usa el relay público. Falta la prueba real entre los dos PCs.
 
 ## Glosario mínimo
 
