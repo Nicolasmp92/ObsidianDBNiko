@@ -50,6 +50,7 @@ Stack real: Angular 22 (standalone por defecto, signals), TypeScript ~6, RxJS 7.
 - **Tokens de diseño:** custom properties en `:root` referenciadas desde `@theme`. Sin valores mágicos de color/espaciado sueltos.
 - **Orden de clases:** `prettier-plugin-tailwindcss` obligatorio — clases desordenadas degradan el HTML rápido.
 - **Responsive:** mobile-first (360 / 768 / 1440 px). WCAG 2.2 AA: contraste ≥ 4.5:1, foco visible, teclado completo, `aria-label` en icon-only. Respeta `prefers-reduced-motion`.
+- **Acciones de sesión:** logout y cuenta viven **solo en el menú de usuario del topbar** — nunca duplicadas en el sidebar. El sidebar lleva navegación + enlace a perfil. CTAs de página a ancho completo en móvil (`w-full sm:w-auto`).
 - **i18n faseado:** mientras el producto sea solo español, cadenas visibles centralizadas en constantes del feature (migración barata). `ngx-translate` solo cuando exista un segundo idioma real — no antes (YAGNI).
 - **SSR seguro:** código browser-only detrás de `isPlatformBrowser(inject(PLATFORM_ID))` o `afterNextRender()`. `@defer` es para performance/lazy rendering, no un guard de plataforma. `TransferState`/`httpResource` para evitar doble fetch.
 - **Imágenes:** `NgOptimizedImage` siempre que aplique.
