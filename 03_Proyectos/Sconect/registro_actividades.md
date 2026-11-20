@@ -44,3 +44,4 @@ Tabla estructurada **append-only**. Una fila por actividad verificable; las fila
 | 2026-11-16 | Lock pesimista por profesional (carrera app↔bot) + 409 informativo; AppToast componente único (17 showSnackBar→1 API, overlay superior) + aviso "notificamos a tu paciente" | tests 20/20, `1d78736` `212a25a` |
 | 2026-11-19 | `front/SCN - front-widgets.md` — inventario de widgets compartidos + API AppButton (primera spec docs-first) | doc en vault |
 | 2026-11-19 | `back/SCN - back-arquitectura.md` — mapa de módulos + API + invariantes (spec docs-first del back) | doc en vault |
+| 2026-11-20 | Preview local con seed demo completo (`SCONECT_SEED_DEMO=true`): 10 pac + 9 citas (todos los estados/orígenes) + clínicos | verificación API login+conteos |
