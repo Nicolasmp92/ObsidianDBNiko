@@ -205,3 +205,4 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
   `b8d52fc`) — antes vivía solo en el otro PC. Stack local arrancando
   con H2 (mismo patrón que Sconect: `SPRING_FLYWAY_ENABLED=false` +
   `ddl-auto=update`, `KAIPETPOINT_DB_URL=jdbc:h2:mem:...`).
+- **HECHO** — stack local verificado en compu pega: backend :8084 health up + login 200 con seed; front :4204 (ng serve, proxy /api→:8084) redirige a /login → 200. Comando H2 documentado en el MOC.

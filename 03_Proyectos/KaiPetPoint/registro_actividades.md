@@ -44,3 +44,4 @@ proyecto: kaipetpoint
 | 2026-10-24 | Stack Docker VPS-ready: Dockerfiles + compose (pg/backend/SSR/caddy) + Caddyfile; smoke end-to-end OK (login 200 + seed) | `14a6de8` en `main` |
 | 2026-10-24 | Rama `refactor/deuda-tecnica-pos` (v0.7.0) respaldada a origin (estaba 3 commits sin pushear) | `741970d` |
 | 2026-10-24 | kpp.namp.cl en producción (Dokploy compose main, Traefik + LE); fix allowedHosts `*.namp.cl` | `3e27718` + `4e66bb9` |
+| 2026-11-20 | Clone en compu pega + stack local H2 arriba (:8084/:4204, login verificado) + SII descartado de roadmap/precios | API login 200, front 200 |
