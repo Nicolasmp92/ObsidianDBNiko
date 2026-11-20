@@ -52,6 +52,8 @@ Stack real: Angular 22 (standalone por defecto, signals), TypeScript ~6, RxJS 7.
 - **Responsive:** mobile-first (360 / 768 / 1440 px). WCAG 2.2 AA: contraste ≥ 4.5:1, foco visible, teclado completo, `aria-label` en icon-only. Respeta `prefers-reduced-motion`.
 - **Acciones de sesión:** logout y cuenta viven **solo en el menú de usuario del topbar** — nunca duplicadas en el sidebar. El sidebar lleva navegación + enlace a perfil. CTAs de página a ancho completo en móvil (`w-full sm:w-auto`).
 - **Overlays móviles:** todo drawer/menú overlay lleva botón de cierre **visible** (X ≥44px). Backdrop y Escape no bastan — el usuario no los adivina.
+- **Swatches/islas de tema:** un elemento con `data-paleta` propio usa los tokens claros de ese acento aunque la página esté en dark — siempre texto explícito (`text-primary`), nunca heredar `text` del tema global.
+- **Zonas bloqueadas por estado:** cuando un aviso impide operar (ej. caja cerrada), el área afectada se marca `[attr.inert]` + `opacity-50` — no basta el banner ni solo deshabilitar el botón final. `inert` bloquea clicks, Tab y AT de una vez.
 - **i18n faseado:** mientras el producto sea solo español, cadenas visibles centralizadas en constantes del feature (migración barata). `ngx-translate` solo cuando exista un segundo idioma real — no antes (YAGNI).
 - **SSR seguro:** código browser-only detrás de `isPlatformBrowser(inject(PLATFORM_ID))` o `afterNextRender()`. `@defer` es para performance/lazy rendering, no un guard de plataforma. `TransferState`/`httpResource` para evitar doble fetch.
 - **Imágenes:** `NgOptimizedImage` siempre que aplique.
