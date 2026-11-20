@@ -75,6 +75,22 @@ dependencias nuevas.
 - `dart:html`/`package:web` solo compila en web → **import condicional** con stub
   para que Android/iOS sigan compilando.
 
+## Fase 2 — Android nativo (SPEC, no implementada)
+
+El APK saldrá servido desde el VPS (no Play Store) → mecanismo distinto:
+
+| Pieza | Diseño propuesto |
+|---|---|
+| Backend | `GET /api/app/version` → `{version, buildNumber, apkUrl, notas}`; el `.apk` servido como recurso estático en el VPS |
+| App | `ActualizacionService` ya está estructurado para esto: en `!kIsWeb` consultaría ese endpoint y compararía `build_number` de `package_info_plus` |
+| Aplicar | abrir `apkUrl` (descarga via browser/DownloadManager) → Android instala con permiso "orígenes desconocidos" (una vez) |
+| UI | **reutiliza `BannerActualizacion`** — mismo banner, otra fuente de verdad |
+
+**Preparación ya hecha (2026-11-20):** `applicationId=cl.namp.sconect`,
+label "Sconect", `ApiConfig` en `kReleaseMode` → `https://sconect.200.141.25.56.sslip.io`,
+pubspec `1.0.1+2`. Pendiente release: keystore de firma, `minSdk`,
+`android:requestLegacyExternalStorage`/`usesCleartextTraffic` revisión.
+
 ## Plan de prueba
 
 1. `flutter build web` v1 → servir → abrir → sin banner.
