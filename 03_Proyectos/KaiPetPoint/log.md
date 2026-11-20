@@ -206,3 +206,4 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
   con H2 (mismo patrón que Sconect: `SPRING_FLYWAY_ENABLED=false` +
   `ddl-auto=update`, `KAIPETPOINT_DB_URL=jdbc:h2:mem:...`).
 - **HECHO** — stack local verificado en compu pega: backend :8084 health up + login 200 con seed; front :4204 (ng serve, proxy /api→:8084) redirige a /login → 200. Comando H2 documentado en el MOC.
+- **HECHO** — Auditoría demo VPS 2026-11-20: `demo.namp.cl` recibe uso real DIARIO — ventas post-reset (después de las 04:00, atribuibles a visitantes) en cada día auditado: 11-nov→1, 12→1, 13→1, 14→3, 15→3, 16→1, 17→4, 18→1, 19→4, 20→2 (11:40, $114.950+$3.490 confirmadas). Nadie crea clientes (flujo rápido). Reset nocturno corre sano (logs 18-20). Sin access logs de Traefik → no se puede atribuir a IPs. `kpp.namp.cl` (real): usuarios = root + vendedor@kpp.dev; 38 ventas entre 14-25 oct (~2/día), **sin actividad desde el 25-oct** — piloto Patitas pausado ~1 mes.
