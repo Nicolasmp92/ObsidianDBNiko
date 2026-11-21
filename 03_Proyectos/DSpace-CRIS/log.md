@@ -105,3 +105,14 @@ Del repo UOH, lo que aplica directo a una instalación nueva:
 - **DECISIÓN** — Los docs del kit viven en **dos lugares**: la fuente de
   verdad editorial es el vault (`03_Proyectos/DSpace-CRIS/`); el repo es la
   copia distribuible. Al editar un doc del kit, sincronizar ambos.
+
+## 2026-11-21 — Lab local levantado end-to-end
+
+- **HECHO** — `dspace-cris-lab` corriendo completo: backend :8080 (200),
+  OAI-PMH `request?verb=Identify` → 200, Solr :8983, **front Angular :4000**
+  agregado al compose (imagen oficial `4science/dspace-cris-angular:2025.02.00`
+  + `dspace.ui.url` descomentada). El compose oficial NO trae el front.
+- **NOTA** — La imagen angular es dev-mode: compila el bundle al arrancar
+  (~4 min primer boot). Existe variante `-dist` si se quiere arranque rápido.
+- **ESTADO** — Instancia fresca vacía: falta `initialize-entities` + admin
+  para ver datos CRIS.
