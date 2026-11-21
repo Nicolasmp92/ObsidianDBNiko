@@ -176,3 +176,7 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 ## 2026-11-19 (2) — Footer centrado en responsivo
 
 - **HECHO** — En <720px la marca y el bloque de contacto quedaban a la izquierda mientras dirección/nav/firma ya estaban centrados; además el copyright móvil no centraba su segunda línea (faltaba `text-align`). Fix CSS en `footer.css`: `.footer__top`/`footer__contact`/`footer__address` con `align-items:center` + `text-align:center` en móvil, reset `text-align:left` en desktop. Verificado a 390px reales (vía iframe — headless Chrome tiene mínimo 500px de viewport) y a 1280px sin regresión. Commit `dbfb22d`, deploy manual (webhook sigue roto).
+
+## 2026-11-20 — Dirección actualizada a Rancagua
+
+- **HECHO** — "Santiago, Chile" → "Rancagua, Chile" en footer, página de contacto y meta descriptions (index.html + `contact.ts` + `home.ts`: SEO/OG/Twitter). Commit `856dc46`, deploy manual, verificado 200 en home y /contacto sin restos de Santiago. OJO: la bio IG resuelta el 18-11 decía "Santiago, Chile" (derivada del og:description) — la plantilla del kit lo refleja; revisar piezas si se republican.
