@@ -6,21 +6,24 @@ actualizado: 2026-11-20
 tags: [dspace-cris, cris, repositorio-institucional, trabajo-externo, docker]
 ---
 
-# MOC — DSpace-CRIS (instalación para cliente externo)
+# MOC — DSpace-CRIS (producto de arranque rápido)
 
-Trabajo independiente de la línea UOH: un contacto externo encargó la
-**instalación y puesta en marcha de DSpace-CRIS**. El proyecto reutiliza el
-conocimiento destilado en la bitácora del lab institucional
-(`repositorios-digitales-uoh/DSPACE-CRIS/`) — misma versión, mismo stack
-Docker — pero con frontera estricta: **cero datos ni configuración UOH**.
+Trabajo independiente de la línea UOH. Nació por un encargo externo de
+instalación y puesta en marcha, pero **el producto real es el kit
+reutilizable**: metodología + receta + baseline de cumplimiento chileno
+(ANID/OpenAIRE/COAR) para que el próximo encargo similar sea rápido.
+Reutiliza el conocimiento de la bitácora del lab UOH con frontera estricta:
+**cero datos ni configuración UOH**.
 
 ## Navegación por necesidad
 
 - **Quiero ver qué pasó** → `log.md` de esta carpeta
 - **Quiero la tabla fecha/actividad/evidencia** → `registro_actividades.md`
+- **Quiero la metodología de trabajo por fases** → `METODOLOGIA.md`
+- **Quiero el estándar chileno exigible (ANID)** → `ESTANDARES-CL.md`
 - **Quiero la receta de instalación probada** → `INSTALACION.md`
 - **Quiero el lab/clon del código** → `C:\Users\Niko\dspace-cris-lab`
-- **Quiero la fuente de conocimiento UOH** → `C:\Users\Niko\Desktop\repositorios-digitales-uoh\DSPACE-CRIS\` (log.md, docs/servidor, docs/tutoriales)
+- **Quiero la fuente de conocimiento UOH** → `C:\Users\Niko\Desktop\repositorios-digitales-uoh\DSPACE-CRIS\` (log.md, docs/servidor, docs/tutoriales, docs/referencias)
 
 ## Ficha
 

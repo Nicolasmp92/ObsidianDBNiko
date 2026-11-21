@@ -55,3 +55,23 @@ Del repo UOH, lo que aplica directo a una instalación nueva:
   al servidor del cliente.
 - **Metadatos**: `metadata-security.cfg` controla qué campos se ven en la
   vista completa de metadatos (mecanismo D8, lección aprendida el 19-nov).
+
+## 2026-11-20 (2) — El encargo se convierte en producto
+
+- **DECISIÓN (usuario)** — El objetivo no es solo cumplir este encargo: es
+  un **producto de arranque rápido** alineado a estándares chilenos, para
+  que encargos similares futuros tengan metodología de trabajo veloz.
+- **HECHO** — `METODOLOGIA.md` escrita: 6 fases con checklist + entregable +
+  gate (F0 levantamiento → F1 infra → F2 instalación → F3 config estándar
+  CL → F4 datos → F5 verificación/entrega) + tabla de reuso acumulado
+  (artefactos transferibles del lab UOH: transform CSV, Unpaywall, systemd,
+  watchdog).
+- **HECHO** — `ESTANDARES-CL.md` escrito desde la auditoría ANID verificada:
+  el estándar chileno = OpenAIRE v4 + DC + OAI-PMH + COAR con 32 metadatos
+  (6M/8MA/15R/3O); los 3 endpoints OAI que deben responder; matriz
+  ANID→campo DSpace verificada; taxonomías chilenas OCDE/CNED/SIES;
+  checklist de verificación por entrega.
+- **HECHO** — MOC renombrado conceptualmente a «producto de arranque rápido».
+- **HIPÓTESIS** — Si el próximo encargo trae fuente de datos similar
+  (xlsx WoS/Scopus), el transform de la UOH se adapta en horas; el cuello
+  real será siempre F0 (ver la fuente antes de prometer cumplimiento).
