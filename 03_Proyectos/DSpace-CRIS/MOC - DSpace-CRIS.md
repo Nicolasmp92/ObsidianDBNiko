@@ -29,7 +29,8 @@ Reutiliza el conocimiento de la bitácora del lab UOH con frontera estricta:
 ## Ficha
 
 - **Cliente:** contacto externo — alcance, dominio y servidor destino por definir
-- **Repo/código:** `C:\Users\Niko\dspace-cris-lab` (clon `4Science/DSpace` @ tag `dspace-cris-2025.02.00`, detached HEAD) — es el lab ya montado en este PC; decidir si el deploy del cliente forkea desde aquí o clon limpio
+- **Repo del kit:** `C:\Users\Niko\Desktop\Desarrollo\dspace-cris-kit` → GitHub `Nicolasmp92/dspace-cris-kit` (privado) — los 4 docs del producto versionados y públicos para el usuario
+- **Repo/código lab:** `C:\Users\Niko\dspace-cris-lab` (clon `4Science/DSpace` @ tag `dspace-cris-2025.02.00`, detached HEAD) — lab montado en este PC; decidir si el deploy del cliente forkea desde aquí o clon limpio
 - **Stack:** DSpace-CRIS **2025.02.00** (= DSpace 9.2) vía Docker Compose — backend REST :8080, Angular SSR :4000, PostgreSQL 15 :5432, Solr :8983, Matomo opcional, CLI por `docker-compose-cli.yml`
 - **Base de conocimiento:** `repositorios-digitales-uoh/DSPACE-CRIS/` (bitácora 3 meses: cargas, entidades, metadatos, ANID, servidor)
 

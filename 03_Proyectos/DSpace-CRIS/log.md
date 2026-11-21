@@ -95,3 +95,13 @@ Del repo UOH, lo que aplica directo a una instalación nueva:
 - **HECHO** — Regla de calidad del proyecto adoptada desde la UOH: "cero
   ambigüedad declarada = cero tolerancia a relleno" — los casos ambiguos
   se devuelven listados, nunca se adivinan.
+
+## 2026-11-20 (4) — Kit publicado como repo propio
+
+- **HECHO** — Repo satélite creado: `C:\Users\Niko\Desktop\Desarrollo\dspace-cris-kit`
+  → `Nicolasmp92/dspace-cris-kit` (privado, creado vía API con credencial
+  del credential manager). Contiene `docs/` con las 4 piezas del producto
+  (METODOLOGIA, ESTANDARES-CL, INSTALACION, DATOS-CLIENTE) + README índice.
+- **DECISIÓN** — Los docs del kit viven en **dos lugares**: la fuente de
+  verdad editorial es el vault (`03_Proyectos/DSpace-CRIS/`); el repo es la
+  copia distribuible. Al editar un doc del kit, sincronizar ambos.
