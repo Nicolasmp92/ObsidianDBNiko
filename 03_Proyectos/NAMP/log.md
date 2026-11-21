@@ -184,3 +184,7 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 ## 2026-11-20 (2) — Logo hace scroll-to-top en la home
 
 - **HECHO** — El click del logo no hacía nada estando en `/` scrolleado (routerLink a la misma ruta se ignora con `onSameUrlNavigation` default). Ahora `irInicio()` en el header: en la home sube suave (`smooth`, respeta `prefers-reduced-motion`), en otras rutas el routerLink navega y el scroll restoration ya sube. Commit `6ba2114`, build+tests 4/4, deploy manual verificado.
+
+## 2026-11-20 (3) — Cometas del hero con difuminación
+
+- **HECHO** — Blur CSS sobre las estelas del hero: `hero__trail--mid` (0.8px, el tramo que se aleja de la cabeza), `hero__spark` (0.4px, chispas que se disipan) y `hero__orbit-node:not(:last-child)` (0.5px, las 4 partículas de estela del cometa orbital). Las cabezas conservan núcleo blanco nítido + drop-shadow → contraste centro caliente/borde difuso. Verificado en build local y en el chunk servido. Commit `20ca696`, deploy manual.
