@@ -1,4 +1,4 @@
-# INSTALACIÓN — DSpace-CRIS 2025.02.00 (receta probada)
+# INSTALACIÓN — DSpace-CRIS 2025.02.01.02 (receta probada)
 
 Destilado de la bitácora UOH (`repositorios-digitales-uoh/DSPACE-CRIS/`):
 es lo que corre el lab local y el servidor institucional. Cada trampa
@@ -9,8 +9,8 @@ citada ocurrió de verdad — no saltárselas.
 | Pieza | Detalle |
 |---|---|
 | Docker | Docker Desktop ≥28 con Compose v2 (Windows) o docker+plugin compose (Linux) |
-| Imágenes | `4science/dspace-cris`, `-cli`, `-solr`, `-angular` — tag `dspace-cris-2025.02.00` (= DSpace 9.2, esquema `9.0.2025.02.13`) |
-| Código | `git clone https://github.com/4Science/DSpace.git` → `git checkout dspace-cris-2025.02.00` |
+| Imágenes | `4science/dspace-cris`, `-cli`, `-solr`, `-angular` — tag `dspace-cris-2025.02.01.02` (= DSpace 9.2, último patch estable oct-2026) |
+| Código | `git clone https://github.com/4Science/DSpace.git` → `git checkout dspace-cris-2025.02.01.02` |
 | Puertos | 8080 (REST), 4000 (Angular SSR), 5432 (Postgres 15), 8983 (Solr) |
 | RAM recomendada | ≥8 GB libres (JVM + Solr + Postgres en contenedores) |
 
@@ -21,7 +21,8 @@ cd dspace-cris-lab   # el clon de 4Science/DSpace en el tag
 
 # .env mínimo:
 #   COMPOSE_PROJECT_NAME=dcris25
-#   DSPACE_VER=dspace-cris-2025.02.00
+#   DSPACE_VER=dspace-cris-2025.02.01.02
+#   DSPACE_ANGULAR_VER=dspace-cris-2025.02.01.01  # angular no publicó .01.02 en Hub
 
 docker compose up -d
 ```

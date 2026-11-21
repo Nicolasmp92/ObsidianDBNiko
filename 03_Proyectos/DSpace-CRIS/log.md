@@ -116,3 +116,14 @@ Del repo UOH, lo que aplica directo a una instalación nueva:
   (~4 min primer boot). Existe variante `-dist` si se quiere arranque rápido.
 - **ESTADO** — Instancia fresca vacía: falta `initialize-entities` + admin
   para ver datos CRIS.
+
+## 2026-11-21 — Lab actualizado a 2025.02.01.02
+
+- **HECHO** — Lab migrado de `2025.02.00` → `2025.02.01.02` (último patch
+  estable, oct-2026). Backend construido desde source en el tag nuevo;
+  solr `.01.02` desde Hub; angular en `.01.01` (Hub no publicó `.01.02`
+  para angular). Verificado: backend/OAI/front todos 200. Flyway sin
+  migraciones nuevas — hotfix puro.
+- **DECISIÓN** — Kit fijado a `2025.02.01.02` como baseline; línea
+  `2024.02.05.01` queda como opción conservadora para clientes que
+  prioricen madurez.
