@@ -21,6 +21,7 @@ Reutiliza el conocimiento de la bitácora del lab UOH con frontera estricta:
 - **Quiero la tabla fecha/actividad/evidencia** → `registro_actividades.md`
 - **Quiero la metodología de trabajo por fases** → `METODOLOGIA.md`
 - **Quiero el estándar chileno exigible (ANID)** → `ESTANDARES-CL.md`
+- **Quiero decirle al cliente qué datos entregar** → `DATOS-CLIENTE.md` (enviable tal cual)
 - **Quiero la receta de instalación probada** → `INSTALACION.md`
 - **Quiero el lab/clon del código** → `C:\Users\Niko\dspace-cris-lab`
 - **Quiero la fuente de conocimiento UOH** → `C:\Users\Niko\Desktop\repositorios-digitales-uoh\DSPACE-CRIS\` (log.md, docs/servidor, docs/tutoriales, docs/referencias)

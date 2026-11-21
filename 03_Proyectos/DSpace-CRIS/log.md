@@ -75,3 +75,23 @@ Del repo UOH, lo que aplica directo a una instalación nueva:
 - **HIPÓTESIS** — Si el próximo encargo trae fuente de datos similar
   (xlsx WoS/Scopus), el transform de la UOH se adapta en horas; el cuello
   real será siempre F0 (ver la fuente antes de prometer cumplimiento).
+
+## 2026-11-20 (3) — Especificación de datos para el cliente
+
+- **HECHO** — `DATOS-CLIENTE.md` escrito: documento enviable que define qué
+  debe entregar la institución — universos (Publicaciones obligatorio;
+  Personas/Unidades recomendado; Proyectos opcional pero desbloquea
+  fundingReferences), formato contenedor (CSV UTF-8, multivalor `||`,
+  fechas AAAA, DOI sin URL), spec por entidad con campo DSpace destino,
+  6 reglas de calidad de aceptación, tabla mínimo-viable→ideal y protocolo
+  canario de 20-50 filas.
+- **HECHO** — Cada requisito justificado con la lección real del lab UOH:
+  RUT como identificador (254/254 resueltas), `dc.title` en Persons (sin
+  él el CERIF sale sin nombre), funding solo cosecha con entidad real,
+  OCDE/CNED/SIES derivables (~80-94%), Unpaywall para licencias.
+- **DECISIÓN** — Se marca explícito qué NO debe preparar el cliente
+  (Journals, taxonomías, licencias CC, mapeo COAR) — ahorra trabajo del
+  cliente y posiciona el valor agregado del servicio.
+- **HECHO** — Regla de calidad del proyecto adoptada desde la UOH: "cero
+  ambigüedad declarada = cero tolerancia a relleno" — los casos ambiguos
+  se devuelven listados, nunca se adivinan.
