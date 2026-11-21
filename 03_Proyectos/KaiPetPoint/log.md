@@ -222,3 +222,17 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 - **HECHO** — `069c72d`: chevron ≥44px con rotate + aria-expanded en cada card de venta (el detalle existía pero nada indicaba que se podía expandir). Nueva regla: todo expandible lleva afordancia visible.
 - **IMPORTANTE** — Deploy demo corregido: `docker-compose.demo.yml` construye desde `/opt/kpp-demo` (raíz), NO `code/`. Los extracts de hoy a `code/` no llegaron al build — la demo sirvió código del 26-oct hasta el rebuild con contexto correcto. Verificar frescura con el hash del bundle (`main-*.js`) o un string del commit, no solo con HTTP 200/302. Pendiente: `code/` es residuo; el catálogo slim se aplica en el reset de las 04:00.
 - **HECHO** — `0e04fa1`: tour reforzado. Pasos nuevos de flujo (Nueva venta → Caja "abre el turno primero" → Catálogo) anclados a `data-tour-item` por ruta, paso exclusivo demo ("crea tus productos, kit mínimo a propósito"), contador N de M + botón Atrás. 9 tests verdes. Verificación de deploy: bundle `main-E2GSR7CH` + chunk con el código nuevo dentro del contenedor.
+
+## 2026-11-21 — Pasarela SaaS decidida (pendiente de implementación)
+
+- **DECISIÓN** — Cobro del arriendo: **Flow Suscripciones** (API nativa de
+  suscripciones, redirect de tarjeta, 2,89%+IVA sin costo fijo) sobre un
+  dominio propio `suscripciones/` — la pasarela es adaptador reemplazable.
+  Cobro manual transferencia como puente. Oneclick/PatPass = migración
+  futura. Análisis completo (3 ramas + consejo) en
+  [[KPP - Pasarela suscripciones SaaS]]. Tarea pendiente registrada.
+- **PENDIENTE** — Implementar módulo `suscripciones/`: Plan/Suscripcion +
+  Flyway, FlowClient, webhook con firma, suspensión por impago, e2e sandbox.
+  Requiere cuenta Flow sandbox del usuario. Paralelo: boleta electrónica.
+- **RIESGO** — Los clientes pedirán boleta/factura, no tarjeta: la pasarela
+  cobra pero la DTE es brecha aparte (ver [[KPP - Boleta electrónica SII]]).
