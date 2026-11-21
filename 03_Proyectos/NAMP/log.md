@@ -180,3 +180,7 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 ## 2026-11-20 — Dirección actualizada a Rancagua
 
 - **HECHO** — "Santiago, Chile" → "Rancagua, Chile" en footer, página de contacto y meta descriptions (index.html + `contact.ts` + `home.ts`: SEO/OG/Twitter). Commit `856dc46`, deploy manual, verificado 200 en home y /contacto sin restos de Santiago. OJO: la bio IG resuelta el 18-11 decía "Santiago, Chile" (derivada del og:description) — la plantilla del kit lo refleja; revisar piezas si se republican.
+
+## 2026-11-20 (2) — Logo hace scroll-to-top en la home
+
+- **HECHO** — El click del logo no hacía nada estando en `/` scrolleado (routerLink a la misma ruta se ignora con `onSameUrlNavigation` default). Ahora `irInicio()` en el header: en la home sube suave (`smooth`, respeta `prefers-reduced-motion`), en otras rutas el routerLink navega y el scroll restoration ya sube. Commit `6ba2114`, build+tests 4/4, deploy manual verificado.
