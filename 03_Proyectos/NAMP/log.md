@@ -202,3 +202,9 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 
 - **HECHO** — Los SVG dibujados a mano del FAB/panel se reemplazaron por **Material Symbols Outlined** (Google Fonts, `icon_names=accessibility_new,close,restart_alt` — subset ~2 KB). Es el set oficial que usa `@angular/material/icon`, pero como fuente/ligatura no agrega dependencias npm (respeta "cero deps extra" de namp-rules). Commit `3f68ba4`, deploy manual, verificado: link servido + fonts.googleapis 200 + ligatura en el HTML.
 - **DECISIÓN** — El ícono de Instagram queda custom: ninguna librería oficial de iconos de Angular incluye marcas de terceros. El SVG replica el glyph oficial de Meta; la alternativa (brand assets de Meta) exige aprobación de uso.
+
+## 2026-11-24 (3) — Destello al completar el trazo de la N
+
+- **HECHO** — Cuando `hero-draw` termina (~1.6s): `hero-glint` (drop-shadow dorado que enciende y apaga sobre el trazo) + `.hero__flash` (estrella de 4 puntas blanca con glow dorado + 3 puntos que irradian desde la punta final 132,64; escala→rota→se disuelve, 1s, una sola vez). `prefers-reduced-motion` lo apaga. Commit `9425c3b`, deploy manual verificado (`hero__flash`/`hero-glint` servidos).
+- **BUG ENCONTRADO Y CORREGIDO** — El atributo SVG `transform="translate(...)"` es **pisado** por `transform` CSS de la animación (la estrella se iba a (0,0), invisible). Fix: coordenadas absolutas en el path + `transform-box: fill-box` para escalar desde su propio centro. Lección: en SVG animado con CSS, nunca mezclar atributo `transform` con `transform` en keyframes — el CSS gana.
+- **NOTA** — `--virtual-time-budget` no captura animaciones transitorias CSS (timing real vs virtual); para verificar, aislar el estado en un HTML de prueba con la animación congelada.
