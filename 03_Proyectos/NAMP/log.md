@@ -219,3 +219,7 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **CAMBIO** — Los puntos dorados pegados al trazo se veían como manchas: se reemplazaron por una **constelación en el espacio alrededor de la N** (entre la letra y los anillos) — 12 elementos mayoría blancos + acentos dorado/esmeralda, tamaños variados, 2 estrellas flare ✦ con glow. Titileo por **opacidad** con periodo propio (`--tw` 2.4–4s), encendido escalonado tras el trazo. Skill frontend-design aplicado: el hero es un sistema orbital — le faltaba el cielo, no decoración en la letra.
 - **LECCIÓN** — Partículas "on-stroke" sobre un trazo grueso (stroke-width 20) leen como defectos de la forma; un starfield necesita espacio, varianza de tamaño/tinte y flicker de brillo, no de escala.
 - Commit `84b4ad7`, deploy manual verificado (`hero__star`/`hero-twinkle` servidos).
+
+## 2026-11-24 (6) — Estrellas: redistribución aleatoria + paleta orbital
+
+- **ITERACIÓN** — Distribución más aleatoria (14 elementos, ángulos y distancias irregulares alrededor de la N) y colores alternados con los de los cuerpos orbitales: blanco (núcleos), dorado (cometa exterior), esmeralda (cometa interior/nodos). Flares: esmeralda derecha, blanca izquierda. Commit `b530084`, deploy manual verificado.
