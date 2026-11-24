@@ -236,3 +236,42 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
   Requiere cuenta Flow sandbox del usuario. Paralelo: boleta electrónica.
 - **RIESGO** — Los clientes pedirán boleta/factura, no tarjeta: la pasarela
   cobra pero la DTE es brecha aparte (ver [[KPP - Boleta electrónica SII]]).
+
+## 2026-11-24 — Análisis de producción pre-features
+
+- **HECHO** — Auditoría `kpp.namp.cl` (real): **sigue muerto**. Última venta 2026-10-25 01:25 (~1 mes sin actividad). `movimientos_stock`, `cliente_abonos`, `clientes` y `aperturas_cajon` igual de quietos. Usuarios intactos: solo root + vendedor@kpp.dev. En el access log (~15h observables): cero POST a `/api` (ningún login), tráfico = monitor Kuma (`172.18.0.1`, ~2 min) + escáneres WordPress de Internet (`/wp-login.php`, `/wp-json/*`). Piloto Patitas no retomó.
+- **CORRECCIÓN** — La auditoría del 20-nov atribuyó las ventas post-reset del demo a visitantes: **eran del seed**. `DataSeeder.sembrarVentasDemo` siembra 1–4 ventas por día `dia=15..0` (incluye HOY) con horas aleatorias 9–18 — por eso aparecía una venta "futura" (hoy 18:06 a las 09:28 reales). En las ~15h de access log disponibles: **cero POSTs a `/api` en demo.namp.cl** → nadie logueó ni vendió; solo 2 IPs externas (crawlers Microsoft/Bing). Evidencia real de visitantes: no existe.
+- **RIESGO** — Rotación del access log **no retiene histórico**: `logrotate.d/traefik-access` tiene `copytruncate` diario×30 pero no existe ningún `access.log.1.gz` — solo quedan ~15h (desde 2026-11-23 21:54 UTC). Ventana de atribución perdida para el 20–23 nov.
+- **DECISIÓN usuario** — Reset de cuentas condicionado a actividad real: **no aplica** (nadie trabaja en ninguna instancia). Siguiente: nuevas características sobre `main`.
+
+## 2026-11-24 (pm) — Reportes de ventas en Caja + layout
+
+- **HECHO** — Descarga de ventas en Caja: botón «Ventas de hoy/del dd-MM en Excel» en la tarjeta del turno abierto y dentro del detalle de cada turno del historial. Reusa `GET /api/ventas/reporte` (granularidad día, no turno — si el turno cruza medianoche el CSV trae ambos días; etiqueta lo declara). Util extraída a `shared/utils/descarga.ts` (`isoLocal` + `descargarArchivo`) y dashboard refactorizado a usarla (2 call sites, era el momento de extraer). Spec: [[front/KPP - front-reportes-caja]].
+- **HECHO** — Layout Caja: fila superior ahora `grid lg:grid-cols-2` — estado de caja (cerrada/turno) izq + cajón de dinero der, mitad y mitad en escritorio; apila en móvil. Pedido del usuario tras screenshot.
+- **ESTADO** — Lint verde, 82/82 tests (3 nuevos en `descarga.spec.ts`). Sin cambios de backend. Falta verificación visual en navegador.
+
+## 2026-11-24 (pm) — Tanda UI/roles: usuarios, granel, miles CLP, repartidor
+
+- **HECHO** — Botones de Usuarios al estándar: `sm:h-9` eliminado del diálogo y del header (la regla escrita es `h-11` ≥44px sin excepción); Guardar/Cancelar ahora `flex-1` en móvil. Ojo: `sm:h-9` sigue existiendo en catálogo/topbar/importar — propagar o aceptar como densidad desktop queda pendiente de decisión.
+- **HECHO** — Chip granel deja el ámbar (`bg-warning` colisionaba con "stock bajo" y "oferta"): ahora neutro sólido `bg-text text-surface` + bordes `border-text/40` en buscador POS y catálogo. Principio: granel es TIPO de producto, no estado — el ámbar queda reservado a alertas.
+- **HECHO** — `appMiles` (`shared/miles.directive.ts`, espejo de `appRut`): formatea miles en vivo `5000`→`5.000`, filtra no-dígitos, funciona en `ngModel` y `formControlName`, reformatea también valores seteados programático (vía `valueChanges` + `afterNextRender` para el valor inicial). Utils en `shared/utils/miles.ts`: `formatearMiles` + `montoDe` (parser único — quita `.` miles, coma→punto decimal legacy). Aplicado a: POS (recibido, abono, 4 del mixto), Caja (fondo, movimiento, declarado), abono en ficha de cliente. `numeroDe` queda para descuentos/kg (donde `.` podría ser decimal).
+- **HECHO** — **Rol `repartidor`** end-to-end verificado local: backend patrón `admin|user|root|repartidor` en AdminUsuariosController + SecurityConfig con allowlist (`/api/despachos`, `/api/auth/**`, `/api/perfil/**` → autenticado; el resto de `/api/**` ahora exige `USER|ADMIN|ROOT` — antes era `authenticated()` y cualquier rol nuevo heredaba todo). Front: opción en dropdown de usuarios, `esRepartidor` en auth.service, `staffGuard` en todas las rutas de tienda (repartidor rebota a `/despachos`), sidebar con un solo ítem, campana de stock oculta + `httpResource` gateado (sin fetch → sin 403). Prueba real con usuario `repartidor@kpp.dev`: me 200, despachos 200, ventas/caja/catalogo/admin 403.
+- **LÍMITE declarado** — `/api/despachos` lista la cola completa de la sucursal (no hay `repartidor_id` en `Despacho`): es cola de equipo, no lista personal. Asignación individual = feature nueva con migración.
+- **ESTADO** — Lint verde, 86/86 tests (4 nuevos en `miles.spec.ts`), backend compila. Specs: [[front/KPP - front-inputs-clp]], [[front/KPP - front-rol-repartidor]], [[back/KPP - back-seguridad-roles]]. Sin commit aún — falta verificación visual + la tanda anterior de reportes-caja.
+
+## 2026-11-24 (pm 2) — Pieles .btn/.input/.acciones-form + fin de sm:h-9
+
+- **CAUSA RAÍZ** — El usuario preguntó por qué `sm:h-9` se repetía: la regla h-11 vivía en la cabeza, no en el código — cada botón/input declaraba su piel a mano (~174 instancias). Diagnóstico correcto: faltaban primitivas reutilizables.
+- **HECHO** — Clases semánticas en `styles.css` (misma filosofía que `.dialogo`): `.btn` + `.btn-primario/.btn-secundario/.btn-peligro` (h-11 + gap-2 + disabled incluidos; el sitio solo aporta layout), `.input` (h-11 + border + focus primario — sirve input/select/textarea), `.acciones-form` (footer de form: mitades en móvil, natural a la derecha en escritorio — hijos `flex-1 sm:flex-none` automático).
+- **HECHO** — Migración mecánica: 174 strings reemplazados en 28 archivos; 15 footers `mt-3/mt-4 flex gap-2` → `.acciones-form` (incluye el diálogo de usuarios que motivó el reporte — en desktop los botones ya no flotan chicos a la izquierda); **14 `sm:h-9` eliminados del codebase completo** (botones, tabs, chips, nav — la regla ≥44px quedó sin excepción).
+- **DECISIÓN** — Chips de filtro (`aria-pressed`) y nav del topbar NO se migraron a `.btn` (son otro componente: pill estrecha vs botón) — solo se les quitó `sm:h-9`. El `file:` input de importar quedó con su piel propia.
+- **RIESGO conocido** — Quitar sm:h-9 sube la densidad desktop de 36→44px en chips/tabs/nav; `.input` suma `text-sm`/`bg-surface` donde faltaban (mejora de consistencia, cambio mínimo). Verificación visual pendiente del usuario.
+- **ESTADO** — Lint verde, 86/86 tests, prettier en todo src/app. ~43 archivos quedaron stat-dirty sin diff real (prettier reescribió mtime) — el commit solo lleva los 39 con cambios.
+
+## 2026-11-24 (pm 3) — Cierre, versionado 0.8.0 y deploy a demo (por sesión Devin CLI)
+
+- **CONTEXTO** — La tanda del mediodía (repartidor + miles + reportes-caja + pieles) quedó sin commit por cambio de instancia. Esta sesión la encontró sin commitear, verificó y cerró.
+- **HECHO** — Commit `8577eb0` (rama `feat/rol-repartidor-miles`, 44 archivos +576/−730) + merge `e6e8e6d` a main + push. Verificación propia: prettier (tocados), lint, 86/86.
+- **HECHO** — Versión 0.8.0 (`version.ts` + `package.json`) con notas que cubren las 4 piezas: repartidor, miles CLP, Excel de ventas en Caja, chip granel neutro + pieles .btn/.input.
+- **DEPLOY** — `/opt/kpp-demo` **no es repo git** (lección: fetch/bundle falla ahí). Método: `git archive main | ssh → sudo tar -x -C /opt/kpp-demo` + `docker compose -f docker-compose.demo.yml -p kaipetpoint-demo up -d --build`. Contenedores healthy, `esRepartidor` confirmado en el bundle servido.
+- **PENDIENTE** — Verificación visual del usuario en demo.namp.cl (piel nueva + repartidor + miles). Prod `kpp.namp.cl` sigue en versión vieja — promoción queda a decisión (auditoría del mediodía: cero uso real en prod).
