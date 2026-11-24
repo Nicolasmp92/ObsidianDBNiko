@@ -188,3 +188,12 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 ## 2026-11-20 (3) — Cometas del hero con difuminación
 
 - **HECHO** — Blur CSS sobre las estelas del hero: `hero__trail--mid` (0.8px, el tramo que se aleja de la cabeza), `hero__spark` (0.4px, chispas que se disipan) y `hero__orbit-node:not(:last-child)` (0.5px, las 4 partículas de estela del cometa orbital). Las cabezas conservan núcleo blanco nítido + drop-shadow → contraste centro caliente/borde difuso. Verificado en build local y en el chunk servido. Commit `20ca696`, deploy manual.
+
+## 2026-11-24 — FAB Instagram + panel de accesibilidad flotante
+
+- **HECHO** — `instagram-fab` (inferior derecha, gradiente IG, `target=_blank`) → `instagram.com/namp.cl` (handle registrado en el media kit; cuenta aún pendiente de crear — el link dará 404 en IG hasta que exista).
+- **HECHO** — `a11y-menu` (inferior izquierda): FAB persona + panel con tamaño de texto (4 niveles), alto contraste, enlaces resaltados, espaciado de lectura, reducir movimiento, escala de grises, cursor grande, guía de lectura (sigue el puntero), foco destacado y reset. Servicio `accesibilidad.ts` signal-based con persistencia localStorage (`namp-a11y`) + script anti-flash en `index.html` (patrón de KPP). Reglas CSS por atributo `[data-a11y-*]` en `styles.scss`. Archivos en `src/app/shared/floating/` + `shared/services/`; integrados en `app.html`/`app.ts`.
+- **HECHO** — Commit `4f58e21` en `main` (rebase sobre `20ca696` del usuario). Build OK — 303.79 kB inicial; warning de budget en `home.css` es preexistente.
+- **HECHO** — Deploy manual (webhook Dokploy sigue roto): bundle → fetch ff-only en `/etc/dokploy/compose/namp-web-tfw8yk/code` → `docker compose -p namp-web-tfw8yk up -d --build web`. Verificado por contenido: namp.cl 200, `a11y-menu`/`instagram-fab`/`instagram.com/namp.cl` servidos en el HTML.
+- **NOTA (verificación)** — Los screenshots "360px" con headless Edge muestran layout desktop: el renderer ignora `--window-size` para el layout viewport (mínimo ~500px, igual que el headless Chrome documentado el 19-nov). Para móvil real usar iframe/CDP, no `--screenshot`.
+- **PENDIENTE (usuario)** — Crear la cuenta IG `@namp.cl` para que el FAB deje de apuntar a un 404; arreglar el webhook Dokploy (arrastrado de sesiones previas).
