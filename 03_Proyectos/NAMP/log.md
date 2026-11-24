@@ -197,3 +197,8 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **HECHO** — Deploy manual (webhook Dokploy sigue roto): bundle → fetch ff-only en `/etc/dokploy/compose/namp-web-tfw8yk/code` → `docker compose -p namp-web-tfw8yk up -d --build web`. Verificado por contenido: namp.cl 200, `a11y-menu`/`instagram-fab`/`instagram.com/namp.cl` servidos en el HTML.
 - **NOTA (verificación)** — Los screenshots "360px" con headless Edge muestran layout desktop: el renderer ignora `--window-size` para el layout viewport (mínimo ~500px, igual que el headless Chrome documentado el 19-nov). Para móvil real usar iframe/CDP, no `--screenshot`.
 - **PENDIENTE (usuario)** — Crear la cuenta IG `@namp.cl` para que el FAB deje de apuntar a un 404; arreglar el webhook Dokploy (arrastrado de sesiones previas).
+
+## 2026-11-24 (2) — Iconos a11y → Material Symbols oficial
+
+- **HECHO** — Los SVG dibujados a mano del FAB/panel se reemplazaron por **Material Symbols Outlined** (Google Fonts, `icon_names=accessibility_new,close,restart_alt` — subset ~2 KB). Es el set oficial que usa `@angular/material/icon`, pero como fuente/ligatura no agrega dependencias npm (respeta "cero deps extra" de namp-rules). Commit `3f68ba4`, deploy manual, verificado: link servido + fonts.googleapis 200 + ligatura en el HTML.
+- **DECISIÓN** — El ícono de Instagram queda custom: ninguna librería oficial de iconos de Angular incluye marcas de terceros. El SVG replica el glyph oficial de Meta; la alternativa (brand assets de Meta) exige aprobación de uso.
