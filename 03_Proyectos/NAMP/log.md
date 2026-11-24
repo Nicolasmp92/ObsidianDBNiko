@@ -213,3 +213,9 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 
 - **CAMBIO** — Al usuario le gustaron las partículas pero no el destello puntual: se eliminaron estrella `hero__flash` + glint `hero-glint`, y se quedaron **8 chispas doradas distribuidas sobre todo el trazo** de la N (barra izquierda, diagonal, barra derecha).
 - **HECHO** — Pop escalonado en el sentido del dibujo (1.5s→2.2s, con overshoot ×1.4) + titileo infinito `hero-sparkle` con fases distintas por punto; glow dorado sutil. Con `prefers-reduced-motion` quedan visibles y estáticas (opacity:1, sin animation). Commit `efc0ca0`, deploy manual verificado (`hero__n-spark`/`hero-spark-in` servidos).
+
+## 2026-11-24 (5) — Campo estelar (iteración de diseño)
+
+- **CAMBIO** — Los puntos dorados pegados al trazo se veían como manchas: se reemplazaron por una **constelación en el espacio alrededor de la N** (entre la letra y los anillos) — 12 elementos mayoría blancos + acentos dorado/esmeralda, tamaños variados, 2 estrellas flare ✦ con glow. Titileo por **opacidad** con periodo propio (`--tw` 2.4–4s), encendido escalonado tras el trazo. Skill frontend-design aplicado: el hero es un sistema orbital — le faltaba el cielo, no decoración en la letra.
+- **LECCIÓN** — Partículas "on-stroke" sobre un trazo grueso (stroke-width 20) leen como defectos de la forma; un starfield necesita espacio, varianza de tamaño/tinte y flicker de brillo, no de escala.
+- Commit `84b4ad7`, deploy manual verificado (`hero__star`/`hero-twinkle` servidos).
