@@ -232,3 +232,9 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 
 - **HECHO** — Botón dark/light eliminado del header (SVGs + estilos huérfanos limpiados); ahora es un control segmentado "Tema" (Oscuro/Claro) al tope del panel de accesibilidad, con iconos oficiales `dark_mode`/`light_mode` (subset Material Symbols ampliado). `ThemeService` sin cambios — solo cambia el consumidor. Fuente única de verdad como el logout en KPP. Commit `46b1c2f`, deploy manual verificado (`dark_mode` servido, `header__theme-toggle` fuera).
 - **COLATERAL KPP (mismo contexto)** — `1730ea9` en kaipetpoint: chevron de expandibles (turnos caja + cards ventas) a esquina superior derecha (lo tapaba el FAB de novedades). La rama barrió trabajo previo sin commitear (util `descarga.ts`+spec, refactor dashboard — coherente y completo). Demo redeployada verificada por contenido. Ojo: al desplegar KPP el compose debe ser `-f docker-compose.demo.yml` **sin** `-p` (el proyecto se llama `kaipetpoint-demo`; un `-p kpp-demo` levantó un stack duplicado que ya se desmontó).
+
+## 2026-11-24 (9) — Refresh del hero + portfolio actualizado
+
+- **HECHO** — Hero más fresco sin tocar la estructura: insignia `hero__status` ("● Disponibles para nuevos proyectos", punto esmeralda con ping de box-shadow) bajo el subtítulo + "a medida" pasa de color plano a **gradiente animado dorado↔esmeralda** (background-clip:text, 6s, respeta reduced-motion).
+- **HECHO** — Portfolio con info nueva: KPP → status "Demo en vivo" + descripción con features reales (ventas a granel, arqueo de caja, despacho, fiado); nuevo proyecto **"NAMP Ingeniería"** (el propio sitio) con thumbnail real `namp-web.webp` (screenshot 1280→960 webp) en `public/img/projects/`.
+- **HECHO** — Commit `c5b3bb5`, deploy manual verificado (`hero__status` + texto servidos). home.css supera el budget en 2.96 kB — ya iba creciendo; evaluar subir el límite o modularizar en otra iteración.
