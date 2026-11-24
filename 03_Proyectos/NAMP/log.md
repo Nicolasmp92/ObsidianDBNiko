@@ -208,3 +208,8 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **HECHO** — Cuando `hero-draw` termina (~1.6s): `hero-glint` (drop-shadow dorado que enciende y apaga sobre el trazo) + `.hero__flash` (estrella de 4 puntas blanca con glow dorado + 3 puntos que irradian desde la punta final 132,64; escala→rota→se disuelve, 1s, una sola vez). `prefers-reduced-motion` lo apaga. Commit `9425c3b`, deploy manual verificado (`hero__flash`/`hero-glint` servidos).
 - **BUG ENCONTRADO Y CORREGIDO** — El atributo SVG `transform="translate(...)"` es **pisado** por `transform` CSS de la animación (la estrella se iba a (0,0), invisible). Fix: coordenadas absolutas en el path + `transform-box: fill-box` para escalar desde su propio centro. Lección: en SVG animado con CSS, nunca mezclar atributo `transform` con `transform` en keyframes — el CSS gana.
 - **NOTA** — `--virtual-time-budget` no captura animaciones transitorias CSS (timing real vs virtual); para verificar, aislar el estado en un HTML de prueba con la animación congelada.
+
+## 2026-11-24 (4) — Partículas doradas a lo largo de toda la N
+
+- **CAMBIO** — Al usuario le gustaron las partículas pero no el destello puntual: se eliminaron estrella `hero__flash` + glint `hero-glint`, y se quedaron **8 chispas doradas distribuidas sobre todo el trazo** de la N (barra izquierda, diagonal, barra derecha).
+- **HECHO** — Pop escalonado en el sentido del dibujo (1.5s→2.2s, con overshoot ×1.4) + titileo infinito `hero-sparkle` con fases distintas por punto; glow dorado sutil. Con `prefers-reduced-motion` quedan visibles y estáticas (opacity:1, sin animation). Commit `efc0ca0`, deploy manual verificado (`hero__n-spark`/`hero-spark-in` servidos).
