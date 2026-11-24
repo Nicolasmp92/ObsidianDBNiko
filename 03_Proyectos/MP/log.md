@@ -83,3 +83,10 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **VERIFICADO** — `https://ingenieriamp.cl` contiene "Creado por NAMP" + link a namp.cl en el HTML servido.
 - **HECHO** — Repo clonado en este equipo (`~/Escritorio/Desarrollo/mp`); remote renombrado `mp` → `MP` en GitHub (origin actualizado).
 - **PENDIENTE leve** — GA4 sigue sin Measurement ID en index.html; revisar que el formulario de contacto envíe correo real con el mailer ya deployado.
+
+## 2026-11-24 — Insignia NAMP orbital en footer + deploy bloqueado (FTP 530)
+
+- **HECHO** — Crédito "Desarrollado por NAMP Ingeniería · namp.cl" con la marca orbital animada completa (mismo componente que footer del portafolio y navbar de namp.cl, clases `namp-*`): N trazada, cometas, plano orbital, Capricornio. `currentColor` para tema claro/oscuro, `prefers-reduced-motion` ok. Sustituye al crédito de texto plano (`e8c9dba`, quedaba absorbido en el merge de origin/main → refactor).
+- **HECHO** — Merge `origin/main` → `refactor/services-UIUX-refactor` (conflicto en footer.ts resuelto: insignia animada + su separador border-t) → ff a `main` (`49c2dc3`) → push gatilla Actions.
+- **BLOQUEO** — Deploy FTP a cPanel **falló con `530 Login authentication failed`** (secrets FTP_USERNAME/FTP_PASSWORD inválidos o rotados desde el último deploy OK del 27-oct). Requiere actualizar secrets en GitHub o subir `dist/MP/browser/` manual al hosting LiteSpeed (147.124.195.39). 
+- **RIESGO** — El workflow tiene un guard de secrets SMTP/RECAPTCHA que imprime `::error::` "Se aborta el deploy" pero **no aborta**: el paso FTP corrió igual. Mensaje ambiguo en logs; revisar el `exit 1` del guard.
