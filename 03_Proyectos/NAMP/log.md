@@ -223,3 +223,7 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 ## 2026-11-24 (6) — Estrellas: redistribución aleatoria + paleta orbital
 
 - **ITERACIÓN** — Distribución más aleatoria (14 elementos, ángulos y distancias irregulares alrededor de la N) y colores alternados con los de los cuerpos orbitales: blanco (núcleos), dorado (cometa exterior), esmeralda (cometa interior/nodos). Flares: esmeralda derecha, blanca izquierda. Commit `b530084`, deploy manual verificado.
+
+## 2026-11-24 (7) — Constelación Capricornio
+
+- **HECHO** — El campo estelar ahora dibuja el asterismo real de **Capricornio**: cúmulo α2/α1+β arriba-izquierda, bajada ζ→θ→ω, barrido inferior ψ→ι→ρ, subida γ→**δ Deneb Algedi** (flare blanca, la estrella más brillante) a la derecha; α2 Algiedi como flare dorada. Líneas de unión tenues (`--color-border`, op 0.35) aparecen tras el encendido de las estrellas. Colores alternados con los cuerpos orbitales. Commit `ade7f4f`, deploy manual verificado (`hero__constellation` servido).
