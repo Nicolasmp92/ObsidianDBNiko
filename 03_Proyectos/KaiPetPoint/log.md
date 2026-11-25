@@ -275,3 +275,24 @@ Bitácora narrativa **append-only**: entradas nuevas al final. Tipos: **HECHO** 
 - **HECHO** — Versión 0.8.0 (`version.ts` + `package.json`) con notas que cubren las 4 piezas: repartidor, miles CLP, Excel de ventas en Caja, chip granel neutro + pieles .btn/.input.
 - **DEPLOY** — `/opt/kpp-demo` **no es repo git** (lección: fetch/bundle falla ahí). Método: `git archive main | ssh → sudo tar -x -C /opt/kpp-demo` + `docker compose -f docker-compose.demo.yml -p kaipetpoint-demo up -d --build`. Contenedores healthy, `esRepartidor` confirmado en el bundle servido.
 - **PENDIENTE** — Verificación visual del usuario en demo.namp.cl (piel nueva + repartidor + miles). Prod `kpp.namp.cl` sigue en versión vieja — promoción queda a decisión (auditoría del mediodía: cero uso real en prod).
+- **FIX** — Campana de stock no aterrizaba en el producto: los items de alerta linkeaban a `/catalogo/productos` a secas. Ahora cada alerta lleva `?q=<nombre>` (prende el buscador y filtra a ese producto) y el enlace "ver las N alertas" lleva `?bajo=1` (panel de filtros abierto con "stock bajo" activo). Reusa los deep links que productos ya soportaba vía queryParamMap — funciona también si ya estás en la página.
+- **HECHO** — Logo orbital NAMP en el login: el SVG animado del footer del portafolio/namp.cl portado a `login.page.html` como firma bajo la tarjeta ("Desarrollado por NAMP Ingeniería" → namp.cl, h-14). ~280 líneas de CSS `namp-*` + keyframes portadas a `styles.css` con tokens adaptados (`--border`→`--color-border`, `--text`→`--color-text`) — paleta ámbar/esmeralda propia, no sigue el acento del usuario. Respeta prefers-reduced-motion. El paw + nombre KPP quedan como marca del producto arriba.
+- **FIX cascada** — Las pieles `.btn`/`.input`/`.acciones-form` movidas a `@layer components`: unlayered ganaban a las utilities del sitio (habría roto `px-2`, `w-28`, `flex` en sitios migrados). Ahora components < utilities: la piel es base, el sitio siempre sobreescribe. `.input` ganó `w-full` por defecto (era el patrón mayoritario; los anchos fijos siguen ganando por utilities).
+- **HECHO** — `login.page.html` migrado a `.btn`/`.input` (era el único .html externo — la migración anterior solo barrió .ts).
+
+## 2026-11-24 — Cierre de sesión (pusheado a main)
+
+**Commits finales en main (pusheados):**
+- `4ad3e3b` fix(topbar): campana de stock aterriza en el producto correcto (?q= / ?bajo=1)
+- `89f8db8` feat(login): firma orbital NAMP + fix cascada @layer en pieles UI
+- `8577eb0` feat: rol repartidor + miles CLP (commiteado por sesión paralela, incl. pieles .btn/.input/.acciones-form y fin de sm:h-9)
+- `1628c2a`+`651474e` docs: notas de versión 0.8.0 + bitácora
+
+**Estado:** árbol limpio, 0/0 con origin/main, lint verde, 86/86 tests, backend compilando. Local sigue corriendo (:8084 back, :4204 front). Repartidor de prueba: `repartidor@kpp.dev` / `reparto123`.
+
+**Pendiente para mañana (retomar acá):**
+1. Verificación visual del usuario en :4204 → si OK, deploy al demo (`docker-compose.demo.yml` desde `/opt/kpp-demo`, NO `code/`).
+2. Densidad desktop post-`sm:h-9`: chips de filtro y nav del topbar pasaron de 36→44px — confirmar que no se vean estirados.
+3. Inputs `type=number` del POS (ofertas, productos) aún sin `appMiles` si tienen montos CLP — revisar.
+4. Portfolio: footer sin linktree compilado pero sin commit ni `ng deploy` (decisión del usuario).
+5. Auditar por qué dos sesiones commitearon en paralelo sobre el mismo hilo (riesgo de pisado — guarda-edicion-concurrente).

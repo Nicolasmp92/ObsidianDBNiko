@@ -17,3 +17,11 @@ Bitácora append-only. Tipos: HECHO / DECISIÓN / HIPÓTESIS / RIESGO.
 - **HECHO** — Único `linktr.ee/NikoMP` del código eliminado del array `socials` del About. Además se commiteó trabajo pendiente de otra instancia que eliminaba la **columna completa de redes del footer** (array `socials` + markup + estilos `.footer-social`/`.social-btn`, −80 líneas) — el footer queda en 2 columnas: marca/contacto + insignia NAMP.
 - **HECHO** — Commit `61fbde6`, deploy `ng deploy` → gh-pages verificado por contenido (`main-KSWRSSIX.js` servido, `linktr.ee` = 0 coincidencias en el bundle). Nota: el primer `ng deploy` se cortó al cerrar la ventana — re-ejecutado completo.
 - **PENDIENTE** — `package.json`/`package-lock.json` siguen sin commitear (eliminación de `ng-recaptcha`, el código llama `grecaptcha` directo).
+
+## 2026-11-25 — Pasada de diseño completa (commit 834f479)
+
+- **Contenido**: title real "Nicolás Muñoz — Desarrollador Full Stack", og tags, theme-color; hero tech-tags con stack actual (Spring Boot/PostgreSQL/Tailwind); tarjeta KPP → "En producción" → kpp.namp.cl con features 0.8.0 (repartidor, miles, reportes Excel); copy del portafolio actualizado.
+- **Modales**: width explícito (min 96/90rem), subtitle fuera del `<h2>` (HTML inválido), fila de acciones alineada a la derecha — Cerrar ghost + Visitar sitio primary relleno; listas innerHTML con marcadores de acento y strong en --text; iframe PDF con borde/radius.
+- **Botones/disposición**: submit de contacto `fit-content` alineado derecha en ≥576px (antes full-width pesado); footer-inner 72→114rem (iguala container); a11y-panel max-width en pantallas angostas; padding skills `px-5`→responsive.
+- **Globales**: `:focus-visible` outline acento, `::selection` acento.
+- **Recordatorio**: deploy gh-pages siempre `MSYS_NO_PATHCONV=1 npx ng deploy --base-href=/` en Git Bash.
