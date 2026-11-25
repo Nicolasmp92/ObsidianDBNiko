@@ -90,3 +90,11 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **HECHO** — Merge `origin/main` → `refactor/services-UIUX-refactor` (conflicto en footer.ts resuelto: insignia animada + su separador border-t) → ff a `main` (`49c2dc3`) → push gatilla Actions.
 - **BLOQUEO** — Deploy FTP a cPanel **falló con `530 Login authentication failed`** (secrets FTP_USERNAME/FTP_PASSWORD inválidos o rotados desde el último deploy OK del 27-oct). Requiere actualizar secrets en GitHub o subir `dist/MP/browser/` manual al hosting LiteSpeed (147.124.195.39). 
 - **CORRECCIÓN (25-11)** — El "RIESGO" del guard de secrets era lectura errada: el `exit 1` sí existe y el paso pasó OK (los `::error::` en el log eran el texto del script, no su ejecución). SMTP_PASSWORD/RECAPTCHA_SECRET siguen presentes. Único fallo real: FTP 530.
+
+## 2026-11-25 — Deploy desbloqueado: insignia NAMP live en ingenieriamp.cl
+
+- **HECHO** — Diagnóstico FTP completo: la cuenta `niko_ftp@ingenieriamp.cl` estaba chrooteada a `~/niko_ftp` (carpeta vacía) — por eso el 530/despiste. Recreada con `Directory: public_html` (cuenta dedicada de deploys, mejor que usar `ingenier5`).
+- **HECHO** — Secrets `FTP_USERNAME`/`FTP_PASSWORD` actualizados por API (PyNaCl sealed box + token de git credential).
+- **BUG DEPLOY** — Primer run verde pero sin efecto: `server-dir: /public_html/` + cuenta ya chrooteada a public_html = upload anidado en `public_html/public_html/`. Fix `server-dir: /` en `c281ae5` (rama `fix/ftp-server-dir`). Restos del upload anidado borrados por FTP.
+- **HECHO** — Run `c281ae5` success → `ingenieriamp.cl` sirve `main-ZRGQAXSQ.js` con `namp-credit`/`namp-logo-n` verificados. La insignia orbital NAMP ("Desarrollado por NAMP Ingeniería · namp.cl") está live. Publicó además todo lo acumulado del merge (Obras Civiles refactor, páginas por servicio, etc.).
+- **NOTA** — Workflow ahora 100% funcional: push a `main` → Actions → FTP correcto. Cuenta `niko_ftp` chrooteada a public_html (superficie mínima).
