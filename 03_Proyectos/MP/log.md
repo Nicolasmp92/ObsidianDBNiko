@@ -98,3 +98,8 @@ Bitácora narrativa **append-only**: las entradas nuevas van al final, nunca se 
 - **BUG DEPLOY** — Primer run verde pero sin efecto: `server-dir: /public_html/` + cuenta ya chrooteada a public_html = upload anidado en `public_html/public_html/`. Fix `server-dir: /` en `c281ae5` (rama `fix/ftp-server-dir`). Restos del upload anidado borrados por FTP.
 - **HECHO** — Run `c281ae5` success → `ingenieriamp.cl` sirve `main-ZRGQAXSQ.js` con `namp-credit`/`namp-logo-n` verificados. La insignia orbital NAMP ("Desarrollado por NAMP Ingeniería · namp.cl") está live. Publicó además todo lo acumulado del merge (Obras Civiles refactor, páginas por servicio, etc.).
 - **NOTA** — Workflow ahora 100% funcional: push a `main` → Actions → FTP correcto. Cuenta `niko_ftp` chrooteada a public_html (superficie mínima).
+
+## 2026-11-25 (2) — Insignia NAMP como card + fix portafolio base href
+
+- **HECHO** — El crédito inline pasó a card bordeada como la del footer del portafolio: caja `rounded-xl border` con sombra, eyebrow "DESARROLLADO POR", "NAMP Ingeniería" en semibold y "namp.cl" en dorado, marca orbital w-11. Commit `5eea6ad` → Actions success → live (`main-P6MVGYAW.js`).
+- **BUG PORTAFOLIO** — `nicolasmp92.github.io` no renderizaba: el último `npx ng deploy --base-href=/` corrió en Git Bash y MSYS convirtió `/` en `C:/laragon/bin/git/` — el `<base href>` apuntaba a una ruta local y todos los assets 404. Fix: `MSYS_NO_PATHCONV=1 npx ng deploy --base-href=/`. **Regla: siempre anteponer MSYS_NO_PATHCONV=1 a ng deploy con flags que lleven / en Git Bash.**
